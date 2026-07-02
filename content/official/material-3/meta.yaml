@@ -1,0 +1,40 @@
+slug: material-3
+name: Material 3
+path: official
+maker: Google
+summary: Google's Material Design 3 — expressive, tonal, and adaptive, built around dynamic color.
+description: >-
+  Material 3 (Material You) is Google's design system for adaptive, expressive
+  interfaces. Its colour system is generated from a seed via tonal palettes; the
+  values here are the documented M3 baseline light scheme. Material 3 favours
+  rounded shapes, tonal surfaces, Roboto typography, and a clear role-based
+  colour model (primary, secondary, tertiary, surface, and their on-/container
+  pairs).
+categories:
+  - mobile-first
+  - saas-product
+  - marketing-site
+tags:
+  - google
+  - material
+  - material-you
+best_for:
+  - Mobile-first and cross-platform apps
+  - Expressive consumer product UIs
+  - Teams standardizing on Material You
+license:
+  spdx: Apache-2.0
+  url: https://github.com/material-components/material-web/blob/main/LICENSE
+  notes: Roboto is licensed under Apache-2.0 and available on Google Fonts. M3 baseline colours are generated from the default seed via material-color-utilities.
+provenance:
+  source_type: npm
+  package: "@material/web"
+  version: 2.4.1
+  extracted_at: "2026-07-02"
+links:
+  official_site: https://m3.material.io
+  docs: https://m3.material.io/styles/color/roles
+  github: https://github.com/material-components/material-web
+restricted: false
+status: draft
+spec_version: alpha
