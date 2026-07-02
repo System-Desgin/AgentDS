@@ -1,0 +1,39 @@
+slug: ant-design
+name: Ant Design
+path: official
+maker: Ant Group
+summary: Ant Group's enterprise UI system — a vivid blue, crisp neutrals, and dense, data-rich layouts.
+description: >-
+  Ant Design is Ant Group's enterprise design system, widely used for admin and
+  data-heavy web apps. Its tokens are generated programmatically from seed tokens
+  via the antd theme algorithm; the values here are the documented v5 default
+  (light) seed/map tokens. Ant favours a vivid brand blue, crisp neutral grays,
+  6px rounding, and a dense 14px-based type scale.
+categories:
+  - enterprise-dashboard
+  - data-dense
+  - saas-product
+tags:
+  - ant
+  - antd
+  - enterprise
+best_for:
+  - Data-dense admin and back-office UIs
+  - Enterprise dashboards and CRUD apps
+  - Teams matching an Ant Design product feel
+license:
+  spdx: MIT
+  url: https://github.com/ant-design/ant-design/blob/master/LICENSE
+  notes: antd is MIT-licensed. It uses the system font stack (no brand font); an open sans-serif is used here.
+provenance:
+  source_type: npm
+  package: "antd"
+  version: "6.5.0"
+  extracted_at: "2026-07-02"
+links:
+  official_site: https://ant.design
+  docs: https://ant.design/docs/react/customize-theme
+  github: https://github.com/ant-design/ant-design
+restricted: false
+status: draft
+spec_version: alpha
