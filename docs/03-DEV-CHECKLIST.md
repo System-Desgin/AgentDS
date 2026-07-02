@@ -59,9 +59,9 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 - [x] Prompt templates versioned in `packages/pipeline/prompts/` (Official + Brand-Looks; Brand-Looks injects the disclaimer header)
 
 ### First content batch (prove the pipeline end-to-end)
-- [~] Pipeline proven end-to-end on a real package (Paste: extract → validate → export). _Publishing the 10 Official systems (Carbon, Material 3, Primer, Fluent 2, Cloudscape, Ant Design, Paste, Flowbite, Orbit, Base) needs the generation runtime + signed `QA.md` per entry — content effort, not autonomously producible here._
-- [ ] Verify every `04-DATA-SOURCES.md` link/package used (URLs from research may have drifted — confirm at build time). _Confirmed live: `@google/design.md` (0.3.0), Carbon/Material/Primer/Cloudscape/Paste token packages all resolve._
-- [ ] Spot-check 10 tokens per system against the official docs; record in QA.md
+- [~] All 10 Official Tier-1 entries produced through the pipeline: **Carbon, Material 3, Primer, Fluent 2, Cloudscape, Ant Design, Paste, Flowbite, Orbit, Base Web**. Each: `new → extract → generate (/generate-system) → validate → export`, DESIGN.md **lints with 0 errors**, `tokens.json` + `tailwind.css` exported, `QA.md` with a token spot-check. All remain **`status: draft` pending human QA sign-off** (the human gate is required before `published`). Grounding: Paste/Primer/Cloudscape/Carbon/Orbit extraction-grounded (JSON / CSS custom-props / safe JS-text regex); Material 3/Fluent 2/Ant/Flowbite/Base authored from documented canonical values (flagged in each QA for cross-check). Ant (3) and Orbit (1) carry accurate sub-AA contrast warnings for their vivid brand/status colours (documented, not hidden).
+- [~] Verify every `04-DATA-SOURCES.md` link/package used. _Confirmed live and used: `@google/design.md` 0.3.0; `@twilio-paste/design-tokens`, `@primer/primitives`, `@cloudscape-design/design-tokens`, `@carbon/styles`, `@material/web`, `@fluentui/tokens`, `antd`, `flowbite`, `@kiwicom/orbit-design-tokens`, `baseui`._
+- [~] Spot-check ≥10 tokens per system, recorded in each `QA.md` (extraction spot-checks where grounded; canonical cross-check list otherwise). _Final human verification is part of the QA sign-off._
 
 ## Phase 2 — Backend API (Weeks 3–4) — F-4/F-5
 
