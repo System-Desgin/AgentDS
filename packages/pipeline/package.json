@@ -1,0 +1,38 @@
+{
+  "name": "@agentds/pipeline",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "AgentDS content pipeline CLI: extract | generate | validate | export | new.",
+  "bin": {
+    "agentds-pipeline": "./dist/cli.js"
+  },
+  "scripts": {
+    "start": "tsx src/cli.ts",
+    "dev": "tsx watch src/cli.ts",
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "clean": "rimraf dist coverage .turbo"
+  },
+  "dependencies": {
+    "@agentds/shared": "workspace:*",
+    "commander": "catalog:",
+    "picocolors": "catalog:",
+    "yaml": "catalog:"
+  },
+  "devDependencies": {
+    "@eslint/js": "catalog:",
+    "@types/node": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "eslint": "catalog:",
+    "eslint-config-prettier": "catalog:",
+    "globals": "catalog:",
+    "rimraf": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:",
+    "vitest": "catalog:"
+  }
+}

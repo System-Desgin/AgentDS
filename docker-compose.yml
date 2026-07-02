@@ -1,0 +1,63 @@
+# AgentDS backend — the whole API + database stack in one compose file.
+#
+# Dokploy provides the reverse proxy (Traefik + Let's Encrypt): the `api`
+# service is routed by the Traefik labels below and joins the external
+# `dokploy-network`. Postgres stays on a private internal network and is never
+# exposed publicly.
+#
+# Config comes from a root .env file (see .env.example). `docker compose config`
+# validates it.
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - internal
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      PORT: 4000
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}?schema=public
+      CORS_ORIGIN: ${CORS_ORIGIN:-*}
+      INGEST_TOKEN: ${INGEST_TOKEN:-}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    networks:
+      - internal
+      - dokploy-network
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.agentds-api.rule=Host(`${API_DOMAIN}`)
+      - traefik.http.routers.agentds-api.entrypoints=websecure
+      - traefik.http.routers.agentds-api.tls.certresolver=letsencrypt
+      - traefik.http.services.agentds-api.loadbalancer.server.port=4000
+      - traefik.docker.network=dokploy-network
+
+volumes:
+  pgdata:
+
+networks:
+  # Private network for api <-> postgres traffic only.
+  internal:
+  # Shared proxy network managed by Dokploy/Traefik (created outside this file).
+  dokploy-network:
+    external: true

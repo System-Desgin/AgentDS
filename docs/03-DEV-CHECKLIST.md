@@ -6,23 +6,34 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 
 ## Phase 0 — Foundation (Week 1)
 
+> **Status (2026-07-02, branch `phase-0`):** all in-repo foundation delivered and
+> verified green (`pnpm typecheck && pnpm lint && pnpm test && pnpm build`, audit
+> clean at `--audit-level=high`, API boots and serves `/v1/health` with helmet +
+> throttler + Swagger). Remaining Phase 0 items are **external infra that must be
+> configured manually** in the respective dashboards: GitHub branch protection,
+> Vercel project link, Dokploy app + Postgres provisioning + deploy webhook, and
+> DNS. Toolchain notes: pnpm **catalog** centralizes versions; ESLint pinned to
+> latest 9.x (the Next lint config + typescript-eslint 8 don't support ESLint 10
+> yet); TS 6 uses `ignoreDeprecations: "6.0"` for `node10` resolution; Prisma is
+> scaffolded (datasource/generator only) — models + migrations are Phase 2.
+
 ### Repo & tooling
 - [x] GitHub org + repo exist: `System-Design/AgentDS` (private)
 - [x] Org slug corrected to `System-Design` (2026-07-02) — install command is final
-- [ ] Repo hygiene (repo stays **private during build**): LICENSE (Apache-2.0) at root + `content/LICENSE` (CC BY 4.0) + NOTICE, SECURITY.md (contact@oday-bakkour.com), README stub, branch protection on `main` (PR + CI required); GitHub's free secret-scanning/push-protection covers public repos only → add `gitleaks` to pre-commit + CI from day one
-- [ ] Scaffold monorepo (`pnpm` workspaces + Turborepo): `apps/web`, `apps/api`, `packages/shared`, `packages/pipeline`, `content/`, `skills/`
-- [ ] Root configs: TypeScript strict, ESLint + Prettier, `.editorconfig`, commitlint (conventional commits), husky pre-commit (lint-staged)
-- [ ] Add project `DESIGN.md` and `CLAUDE.md` to repo root (deliverables 5 & 6)
-- [ ] `.claude/` project config: `/generate-system <slug>` command + settings (read-only tool allowlist); verify a headless `claude -p` test run bills to the plan's monthly Agent SDK credit — **never set `ANTHROPIC_API_KEY` in any environment**
-- [ ] `packages/shared`: zod schema for `meta.yaml`, shared types, purpose-taxonomy constants
-- [ ] GitHub Actions: `ci.yml` (install → typecheck → lint → test) on PR; `content.yml` (meta schema validation + `npx @google/design.md lint` on `content/**` changes)
+- [x] Repo hygiene: LICENSE (Apache-2.0) at root + `content/LICENSE` (CC BY 4.0) + NOTICE, SECURITY.md (contact@oday-bakkour.com), README, `gitleaks` in pre-commit + CI — _remaining: enable branch protection on `main` (PR + CI required) in GitHub settings_
+- [x] Scaffold monorepo (`pnpm` workspaces + Turborepo): `apps/web`, `apps/api`, `packages/shared`, `packages/pipeline`, `content/`, `skills/`
+- [x] Root configs: TypeScript strict (no `any`), ESLint + Prettier, `.editorconfig`, commitlint (conventional commits), husky pre-commit (lint-staged)
+- [x] Add project `DESIGN.md` and `CLAUDE.md` to repo root (deliverables 5 & 6)
+- [x] `.claude/` project config: `/generate-system <slug>` command (read-only tool allowlist) + settings; `ANTHROPIC_API_KEY` kept unset everywhere — _remaining: one-time manual check that a headless `claude -p` run bills to the plan's Agent SDK credit_
+- [x] `packages/shared`: zod schema for `meta.yaml`, shared types/DTOs, purpose-taxonomy constants (+ 14 schema tests)
+- [x] GitHub Actions: `ci.yml` (install → typecheck → lint → test → build → audit + gitleaks) on PR/push; `content.yml` (meta schema validation + `npx @google/design.md lint` on `content/**`); `deploy.yml` (Dokploy webhook trigger)
 
 ### Environments
-- [ ] Vercel project linked to `apps/web` (monorepo root + build filters); preview deployments on PR
-- [ ] Dokploy app for `apps/api`: Dockerfile (multi-stage, node:22-alpine, non-root user), health check on `/v1/health`, auto-deploy webhook from `main`
-- [ ] PostgreSQL on Dokploy (dedicated DB + user, least privilege); connection via env; automated daily backup + tested restore
-- [ ] Env management: `.env.example` per app; secrets only in Vercel/Dokploy, never in Git
-- [ ] DNS on oday-bakkour.com: `agent-ds` CNAME → Vercel, `api.agent-ds` A/AAAA → Dokploy host; attach both domains (Vercel project + Dokploy/Traefik with Let's Encrypt); verify HTTPS on both
+- [ ] Vercel project linked to `apps/web` (monorepo root + build filters); preview deployments on PR — _external: configure in Vercel dashboard_
+- [x] API container: multi-stage `Dockerfile` (node:22-alpine, non-root, `HEALTHCHECK` on `/v1/health`) + single `docker-compose.yml` (api + postgres, Traefik labels for Dokploy) — _remaining: create the Dokploy app + auto-deploy webhook from `main`_
+- [ ] PostgreSQL on Dokploy (dedicated DB + user, least privilege); connection via env; automated daily backup + tested restore — _external: provision in Dokploy (compose defines the `postgres` service)_
+- [x] Env management: `.env.example` per app + root compose env; secrets only in Vercel/Dokploy, never in Git
+- [ ] DNS on oday-bakkour.com: `agent-ds` CNAME → Vercel, `api.agent-ds` A/AAAA → Dokploy host; attach both domains (Vercel project + Dokploy/Traefik with Let's Encrypt); verify HTTPS on both — _external: DNS + dashboards_
 
 ## Phase 1 — Content pipeline + first 10 systems (Weeks 2–3)
 

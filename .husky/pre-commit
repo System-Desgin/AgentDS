@@ -1,0 +1,9 @@
+pnpm exec lint-staged
+
+# Best-effort local secret scan. CI enforces this unconditionally; locally we
+# only run it if gitleaks is installed so a missing binary never blocks a commit.
+if command -v gitleaks >/dev/null 2>&1; then
+  gitleaks git --staged --redact --config .gitleaks.toml
+else
+  echo "gitleaks not found — skipping local secret scan (CI still enforces it)."
+fi

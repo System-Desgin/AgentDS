@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/*
+ * A subset of the project DESIGN.md tokens, wired as the Tailwind v4 theme so
+ * the site dogfoods its own design system. The full token set + preview
+ * renderer land in Phase 3 — read /DESIGN.md before extending this.
+ */
+@theme {
+  --color-primary: #17150f;
+  --color-on-primary: #faf7f2;
+  --color-accent: #bc4a26;
+  --color-surface: #faf7f2;
+  --color-surface-variant: #f1ebdf;
+  --color-on-surface: #17150f;
+  --color-on-surface-variant: #57503f;
+  --color-border: #e3dbc9;
+  --color-code-bg: #201d14;
+  --color-code-fg: #f1eada;
+  --color-code-accent: #d9a054;
+  --color-success: #3f6b42;
+
+  --font-display: "Source Serif 4", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+}
