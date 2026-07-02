@@ -1,0 +1,33 @@
+name: Content
+
+on:
+  pull_request:
+    paths: ["content/**"]
+  push:
+    branches: [main]
+    paths: ["content/**"]
+
+jobs:
+  validate-content:
+    name: meta schema · DESIGN.md lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build shared schema package
+        run: pnpm --filter @agentds/shared build
+
+      - name: Validate content (meta.yaml + DESIGN.md lint)
+        run: node scripts/validate-content.mjs
