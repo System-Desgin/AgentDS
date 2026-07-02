@@ -27,3 +27,16 @@ export function findRepoRoot(startDir: string = __dirname): string {
 export function contentDirFor(path: SystemPath, slug: string): string {
   return resolve(findRepoRoot(), "content", CONTENT_DIRNAME[path], slug);
 }
+
+/**
+ * Resolve an existing entry folder by slug, searching both catalog paths.
+ * Returns the absolute dir and its catalog path, or null if not found.
+ */
+export function findEntryDir(slug: string): { dir: string; path: SystemPath } | null {
+  const root = findRepoRoot();
+  for (const path of ["official", "brand-look"] as const) {
+    const dir = resolve(root, "content", CONTENT_DIRNAME[path], slug);
+    if (existsSync(dir)) return { dir, path };
+  }
+  return null;
+}
