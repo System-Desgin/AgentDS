@@ -1,0 +1,40 @@
+slug: fluent-2
+name: Fluent 2
+path: official
+maker: Microsoft
+summary: Microsoft's design system — coherent across web and Windows, calm neutrals with a confident brand blue.
+description: >-
+  Fluent 2 is Microsoft's design system for products across web, Windows, and
+  Microsoft 365. Its tokens ship as packages (@fluentui/tokens) with a neutral
+  ramp, a brand blue, and functional roles. The values here are the documented
+  Fluent 2 web light theme. Fluent's language is calm and coherent: soft
+  neutrals, subtle rounding, a clear brand blue for interaction, and highly
+  legible UI type.
+categories:
+  - enterprise-dashboard
+  - saas-product
+  - dev-tools
+tags:
+  - microsoft
+  - fluent
+  - fluent-ui
+best_for:
+  - Microsoft 365-style productivity apps
+  - Cross-platform web and Windows products
+  - Calm, coherent enterprise UIs
+license:
+  spdx: MIT
+  url: https://github.com/microsoft/fluentui/blob/master/LICENSE
+  notes: Fluent UI tokens are MIT-licensed. Segoe UI Variable is proprietary and substituted here with an open sans-serif; Cascadia Code (OFL) is used for code.
+provenance:
+  source_type: npm
+  package: "@fluentui/tokens"
+  version: "1.0.0-alpha.23"
+  extracted_at: "2026-07-02"
+links:
+  official_site: https://fluent2.microsoft.design
+  docs: https://fluent2.microsoft.design/design-tokens
+  github: https://github.com/microsoft/fluentui
+restricted: false
+status: draft
+spec_version: alpha
