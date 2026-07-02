@@ -1,0 +1,38 @@
+slug: flowbite
+name: Flowbite
+path: official
+maker: Themesberg
+summary: A Tailwind-native component system — Inter, an electric blue, and utility-first neutrals.
+description: >-
+  Flowbite is an open-source component library built on Tailwind CSS. Its design
+  language is utility-first and Tailwind-native: Inter typography, an electric
+  brand blue, Tailwind's neutral gray ramp, and generous rounding. The values
+  here reflect Flowbite's documented default theme (open-source core, not Pro).
+categories:
+  - tailwind-native
+  - saas-product
+  - marketing-site
+tags:
+  - flowbite
+  - tailwind
+  - components
+best_for:
+  - Tailwind CSS projects wanting ready components
+  - Marketing sites and SaaS dashboards
+  - Teams standardizing on a Tailwind-native look
+license:
+  spdx: MIT
+  url: https://github.com/themesberg/flowbite/blob/main/LICENSE
+  notes: Flowbite open-source core is MIT. Inter is open (SIL OFL) and available on Google Fonts.
+provenance:
+  source_type: npm
+  package: "flowbite"
+  version: "4.0.2"
+  extracted_at: "2026-07-02"
+links:
+  official_site: https://flowbite.com
+  docs: https://flowbite.com/docs/customize/colors/
+  github: https://github.com/themesberg/flowbite
+restricted: false
+status: draft
+spec_version: alpha
