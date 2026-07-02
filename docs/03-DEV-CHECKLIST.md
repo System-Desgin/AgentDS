@@ -7,7 +7,7 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 ## Phase 0 — Foundation (Week 1)
 
 ### Repo & tooling
-- [x] GitHub org + repo exist: `System-Design/AgentDS` (public)
+- [x] GitHub org + repo exist: `System-Design/AgentDS` (private)
 - [x] Org slug corrected to `System-Design` (2026-07-02) — install command is final
 - [ ] Repo hygiene (repo stays **private during build**): LICENSE (Apache-2.0) at root + `content/LICENSE` (CC BY 4.0) + NOTICE, SECURITY.md (contact@oday-bakkour.com), README stub, branch protection on `main` (PR + CI required); GitHub's free secret-scanning/push-protection covers public repos only → add `gitleaks` to pre-commit + CI from day one
 - [ ] Scaffold monorepo (`pnpm` workspaces + Turborepo): `apps/web`, `apps/api`, `packages/shared`, `packages/pipeline`, `content/`, `skills/`
