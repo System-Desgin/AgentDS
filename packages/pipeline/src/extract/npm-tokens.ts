@@ -29,7 +29,9 @@ export function isTokenFile(path: string): boolean {
   const lower = path.toLowerCase();
   if (!lower.endsWith(".json")) return false;
   if (/package\.json|tsconfig|node_modules|schema|manifest/.test(lower)) return false;
-  return /token|theme|palette|colou?r|primitive|design|scale|spacing|typography/.test(lower);
+  return /token|theme|palette|colou?r|primitive|design|scale|spacing|typography|variables|(^|\/)index[^/]*\.json$/.test(
+    lower,
+  );
 }
 
 /**
