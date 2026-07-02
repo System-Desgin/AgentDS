@@ -1,0 +1,22 @@
+AgentDS
+Copyright 2026 Oday Bakkour
+
+This product includes software developed by Oday Bakkour and the AgentDS
+contributors, licensed under the Apache License, Version 2.0.
+
+Catalog content under content/ (DESIGN.md files, tokens, metadata) is
+licensed separately under Creative Commons Attribution 4.0 International
+(CC BY 4.0); see content/LICENSE. Each catalog entry additionally carries
+upstream attribution and license notices for the design system it is
+derived from.
+
+Design system names, trademarks, and logos referenced in this project
+belong to their respective owners. "Official Systems" are generated from
+publicly available, permissively licensed token packages with recorded
+provenance. "Brand Looks" are independent analyses of publicly observable
+design patterns and are not affiliated with, endorsed by, or sponsored by
+the named makers.
+
+The DESIGN.md format and its official tooling (@google/design.md) are
+projects of Google LLC, used here under their respective open-source
+licenses. AgentDS is not affiliated with or endorsed by Google.

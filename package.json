@@ -1,0 +1,51 @@
+{
+  "name": "agentds",
+  "version": "0.0.0",
+  "private": true,
+  "description": "AgentDS — a free catalog of agent-ready design system files (DESIGN.md + tokens) with previews and a public fetch API.",
+  "license": "Apache-2.0",
+  "author": "Oday Bakkour <contact@oday-bakkour.com>",
+  "type": "module",
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "audit": "pnpm audit --audit-level=moderate",
+    "validate:content": "pnpm --filter @agentds/shared build && node scripts/validate-content.mjs",
+    "pipeline": "pnpm --filter @agentds/pipeline start",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "catalog:",
+    "@commitlint/config-conventional": "catalog:",
+    "@types/node": "catalog:",
+    "husky": "catalog:",
+    "lint-staged": "catalog:",
+    "prettier": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@tailwindcss/oxide",
+      "esbuild",
+      "sharp",
+      "unrs-resolver"
+    ],
+    "overrides": {
+      "multer": ">=2.2.0",
+      "postcss": ">=8.5.10",
+      "@hono/node-server": ">=1.19.13"
+    }
+  }
+}

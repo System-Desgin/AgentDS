@@ -1,0 +1,19 @@
+# Build context is the repo root. Keep images small and secret-free.
+**/node_modules
+**/dist
+**/.next
+**/.turbo
+**/coverage
+**/*.tsbuildinfo
+.git
+.github
+.husky
+**/.env
+**/.env.*
+!**/.env.example
+apps/web
+docs
+skills
+*.log
+.DS_Store
+apps/api/src/generated

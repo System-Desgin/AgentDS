@@ -1,0 +1,6 @@
+# This file is only used if the API is built with apps/api as context.
+# The real build uses the repo root context + root .dockerignore.
+node_modules
+dist
+coverage
+.turbo

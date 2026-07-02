@@ -1,0 +1,15 @@
+node_modules
+dist
+build
+.next
+out
+coverage
+.turbo
+pnpm-lock.yaml
+apps/api/src/generated
+
+# Authored docs kept as-written; DESIGN.md must stay valid for the official
+# linter, so Prettier never touches it.
+DESIGN.md
+CLAUDE.md
+docs

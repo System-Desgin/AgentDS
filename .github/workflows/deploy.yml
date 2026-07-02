@@ -1,0 +1,30 @@
+name: Deploy
+
+# Web (apps/web) deploys automatically via Vercel's Git integration on main.
+# This workflow triggers the API redeploy on Dokploy. It is a no-op unless the
+# DOKPLOY_WEBHOOK_URL secret is configured, so forks and unconfigured repos are
+# unaffected.
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: deploy-api
+  cancel-in-progress: false
+
+jobs:
+  deploy-api:
+    name: Trigger Dokploy API redeploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger redeploy webhook
+        env:
+          DOKPLOY_WEBHOOK_URL: ${{ secrets.DOKPLOY_WEBHOOK_URL }}
+        run: |
+          if [ -z "${DOKPLOY_WEBHOOK_URL}" ]; then
+            echo "DOKPLOY_WEBHOOK_URL not set — skipping API deploy trigger."
+            exit 0
+          fi
+          curl -fsSL -X POST "${DOKPLOY_WEBHOOK_URL}"
+          echo "Dokploy redeploy triggered."

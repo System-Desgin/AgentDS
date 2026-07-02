@@ -1,0 +1,15 @@
+// AgentDS persistence schema.
+//
+// Phase 0 establishes the datasource + generator only. The data models
+// (System, Category, SystemCategory, Counter, LintReport) and their migrations
+// land in Phase 2 (see docs/03-DEV-CHECKLIST.md). Never edit an applied
+// migration; schema changes flow through `prisma migrate`.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}

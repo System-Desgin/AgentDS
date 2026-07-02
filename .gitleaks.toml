@@ -1,0 +1,18 @@
+# gitleaks configuration — secret scanning in pre-commit + CI.
+# GitHub's native push-protection only covers public repos, and this repo is
+# private until Phase 4, so we scan ourselves from day one (see docs checklist).
+title = "AgentDS gitleaks"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Files that legitimately contain placeholder-only values."
+paths = [
+  '''\.env\.example$''',
+  '''(^|/)pnpm-lock\.yaml$''',
+]
+regexes = [
+  # Documented example placeholders, never real secrets.
+  '''(?i)(change[-_]?me|your[-_]?.*[-_]?here|example|placeholder|xxxx+)''',
+]

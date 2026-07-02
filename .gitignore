@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+build/
+.next/
+out/
+*.tsbuildinfo
+
+# Next.js generated types (auto-created on dev/build)
+next-env.d.ts
+
+# Turborepo
+.turbo/
+
+# Test / coverage
+coverage/
+*.lcov
+
+# Prisma generated client (regenerated on install/build)
+apps/api/src/generated/
+
+# Environment — never commit real secrets; only *.example is tracked
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Misc
+*.pem
+.vercel/
