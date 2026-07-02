@@ -1,0 +1,40 @@
+slug: paste
+name: Paste
+path: official
+maker: Twilio
+summary: Twilio's design system for building customer experiences — accessible, calm, and token-driven.
+description: >-
+  Paste is Twilio's open-source design system. Its design tokens ship as
+  DTCG-friendly JSON (@twilio-paste/design-tokens), covering colours, typography,
+  spacing, radii, shadows, and semantic aliases across default and dark themes.
+  Paste's visual language is calm and highly legible, with a confident blue as
+  the primary interactive colour and a strong emphasis on WCAG-compliant
+  contrast.
+categories:
+  - saas-product
+  - enterprise-dashboard
+  - dev-tools
+tags:
+  - twilio
+  - paste
+  - accessible
+best_for:
+  - Customer engagement and communications products
+  - Accessible SaaS and admin UIs
+  - Teams that want a calm, token-driven blue system
+license:
+  spdx: MIT
+  url: https://github.com/twilio-labs/paste/blob/main/LICENSE
+  notes: Paste design tokens are published under MIT; fonts used are open (Inter substitution is fine where noted).
+provenance:
+  source_type: npm
+  package: "@twilio-paste/design-tokens"
+  version: 10.15.0
+  extracted_at: "2026-07-02"
+links:
+  official_site: https://paste.twilio.design
+  docs: https://paste.twilio.design/tokens
+  github: https://github.com/twilio-labs/paste
+restricted: false
+status: draft
+spec_version: alpha

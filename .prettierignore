@@ -13,3 +13,8 @@ apps/api/src/generated
 DESIGN.md
 CLAUDE.md
 docs
+
+# Generated content artifacts (canonical tool output — don't reformat)
+content/**/tokens.json
+content/**/tailwind.css
+content/**/lint-report.json
