@@ -11,7 +11,8 @@ export { buildFrontMatter, assembleDesignMd } from "./templates/design-md";
 export { buildLicenseNotice } from "./templates/license-notice";
 
 export { flattenTokens } from "./extract/parse-dtcg";
-export { isTokenFile, extractNpmTokens } from "./extract/npm-tokens";
+export { parseCssVars } from "./extract/parse-css";
+export { isTokenFile, isCssTokenFile, extractNpmTokens } from "./extract/npm-tokens";
 export { extractRepoJson } from "./extract/repo-json";
 
 export { lintDesignMd, exportDesignMd, findDesignMdBin } from "./lib/design-md";
