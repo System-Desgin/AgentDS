@@ -1,0 +1,40 @@
+slug: cloudscape
+name: Cloudscape
+path: official
+maker: AWS
+summary: Amazon's open-source design system for cloud consoles — built for data-dense, task-heavy web apps.
+description: >-
+  Cloudscape is the open-source design system behind the AWS Management Console.
+  Its design tokens ship as resolved JSON (@cloudscape-design/design-tokens),
+  covering colours, typography, spacing, and borders across light and dark
+  visual modes. Cloudscape's language is dense and functional: a neutral,
+  content-first surface, a confident AWS blue for primary actions and links, and
+  a spacing scale tuned for tables, forms, and configuration-heavy screens.
+categories:
+  - enterprise-dashboard
+  - data-dense
+  - saas-product
+tags:
+  - aws
+  - cloudscape
+  - console
+best_for:
+  - Cloud consoles and infrastructure dashboards
+  - Data-dense tables, forms, and settings
+  - Task-heavy enterprise web applications
+license:
+  spdx: Apache-2.0
+  url: https://github.com/cloudscape-design/design-tokens/blob/main/LICENSE
+  notes: Cloudscape design tokens are Apache-2.0; UI type uses an open sans-serif stack.
+provenance:
+  source_type: npm
+  package: "@cloudscape-design/design-tokens"
+  version: 3.0.100
+  extracted_at: "2026-07-02"
+links:
+  official_site: https://cloudscape.design
+  docs: https://cloudscape.design/foundation/visual-foundation/design-tokens/
+  github: https://github.com/cloudscape-design/design-tokens
+restricted: false
+status: draft
+spec_version: alpha
