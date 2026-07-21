@@ -40,6 +40,8 @@ services:
       DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}?schema=public
       CORS_ORIGIN: ${CORS_ORIGIN:-*}
       INGEST_TOKEN: ${INGEST_TOKEN:-}
+      # IPs allowed to call POST /internal/ingest (beyond the boot-time ingest).
+      INGEST_IP_ALLOWLIST: ${INGEST_IP_ALLOWLIST:-127.0.0.1,::1,::ffff:127.0.0.1}
       LOG_LEVEL: ${LOG_LEVEL:-info}
     networks:
       - internal

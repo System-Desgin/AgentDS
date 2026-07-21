@@ -35,17 +35,5 @@
     "turbo": "catalog:",
     "typescript": "catalog:"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@tailwindcss/oxide",
-      "esbuild",
-      "sharp",
-      "unrs-resolver"
-    ],
-    "overrides": {
-      "multer": ">=2.2.0",
-      "postcss": ">=8.5.10",
-      "@hono/node-server": ">=1.19.13"
-    }
-  }
+  "//": "pnpm settings (onlyBuiltDependencies, overrides) live in pnpm-workspace.yaml — pnpm 10.33+ no longer reads a package.json `pnpm` field."
 }

@@ -1,0 +1,9 @@
+{
+  "findings": [
+    {
+      "severity": "info",
+      "message": "Design system defines 3 colors, 1 typography scale."
+    }
+  ],
+  "summary": { "errors": 0, "warnings": 0, "infos": 1 }
+}

@@ -5,7 +5,12 @@ import { ThrottlerGuard, ThrottlerModule } from "@nestjs/throttler";
 import { LoggerModule } from "nestjs-pino";
 import type { Env } from "./config/env.schema";
 import { validateEnv } from "./config/env.schema";
+import { CategoriesModule } from "./modules/categories/categories.module";
+import { EventsModule } from "./modules/events/events.module";
 import { HealthModule } from "./modules/health/health.module";
+import { IngestModule } from "./modules/ingest/ingest.module";
+import { SystemsModule } from "./modules/systems/systems.module";
+import { PrismaModule } from "./prisma/prisma.module";
 
 @Module({
   imports: [
@@ -43,7 +48,12 @@ import { HealthModule } from "./modules/health/health.module";
         ],
       }),
     }),
+    PrismaModule,
     HealthModule,
+    SystemsModule,
+    CategoriesModule,
+    EventsModule,
+    IngestModule,
   ],
   providers: [
     {

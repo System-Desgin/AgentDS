@@ -65,15 +65,24 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 
 ## Phase 2 — Backend API (Weeks 3–4) — F-4/F-5
 
-- [ ] NestJS scaffold (Express adapter): modules `systems`, `categories`, `events`, `ingest`, `health`; global validation pipe (zod or class-validator), global exception filter with problem-details JSON
-- [ ] Prisma schema: `System`, `Category`, `SystemCategory`, `Counter`, `LintReport`; migrations checked in
-- [ ] Ingest service: read `content/` (baked into image), validate, upsert DB, mark missing entries unpublished; run on boot + `POST /internal/ingest` (bearer token + IP allowlist)
-- [ ] Endpoints per PRD table incl. raw-file responses with correct `Content-Type`, `ETag`, `Cache-Control`; `451` for restricted; pagination envelope `{data, meta}`
-- [ ] `@nestjs/throttler` (global 60/min, file routes 120/min) + `helmet`; request logging (pino) without IP retention beyond rate-limit window
-- [ ] Swagger at `/docs`, spec at `/docs-json`; tag + example every endpoint
-- [ ] Counters: `POST /v1/events` {slug, type: download|copy|api_fetch} — fire-and-forget, aggregate only; api_fetch also incremented server-side on raw-file GETs
-- [ ] Tests: unit (services), e2e (supertest) for list/detail/raw/429/451 paths; ≥80% on `systems` module
-- [ ] Deploy to Dokploy; smoke-test from external network; confirm TLS, gzip/br, health checks, restart policy
+> **Status (2026-07-21, branch `phase-2`):** the API is feature-complete and
+> green (`pnpm typecheck && lint && test && build`; 38 tests incl. supertest
+> e2e). Prisma 7 uses the new `prisma-client` generator (client emitted into
+> `src/generated`, compiled into dist — no runtime generate) + the
+> `@prisma/adapter-pg` driver adapter; connection URL lives in
+> `prisma.config.ts` (Prisma 7 requirement). Smoke-tested against a local
+> Postgres 17: boot ingest ran 10/10 real entries, drafts 404 publicly,
+> unauthenticated ingest 503. Remaining box: the **external Dokploy deploy**.
+
+- [x] NestJS scaffold (Express adapter): modules `systems`, `categories`, `events`, `ingest`, `health`; validation at the edge (shared zod schemas via `ZodValidationPipe` + global class-validator pipe), global exception filter with problem-details JSON (incl. proper 451 error name)
+- [x] Prisma schema: `System`, `Category`, `SystemCategory`, `Counter`, `LintReport`; init migration checked in (`prisma/migrations/20260721091240_init`)
+- [x] Ingest service: reads `CONTENT_DIR` (baked at `/app/content`, auto-resolved in dev), validates meta (shared zod) + lint report (zero errors) + front matter, pre-builds `bundle.zip`, computes per-artifact sha256 ETags, upserts, demotes entries missing from disk; runs on boot + `POST /internal/ingest` (bearer token, timing-safe compare + IP allowlist, outside `/v1`)
+- [x] Endpoints per PRD table incl. raw-file responses with correct `Content-Type`, `ETag`/`If-None-Match` 304, `Cache-Control: public, max-age=300, stale-while-revalidate=86400`; `451` + JSON reason for restricted; pagination envelope `{data, meta}`; `limit` max 100
+- [x] `@nestjs/throttler` (global 60/min, file routes 120/min via `@Throttle` override) + `helmet`; pino logging without bodies/IP retention; `trust proxy: 1` for correct per-IP limits behind Traefik
+- [x] Swagger at `/docs`, spec at `/docs-json`; every endpoint tagged with operation summaries + examples
+- [x] Counters: `POST /v1/events` {slug, type: download|copy|api_fetch} — 202, aggregate-only upsert; api_fetch also incremented server-side (fire-and-forget) on raw-file GETs
+- [x] Tests: unit (services, guard, pipe, controller) + e2e (supertest) for list/detail/raw/304/404/429+Retry-After/451/events/ingest-auth; **96% stmts / 98.7% lines on `systems` module** (in-memory Prisma fake + content fixtures — no DB needed in CI)
+- [ ] Deploy to Dokploy; smoke-test from external network; confirm TLS, gzip/br, health checks, restart policy — _external: Dockerfile now bakes `content/`, generates the client at build, and runs `prisma migrate deploy` on boot; compose passes `INGEST_IP_ALLOWLIST`_
 
 ## Phase 3 — Frontend (Weeks 4–6) — F-1/F-2/F-3
 

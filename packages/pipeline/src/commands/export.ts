@@ -3,10 +3,9 @@ import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import JSZip from "jszip";
 import pc from "picocolors";
-import { parseMetaYaml } from "@agentds/shared";
+import { buildLicenseNotice, parseMetaYaml } from "@agentds/shared";
 import { findEntryDir } from "../lib/paths";
 import { exportDesignMd } from "../lib/design-md";
-import { buildLicenseNotice } from "../templates/license-notice";
 
 /**
  * Export an entry's derived artifacts from its DESIGN.md: tokens.json (DTCG),

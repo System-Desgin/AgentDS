@@ -2,6 +2,26 @@ packages:
   - "apps/*"
   - "packages/*"
 
+# pnpm settings (moved from the root package.json `pnpm` field, which
+# pnpm 10.33+ no longer reads).
+onlyBuiltDependencies:
+  - "@prisma/client"
+  - "@prisma/engines"
+  - "@tailwindcss/oxide"
+  - esbuild
+  - prisma
+  - sharp
+  - unrs-resolver
+
+overrides:
+  multer: ">=2.2.0"
+  postcss: ">=8.5.10"
+  "@hono/node-server": ">=1.19.13"
+  # ReDoS GHSA-3jxr-9vmj-r5cp via @nestjs/cli > fork-ts-checker > minimatch.
+  # Caret keeps the fix on the 1.x line — 2+ changed the API and breaks the
+  # old minimatch consumers ("expand is not a function").
+  "brace-expansion@<1.1.16": "^1.1.16"
+
 # Single source of truth for dependency versions across the monorepo.
 # Every package references these with the "catalog:" protocol so upgrades
 # happen in exactly one place. Versions verified against the npm registry
@@ -62,6 +82,7 @@ catalog:
   helmet: 8.2.0
   prisma: 7.8.0
   "@prisma/client": 7.8.0
+  "@prisma/adapter-pg": 7.8.0
   nestjs-pino: 4.6.1
   pino: 10.3.1
   pino-http: 11.0.0

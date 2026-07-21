@@ -1,0 +1,26 @@
+slug: test-carbon
+name: Test Carbon
+path: official
+maker: IBM
+summary: Fixture entry for API tests.
+description: A published fixture entry used by unit and e2e tests.
+categories:
+  - enterprise-dashboard
+  - data-dense
+tags:
+  - test
+best_for:
+  - Testing the API
+license:
+  spdx: Apache-2.0
+  url: https://www.apache.org/licenses/LICENSE-2.0
+provenance:
+  source_type: npm
+  package: "@carbon/styles"
+  version: 1.0.0
+  extracted_at: "2026-07-01"
+links:
+  github: https://github.com/carbon-design-system/carbon
+restricted: false
+status: published
+spec_version: alpha

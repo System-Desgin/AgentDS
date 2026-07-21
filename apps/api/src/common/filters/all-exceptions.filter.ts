@@ -25,7 +25,7 @@ export class AllExceptionsFilter implements ExceptionFilter {
 
     const body: ProblemDetails = {
       statusCode: status,
-      error: this.errorName(status),
+      error: this.errorName(exception, status),
       message: this.extractMessage(exception, status),
     };
 
@@ -38,7 +38,16 @@ export class AllExceptionsFilter implements ExceptionFilter {
     response.status(status).json(body);
   }
 
-  private errorName(status: number): string {
+  private errorName(exception: unknown, status: number): string {
+    // Respect an explicit `error` in the HttpException response (e.g. the 451
+    // legal-restriction responses, which Nest's HttpStatus enum has no name for).
+    if (exception instanceof HttpException) {
+      const res = exception.getResponse();
+      if (res && typeof res === "object" && "error" in res) {
+        const error = (res as { error: unknown }).error;
+        if (typeof error === "string") return error;
+      }
+    }
     const name = HttpStatus[status];
     return typeof name === "string" ? name.replace(/_/g, " ") : "Error";
   }

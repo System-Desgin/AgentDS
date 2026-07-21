@@ -1,0 +1,16 @@
+# Deliberately invalid: missing maker, empty categories, bad provenance for
+# an official entry. Ingest must skip this folder with a logged reason.
+slug: broken-sys
+name: Broken System
+path: official
+summary: Fixture entry with an invalid meta.yaml.
+description: Ingest must skip this entry.
+categories: []
+license:
+  spdx: MIT
+  url: https://opensource.org/license/mit
+provenance:
+  source_type: css-analysis
+  extracted_at: "2026-07-01"
+status: published
+spec_version: alpha

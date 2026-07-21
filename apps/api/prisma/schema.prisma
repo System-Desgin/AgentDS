@@ -1,15 +1,108 @@
-// AgentDS persistence schema.
+// AgentDS persistence schema (Phase 2).
 //
-// Phase 0 establishes the datasource + generator only. The data models
-// (System, Category, SystemCategory, Counter, LintReport) and their migrations
-// land in Phase 2 (see docs/03-DEV-CHECKLIST.md). Never edit an applied
-// migration; schema changes flow through `prisma migrate`.
+// The DB is a queryable index over the content directory baked into the API
+// image — `content/` stays the source of truth and ingest re-syncs it on boot
+// and via POST /internal/ingest. Raw file bodies are served from disk, never
+// from the DB. Never edit an applied migration; changes flow through
+// `prisma migrate`.
 
 generator client {
-  provider = "prisma-client-js"
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "cjs"
 }
 
+// Connection URL lives in prisma.config.ts (Prisma 7); the runtime client
+// connects through the @prisma/adapter-pg driver adapter in PrismaService.
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+}
+
+/// One catalog entry (Official System or Brand Look), mirroring meta.yaml.
+model System {
+  id               String   @id @default(cuid())
+  slug             String   @unique
+  /// Catalog path: "official" | "brand-look" (shared SYSTEM_PATHS).
+  path             String
+  name             String
+  maker            String
+  summary          String
+  description      String
+  tags             String[] @default([])
+  bestFor          String[] @default([]) @map("best_for")
+  licenseSpdx      String   @map("license_spdx")
+  licenseUrl       String   @map("license_url")
+  licenseNotes     String?  @map("license_notes")
+  /// meta.yaml provenance block (package@version or repo@commit or css URLs).
+  provenance       Json
+  /// meta.yaml links block (official_site, docs, figma, github).
+  links            Json
+  restricted       Boolean  @default(false)
+  restrictedReason String?  @map("restricted_reason")
+  /// "draft" | "published" (shared ENTRY_STATUSES). Only published entries are
+  /// listed publicly; ingest demotes entries missing from disk to draft.
+  status           String   @default("draft")
+  specVersion      String   @map("spec_version")
+  /// Parsed DESIGN.md front-matter summary (palette, type scale, spacing…)
+  /// for the detail endpoint — computed at ingest, never at request time.
+  tokenSummary     Json?    @map("token_summary")
+  /// sha256-based ETags per served artifact, computed at ingest:
+  /// { "design.md": "…", "tokens.json": "…", "tailwind.css": "…", "bundle.zip": "…" }
+  fileEtags        Json?    @map("file_etags")
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+
+  categories SystemCategory[]
+  lintReport LintReport?
+
+  @@index([status, path])
+  @@map("systems")
+}
+
+/// Fixed purpose taxonomy (shared PURPOSE_CATEGORIES), seeded at ingest.
+model Category {
+  /// The taxonomy slug, e.g. "enterprise-dashboard".
+  id      String           @id
+  label   String
+  systems SystemCategory[]
+
+  @@map("categories")
+}
+
+model SystemCategory {
+  systemId   String   @map("system_id")
+  categoryId String   @map("category_id")
+  system     System   @relation(fields: [systemId], references: [id], onDelete: Cascade)
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([systemId, categoryId])
+  @@map("system_categories")
+}
+
+/// Aggregate usage counters (PRD F-3): no PII, no per-request rows. Keyed by
+/// slug (not FK) so counts survive re-ingest and entry replacement.
+model Counter {
+  id    String @id @default(cuid())
+  slug  String
+  /// "download" | "copy" | "api_fetch" (shared EVENT_TYPES).
+  type  String
+  count Int    @default(0)
+
+  @@unique([slug, type])
+  @@map("counters")
+}
+
+/// Latest lint report for an entry (the pipeline's lint-report.json).
+model LintReport {
+  id       String   @id @default(cuid())
+  systemId String   @unique @map("system_id")
+  system   System   @relation(fields: [systemId], references: [id], onDelete: Cascade)
+  errors   Int
+  warnings Int
+  info     Int
+  /// Full structured findings from `@google/design.md lint --format json`.
+  findings Json
+  lintedAt DateTime @map("linted_at")
+
+  @@map("lint_reports")
 }

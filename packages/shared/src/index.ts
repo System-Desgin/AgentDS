@@ -6,3 +6,4 @@
 export * from "./taxonomy";
 export * from "./schemas";
 export * from "./types";
+export * from "./content";
