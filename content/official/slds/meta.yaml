@@ -1,0 +1,39 @@
+slug: slds
+name: Lightning Design System
+path: official
+maker: Salesforce
+summary: Salesforce's enterprise CRM system — Lightning blue on cloud-gray neutrals, compact 4/8px rhythm, built for data-dense record pages.
+description: >-
+  The Lightning Design System (SLDS) drives Salesforce's CRM products: record
+  pages, list views, and consoles built for density. Its published design
+  tokens set Lightning blue as the single interactive voice on cloud-gray
+  neutrals, with a compact 4/8px spacing rhythm, quiet .25rem corners, and a
+  small type ramp tuned for forms and tables. Token values are open source
+  under BSD-3-Clause; Salesforce Sans and Salesforce branding are not.
+categories:
+  - enterprise-dashboard
+  - saas-product
+  - data-dense
+tags:
+  - salesforce
+  - lightning
+  - crm
+best_for:
+  - Enterprise CRM and record-page UIs
+  - Data-dense consoles and list views
+  - Teams standardizing agent output on SLDS
+license:
+  spdx: BSD-3-Clause
+  url: https://github.com/salesforce-ux/design-system/blob/main/LICENSE.txt
+  notes: BSD-3-Clause covers the open-sourced token values only; Salesforce Sans is proprietary (never committed or served — Inter substituted in tokens, original named in prose only) and Salesforce trademarks/branding remain Salesforce's.
+provenance:
+  source_type: npm
+  package: "@salesforce-ux/design-system"
+  version: 2.30.7
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://www.lightningdesignsystem.com
+  github: https://github.com/salesforce-ux/design-system
+status: published
+spec_version: alpha

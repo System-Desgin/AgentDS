@@ -1,0 +1,40 @@
+slug: apple
+name: Apple
+path: brand-look
+maker: "Apple Inc."
+summary: "Apple's observed web look: vast white and near-black sections, product-hero photography, blue pill CTAs, and hairline gray precision."
+description: >-
+  An independent analysis of the design language visible on Apple's public
+  marketing pages: alternating vast white and near-black hero sections with
+  product photography as the visual protagonist, near-black text over white
+  and quiet gray fields, blue links and pill-shaped CTA buttons, big display
+  type with tight tracking, hairline dividers, and restrained scroll-driven
+  motion. Written as inspiration for an original system; not an official
+  Apple design system.
+categories:
+  - marketing-site
+  - e-commerce
+  - mobile-first
+tags:
+  - apple
+  - minimalism
+  - premium
+best_for:
+  - Premium product marketing pages
+  - E-commerce product detail pages
+  - Mobile-first landing pages
+license:
+  spdx: CC-BY-4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: "Independent analysis (catalog content, CC BY 4.0); the observed SF Pro is proprietary and substituted with Inter, and JetBrains Mono stands in for the rare monospace."
+provenance:
+  source_type: css-analysis
+  urls:
+    - https://www.apple.com
+    - https://www.apple.com/mac/
+  extracted_at: "2026-07-21"
+links:
+  official_site: https://www.apple.com
+restricted: false
+status: published
+spec_version: alpha

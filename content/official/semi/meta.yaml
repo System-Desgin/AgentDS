@@ -1,0 +1,40 @@
+slug: semi
+name: Semi Design
+path: official
+maker: ByteDance
+summary: ByteDance's open-source design system — blue-accent minimalism, high information clarity, and first-class light/dark theming.
+description: >-
+  Semi Design is ByteDance's open-source design system, built by the Douyin
+  front-end and UED teams to bridge design and engineering. Its default theme
+  ships as SCSS design variables: a vivid Semi Blue on white surfaces, a
+  ten-step neutral grey ramp used at measured opacities for text and fills,
+  compact 3px/6px radii, and a 14px base type size. Every semantic token has a
+  matching dark-mode value, so whole products re-theme without redesign.
+categories:
+  - saas-product
+  - enterprise-dashboard
+  - data-dense
+tags:
+  - bytedance
+  - semi-ui
+  - dark-mode
+best_for:
+  - SaaS product interfaces
+  - Enterprise dashboards and consoles
+  - Data-dense screens that ship light and dark modes
+license:
+  spdx: MIT
+  url: https://github.com/DouyinFE/semi-design/blob/main/LICENSE
+  notes: No proprietary font — Semi's default stack leads with open Inter (Google Fonts) before system CJK fallbacks.
+provenance:
+  source_type: npm
+  package: "@douyinfe/semi-theme-default"
+  version: 2.101.1
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://semi.design
+  docs: https://semi.design/en-US/basic/tokens
+  github: https://github.com/DouyinFE/semi-design
+status: published
+spec_version: alpha

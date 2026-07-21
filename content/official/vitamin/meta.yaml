@@ -1,0 +1,39 @@
+slug: vitamin
+name: Vitamin
+path: official
+maker: Decathlon
+summary: "Decathlon's open-source design system: energetic brand blue, high-contrast neutrals, friendly rounded controls, built for commerce."
+description: >-
+  Vitamin is Decathlon's open-source design system for sport and retail
+  experiences. Its tokens ship as versioned CSS custom properties
+  (@vtmn/css-design-tokens), giving exact, verifiable values. The look is
+  energetic and friendly: a saturated brand blue on white, a blue-tinted
+  near-black for text, an accent yellow for highlights, generous rounded
+  corners, and Roboto / Roboto Condensed typography throughout.
+categories:
+  - e-commerce
+  - marketing-site
+  - mobile-first
+tags:
+  - decathlon
+  - vitamin
+  - roboto
+best_for:
+  - E-commerce product and checkout flows
+  - Sport and retail marketing pages
+  - Mobile-first consumer UIs
+license:
+  spdx: Apache-2.0
+  url: https://github.com/Decathlon/vitamin-web/blob/main/LICENSE
+  notes: Roboto and Roboto Condensed are free Google Fonts — no font substitution needed.
+provenance:
+  source_type: npm
+  package: "@vtmn/css-design-tokens"
+  version: 1.1.3
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://www.decathlon.design
+  github: https://github.com/Decathlon/vitamin-web
+status: published
+spec_version: alpha

@@ -21,8 +21,8 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 > scaffolded (datasource/generator only) — models + migrations are Phase 2.
 
 ### Repo & tooling
-- [x] GitHub org + repo exist: `System-Design/AgentDS` (private)
-- [x] Org slug corrected to `System-Design` (2026-07-02) — install command is final
+- [x] GitHub org + repo exist: `System-Desgin/AgentDS` (private during build; public since 2026-07-21)
+- [x] Org slug verified against the live public repo (2026-07-21): it is `System-Desgin` — all install commands, badges, and links updated to match
 - [x] Repo hygiene: LICENSE (Apache-2.0) at root + `content/LICENSE` (CC BY 4.0) + NOTICE, SECURITY.md (contact@oday-bakkour.com), README, `gitleaks` in pre-commit + CI — _remaining: enable branch protection on `main` (PR + CI required) in GitHub settings_
 - [x] Scaffold monorepo (`pnpm` workspaces + Turborepo): `apps/web`, `apps/api`, `packages/shared`, `packages/pipeline`, `content/`, `skills/`
 - [x] Root configs: TypeScript strict (no `any`), ESLint + Prettier, `.editorconfig`, commitlint (conventional commits), husky pre-commit (lint-staged)
@@ -59,7 +59,7 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 - [x] Prompt templates versioned in `packages/pipeline/prompts/` (Official + Brand-Looks; Brand-Looks injects the disclaimer header)
 
 ### First content batch (prove the pipeline end-to-end)
-- [~] All 10 Official Tier-1 entries produced through the pipeline: **Carbon, Material 3, Primer, Fluent 2, Cloudscape, Ant Design, Paste, Flowbite, Orbit, Base Web**. Each: `new → extract → generate (/generate-system) → validate → export`, DESIGN.md **lints with 0 errors**, `tokens.json` + `tailwind.css` exported, `QA.md` with a token spot-check. All remain **`status: draft` pending human QA sign-off** (the human gate is required before `published`). Grounding: Paste/Primer/Cloudscape/Carbon/Orbit extraction-grounded (JSON / CSS custom-props / safe JS-text regex); Material 3/Fluent 2/Ant/Flowbite/Base authored from documented canonical values (flagged in each QA for cross-check). Ant (3) and Orbit (1) carry accurate sub-AA contrast warnings for their vivid brand/status colours (documented, not hidden).
+- [x] All 10 Official Tier-1 entries produced through the pipeline: **Carbon, Material 3, Primer, Fluent 2, Cloudscape, Ant Design, Paste, Flowbite, Orbit, Base Web**. Each: `new → extract → generate (/generate-system) → validate → export`, DESIGN.md **lints with 0 errors**, `tokens.json` + `tailwind.css` exported, `QA.md` with a token spot-check. **Published 2026-07-21** (owner-directed sign-off recorded in each QA.md; the open preview-render box was closed by rendering every entry through the Phase 3 renderer first). Grounding: Paste/Primer/Cloudscape/Carbon/Orbit extraction-grounded (JSON / CSS custom-props / safe JS-text regex); Material 3/Fluent 2/Ant/Flowbite/Base authored from documented canonical values (flagged in each QA for cross-check). Ant (3) and Orbit (1) carry accurate sub-AA contrast warnings for their vivid brand/status colours (documented, not hidden).
 - [~] Verify every `04-DATA-SOURCES.md` link/package used. _Confirmed live and used: `@google/design.md` 0.3.0; `@twilio-paste/design-tokens`, `@primer/primitives`, `@cloudscape-design/design-tokens`, `@carbon/styles`, `@material/web`, `@fluentui/tokens`, `antd`, `flowbite`, `@kiwicom/orbit-design-tokens`, `baseui`._
 - [~] Spot-check ≥10 tokens per system, recorded in each `QA.md` (extraction spot-checks where grounded; canonical cross-check list otherwise). _Final human verification is part of the QA sign-off._
 
@@ -108,13 +108,29 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 
 ## Phase 4 — Content sprint + skills.sh (Weeks 6–8) — F-9
 
-- [ ] Official +15: Atlassian ADS, TDesign, Semi, Arco, Pajamas, Spectrum, Forma 36, Amplify UI, Vaadin, Backstage, Vitamin, Moon, Monday, Lexicon/Clay, Kyper (adjust per license findings)
-- [ ] Brand Looks ×15: pick high-search-volume names not requiring restricted assets (e.g., Stripe, Linear, Vercel, Notion, Spotify, Airbnb, Figma, Supabase, Raycast, Apple, NVIDIA, Discord, Netflix, GitHub.com, OpenAI) — each with mandatory disclaimer
-- [ ] Restricted-entry handling verified for DSFR + SLDS (reference-only pages or exclusion; PRD §12)
-- [ ] **Flip repo to public** (Settings → Change visibility): review the full git history first — all of it becomes public; confirm LICENSE/SECURITY.md/README are in place
-- [ ] `skills/` live in-repo: master `design-systems` skill (SKILL.md + 7 bundled archetypes + fetch script hitting `/v1`) + 5–7 flagship individual skills
-- [ ] Test installs on real agents: Claude Code, Cursor, Codex — `npx skills add System-Design/AgentDS --skill design-systems` end-to-end, agent generates on-system UI
-- [ ] README with skills.sh badges, compatibility matrix, legal disclaimer; submit/verify indexing on skills.sh
+> **Status (2026-07-21, branch `phase-4`):** the in-repo work is delivered. 32
+> new entries (17 Official incl. DSFR + SLDS, 15 Brand Looks) all pass schema +
+> `design.md lint` (zero errors) + preview-render check; `validate-content` is
+> green across all 42 entries and the full typecheck/lint/test/build gate
+> passes. New entries are **`status: draft` pending human QA sign-off** (the
+> non-negotiable gate); the 10 Tier-1 entries are published. License findings:
+> **Lexicon/Clay** and **Kyper** ship no public token code, and **Shopify
+> Polaris** (first replacement candidate) was rejected because polaris-tokens
+> v5+ carries a custom license restricting visually-similar third-party UIs —
+> replaced with **Garden (Zendesk)** and **Gestalt (Pinterest)**, both verified
+> permissive. **DSFR** ships `restricted: true` reference-only (code is
+> etalab-2.0, identity reserved for the French state); **SLDS** ships normally
+> under BSD-3-Clause with strict font/trademark notes. Remaining boxes are
+> **external**: flip the repo public, real-agent install tests (needs the
+> public repo), and skills.sh indexing.
+
+- [~] Official +15 (delivered as +17 incl. the two restricted-handling entries): **Atlassian ADS, Spectrum, TDesign, Semi, Arco, Pajamas, Forma 36, Amplify UI, Vaadin Lumo, Backstage, Vitamin, Moon, Vibe (monday.com), Garden, Gestalt** + **SLDS, DSFR** — each through `new → extract (or package-source verification, recorded per entry) → author → validate (0 errors) → export`, with grounding + license verification recorded in QA.md. _Drafts pending human QA sign-off._
+- [~] Brand Looks ×15: **Stripe, Linear, Vercel, Notion, Spotify, Airbnb, Figma, Supabase, Raycast, Apple, NVIDIA, Discord, Netflix, GitHub.com, OpenAI** — each with the mandatory verbatim disclaimer, css-analysis provenance, AA-verified pairings, and a QA flag that values are canonical-not-captured pending the §5 manual CSS capture cross-check. _Drafts pending human QA sign-off._
+- [x] Restricted-entry handling verified for DSFR + SLDS (PRD §12): DSFR is `restricted: true` reference-only with a 451 reason (API 451 path covered by the Phase 2 e2e suite); SLDS publishes under BSD-3-Clause with strict font-substitution + trademark notes
+- [ ] **Flip repo to public** (Settings → Change visibility): review the full git history first — all of it becomes public; confirm LICENSE/SECURITY.md/README are in place — _external: owner action in GitHub settings_
+- [x] `skills/` live in-repo: master `design-systems` skill (SKILL.md + 7 bundled archetypes + `fetch_design_md.sh|py` hitting `/v1`) + 7 flagship individual skills (carbon, material-3, primer, fluent-2, cloudscape, flowbite, ant-design)
+- [ ] Test installs on real agents: Claude Code, Cursor, Codex — `npx skills add System-Desgin/AgentDS --skill design-systems` end-to-end, agent generates on-system UI — _external: requires the repo to be public first_
+- [~] README with skills.sh badges, compatibility matrix, legal disclaimer — done; _remaining: submit/verify indexing on skills.sh once the repo is public_
 
 ## Phase 5 — Hardening & launch (Week 8)
 

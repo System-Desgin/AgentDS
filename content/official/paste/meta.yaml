@@ -36,5 +36,5 @@ links:
   docs: https://paste.twilio.design/tokens
   github: https://github.com/twilio-labs/paste
 restricted: false
-status: draft
+status: published
 spec_version: alpha

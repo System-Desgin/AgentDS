@@ -2,7 +2,7 @@
 
 > **Name (confirmed):** AgentDS (Agent Design Systems)
 > **Owner:** Oday Bakkour · **Domain:** https://agent-ds.oday-bakkour.com · **API:** https://api.agent-ds.oday-bakkour.com
-> **GitHub:** https://github.com/System-Design/AgentDS (private during build → public at Phase 4) · **Install:** `npx skills add System-Design/AgentDS`
+> **GitHub:** https://github.com/System-Desgin/AgentDS (private during build → public at Phase 4) · **Install:** `npx skills add System-Desgin/AgentDS`
 > **Contact:** contact@oday-bakkour.com · **License:** code Apache-2.0 · catalog content CC BY 4.0
 > **One-liner:** A free, curated catalog of agent-ready design system files (DESIGN.md + tokens) with visual previews, purpose guidance, and a public fetch API — so any coding agent (Claude Code, Cursor, Codex, Copilot, Windsurf, Kiro…) can build UI that follows a real design system instead of generic AI defaults.
 
@@ -94,10 +94,10 @@ This maps directly onto the Cyberpedia security reputation without needing the C
 | Owner | Oday Bakkour |
 | Web (production) | https://agent-ds.oday-bakkour.com (Vercel) |
 | API (production) | https://api.agent-ds.oday-bakkour.com (Dokploy) |
-| GitHub org / repo | `System-Design` / `AgentDS` — private during build, public from Phase 4 launch |
-| Skills install | `npx skills add System-Design/AgentDS --skill design-systems` |
+| GitHub org / repo | `System-Desgin` / `AgentDS` — private during build, public from Phase 4 launch |
+| Skills install | `npx skills add System-Desgin/AgentDS --skill design-systems` |
 | Contact / security | contact@oday-bakkour.com |
 | License | Code: Apache-2.0 · Catalog content: CC BY 4.0 (+ per-entry upstream notices) |
 | Generation runtime | Claude Code on the owner's Max plan (interactive = plan limits; headless `claude -p` = the plan's monthly Agent SDK credit — no API key) |
 
-Org slug corrected to `System-Design` on 2026-07-02 — the install command, badges, and URLs above are final.
+Org slug verified against the live public repo on 2026-07-21: it is `System-Desgin` (transposed spelling is the real org name) — the install command, badges, and URLs above use it.

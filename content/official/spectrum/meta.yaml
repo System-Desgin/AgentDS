@@ -1,0 +1,40 @@
+slug: spectrum
+name: Spectrum
+path: official
+maker: Adobe
+summary: Adobe's cross-product design system — Spectrum blue accents on a meticulous gray ramp, built for creative-pro tools.
+description: >-
+  Spectrum is Adobe's design system, spanning Creative Cloud, Document Cloud,
+  and Experience Cloud products. Its tokens ship as DTCG-style JSON in
+  @adobe/spectrum-tokens, giving exact, verifiable values. The character is
+  calm and workmanlike: a restrained blue accent for actions, a finely stepped
+  neutral gray ramp for surfaces and text, and generous perceptual color
+  scales that stay out of the way of creative content.
+categories:
+  - saas-product
+  - enterprise-dashboard
+  - dev-tools
+tags:
+  - adobe
+  - spectrum
+  - creative-tools
+best_for:
+  - Creative and productivity tool UIs
+  - Cross-product SaaS suites
+  - Teams standardizing agent output on Spectrum
+license:
+  spdx: Apache-2.0
+  url: https://github.com/adobe/spectrum-design-data/blob/main/LICENSE
+  notes: Adobe Clean is proprietary — tokens substitute open Source Sans 3 (Adobe, OFL, Google Fonts); Source Code Pro for code.
+provenance:
+  source_type: npm
+  package: "@adobe/spectrum-tokens"
+  version: 14.15.0
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://spectrum.adobe.com
+  docs: https://spectrum.adobe.com/page/design-tokens/
+  github: https://github.com/adobe/spectrum-tokens
+status: published
+spec_version: alpha

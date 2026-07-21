@@ -1,0 +1,39 @@
+slug: nvidia
+name: NVIDIA
+path: brand-look
+maker: NVIDIA Corporation
+summary: NVIDIA's observed look — black and charcoal surfaces, one signature green accent, squared corners, and dense hardware spec tables.
+description: >-
+  Independent analysis of the visual language observable on NVIDIA's public
+  marketing and GeForce product pages. The look is technical power: near-black
+  and charcoal hero surfaces alternating with white content bands, a single
+  signature green carrying every call to action and highlight, a utilitarian
+  gray ramp, squared corners, all-caps navigation labels, and dense product
+  spec tables. Tokens model the dark surfaces, where the green stays AA-safe.
+categories:
+  - marketing-site
+  - e-commerce
+  - data-dense
+tags:
+  - nvidia
+  - geforce
+  - dark-theme
+best_for:
+  - Dark technical marketing pages
+  - Hardware product and spec pages
+  - Data-dense e-commerce grids
+license:
+  spdx: CC-BY-4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: Independent analysis, CC BY 4.0; the observed proprietary DIN-like condensed sans is substituted with Work Sans, mono with JetBrains Mono (both on Google Fonts).
+provenance:
+  source_type: css-analysis
+  urls:
+    - https://www.nvidia.com
+    - https://www.nvidia.com/en-us/geforce/
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://www.nvidia.com
+status: published
+spec_version: alpha

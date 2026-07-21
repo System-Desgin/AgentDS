@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (MIT); `restricted: false`
 - [x] Fonts: Mona Sans is open (Google Fonts, no substitution); code monospace substituted (→ JetBrains Mono), original stack named in prose
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — _pending the Phase 3 renderer_
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Token spot-check (≥10)
 
@@ -37,5 +37,5 @@ primitive values (stable, documented at primer.style) — cross-check before pub
 
 - Automated checks (schema, lint, colour spot-check, license, font substitution) completed by the pipeline.
 - **Human reviewer sign-off required before `status: published`** (kept `draft` until then); confirm radius/spacing/type-scale values against primer.style.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (publish directed by owner, Claude Code session)
+- Date: 2026-07-21

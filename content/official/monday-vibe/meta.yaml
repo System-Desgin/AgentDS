@@ -1,0 +1,39 @@
+slug: monday-vibe
+name: Vibe
+path: official
+maker: monday.com
+summary: monday.com's open-source design system — bold, friendly color chips on calm gray surfaces, with rounded, confident controls.
+description: >-
+  Vibe is monday.com's open-source design system, the visual language of its
+  work OS. Its tokens ship as resolved CSS custom properties in the
+  monday-ui-style package, giving exact, verifiable values. The character is
+  playful but businesslike: a bright working blue on white and soft-gray
+  surfaces, a vivid status palette (done green, warning yellow, negative red),
+  generous rounded corners, and open Figtree and Poppins typography.
+categories:
+  - saas-product
+  - enterprise-dashboard
+  - marketing-site
+tags:
+  - monday
+  - vibe
+  - work-os
+best_for:
+  - Work management and collaboration UIs
+  - Status-driven boards and dashboards
+  - Teams standardizing agent output on Vibe
+license:
+  spdx: MIT
+  url: https://github.com/mondaycom/vibe/blob/master/packages/style/LICENSE
+  notes: Vibe is MIT; its Figtree and Poppins fonts are open (OFL, on Google Fonts) — Roboto stands in for Figtree in tokens here.
+provenance:
+  source_type: npm
+  package: monday-ui-style
+  version: 0.26.2
+  extracted_at: "2026-07-21"
+links:
+  official_site: https://vibe.monday.com
+  github: https://github.com/mondaycom/vibe
+restricted: false
+status: published
+spec_version: alpha

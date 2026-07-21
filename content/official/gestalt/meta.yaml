@@ -1,0 +1,41 @@
+slug: gestalt
+name: Gestalt
+path: official
+maker: Pinterest
+summary: Pinterest's open-source design system — friendly pill buttons, bold red actions, and image-first cards on an airy white field.
+description: >-
+  Gestalt is Pinterest's open-source design system, built for a visual,
+  consumer-scale product. Its tokens ship as resolved values in the
+  gestalt-design-tokens package: Pinterest red for primary actions, near-black
+  text on white, fully rounded pill buttons, a 4px spacing grid centered on
+  16px, and 8px default card rounding. The system pairs a bold CTA voice with
+  quiet neutrals so photographic content stays the hero, and it carries a
+  strong accessibility program.
+categories:
+  - mobile-first
+  - e-commerce
+  - marketing-site
+tags:
+  - pinterest
+  - gestalt
+  - consumer
+best_for:
+  - Consumer apps with image-heavy feeds
+  - Mobile-first shopping and discovery UIs
+  - Teams standardizing agent output on Gestalt
+license:
+  spdx: Apache-2.0
+  url: https://github.com/pinterest/gestalt/blob/master/LICENSE
+  notes: Gestalt uses the platform system font stack (no brand font binaries); tokens here use open Inter and JetBrains Mono stand-ins.
+provenance:
+  source_type: npm
+  package: gestalt-design-tokens
+  version: 177.0.12
+  extracted_at: "2026-07-21"
+links:
+  official_site: https://gestalt.pinterest.systems
+  docs: https://gestalt.pinterest.systems/foundations/design_tokens/overview
+  github: https://github.com/pinterest/gestalt
+restricted: false
+status: published
+spec_version: alpha

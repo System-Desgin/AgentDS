@@ -1,0 +1,40 @@
+slug: amplify-ui
+name: Amplify UI
+path: official
+maker: AWS
+summary: AWS's design system for Amplify app front-ends — teal-led, pragmatic neutrals, and rounded-but-sober controls.
+description: >-
+  Amplify UI is AWS's open-source design system for application front-ends
+  built on Amplify. Its default theme ships as a resolved CSS distribution of
+  --amplify-* custom properties, giving exact, verifiable values. The look is
+  developer-console adjacent: a teal brand primary over a pragmatic gray ramp,
+  moderate corner radii, a rem-based doubling space scale, and a system font
+  stack rendered here with Inter as the open stand-in.
+categories:
+  - saas-product
+  - dev-tools
+  - mobile-first
+tags:
+  - aws
+  - amplify
+  - teal
+best_for:
+  - Amplify and AWS-adjacent product UIs
+  - SaaS apps with authentication-heavy flows
+  - Teams standardizing agent output on Amplify UI
+license:
+  spdx: Apache-2.0
+  url: https://github.com/aws-amplify/amplify-ui/blob/main/LICENSE
+  notes: Amplify UI defaults to a system font stack (no bundled fonts); Inter is used here as the open stand-in.
+provenance:
+  source_type: npm
+  package: "@aws-amplify/ui"
+  version: 6.15.4
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://ui.docs.amplify.aws
+  docs: https://ui.docs.amplify.aws/react/theming
+  github: https://github.com/aws-amplify/amplify-ui
+status: published
+spec_version: alpha

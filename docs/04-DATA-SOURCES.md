@@ -36,7 +36,7 @@ Everything the pipeline and content team pull from. **All URLs and package names
 | skills CLI (open source) | https://github.com/vercel-labs/skills | Install flow our fetch-script complements |
 | Agent Skills standard (SKILL.md) | Anthropic Agent Skills docs (docs.claude.com) + https://github.com/anthropics/skills | SKILL.md frontmatter format, progressive disclosure, `references/` + `scripts/` layout |
 | Architecture blueprint | https://github.com/VoltAgent/awesome-design-md/issues/90 | Proven pattern: master skill = SKILL.md + 7 bundled archetype systems + catalog index + fetch script (~60KB); rest fetched on demand |
-| Install badge | `https://skills.sh/b/System-Design/AgentDS` → links to `skills.sh/System-Design/AgentDS` | README badges |
+| Install badge | `https://skills.sh/b/System-Desgin/AgentDS` → links to `skills.sh/System-Desgin/AgentDS` | README badges |
 
 ## 4. Official Systems — token sources
 

@@ -1,0 +1,39 @@
+slug: figma
+name: Figma
+path: brand-look
+maker: "Figma, Inc."
+summary: "Figma's observed web look: white fields, near-black ink, a five-color brand set as accents, blue in-product actions, and 5-6px corners."
+description: >-
+  An independent analysis of the design language visible on Figma's public
+  marketing and product pages: white and near-white fields under near-black
+  ink, a five-color brand set (red-orange, orange, purple, blue, green) used
+  as accents and illustration rather than UI chrome, a bright blue for
+  in-product primary actions, compact 5-6px corners, and dense tool panels
+  set against airy marketing sections. Not an official Figma design system.
+categories:
+  - saas-product
+  - marketing-site
+  - dev-tools
+tags:
+  - figma
+  - multicolor
+  - design-tools
+best_for:
+  - Creative-tool marketing pages
+  - Design-tool product UIs
+  - Playful developer-facing surfaces
+license:
+  spdx: CC-BY-4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: "Independent analysis (catalog content, CC BY 4.0); the proprietary grotesk observed on figma.com is substituted with Inter, and JetBrains Mono stands in for code."
+provenance:
+  source_type: css-analysis
+  urls:
+    - https://www.figma.com
+    - https://www.figma.com/design/
+  extracted_at: "2026-07-21"
+links:
+  official_site: https://www.figma.com
+restricted: false
+status: published
+spec_version: alpha

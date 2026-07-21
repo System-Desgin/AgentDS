@@ -1,0 +1,40 @@
+slug: dsfr
+name: DSFR
+path: official
+maker: French Government (DINUM/SIG)
+summary: The French state's design system — blue-france, red-marianne, Marianne typography, square corners, and a strong accessibility mandate.
+description: >-
+  DSFR (Système de Design de l'État) is the official design system of the
+  French government, built and maintained by DINUM and the SIG. Its language is
+  institutional and austere: blue-france and red-marianne from the national
+  identity, near-black text on white, square corners, an 8px grid, and the
+  state-reserved Marianne typeface. Accessibility is a legal mandate (RGAA).
+  This entry is reference-only: the visual identity may only be used by French
+  government services, so downloads and API file access are disabled.
+categories:
+  - government
+  - docs-content
+tags:
+  - dsfr
+  - french-state
+  - marianne
+best_for:
+  - Studying government design system patterns
+  - Referencing RGAA-driven accessible UI
+  - French state service teams (identity is reserved to them)
+license:
+  spdx: etalab-2.0
+  url: https://github.com/GouvernementFR/dsfr/blob/main/LICENSE.md
+  notes: Code under the Etalab Open License 2.0 (verified in the npm package, not MIT); use of the visual identity is reserved for French government services; the Marianne typeface is state-reserved — Public Sans substituted in tokens, Marianne named in prose only.
+provenance:
+  source_type: npm
+  package: "@gouvfr/dsfr"
+  version: 1.15.1
+  extracted_at: "2026-07-21"
+restricted: true
+restricted_reason: "The DSFR visual identity is legally restricted to French state services. This entry is reference-only: downloads and API file access are disabled."
+links:
+  official_site: https://www.systeme-de-design.gouv.fr
+  github: https://github.com/GouvernementFR/dsfr
+status: published
+spec_version: alpha

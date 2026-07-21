@@ -1,0 +1,40 @@
+slug: tdesign
+name: TDesign
+path: official
+maker: Tencent
+summary: Tencent's open-source enterprise design system — a disciplined blue-led palette built for dense admin and data screens.
+description: >-
+  TDesign is Tencent's open-source design system, shipped as matching Vue,
+  React, and mobile component libraries on a shared token layer of --td-*
+  CSS custom properties. Its character is enterprise pragmatism: TDesign
+  Blue (#0052D9) as the single interactive voice, a warm-free gray ramp for
+  surfaces and text, a compact 3/6/9px radius scale, and a 14px base type
+  size tuned for dense admin consoles and mixed Chinese and Latin text.
+categories:
+  - enterprise-dashboard
+  - data-dense
+  - saas-product
+tags:
+  - tencent
+  - tdesign
+  - enterprise
+best_for:
+  - Enterprise admin consoles and dashboards
+  - Data-dense B2B product UIs
+  - Teams standardizing on TDesign across Vue and React
+license:
+  spdx: MIT
+  url: https://github.com/Tencent/tdesign-vue-next/blob/main/LICENSE
+  notes: TDesign ships no brand font (system stack — PingFang SC, Microsoft YaHei, Arial); open Inter and JetBrains Mono stand in.
+provenance:
+  source_type: npm
+  package: tdesign-vue-next
+  version: 1.20.3
+  extracted_at: "2026-07-21"
+links:
+  official_site: https://tdesign.tencent.com
+  docs: https://tdesign.tencent.com/design/color
+  github: https://github.com/Tencent/tdesign-common
+restricted: false
+status: published
+spec_version: alpha

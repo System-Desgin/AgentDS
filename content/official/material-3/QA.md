@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (Apache-2.0); `restricted: false`
 - [x] Fonts: Roboto / Roboto Mono are open (Apache-2.0, Google Fonts) — no substitution needed
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — _pending the Phase 3 renderer_
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Token spot-check (≥10)
 
@@ -41,5 +41,5 @@
 - **Human reviewer sign-off required before `status: published`** (kept `draft`).
   Cross-check the baseline colour roles + type/shape scale against m3.material.io
   (values are canonical baseline, not extracted from a static token file).
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (publish directed by owner, Claude Code session)
+- Date: 2026-07-21

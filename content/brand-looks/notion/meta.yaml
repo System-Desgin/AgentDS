@@ -1,0 +1,40 @@
+slug: notion
+name: Notion
+path: brand-look
+maker: "Notion Labs, Inc."
+summary: "Notion's observed look: warm paper-white pages, quiet near-black type, a sparing blue accent, soft corners, and tinted callout blocks."
+description: >-
+  An independent analysis of the design language visible on Notion's public
+  marketing, product, and help pages: warm paper-white surfaces with a
+  near-black and warm-gray text hierarchy, one sparing blue accent, soft 4-6px
+  corners, quiet system-style sans type at generous document line lengths, and
+  the signature muted callout and tag tints. Written as inspiration for an
+  original system; not an official Notion design system.
+categories:
+  - docs-content
+  - saas-product
+  - marketing-site
+tags:
+  - notion
+  - paper-white
+  - callouts
+best_for:
+  - Document-first product UIs
+  - Notes and knowledge tools
+  - Calm content-heavy workspaces
+license:
+  spdx: CC-BY-4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: "Independent analysis (catalog content, CC BY 4.0); the observed system-style sans stack is substituted with Inter, and JetBrains Mono stands in for the code monospace."
+provenance:
+  source_type: css-analysis
+  urls:
+    - https://www.notion.com
+    - https://www.notion.com/product
+    - https://www.notion.com/help
+  extracted_at: "2026-07-21"
+links:
+  official_site: https://www.notion.com
+restricted: false
+status: published
+spec_version: alpha

@@ -1,0 +1,39 @@
+slug: forma-36
+name: Forma 36
+path: official
+maker: Contentful
+summary: Contentful's open design system — a functional blue on crisp grays, with compact UI type built for editorial-tool density.
+description: >-
+  Forma 36 is Contentful's open-source design system for its content platform
+  and the apps built on it. Its tokens ship as a versioned npm package
+  (@contentful/f36-tokens) with resolved JS/JSON values, so every color, size,
+  and radius here is verifiable. The look is workmanlike and calm: a single
+  functional blue for interaction, a cool gray ladder for structure, and a
+  compact 14px-base type scale tuned for dense editorial tooling.
+categories:
+  - saas-product
+  - docs-content
+  - enterprise-dashboard
+tags:
+  - contentful
+  - forma-36
+  - content-management
+best_for:
+  - Content management and editorial tools
+  - SaaS product and admin surfaces
+  - Teams standardizing agent output on Forma 36
+license:
+  spdx: MIT
+  url: https://github.com/contentful/forma-36/blob/main/LICENSE.md
+  notes: Code MIT; token stack leads with Geist Sans/Mono (open, SIL OFL) — catalog tokens substitute Inter / JetBrains Mono, true stack named in prose.
+provenance:
+  source_type: npm
+  package: "@contentful/f36-tokens"
+  version: 6.2.1
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://f36.contentful.com
+  github: https://github.com/contentful/forma-36
+status: published
+spec_version: alpha

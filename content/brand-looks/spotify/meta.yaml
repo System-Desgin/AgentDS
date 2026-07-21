@@ -1,0 +1,39 @@
+slug: spotify
+name: Spotify
+path: brand-look
+maker: Spotify AB
+summary: "Spotify's observed dark-first look: near-black surfaces, elevated gray cards, bold display type, and one signature green pill CTA."
+description: >-
+  An independent analysis of the design language visible on Spotify's public
+  web player and marketing pages: a near-black base with elevated dark-gray
+  cards, white primary text over muted gray secondary text, bold tightly-set
+  display type, pill-shaped controls throughout, and a single signature green
+  reserved for play affordances and the primary CTA — always paired with
+  black text. Written as inspiration for an original system.
+categories:
+  - mobile-first
+  - marketing-site
+  - e-commerce
+tags:
+  - spotify
+  - dark-ui
+  - streaming
+best_for:
+  - Dark-first consumer media apps
+  - Bold single-accent marketing pages
+  - Subscription plan and checkout flows
+license:
+  spdx: CC-BY-4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: "Independent analysis (catalog content, CC BY 4.0); the observed proprietary circular-style geometric sans is substituted with Inter in tokens."
+provenance:
+  source_type: css-analysis
+  urls:
+    - https://open.spotify.com
+    - https://www.spotify.com
+  extracted_at: "2026-07-21"
+links:
+  official_site: https://www.spotify.com
+restricted: false
+status: published
+spec_version: alpha

@@ -1,0 +1,40 @@
+slug: backstage
+name: Backstage
+path: official
+maker: Spotify
+summary: Spotify's open-source developer-portal platform — dark header bands, utilitarian blues, and dense engineering catalogs.
+description: >-
+  Backstage is the open-source developer-portal platform created at Spotify and
+  hosted by the CNCF. Its light theme pairs a deep navy-blue interactive voice
+  with dark page-header bands over a light content field, built for service
+  catalogs, plugin cards, and dense engineering tables. The look is
+  engineering-tool utilitarian: system-stack typography, quiet gray structure,
+  and status colors that read at a glance in crowded dashboards.
+categories:
+  - dev-tools
+  - enterprise-dashboard
+  - data-dense
+tags:
+  - backstage
+  - spotify
+  - cncf
+best_for:
+  - Internal developer portals
+  - Service catalogs and plugin dashboards
+  - Data-dense engineering tools
+license:
+  spdx: Apache-2.0
+  url: https://github.com/backstage/backstage/blob/master/LICENSE
+  notes: Backstage ships no font binaries (system-font stack); the catalog uses open Inter as the stand-in family.
+provenance:
+  source_type: npm
+  package: "@backstage/theme"
+  version: 0.7.3
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://backstage.io
+  docs: https://backstage.io/docs/getting-started/app-custom-theme/
+  github: https://github.com/backstage/backstage
+status: published
+spec_version: alpha

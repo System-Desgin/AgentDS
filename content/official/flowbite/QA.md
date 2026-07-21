@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (MIT, open-source core); `restricted: false`
 - [x] Fonts: Inter is open (SIL OFL, Google Fonts) — no substitution; JetBrains Mono for code
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — _pending the Phase 3 renderer_
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Token spot-check (≥10)
 
@@ -38,5 +38,5 @@
 - Automated checks (schema, lint, license, fonts) completed by the pipeline.
 - **Human reviewer sign-off required before `status: published`** (kept `draft`);
   cross-check the palette/scale against flowbite.com.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (publish directed by owner, Claude Code session)
+- Date: 2026-07-21

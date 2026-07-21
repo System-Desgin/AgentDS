@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (MIT); `restricted: false`
 - [x] Fonts: Roboto is open (Apache-2.0, Google Fonts) — no substitution; JetBrains Mono for code
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — _pending the Phase 3 renderer_
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Contrast note (1 warning — accurate)
 
@@ -43,5 +43,5 @@ default theme; values pulled by a safe text regex — no code executed).
 - Automated checks (schema, lint, extraction spot-check, license, fonts) completed by the pipeline.
 - **Human reviewer sign-off required before `status: published`** (kept `draft`);
   confirm the 1 contrast warning is acceptable.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (publish directed by owner, Claude Code session)
+- Date: 2026-07-21

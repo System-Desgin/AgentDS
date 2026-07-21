@@ -1,0 +1,40 @@
+slug: pajamas
+name: Pajamas
+path: official
+maker: GitLab
+summary: GitLab's Pajamas design system — utilitarian DevOps-tool density with a blue interactive voice and a strong accessibility culture.
+description: >-
+  Pajamas is GitLab's design system, implemented in the open-source @gitlab/ui
+  component library. Its published token build gives exact, resolved values:
+  an action blue reserved for interactive elements, a cool near-black neutral
+  ramp for dense dev-tool text, clear semantic status colors, and a 4px base
+  grid for spacing and radius. GitLab's brand orange stays out of product UI,
+  keeping data-heavy DevOps screens calm, legible, and accessible.
+categories:
+  - dev-tools
+  - enterprise-dashboard
+  - saas-product
+tags:
+  - gitlab
+  - pajamas
+  - gitlab-ui
+best_for:
+  - DevOps and developer-tool interfaces
+  - Data-dense dashboards and admin screens
+  - Teams standardizing agent output on Pajamas
+license:
+  spdx: MIT
+  url: https://gitlab.com/gitlab-org/gitlab-ui/-/blob/main/LICENSE
+  notes: GitLab Sans and GitLab Mono are open (OFL) but not on Google Fonts; tokens substitute Inter and JetBrains Mono, originals named in prose.
+provenance:
+  source_type: npm
+  package: "@gitlab/ui"
+  version: 135.1.0
+  extracted_at: "2026-07-21"
+links:
+  official_site: https://design.gitlab.com
+  docs: https://design.gitlab.com/product-foundations/color
+  github: https://gitlab.com/gitlab-org/gitlab-ui
+restricted: false
+status: published
+spec_version: alpha

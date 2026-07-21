@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (MIT); `restricted: false`
 - [x] Fonts: antd ships no brand font (system stack); open Inter used, JetBrains Mono for code
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — _pending the Phase 3 renderer_
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Contrast note (3 warnings — accurate, not defects to hide)
 
@@ -50,5 +50,5 @@ human reviewer should confirm this is acceptable for the entry before publish.
 - Automated checks (schema, lint, license, fonts) completed by the pipeline.
 - **Human reviewer sign-off required before `status: published`** (kept `draft`);
   confirm the 3 contrast warnings are acceptable and cross-check tokens against ant.design.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (publish directed by owner, Claude Code session)
+- Date: 2026-07-21

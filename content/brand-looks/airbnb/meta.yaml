@@ -1,0 +1,39 @@
+slug: airbnb
+name: Airbnb
+path: brand-look
+maker: "Airbnb, Inc."
+summary: "Airbnb's observed web look: white surfaces, near-black type, a coral-to-magenta pill CTA, photo-led rounded cards, and airy touch targets."
+description: >-
+  An independent analysis of the design language visible on Airbnb's public
+  site and help center: white surfaces with near-black text, the signature
+  coral-to-magenta gradient on pill-shaped CTAs, photography-led cards with
+  soft 8-12px corners, big 24-32px sheet radii, understated hairline gray
+  dividers, and a friendly rounded sans with generous touch targets. Written
+  as inspiration for an original system; not an official Airbnb design system.
+categories:
+  - travel-consumer
+  - e-commerce
+  - mobile-first
+tags:
+  - airbnb
+  - travel
+  - coral
+best_for:
+  - Travel and booking marketplaces
+  - Photo-led listing and detail pages
+  - Mobile-first consumer browsing
+license:
+  spdx: CC-BY-4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: "Independent analysis (catalog content, CC BY 4.0); the observed proprietary rounded geometric sans is substituted with Inter and named generically in prose only."
+provenance:
+  source_type: css-analysis
+  urls:
+    - https://www.airbnb.com
+    - https://www.airbnb.com/help
+  extracted_at: "2026-07-21"
+links:
+  official_site: https://www.airbnb.com
+restricted: false
+status: published
+spec_version: alpha

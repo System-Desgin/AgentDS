@@ -1,0 +1,39 @@
+slug: moon
+name: Moon
+path: official
+maker: Yolo Group
+summary: Yolo Group's Tailwind-native design system — playful token names over a disciplined neutral base, built for high-tempo products.
+description: >-
+  Moon is Yolo Group's open-source design system for its fintech and
+  entertainment products. It is Tailwind-native: every theme ships as CSS
+  custom properties consumed by a Tailwind preset, with a light and a dark
+  value for each role. Its voice is playful naming over a disciplined base —
+  semantic tokens like piccolo (primary), goku (background), and bulma (text)
+  map a compact purple-led palette onto calm neutral surfaces for fast, dense UIs.
+categories:
+  - fintech
+  - saas-product
+  - tailwind-native
+tags:
+  - moon
+  - yolo-group
+  - tailwind
+best_for:
+  - Fintech and betting product UIs
+  - Dark-mode-first consumer apps
+  - Tailwind teams wanting semantic tokens
+license:
+  spdx: MIT
+  url: https://github.com/coingaming/moon-light/blob/main/LICENSE
+  notes: Averta Std is proprietary — substituted with DM Sans (a Moon font token, available on Google Fonts); Averta is named in prose only.
+provenance:
+  source_type: npm
+  package: "@heathmont/moon-themes-tw"
+  version: 10.22.2
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://moon.io
+  github: https://github.com/coingaming/moon-light
+status: published
+spec_version: alpha

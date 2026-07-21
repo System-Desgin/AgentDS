@@ -1,0 +1,39 @@
+slug: arco
+name: Arco Design
+path: official
+maker: ByteDance
+summary: ByteDance's enterprise design system — vivid arcoblue on cool neutrals, tight geometric density for admin platforms.
+description: >-
+  Arco Design is ByteDance's comprehensive design system for enterprise and
+  admin-platform products, sibling to Semi Design but more back-office
+  oriented. Its React distribution ships resolved CSS custom properties
+  (--arcoblue-*, --gray-*, and friends), giving verifiable default values:
+  vivid arcoblue #165DFF as the single interactive voice, a cool 10-step
+  neutral ramp, tight 2px/4px corners, and a dense 14px base type size.
+categories:
+  - enterprise-dashboard
+  - data-dense
+  - saas-product
+tags:
+  - bytedance
+  - arco
+  - arcoblue
+best_for:
+  - Admin platforms and back-office consoles
+  - Data-dense enterprise dashboards
+  - Teams standardizing agent output on Arco
+license:
+  spdx: MIT
+  url: https://github.com/arco-design/arco-design/blob/main/LICENSE
+  notes: Arco ships no brand font (system stack); open Inter is used as the stand-in, with JetBrains Mono for code.
+provenance:
+  source_type: npm
+  package: "@arco-design/web-react"
+  version: 2.66.16
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://arco.design
+  github: https://github.com/arco-design/arco-design
+status: published
+spec_version: alpha
