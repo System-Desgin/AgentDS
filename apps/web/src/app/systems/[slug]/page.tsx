@@ -13,6 +13,7 @@ import {
 import { CopyButton } from "../../../components/copy-button";
 import { DesignMdViewer } from "../../../components/design-md-viewer";
 import { DownloadLink } from "../../../components/download-link";
+import { SpecimenFonts } from "../../../components/specimen-fonts";
 import { Tabs } from "../../../components/tabs";
 import { AGENT_SNIPPETS } from "../../../lib/agent-snippets";
 import { fetchAllSlugs, fetchDesignMd, fetchSystem } from "../../../lib/api";
@@ -99,7 +100,13 @@ export default async function SystemDetailPage({ params }: { params: Promise<{ s
 
   return (
     <div className="mx-auto flex max-w-[1200px] flex-col gap-14 px-6 py-16">
-      {fontsHref ? <link rel="stylesheet" href={fontsHref} /> : null}
+      {fontsHref ? (
+        <>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <SpecimenFonts href={fontsHref} />
+        </>
+      ) : null}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

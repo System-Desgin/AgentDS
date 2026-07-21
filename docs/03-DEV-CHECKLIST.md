@@ -135,16 +135,16 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 ## Phase 5 — Hardening & launch (Week 8)
 
 ### Security review (own it — this is the brand)
-- [ ] Dependency audit (`pnpm audit`, `osv-scanner`) clean or triaged
-- [ ] Web: CSP (no unsafe-inline), security headers scored A on observatory; API: helmet, no stack traces in prod errors, throttler verified under load
-- [ ] Abuse test: hammer raw-file endpoints; confirm CDN/proxy caching absorbs, 429 behavior correct
-- [ ] Secrets rotation documented; Dokploy + DB access reviewed; backups restore-tested
-- [ ] Pipeline output review: confirm no HTML/script can pass into published markdown (sanitizer test cases)
+- [x] Dependency audit: `pnpm audit --audit-level=moderate` clean (2026-07-21); CI keeps enforcing at high — _osv-scanner optional follow-up_
+- [~] Web: full security-header set live (HSTS preload, nosniff, DENY framing, strict referrer, Permissions-Policy, COOP/CORP) + CSP locked to self/API/fonts. **Observatory: B+ (80, 9/10 tests)** — the missing test is `script-src 'unsafe-inline'`, required because App Router prerenders inline bootstrap scripts; an A needs per-request nonces = abandoning SSG/ISR. Owner call if A outranks static rendering. API side: helmet, problem-details errors, throttler verified under load — done
+- [x] Abuse test (2026-07-21): 600 requests at 62 rps against raw-file endpoints → 240 served (incl. 22 ETag 304s), 360 clean 429s, zero errors/5xx, p50 144ms, healthy after
+- [~] Secrets rotation + backup/restore + deploy runbook documented in `docs/05-OPERATIONS.md` — _remaining owner actions: schedule the daily Postgres backup in Dokploy + one restore test; quarterly access review_
+- [x] Pipeline output review (2026-07-21): sweep of all 42 published DESIGN.md files — zero HTML/script/embed tags; preview renderer test keeps asserting script-free server markup
 
 ### Launch
-- [ ] Lighthouse ≥95 perf/a11y/SEO on home + 3 detail pages
-- [ ] 404/500 pages, uptime monitoring (Uptime Kuma on Dokploy) + alerting
-- [ ] Launch assets: demo GIF (prompt → on-system UI), comparison screenshot (default AI UI vs with DESIGN.md), copy for PH/HN/X/LinkedIn
+- [~] Lighthouse (mobile emulation, production, 2026-07-21): home **99/96/96/100**, detail pages 92-93 perf (LCP waited on the render-blocking specimen-fonts stylesheet — now deferred to post-paint + preconnect; re-measure after deploy)
+- [~] 404/500 pages: 404 returns real status; root `error.tsx` + `global-error.tsx` added (styled to DESIGN.md) — _remaining: Uptime Kuma on Dokploy + alerting (owner)_
+- [~] Launch assets: copy for PH/HN/X/LinkedIn drafted in `docs/06-LAUNCH-COPY.md` — _remaining: demo GIF (prompt → on-system UI) and comparison screenshot_
 - [ ] Publish, submit to skills.sh visibility channels, awesome-lists PRs where appropriate
 - [ ] Day-7 review: metrics vs PRD §10, bug triage, P1 backlog grooming
 
