@@ -86,17 +86,25 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 
 ## Phase 3 — Frontend (Weeks 4–6) — F-1/F-2/F-3
 
-- [ ] Implement design tokens from project `DESIGN.md` as Tailwind v4 theme; base layout, nav, footer
-- [ ] Home page per DESIGN.md (hero thesis, path split, featured grid, 3-step how-it-works, install command block)
-- [ ] Catalog `/systems`: server components + URL-state filters (F-1 acceptance criteria), search wired to API, skeleton/empty/error states
-- [ ] Token-preview renderer (`packages/shared/preview`): parse YAML front matter → palette swatches, type specimen (Google Fonts loader with fallback map), spacing bars, radius chips, component token table — pure server-rendered
-- [ ] Detail page `/systems/[slug]`: all F-2 items — badges, previews, syntax-highlighted viewer (shiki), action buttons, per-agent snippet tabs, provenance/disclaimer blocks, restricted state
-- [ ] OG image route (`next/og`) generating per-system share cards from tokens
-- [ ] Static pages: `/what-is-design-md`, `/agents/[agent]` ×6, `/api`, `/about` (incl. legal + per-license notes)
-- [ ] SSG/ISR: `generateStaticParams` from API at build; revalidate webhook triggered by ingest; graceful fallback when API unreachable (files bundled at build)
-- [ ] SEO: metadata, JSON-LD, sitemap.xml, robots.txt, canonical; llms.txt (P1 but cheap — do it)
-- [ ] Analytics: self-hosted Umami on Dokploy, script on web; wire copy/download events to `/v1/events`
-- [ ] a11y pass: keyboard nav, focus rings, contrast (ironic failure here is unacceptable), reduced motion
+> **Status (2026-07-21, branch `phase-3`):** frontend feature-complete and
+> green (16/16 turbo tasks, no cache). Verified in the browser against the API
+> serving fixture content (published entries): home, catalog with URL filters,
+> detail with previews/viewer/tabs, restricted state, 404 status for unknown
+> slugs (route-grouped loading boundary so `notFound()` resolves pre-stream),
+> OG image, sitemap, llms.txt. Umami itself is external infra (Dokploy);
+> the script slot is env-gated and ships dormant.
+
+- [x] Design tokens from project `DESIGN.md` as Tailwind v4 theme (full palette incl. warning/error, radii, next/font-backed font stacks); base layout with skip link, nav, footer
+- [x] Home page per DESIGN.md (hero thesis, path split, featured grid — hidden while catalog is empty, 3-step how-it-works, install command block with copy)
+- [x] Catalog `/systems`: server components + URL-state filters (path toggle, q, category, license, sort, page — shareable URLs), search wired to API, skeleton/empty/error states, pagination
+- [x] Token-preview renderer (`@agentds/shared/preview`): palette swatches with role + hex, type specimen (Google Fonts css2 loader + proprietary-font substitution map with system fallback), spacing bars, radius chips, component token table, catalog mini-palette — pure server-rendered, snapshot-tested against Official + Brand Look fixtures
+- [x] Detail page `/systems/[slug]`: badges (lint-pass/restricted/license chips), previews from parsed front matter, shiki viewer on the code register (collapsible `<details>` + copy), actions (copy file / downloads / copy API URL / copy skills command), per-agent tabs ×6 (ARIA tablist), provenance + Brand-Look disclaimer blocks, restricted state without downloads
+- [x] OG image route (`next/og`) — per-system share card from real tokens (name + palette + hex)
+- [x] Static pages: `/what-is-design-md`, `/agents/[agent]` ×6 (claude-code, cursor, kiro, windsurf, codex, copilot), `/api`, `/about` (legal, licensing, privacy, contact)
+- [x] SSG/ISR: `generateStaticParams` from API ∪ bundled content; `POST /api/revalidate` (bearer REVALIDATE_TOKEN) for ingest-triggered refresh; graceful fallback serving bundled `content/` files when the API is unreachable (`outputFileTracingIncludes`)
+- [x] SEO: per-page metadata + OG, JSON-LD (`SoftwareSourceCode`) on detail, sitemap.xml, robots.txt, canonical URLs, llms.txt
+- [~] Analytics: env-gated Umami script slot on web + copy/download events wired to `/v1/events` — _remaining: provision Umami on Dokploy and set the two env vars_
+- [x] a11y: skip link, keyboard-operable tabs/forms, 2px accent `:focus-visible` rings, AA token pairs per DESIGN.md, `prefers-reduced-motion` disables the entrance fade
 
 ## Phase 4 — Content sprint + skills.sh (Weeks 6–8) — F-9
 

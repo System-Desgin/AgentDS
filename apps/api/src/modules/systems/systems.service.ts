@@ -200,6 +200,8 @@ export class SystemsService {
   }
 
   private toListItem(row: SystemWithCategories, fetches: number): SystemListItem {
+    const summary = row.tokenSummary as unknown as TokenSummary | null;
+    const displayFont = summary?.fonts?.[0];
     return {
       slug: row.slug,
       name: row.name,
@@ -211,6 +213,8 @@ export class SystemsService {
       license_spdx: row.licenseSpdx,
       restricted: row.restricted,
       fetches,
+      palette: Object.values(summary?.colors ?? {}).slice(0, 5),
+      ...(displayFont ? { display_font: displayFont } : {}),
       updated_at: row.updatedAt.toISOString(),
     };
   }

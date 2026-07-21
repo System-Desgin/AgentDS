@@ -40,6 +40,10 @@ export interface SystemListItem {
   restricted: boolean;
   /** Aggregate api_fetch counter (drives the "most-fetched" sort). */
   fetches: number;
+  /** First tokens of the palette, for the catalog card mini-swatches (F-1). */
+  palette: string[];
+  /** Display font family for the card initial, when the system declares one. */
+  display_font?: string;
   updated_at: string;
 }
 

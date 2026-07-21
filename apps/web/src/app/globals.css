@@ -1,35 +1,70 @@
 @import "tailwindcss";
 
 /*
- * A subset of the project DESIGN.md tokens, wired as the Tailwind v4 theme so
- * the site dogfoods its own design system. The full token set + preview
- * renderer land in Phase 3 — read /DESIGN.md before extending this.
+ * The project DESIGN.md tokens wired as the Tailwind v4 theme — the site
+ * dogfoods its own design system. Every value here mirrors /DESIGN.md; new
+ * tokens are proposed there first (Agent Prompt Guide rule 5), never invented
+ * here.
  */
 @theme {
   --color-primary: #17150f;
   --color-on-primary: #faf7f2;
   --color-accent: #bc4a26;
+  --color-on-accent: #fdf6f0;
   --color-surface: #faf7f2;
-  --color-surface-variant: #f1ebdf;
   --color-on-surface: #17150f;
+  --color-surface-variant: #f1ebdf;
   --color-on-surface-variant: #57503f;
   --color-border: #e3dbc9;
   --color-code-bg: #201d14;
   --color-code-fg: #f1eada;
   --color-code-accent: #d9a054;
   --color-success: #3f6b42;
+  --color-warning: #82590c;
+  --color-error: #8c2f23;
 
-  --font-display: "Source Serif 4", Georgia, serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  /* Font stacks resolve through next/font CSS variables set on <html>. */
+  --font-display: var(--font-source-serif), Georgia, serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
+  --radius-full: 999px;
+
+  /* spacing tokens (base-8): xs 4 / sm 8 / md 16 / lg 24 / xl 40 / 2xl 64 / 3xl 96
+     Tailwind's default 4px-based scale maps them exactly: 1, 2, 4, 6, 10, 16, 24. */
 }
 
 body {
   background-color: var(--color-surface);
   color: var(--color-on-surface);
   font-family: var(--font-body);
+}
+
+/* Accessibility: visible 2px accent focus ring everywhere (DESIGN.md input
+   spec: "focus = 2px accent ring, no glow"). */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Motion restraint (DESIGN.md Motion): 150–200ms ease-out on hover/focus is
+   handled per-element; the single entrance fade for detail preview cards is
+   defined here and disabled under prefers-reduced-motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-up {
+    animation: fade-up 250ms ease-out both;
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
