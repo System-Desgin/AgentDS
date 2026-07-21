@@ -16,11 +16,17 @@ onlyBuiltDependencies:
 overrides:
   multer: ">=2.2.0"
   postcss: ">=8.5.10"
-  "@hono/node-server": ">=1.19.13"
+  # WebSocket DoS GHSA (2.x line) via prisma > @prisma/dev; also covers the
+  # older 1.x advisory this override originally pinned.
+  "@hono/node-server": ">=2.0.10"
   # ReDoS GHSA-3jxr-9vmj-r5cp via @nestjs/cli > fork-ts-checker > minimatch.
   # Caret keeps the fix on the 1.x line — 2+ changed the API and breaks the
   # old minimatch consumers ("expand is not a function").
   "brace-expansion@<1.1.16": "^1.1.16"
+  # Host confusion GHSA-v2hh-gcrm-f6hx via @commitlint > ajv > fast-uri.
+  "fast-uri": ">=3.1.4"
+  # libvips CVEs GHSA-f88m-g3jw-g9cj via next > sharp (image optimizer).
+  sharp: ">=0.35.0"
 
 # Single source of truth for dependency versions across the monorepo.
 # Every package references these with the "catalog:" protocol so upgrades
