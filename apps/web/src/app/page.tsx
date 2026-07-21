@@ -1,8 +1,26 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { CopyButton } from "../components/copy-button";
 import { SystemCard } from "../components/system-card";
 import { fetchCatalog } from "../lib/api";
-import { INSTALL_COMMAND, SKILLS_SH_URL } from "../lib/site";
+import { INSTALL_COMMAND, SITE_DESCRIPTION, SITE_NAME, SITE_URL, SKILLS_SH_URL } from "../lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+const WEBSITE_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+  publisher: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+  },
+};
 
 const HOW_IT_WORKS = [
   {
@@ -27,6 +45,10 @@ export default async function HomePage() {
 
   return (
     <div className="mx-auto flex max-w-[1200px] flex-col gap-24 px-6 py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_JSON_LD) }}
+      />
       {/* Hero thesis */}
       <section className="flex max-w-[720px] flex-col gap-6">
         <p className="font-mono text-[0.8125rem] font-medium uppercase tracking-[0.04em] text-accent">

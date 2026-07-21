@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Catalog",
   description:
     "Browse agent-ready DESIGN.md files: Official Systems from real token packages and Brand Looks from famous product sites.",
+  alternates: { canonical: "/systems" },
 };
 
 export const revalidate = 300;
