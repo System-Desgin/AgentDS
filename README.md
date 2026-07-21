@@ -43,6 +43,8 @@ Every published file passes `npx @google/design.md lint` and a human QA gate.
 | Copilot     | Fetched `DESIGN.md` + `.github/copilot-instructions.md` pointer  | —                                                                          |
 | Windsurf    | Fetched `DESIGN.md` + `.windsurf/rules/` pointer                 | —                                                                          |
 | Kiro        | Fetched `DESIGN.md` + `.kiro/steering/` pointer                  | —                                                                          |
+| OpenCode    | `npx skills add System-Desgin/AgentDS --agent opencode`          | Fetched `DESIGN.md` + a pointer in `AGENTS.md`                             |
+| Pi          | `npx skills add System-Desgin/AgentDS --agent pi`                | Fetched `DESIGN.md` + a pointer in `AGENTS.md`, then `/reload`             |
 
 Per-agent setup snippets are on every system page at
 [agent-ds.oday-bakkour.com](https://agent-ds.oday-bakkour.com), and the API

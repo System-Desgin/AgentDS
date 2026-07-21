@@ -85,4 +85,28 @@ ${fetchLine(slug)}
 When generating or editing UI, follow the design tokens and rules in
 DESIGN.md at the repository root. Never invent design values.`,
   },
+  {
+    id: "opencode",
+    label: "OpenCode",
+    file: "AGENTS.md",
+    snippet: (slug) => `# Fetch the design system file
+${fetchLine(slug)}
+
+# AGENTS.md — add (OpenCode reads it at the repo root):
+## UI & design system
+All UI follows ./DESIGN.md. Reference tokens by name; never invent
+colors, typography, spacing, or radii.`,
+  },
+  {
+    id: "pi",
+    label: "Pi",
+    file: "AGENTS.md",
+    snippet: (slug) => `# Fetch the design system file
+${fetchLine(slug)}
+
+# AGENTS.md — add (pi loads it at startup; run /reload after editing):
+## UI & design system
+All UI follows ./DESIGN.md. Reference tokens by name; never invent
+colors, typography, spacing, or radii.`,
+  },
 ];

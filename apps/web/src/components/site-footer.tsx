@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CONTACT_EMAIL, GITHUB_URL } from "../lib/site";
+import { CONTACT_EMAIL, GITHUB_URL, SKILLS_SH_URL } from "../lib/site";
 
 export function SiteFooter() {
   return (
@@ -17,6 +17,13 @@ export function SiteFooter() {
             className="transition-colors duration-150 ease-out hover:text-accent"
           >
             github
+          </a>
+          <a
+            href={SKILLS_SH_URL}
+            rel="noopener noreferrer"
+            className="transition-colors duration-150 ease-out hover:text-accent"
+          >
+            skills.sh
           </a>
           <a
             href={`mailto:${CONTACT_EMAIL}`}

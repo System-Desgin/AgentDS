@@ -12,4 +12,6 @@ export const SITE_DESCRIPTION =
 export const INSTALL_COMMAND = "npx skills add System-Desgin/AgentDS --skill design-systems";
 
 export const GITHUB_URL = "https://github.com/System-Desgin/AgentDS";
+/** Public listing on the skills.sh leaderboard (install telemetry driven). */
+export const SKILLS_SH_URL = "https://www.skills.sh/system-desgin/agentds";
 export const CONTACT_EMAIL = "contact@oday-bakkour.com";
