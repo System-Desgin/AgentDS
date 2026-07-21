@@ -5,6 +5,16 @@
  */
 export { googleFontsUrl, previewFontStack, resolvePreviewFamily } from "./fonts";
 export {
+  DashboardTemplate,
+  LoginTemplate,
+  SettingsTemplate,
+  SAMPLE_TEMPLATES,
+  TEMPLATE_COMPONENTS,
+  deriveTheme,
+  type SampleTemplate,
+  type SampleTheme,
+} from "./templates";
+export {
   ComponentTokenTable,
   MiniPalette,
   PalettePreview,

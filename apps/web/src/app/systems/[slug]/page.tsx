@@ -6,6 +6,7 @@ import {
   ComponentTokenTable,
   PalettePreview,
   RadiusPreview,
+  SAMPLE_TEMPLATES,
   SpacingPreview,
   TypeScalePreview,
   googleFontsUrl,
@@ -223,6 +224,41 @@ export default async function SystemDetailPage({ params }: { params: Promise<{ s
               <ComponentTokenTable components={tokens.components} />
             </div>
           ) : null}
+        </section>
+      ) : null}
+
+      {/* Sample screens — full app previews rendered from the tokens. */}
+      {tokens?.colors && !system.restricted ? (
+        <section aria-labelledby="sample-screens" className="flex flex-col gap-6">
+          <div className="flex flex-col gap-2">
+            <h2
+              id="sample-screens"
+              className="font-mono text-[0.8125rem] font-medium uppercase tracking-[0.04em] text-on-surface-variant"
+            >
+              ## preview as an app
+            </h2>
+            <p className="max-w-[72ch] text-sm leading-relaxed text-on-surface-variant">
+              See these tokens as full screens — an approximation of the system&apos;s language, not
+              its official components.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {SAMPLE_TEMPLATES.map((t) => (
+              <Link
+                key={t.id}
+                href={`/systems/${slug}/preview/${t.id}`}
+                className="group flex flex-col gap-2 rounded-lg border border-border bg-surface-variant p-6 transition-colors duration-150 ease-out hover:border-accent"
+              >
+                <span className="font-display text-lg font-semibold text-primary">{t.name}</span>
+                <span className="text-sm leading-relaxed text-on-surface-variant">
+                  {t.description}
+                </span>
+                <span className="mt-auto font-mono text-[0.8125rem] uppercase tracking-[0.04em] text-accent">
+                  open preview →
+                </span>
+              </Link>
+            ))}
+          </div>
         </section>
       ) : null}
 
