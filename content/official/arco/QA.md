@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (MIT, `package.json` of `@arco-design/web-react@2.66.16` and repo LICENSE); `restricted: false`
 - [x] Fonts: Arco ships no brand font — its own default stack leads with open Inter (then system CJK fallbacks); JetBrains Mono stands in for the generic monospace stack, noted in prose
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Token spot-check (≥10)
 
@@ -56,5 +56,5 @@ when checked); alert-warning matches `.arco-alert-warning`
 - **Human reviewer sign-off required before `status: published`** (kept `draft`).
   Cross-check the palette, radius, and type values against arco.design and the
   shipped `dist/css/arco.css` (values were read manually, not auto-extracted).
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

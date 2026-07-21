@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from notion.com or any design-md collection
 - [x] License SPDX + URL verified (CC-BY-4.0 catalog content, per-entry independent analysis); `restricted: false`
 - [x] Fonts: observed system-style sans stack substituted with Inter (OFL, Google Fonts); observed SF Mono/Consolas-class code stack substituted with JetBrains Mono (OFL); originals named in prose only, no proprietary binaries
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 - [x] Disclaimer header present — verbatim, maker "Notion Labs, Inc.", first block after front matter
 
 ## Token spot-check (≥10)
@@ -58,5 +58,5 @@ Agent Prompt Guide.
 - **Human reviewer sign-off required before `status: published`** (kept `draft`).
   Run the manual CSS capture cross-check (docs/04-DATA-SOURCES.md §5) on the
   provenance URLs and confirm the spot-check table before publish.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

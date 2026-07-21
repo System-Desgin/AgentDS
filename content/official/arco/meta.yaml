@@ -35,5 +35,5 @@ restricted: false
 links:
   official_site: https://arco.design
   github: https://github.com/arco-design/arco-design
-status: draft
+status: published
 spec_version: alpha

@@ -35,5 +35,5 @@ restricted: false
 links:
   official_site: https://vaadin.com/docs/latest/styling/lumo
   github: https://github.com/vaadin/web-components
-status: draft
+status: published
 spec_version: alpha

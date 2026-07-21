@@ -36,5 +36,5 @@ provenance:
 restricted: false
 links:
   official_site: https://supabase.com
-status: draft
+status: published
 spec_version: alpha

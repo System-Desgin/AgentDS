@@ -36,5 +36,5 @@ restricted: false
 links:
   official_site: https://openai.com
   docs: https://platform.openai.com/docs
-status: draft
+status: published
 spec_version: alpha

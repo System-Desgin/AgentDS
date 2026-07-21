@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — observed-language only, no copied text from Spotify properties
 - [x] License SPDX + URL verified (CC-BY-4.0, catalog content license); `restricted: false`
 - [x] Fonts: the observed proprietary circular-style geometric sans is substituted with Inter (per the `packages/shared` substitution map); the original family is named generically in prose only
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 - [x] Disclaimer header present, verbatim, first thing after front matter (never removed)
 
 ## Token spot-check (≥10)
@@ -67,5 +67,5 @@ two first during the manual capture.
   Perform the manual CSS capture cross-check (docs/04-DATA-SOURCES.md §5)
   against open.spotify.com and www.spotify.com — values are canonical from
   knowledge of the public site, not captured.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

@@ -21,7 +21,7 @@ as Primer or as an official GitHub system.
 - [x] License SPDX + URL verified (CC-BY-4.0, this catalog's own license for independent analyses); `restricted: false`
 - [x] Fonts: observed Mona Sans is open (SIL OFL) but not on the preview loader allow-list — tokens substitute Inter; observed monospace stack substituted with JetBrains Mono; true families named in prose only (same pattern as vercel/Geist)
 - [x] Disclaimer header present as the first block after front matter (verbatim, maker "GitHub, Inc.")
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Token spot-check (≥10)
 
@@ -91,5 +91,5 @@ warnings. Verified pairings (WCAG relative-luminance math):
   Perform the manual CSS capture cross-check (docs/04-DATA-SOURCES.md §5) on the
   provenance URLs before publishing — values are canonical from public
   observation, not captured.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

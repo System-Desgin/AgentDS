@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — observed-language only, no copied text from supabase.com
 - [x] License SPDX + URL verified (CC-BY-4.0 covers this independent analysis only); `restricted: false`
 - [x] Fonts: custom Circular-family sans observed — mapped to Inter via the substitution map in `packages/shared/src/preview/fonts.ts` (`circular` → Inter); JetBrains Mono (OFL) is an open stand-in for the observed monospace, original family not verified
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 - [x] Disclaimer header present as the first content after front matter (authored verbatim per `packages/pipeline/prompts/brand-look.md`; never remove)
 
 ## Modeling choice (dark tokens)
@@ -85,5 +85,5 @@ stand-ins) — verify these first during capture.
 - **Human reviewer sign-off required before `status: published`.** Perform the
   manual CSS capture cross-check (docs/04-DATA-SOURCES.md §5) on the public
   provenance URLs and re-verify the contrast facts above.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

@@ -36,5 +36,5 @@ links:
   docs: https://design.gitlab.com/product-foundations/color
   github: https://gitlab.com/gitlab-org/gitlab-ui
 restricted: false
-status: draft
+status: published
 spec_version: alpha

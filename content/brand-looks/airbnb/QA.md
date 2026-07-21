@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — observed-language only, no copied text from airbnb.com
 - [x] License SPDX + URL verified — CC-BY-4.0 is this entry's own content license (independent analysis; there is no upstream OSS token package); `restricted: false`
 - [x] Fonts: the observed proprietary rounded geometric sans is substituted with Inter; the original is named generically in prose only
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 - [x] Disclaimer header present (verbatim, first thing after front matter; never removed)
 
 ## Token spot-check (≥10)
@@ -79,5 +79,5 @@ ant-design-style).
   (docs/04-DATA-SOURCES.md §5) against the two provenance URLs, confirm the
   rows marked "verify" (gradient end, input outline gray, status greens and
   reds), and confirm the AA-anchored `button-primary` decision.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

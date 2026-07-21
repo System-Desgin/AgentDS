@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — observed-language only, no copied text from figma.com
 - [x] License SPDX + URL verified (CC-BY-4.0 covers this independent analysis only); `restricted: false`
 - [x] Fonts: the proprietary grotesk observed on figma.com is substituted with Inter (OFL, Google Fonts allow-list); JetBrains Mono (OFL) is an open stand-in for the monospace; originals named in prose only
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 - [x] Disclaimer header present as the first content after front matter (authored verbatim per `packages/pipeline/prompts/brand-look.md`, maker "Figma, Inc."; never remove)
 
 ## Token spot-check (≥10)
@@ -74,5 +74,5 @@ these first during capture.
 - **Human reviewer sign-off required before `status: published`.** Perform the
   manual CSS capture cross-check (docs/04-DATA-SOURCES.md §5) on the two
   provenance URLs and re-verify the three contrast facts above.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

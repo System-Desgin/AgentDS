@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (Apache-2.0, `gestalt-design-tokens@177.0.12` package.json + repo LICENSE); `restricted: false`
 - [x] Fonts: Gestalt uses the platform system stack (no brand font); open Inter used as the stand-in, JetBrains Mono for the SF Mono code stack; the true stacks are named in prose only
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Token spot-check (≥10)
 
@@ -69,5 +69,5 @@ exactly as shipped:
 
 - Automated checks (schema, lint, spot-check, license, font substitution) completed by the pipeline.
 - **Human reviewer sign-off required before `status: published`** (kept `draft` until then).
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

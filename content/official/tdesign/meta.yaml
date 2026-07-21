@@ -36,5 +36,5 @@ links:
   docs: https://tdesign.tencent.com/design/color
   github: https://github.com/Tencent/tdesign-common
 restricted: false
-status: draft
+status: published
 spec_version: alpha

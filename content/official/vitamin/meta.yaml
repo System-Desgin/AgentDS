@@ -35,5 +35,5 @@ restricted: false
 links:
   official_site: https://www.decathlon.design
   github: https://github.com/Decathlon/vitamin-web
-status: draft
+status: published
 spec_version: alpha

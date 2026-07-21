@@ -35,5 +35,5 @@ provenance:
 restricted: false
 links:
   official_site: https://www.nvidia.com
-status: draft
+status: published
 spec_version: alpha

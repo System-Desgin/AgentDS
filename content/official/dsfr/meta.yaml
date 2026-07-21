@@ -36,5 +36,5 @@ restricted_reason: "The DSFR visual identity is legally restricted to French sta
 links:
   official_site: https://www.systeme-de-design.gouv.fr
   github: https://github.com/GouvernementFR/dsfr
-status: draft
+status: published
 spec_version: alpha

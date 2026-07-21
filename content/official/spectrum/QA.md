@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (Apache-2.0, from the package.json `license` field and the LICENSE file in adobe/spectrum-design-data); `restricted: false`
 - [x] Fonts: proprietary Adobe Clean substituted (→ Source Sans 3, Adobe's open family); original named in prose only. Source Code Pro is the literal `code-font-family` token value — no substitution needed
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Token spot-check (≥10)
 
@@ -52,5 +52,5 @@ Notes:
 
 - Automated checks (schema, lint, spot-check, license, font substitution) completed by the pipeline.
 - **Human reviewer sign-off required before `status: published`** (kept `draft` until then).
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

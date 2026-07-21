@@ -36,5 +36,5 @@ links:
   official_site: https://ui.docs.amplify.aws
   docs: https://ui.docs.amplify.aws/react/theming
   github: https://github.com/aws-amplify/amplify-ui
-status: draft
+status: published
 spec_version: alpha

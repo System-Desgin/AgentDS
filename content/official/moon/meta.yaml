@@ -35,5 +35,5 @@ restricted: false
 links:
   official_site: https://moon.io
   github: https://github.com/coingaming/moon-light
-status: draft
+status: published
 spec_version: alpha

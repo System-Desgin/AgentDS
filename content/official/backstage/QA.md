@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (Apache-2.0, `license` field of `@backstage/theme@0.7.3` package.json + repo LICENSE); `restricted: false`
 - [x] Fonts: Backstage bundles no fonts (system stack: Helvetica Neue, Helvetica, Roboto, Arial); open Inter / JetBrains Mono used as stand-ins in tokens, originals named in prose only
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Token spot-check (≥10)
 
@@ -65,5 +65,5 @@ Notes for the reviewer:
 - **Human reviewer sign-off required before `status: published`** (kept `draft`
   until then). Cross-check palette values against the dist files cited above
   (values are canonical from package sources, not auto-extracted).
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — observed-language only, no copied text from apple.com
 - [x] License SPDX + URL verified — CC-BY-4.0 is this entry's own content license (independent analysis; there is no upstream OSS token package); `restricted: false`
 - [x] Fonts: the observed SF Pro is proprietary and substituted (all levels → Inter; monospace stand-in → JetBrains Mono); original named in prose only
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 - [x] Disclaimer header present (verbatim, first thing after front matter; never removed)
 
 ## Token spot-check (≥10)
@@ -70,5 +70,5 @@ secondary text at 5.07:1.
   (docs/04-DATA-SOURCES.md §5) against the two provenance URLs, confirm the
   four rows marked "verify", and confirm the narrow 4.70:1 button-primary
   pairing is acceptable.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

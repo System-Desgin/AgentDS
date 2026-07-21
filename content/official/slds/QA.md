@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (BSD-3-Clause, from `package.json` of `@salesforce-ux/design-system@2.30.7` and `LICENSE.txt` in the salesforce-ux/design-system repo); `restricted: false`
 - [x] Fonts: proprietary Salesforce Sans substituted (→ Inter, per the `packages/pipeline` substitution map); original named in prose only. Code uses JetBrains Mono in place of the shipped Consolas/Menlo stack. No font binaries committed or served.
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## License & trademark notes (strict handling)
 
@@ -62,5 +62,5 @@ rgb(234, 0, 30)) are fills, not text, and are not used as text tokens here.
 
 - Automated checks (schema, lint, spot-check, license, font substitution) completed by the pipeline.
 - **Human reviewer sign-off required before `status: published`** (kept `draft` until then).
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

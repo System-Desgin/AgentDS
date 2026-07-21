@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (Apache-2.0, `license` field in package.json and LICENSE in the package and repo); `restricted: false`
 - [x] Fonts: Lumo uses a system font stack (no bundled fonts) — Inter stands in for text, JetBrains Mono for code; the real stack is named in prose only
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Token spot-check (≥10)
 
@@ -64,5 +64,5 @@ at or above WCAG AA 4.5:1, including the two tightest: on-primary on primary
 - **Human reviewer sign-off required before `status: published`** (kept `draft` until then).
   Cross-check the manually verified color/typography/spacing values against the
   package source at the pinned version (see grounding note above).
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

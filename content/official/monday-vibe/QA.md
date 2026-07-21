@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (MIT — `monday-ui-style@0.26.2` package.json and `packages/style/LICENSE` in mondaycom/vibe); `restricted: false`
 - [x] Fonts: Figtree (Vibe's first-choice family) is open but not on the preview allow-list, so body tokens carry Roboto — Vibe's own declared fallback in `--font-family`; Poppins (title family) is open and used directly; Roboto Mono chosen for code (Vibe defines no mono face); originals named in prose
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Token spot-check (≥10)
 
@@ -55,5 +55,5 @@ explicitly restrict negative text to `surface`.
 
 - Automated checks (schema, lint, spot-check, license, font substitution) completed by the pipeline.
 - **Human reviewer sign-off required before `status: published`** (kept `draft` until then).
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

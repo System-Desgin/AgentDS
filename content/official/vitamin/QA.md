@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (Apache-2.0, from the package.json `license` field and the LICENSE file shipped in `@vtmn/css-design-tokens@1.1.3` and in Decathlon/vitamin-web); `restricted: false`
 - [x] Fonts: Roboto and Roboto Condensed are free Google Fonts — no substitution needed. Tokens carry Roboto only (Roboto Condensed is not on the preview loader allow-list); the condensed display face is named in prose. Roboto Mono is used for `code` as the open companion — Vitamin defines no monospace face (noted in prose).
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Token spot-check (≥10)
 
@@ -66,5 +66,5 @@
 - Automated checks (schema, lint, spot-check, license, fonts) completed by the pipeline.
 - **Human reviewer sign-off required before `status: published`** (kept `draft` until then).
   Cross-check the hand-converted HSL→hex values and the two 3:1-only status colours.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

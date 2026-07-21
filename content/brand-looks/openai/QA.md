@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — observed-language only, no copied text from openai.com or platform.openai.com
 - [x] License SPDX + URL verified — CC-BY-4.0 is this entry's own content license (independent analysis; there is no upstream OSS token package); `restricted: false`
 - [x] Fonts: the observed proprietary custom sans is substituted (UI/editorial → Inter; serif editorial moments → Source Serif 4; code → JetBrains Mono); original named generically in prose only
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 - [x] Disclaimer header present (verbatim, first thing after front matter; never removed)
 
 ## Token spot-check (≥10)
@@ -75,5 +75,5 @@ The linter reports zero contrast warnings. Measured ratios for the reviewer:
   (docs/04-DATA-SOURCES.md §5) against the two provenance URLs, and confirm
   the four rows marked "verify" (the heritage-green accent and the sparse
   status set).
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

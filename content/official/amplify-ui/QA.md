@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (Apache-2.0, `license` field of `@aws-amplify/ui@6.15.4` package.json and LICENSE in the repo); `restricted: false`
 - [x] Fonts: no proprietary binaries — Amplify's default stack leads with Inter (open) before system fonts (`--amplify-fonts-default-static`); the default theme has no mono token, so JetBrains Mono is the open stand-in (named as such in prose)
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Extraction note
 
@@ -75,5 +75,5 @@ button-primary pairing: font-inverse on primary-80).
 
 - Automated checks (schema, lint, spot-check, license, fonts) completed by the pipeline.
 - **Human reviewer sign-off required before `status: published`** (kept `draft` until then).
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

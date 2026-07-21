@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs (source files are SCSS variables with Chinese comments; no upstream prose was reused)
 - [x] License SPDX + URL verified — `package.json` of `@douyinfe/semi-theme-default@2.101.1` says `MIT` and the package's bundled LICENSE is the MIT text (Copyright 2021 DouyinFE); `restricted: false`
 - [x] Fonts: no proprietary family — `$font-family-regular` in the source leads with open Inter (Google Fonts) before system/CJK fallbacks, so the token value is the real first-choice family; JetBrains Mono is an open stand-in for code (Semi defines no mono token), named as such in prose
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Token spot-check (≥10)
 
@@ -53,5 +53,5 @@ white at 4.69:1; white on primary (#0064FA) in button-primary at 5.0:1.
 
 - Automated checks (schema, lint, spot-check, license, fonts) completed by the pipeline and manual source verification.
 - **Human reviewer sign-off required before `status: published`** (kept `draft` until then).
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

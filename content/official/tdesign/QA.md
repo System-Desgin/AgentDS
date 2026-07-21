@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (MIT, `tdesign-vue-next@1.20.3` package.json and repo LICENSE); `restricted: false`
 - [x] Fonts: TDesign ships a system stack (PingFang SC, Microsoft YaHei, Arial — `--td-font-family`); open Inter stands in, JetBrains Mono for code; originals named in prose only
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Contrast note (1 warning — accurate, not a defect to hide)
 
@@ -64,5 +64,5 @@ All other component pairings meet AA (button-primary 6.54:1, menu-item-active
 - **Human reviewer sign-off required before `status: published`** (kept `draft` until then).
   Confirm the badge-count contrast warning is acceptable and cross-check the
   token table against tdesign.tencent.com and `tdesign-common`.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

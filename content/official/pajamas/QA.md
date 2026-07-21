@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (MIT, `LICENSE` in `@gitlab/ui@135.1.0` and package.json `license` field); `restricted: false`
 - [x] Fonts: GitLab Sans / GitLab Mono are open (OFL) but not on Google Fonts — substituted with Inter / JetBrains Mono in tokens; originals named in prose only. JetBrains Mono is itself the first fallback in GitLab's shipped monospace stack.
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Token spot-check (≥10)
 
@@ -60,5 +60,5 @@ color ramps.
 
 - Automated checks (schema, lint, spot-check, license, font substitution) completed by the pipeline.
 - **Human reviewer sign-off required before `status: published`** (kept `draft` until then).
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (**etalab-2.0**, not MIT — see license note); `restricted: true` set with reason
 - [x] Fonts: Marianne (state-reserved, non-redistributable) substituted with open Public Sans in tokens; Marianne named in prose only; JetBrains Mono (open) for the code level
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Restricted handling (reference-only entry)
 
@@ -89,5 +89,5 @@ token value is the open Public Sans substitute; Marianne appears in prose only.
   Confirm the reference-only/451 behaviour is wired for this slug, the
   etalab-2.0 license reading, and the red-marianne lint warning; cross-check a
   sample of values against systeme-de-design.gouv.fr.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21

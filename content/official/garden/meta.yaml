@@ -35,5 +35,5 @@ restricted: false
 links:
   official_site: https://garden.zendesk.com
   github: https://github.com/zendeskgarden
-status: draft
+status: published
 spec_version: alpha

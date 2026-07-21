@@ -35,5 +35,5 @@ restricted: false
 links:
   official_site: https://www.lightningdesignsystem.com
   github: https://github.com/salesforce-ux/design-system
-status: draft
+status: published
 spec_version: alpha

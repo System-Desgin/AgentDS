@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (MIT, `package.json` of @heathmont/moon-themes-tw@10.22.2 and the moon-light repo LICENSE); `restricted: false`
 - [x] Fonts: proprietary Averta Std substituted (→ DM Sans, itself a Moon font token `--dm-sans`); original named in prose only
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — pending publish-time render check
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Token spot-check (≥10)
 
@@ -77,5 +77,5 @@
   Cross-check the colour roles against `lib/moon.css` (theme-moon-light) and the
   type scale against `ds-moon-preset.js` — values are manually transcribed from
   the published package, not auto-extracted.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Date: 2026-07-21
