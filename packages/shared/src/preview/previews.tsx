@@ -108,7 +108,11 @@ export function TypeScalePreview({
                 fontSize: Math.min(sizePx, 40),
                 fontWeight: Number(weight) || 400,
                 lineHeight: typeof lineHeight === "number" ? lineHeight : 1.3,
-                overflowWrap: "anywhere",
+                // One clipped line: row height stays fixed when the webfont
+                // swaps in post-paint (no CLS from re-wrapping).
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
               }}
             >
               {specimen}
