@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (Apache-2.0); `restricted: false`
 - [x] Fonts: IBM Plex Sans / IBM Plex Mono are open (SIL OFL, Google Fonts) — no substitution needed
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — _pending the Phase 3 renderer_
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Token spot-check (≥10)
 
@@ -37,5 +37,5 @@ canonical Carbon values (2/8px grid, Type set) — cross-check against carbondes
 
 - Automated checks (schema, lint, colour spot-check, license, fonts) completed by the pipeline.
 - **Human reviewer sign-off required before `status: published`** (kept `draft` until then); confirm radius/spacing/type-scale against carbondesignsystem.com.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (publish directed by owner, Claude Code session)
+- Date: 2026-07-21

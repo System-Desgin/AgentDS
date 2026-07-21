@@ -36,5 +36,5 @@ links:
   docs: https://fluent2.microsoft.design/design-tokens
   github: https://github.com/microsoft/fluentui
 restricted: false
-status: draft
+status: published
 spec_version: alpha

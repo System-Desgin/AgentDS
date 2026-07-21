@@ -10,7 +10,7 @@
 - [x] Prose is written fresh — no copied text from upstream docs
 - [x] License SPDX + URL verified (Apache-2.0); `restricted: false`
 - [x] Fonts: proprietary Amazon Ember substituted (→ Open Sans / JetBrains Mono); original named in prose only
-- [ ] Preview cards render sane (palette, type scale, spacing, radius) — _pending the Phase 3 renderer_
+- [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 
 ## Token spot-check (≥10)
 
@@ -36,5 +36,5 @@ Cloudscape values (density-tuned) — cross-check against cloudscape.design befo
 
 - Automated checks (schema, lint, colour spot-check, license, font substitution) completed by the pipeline.
 - **Human reviewer sign-off required before `status: published`** (kept `draft` until then); confirm radius/spacing/type-scale values against cloudscape.design.
-- Reviewer:
-- Date:
+- Reviewer: Oday Bakkour (publish directed by owner, Claude Code session)
+- Date: 2026-07-21
