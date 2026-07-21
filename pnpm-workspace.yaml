@@ -17,6 +17,8 @@ overrides:
   multer: ">=2.2.0"
   postcss: ">=8.5.10"
   "@hono/node-server": ">=1.19.13"
+  # ReDoS GHSA-3jxr-9vmj-r5cp via @nestjs/cli > fork-ts-checker > minimatch
+  "brace-expansion@<1.1.16": ">=1.1.16"
 
 # Single source of truth for dependency versions across the monorepo.
 # Every package references these with the "catalog:" protocol so upgrades
