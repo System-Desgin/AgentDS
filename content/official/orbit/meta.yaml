@@ -1,0 +1,39 @@
+slug: orbit
+name: Orbit
+path: official
+maker: Kiwi.com
+summary: Kiwi.com's design system for travel — a friendly green-teal brand, calm neutrals, and booking-ready flows.
+description: >-
+  Orbit is Kiwi.com's open-source design system, built for travel and booking
+  products. Its tokens ship as JS (@kiwicom/orbit-design-tokens); the values
+  here are grounded in that package's default theme. Orbit's language is friendly
+  and legible: a signature green-teal product colour, calm cloud neutrals, a blue
+  for links, generous rounding, and Roboto typography.
+categories:
+  - travel-consumer
+  - saas-product
+  - mobile-first
+tags:
+  - kiwi
+  - orbit
+  - travel
+best_for:
+  - Travel, booking, and consumer flows
+  - Friendly, high-legibility consumer UIs
+  - Mobile-first product surfaces
+license:
+  spdx: MIT
+  url: https://github.com/kiwicom/orbit/blob/master/LICENSE
+  notes: Orbit design tokens are MIT-licensed. Roboto is open (Apache-2.0) and available on Google Fonts.
+provenance:
+  source_type: npm
+  package: "@kiwicom/orbit-design-tokens"
+  version: 11.0.0
+  extracted_at: "2026-07-02"
+links:
+  official_site: https://orbit.kiwi
+  docs: https://orbit.kiwi/design-tokens/
+  github: https://github.com/kiwicom/orbit
+restricted: false
+status: draft
+spec_version: alpha

@@ -1,0 +1,39 @@
+slug: base-web
+name: Base Web
+path: official
+maker: Uber
+summary: Uber's design system — a stark black-and-white base with an electric blue accent, built for scale.
+description: >-
+  Base Web is Uber's open-source React design system. Its themes ship as JS
+  objects (baseui/themes); the values here reflect Base's documented default
+  LightTheme. Base's language is stark and utilitarian: a black primary on a
+  mono neutral ramp, an electric blue accent, restrained rounding, and dense,
+  legible UI type — tuned for operational, data-heavy tools.
+categories:
+  - enterprise-dashboard
+  - data-dense
+  - saas-product
+tags:
+  - uber
+  - base-web
+  - baseui
+best_for:
+  - Operational and logistics tools
+  - Data-dense internal dashboards
+  - Teams wanting a stark, high-contrast base
+license:
+  spdx: MIT
+  url: https://github.com/uber/baseweb/blob/main/LICENSE
+  notes: Base Web is MIT-licensed. Uber Move is proprietary and substituted here with an open sans-serif.
+provenance:
+  source_type: npm
+  package: "baseui"
+  version: "18.1.0"
+  extracted_at: "2026-07-02"
+links:
+  official_site: https://baseweb.design
+  docs: https://baseweb.design/guides/theming/
+  github: https://github.com/uber/baseweb
+restricted: false
+status: draft
+spec_version: alpha

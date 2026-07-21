@@ -1,0 +1,40 @@
+slug: primer
+name: Primer
+path: official
+maker: GitHub
+summary: GitHub's design system — the archetype for developer tools, precise and information-dense.
+description: >-
+  Primer is GitHub's open-source design system, powering github.com and the
+  developer tools around it. Its primitives ship as versioned token packages
+  (@primer/primitives) covering functional colours, typography, spacing, and
+  borders across light and dark modes. Primer's visual language is calm and
+  utilitarian: a neutral canvas, GitHub's accent blue for interaction, tight
+  spacing, and highly legible UI type built for dense, text-heavy interfaces.
+categories:
+  - dev-tools
+  - saas-product
+  - data-dense
+tags:
+  - github
+  - primer
+  - developer-tools
+best_for:
+  - Developer tools and code-centric UIs
+  - Information-dense dashboards and lists
+  - Teams matching a GitHub-like product feel
+license:
+  spdx: MIT
+  url: https://github.com/primer/primitives/blob/main/LICENSE
+  notes: Primer primitives are MIT-licensed; UI type uses the open-source system font stack.
+provenance:
+  source_type: npm
+  package: "@primer/primitives"
+  version: 11.9.0
+  extracted_at: "2026-07-02"
+links:
+  official_site: https://primer.style
+  docs: https://primer.style/foundations/color
+  github: https://github.com/primer/primitives
+restricted: false
+status: draft
+spec_version: alpha

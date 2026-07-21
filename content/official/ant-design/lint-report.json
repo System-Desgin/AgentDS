@@ -1,0 +1,28 @@
+{
+  "findings": [
+    {
+      "severity": "warning",
+      "path": "components.button-primary",
+      "message": "textColor (#ffffff) on backgroundColor (#1677ff) has contrast ratio 4.10:1, below WCAG AA minimum of 4.5:1."
+    },
+    {
+      "severity": "warning",
+      "path": "components.button-primary-hover",
+      "message": "textColor (#ffffff) on backgroundColor (#4096ff) has contrast ratio 2.99:1, below WCAG AA minimum of 4.5:1."
+    },
+    {
+      "severity": "warning",
+      "path": "components.badge-error",
+      "message": "textColor (#ffffff) on backgroundColor (#ff4d4f) has contrast ratio 3.27:1, below WCAG AA minimum of 4.5:1."
+    },
+    {
+      "severity": "info",
+      "message": "Design system defines 13 colors, 7 typography scales, 4 rounding levels, 7 spacing tokens, 13 components."
+    }
+  ],
+  "summary": {
+    "errors": 0,
+    "warnings": 3,
+    "infos": 1
+  }
+}

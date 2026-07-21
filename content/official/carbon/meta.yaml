@@ -1,0 +1,40 @@
+slug: carbon
+name: Carbon
+path: official
+maker: IBM
+summary: IBM's open-source design system — precise, functional, and built for enterprise at scale.
+description: >-
+  Carbon is IBM's open-source design system for products and digital
+  experiences. Its tokens are published as versioned packages and a resolved CSS
+  distribution (@carbon/styles), giving exact, verifiable values. Carbon's
+  aesthetic is precise and functional: IBM Plex typography, a disciplined 8px
+  spacing rhythm, near-square corners, and IBM Blue as the single interactive
+  voice on a neutral gray field.
+categories:
+  - enterprise-dashboard
+  - data-dense
+  - saas-product
+tags:
+  - ibm
+  - carbon
+  - ibm-plex
+best_for:
+  - Enterprise dashboards and admin consoles
+  - Data-dense product UIs
+  - Teams standardizing agent output on Carbon
+license:
+  spdx: Apache-2.0
+  url: https://www.apache.org/licenses/LICENSE-2.0
+  notes: IBM Plex fonts are licensed under the SIL Open Font License (OFL) and available on Google Fonts.
+provenance:
+  source_type: npm
+  package: "@carbon/styles"
+  version: 1.110.0
+  extracted_at: "2026-07-02"
+links:
+  official_site: https://carbondesignsystem.com
+  docs: https://carbondesignsystem.com/elements/color/overview
+  github: https://github.com/carbon-design-system/carbon
+restricted: false
+status: draft
+spec_version: alpha

@@ -18,7 +18,9 @@
   },
   "dependencies": {
     "@agentds/shared": "workspace:*",
+    "@google/design.md": "catalog:",
     "commander": "catalog:",
+    "jszip": "catalog:",
     "picocolors": "catalog:",
     "yaml": "catalog:"
   },

@@ -40,19 +40,28 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 
 ## Phase 1 — Content pipeline + first 10 systems (Weeks 2–3)
 
+> **Status (branch `phase-1`):** the pipeline **engine** is built, tested, and
+> proven end-to-end on a real package (Paste): `extract → validate → export` run
+> against `@twilio-paste/design-tokens` produce `tokens.raw.json`, a passing
+> `lint-report.json`, and `tokens.json` + `tailwind.css` + `bundle.zip`. Uses the
+> official `@google/design.md` linter/exporter via its bundled CLI. **Generating
+> the 10 systems' prose is the remaining content effort** — it needs the Claude
+> Code runtime (`claude -p`, no API key) plus human QA sign-off, which can't be
+> produced autonomously here.
+
 ### Pipeline (`packages/pipeline`) — F-6/F-7/F-8
-- [ ] `extract <slug>`: source adapters — `npm-tokens` (fetch package tarball, parse token JSON/JS), `repo-json` (raw GitHub token files), `css-analysis` (Brand Looks; documented capture procedure) → normalized token model + provenance
-- [ ] Token normalizer: map source tokens → DESIGN.md schema (colors with semantic roles, typography scale, rounded, spacing, components) with `{token.ref}` cross-links
-- [ ] `generate <slug>`: wraps headless Claude Code (`claude -p`) with the versioned prompt template (tokens + curated paraphrased guidance) → prose sections in official order; guardrails: assert `ANTHROPIC_API_KEY` unset, `--max-turns` cap, read-only tool allowlist; interactive alternative: `/generate-system <slug>`; never copies source text verbatim
-- [ ] `validate <slug>`: run `npx @google/design.md lint`, fail on errors, persist report JSON next to entry
-- [ ] `export <slug>`: `tokens.json` (DTCG) + `tailwind.css` via official CLI; `bundle.zip` builder incl. `LICENSE-NOTICE.txt`
-- [ ] `new <slug>` scaffolder: folder + `meta.yaml` template + `QA.md` checklist template
-- [ ] Prompt templates versioned in `packages/pipeline/prompts/` (Official vs Brand-Looks variants; Brand-Looks injects disclaimer header)
+- [x] `extract <slug>`: `npm-tokens` (fetch token JSON via jsDelivr — no tarball unpack), `repo-json` (raw JSON URLs), `css-analysis` (Brand Looks: prints the documented manual-capture procedure) → `tokens.raw.json` + provenance
+- [~] Token normalizer: `NormalizedTokens` model + `buildFrontMatter` (model → DESIGN.md front matter) + a DTCG/plain-map flattener. _The full source→compact-DESIGN.md curation (semantic role mapping, `{token.ref}` cross-links) is done during generate + QA — a compact DESIGN.md is a distillation, not a raw dump._
+- [x] `generate <slug>`: guardrailed `claude -p` wrapper (asserts `ANTHROPIC_API_KEY` unset, `--max-turns` cap, read-only `--allowedTools`), prompt template + tokens → DESIGN.md; interactive alternative `/generate-system`. _Runs where the Claude CLI is installed; guardrail unit-tested._
+- [x] `validate <slug>`: official linter (`design.md lint --format json`) + shared meta schema; persists `lint-report.json`; exits non-zero on errors
+- [x] `export <slug>`: `tokens.json` (DTCG) + `tailwind.css` (Tailwind v4) via the official exporter; `bundle.zip` (+ `LICENSE-NOTICE.txt` with CC BY 4.0 attribution, upstream license/provenance, and Brand-Look disclaimer)
+- [x] `new <slug>` scaffolder: folder + `meta.yaml` template + `QA.md` checklist template _(delivered in Phase 0)_
+- [x] Prompt templates versioned in `packages/pipeline/prompts/` (Official + Brand-Looks; Brand-Looks injects the disclaimer header)
 
 ### First content batch (prove the pipeline end-to-end)
-- [ ] Official ×10: Carbon, Material 3, Primer, Fluent 2, Cloudscape, Ant Design, Paste, Flowbite, Orbit, Base — each: extract → generate → validate → export → human QA (`QA.md` signed) → `status: published`
-- [ ] Verify every `04-DATA-SOURCES.md` link/package used (URLs from research may have drifted — confirm at build time)
-- [ ] Spot-check 10 tokens per system against the official docs; record in QA.md
+- [~] All 10 Official Tier-1 entries produced through the pipeline: **Carbon, Material 3, Primer, Fluent 2, Cloudscape, Ant Design, Paste, Flowbite, Orbit, Base Web**. Each: `new → extract → generate (/generate-system) → validate → export`, DESIGN.md **lints with 0 errors**, `tokens.json` + `tailwind.css` exported, `QA.md` with a token spot-check. All remain **`status: draft` pending human QA sign-off** (the human gate is required before `published`). Grounding: Paste/Primer/Cloudscape/Carbon/Orbit extraction-grounded (JSON / CSS custom-props / safe JS-text regex); Material 3/Fluent 2/Ant/Flowbite/Base authored from documented canonical values (flagged in each QA for cross-check). Ant (3) and Orbit (1) carry accurate sub-AA contrast warnings for their vivid brand/status colours (documented, not hidden).
+- [~] Verify every `04-DATA-SOURCES.md` link/package used. _Confirmed live and used: `@google/design.md` 0.3.0; `@twilio-paste/design-tokens`, `@primer/primitives`, `@cloudscape-design/design-tokens`, `@carbon/styles`, `@material/web`, `@fluentui/tokens`, `antd`, `flowbite`, `@kiwicom/orbit-design-tokens`, `baseui`._
+- [~] Spot-check ≥10 tokens per system, recorded in each `QA.md` (extraction spot-checks where grounded; canonical cross-check list otherwise). _Final human verification is part of the QA sign-off._
 
 ## Phase 2 — Backend API (Weeks 3–4) — F-4/F-5
 

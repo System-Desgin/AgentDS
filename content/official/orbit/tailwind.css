@@ -1,0 +1,48 @@
+@theme {
+  --color-primary: #008f7b;
+  --color-on-primary: #ffffff;
+  --color-primary-strong: #007061;
+  --color-link: #0070c8;
+  --color-surface: #ffffff;
+  --color-on-surface: #252a31;
+  --color-on-surface-variant: #4f5e71;
+  --color-surface-variant: #f5f7f9;
+  --color-border: #e8edf1;
+  --color-border-strong: #bac7d5;
+  --color-success: #048724;
+  --color-warning: #b36200;
+  --color-error: #d21c1c;
+  --font-display: "Roboto";
+  --font-heading: "Roboto";
+  --font-title: "Roboto";
+  --font-body-lg: "Roboto";
+  --font-body: "Roboto";
+  --font-label: "Roboto";
+  --font-code: "JetBrains Mono";
+  --text-display: 2.5rem;
+  --text-heading: 1.75rem;
+  --text-title: 1.375rem;
+  --text-body-lg: 1rem;
+  --text-body: 0.875rem;
+  --text-label: 0.75rem;
+  --text-code: 0.875rem;
+  --font-weight-display: 700;
+  --font-weight-heading: 700;
+  --font-weight-title: 500;
+  --font-weight-body-lg: 400;
+  --font-weight-body: 400;
+  --font-weight-label: 500;
+  --font-weight-code: 400;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 40px;
+}
+
