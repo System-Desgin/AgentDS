@@ -5,8 +5,8 @@ Live from Phase 4 — `npx skills add` reads this public repo directly (skills.s
 indexes repos; there is no upload step).
 
 ```bash
-npx skills add System-Design/AgentDS --skill design-systems   # master skill
-npx skills add System-Design/AgentDS --skill carbon           # single system
+npx skills add System-Desgin/AgentDS --skill design-systems   # master skill
+npx skills add System-Desgin/AgentDS --skill carbon           # single system
 ```
 
 ## Layout

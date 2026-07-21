@@ -17,4 +17,4 @@ Refresh from the live catalog when needed:
 `curl -fsSL https://api.agent-ds.oday-bakkour.com/v1/systems/flowbite/design.md`
 (also available: `tokens.json`, `tailwind.css`, `bundle.zip`). Full catalog with
 30+ systems: https://agent-ds.oday-bakkour.com — or install the master skill:
-`npx skills add System-Design/AgentDS --skill design-systems`.
+`npx skills add System-Desgin/AgentDS --skill design-systems`.

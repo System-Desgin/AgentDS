@@ -21,8 +21,8 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 > scaffolded (datasource/generator only) — models + migrations are Phase 2.
 
 ### Repo & tooling
-- [x] GitHub org + repo exist: `System-Design/AgentDS` (private)
-- [x] Org slug corrected to `System-Design` (2026-07-02) — install command is final
+- [x] GitHub org + repo exist: `System-Desgin/AgentDS` (private during build; public since 2026-07-21)
+- [x] Org slug verified against the live public repo (2026-07-21): it is `System-Desgin` — all install commands, badges, and links updated to match
 - [x] Repo hygiene: LICENSE (Apache-2.0) at root + `content/LICENSE` (CC BY 4.0) + NOTICE, SECURITY.md (contact@oday-bakkour.com), README, `gitleaks` in pre-commit + CI — _remaining: enable branch protection on `main` (PR + CI required) in GitHub settings_
 - [x] Scaffold monorepo (`pnpm` workspaces + Turborepo): `apps/web`, `apps/api`, `packages/shared`, `packages/pipeline`, `content/`, `skills/`
 - [x] Root configs: TypeScript strict (no `any`), ESLint + Prettier, `.editorconfig`, commitlint (conventional commits), husky pre-commit (lint-staged)
@@ -129,7 +129,7 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 - [x] Restricted-entry handling verified for DSFR + SLDS (PRD §12): DSFR is `restricted: true` reference-only with a 451 reason (API 451 path covered by the Phase 2 e2e suite); SLDS publishes under BSD-3-Clause with strict font-substitution + trademark notes
 - [ ] **Flip repo to public** (Settings → Change visibility): review the full git history first — all of it becomes public; confirm LICENSE/SECURITY.md/README are in place — _external: owner action in GitHub settings_
 - [x] `skills/` live in-repo: master `design-systems` skill (SKILL.md + 7 bundled archetypes + `fetch_design_md.sh|py` hitting `/v1`) + 7 flagship individual skills (carbon, material-3, primer, fluent-2, cloudscape, flowbite, ant-design)
-- [ ] Test installs on real agents: Claude Code, Cursor, Codex — `npx skills add System-Design/AgentDS --skill design-systems` end-to-end, agent generates on-system UI — _external: requires the repo to be public first_
+- [ ] Test installs on real agents: Claude Code, Cursor, Codex — `npx skills add System-Desgin/AgentDS --skill design-systems` end-to-end, agent generates on-system UI — _external: requires the repo to be public first_
 - [~] README with skills.sh badges, compatibility matrix, legal disclaimer — done; _remaining: submit/verify indexing on skills.sh once the repo is public_
 
 ## Phase 5 — Hardening & launch (Week 8)

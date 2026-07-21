@@ -1,7 +1,7 @@
 # PRD — AgentDS v1
 
 **Status:** Draft 1.1 · **Owner:** Oday Bakkour · **Date:** 2026-07-02
-**Identity:** AgentDS · web https://agent-ds.oday-bakkour.com · api https://api.agent-ds.oday-bakkour.com · repo github.com/System-Design/AgentDS (private during build → public at Phase 4) · contact contact@oday-bakkour.com · license: code Apache-2.0 / content CC BY 4.0
+**Identity:** AgentDS · web https://agent-ds.oday-bakkour.com · api https://api.agent-ds.oday-bakkour.com · repo github.com/System-Desgin/AgentDS (private during build → public at Phase 4) · contact contact@oday-bakkour.com · license: code Apache-2.0 / content CC BY 4.0
 **Related docs:** `01-PROJECT-IDEA.md`, `03-DEV-CHECKLIST.md`, `04-DATA-SOURCES.md`, `DESIGN.md`, `CLAUDE.md`
 
 ---
@@ -144,7 +144,7 @@ content/official/carbon/
 ### 7.4 Must-have (P0) — skills.sh distribution
 
 **F-9 Skills distribution** (skills ship from `skills/` in the monorepo, which flips to **public at the start of Phase 4** — `npx skills add` requires a reachable public repo; a dedicated repo is optional later if leaderboard branding demands it)
-- [ ] Master skill `design-systems`: SKILL.md (workflows: "use system X", "list systems", "create a DESIGN.md") + `references/` bundling 7 archetype systems + `scripts/fetch_design_md.(py|sh)` calling `GET https://api.agent-ds.oday-bakkour.com/v1/systems/{slug}/design.md`. Package ≤ ~100KB. Install: `npx skills add System-Design/AgentDS --skill design-systems`.
+- [ ] Master skill `design-systems`: SKILL.md (workflows: "use system X", "list systems", "create a DESIGN.md") + `references/` bundling 7 archetype systems + `scripts/fetch_design_md.(py|sh)` calling `GET https://api.agent-ds.oday-bakkour.com/v1/systems/{slug}/design.md`. Package ≤ ~100KB. Install: `npx skills add System-Desgin/AgentDS --skill design-systems`.
 - [ ] 5–7 individual flagship skills (carbon, material-3, primer, fluent-2, cloudscape, flowbite, ant-design) — each a thin SKILL.md + bundled file, so they rank individually on the skills.sh leaderboard.
 - [ ] README with install badges (`skills.sh/b/...`), agent compatibility list, disclaimer.
 

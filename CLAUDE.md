@@ -6,8 +6,8 @@ Instructions for Claude Code working in this repository. Follow them exactly; wh
 
 - **Name:** AgentDS · **Owner:** Oday Bakkour
 - **Production:** web `https://agent-ds.oday-bakkour.com` (Vercel) · API `https://api.agent-ds.oday-bakkour.com` (Dokploy)
-- **Repo:** `github.com/System-Design/AgentDS` — private during build, **public from Phase 4**. Treat every commit as world-readable from day one (the full history ships when visibility flips): no secrets, no client data, no internal Cyberpedia material, ever.
-- **Skills install (public contract):** `npx skills add System-Design/AgentDS --skill design-systems`
+- **Repo:** `github.com/System-Desgin/AgentDS` — private during build, **public from Phase 4**. Treat every commit as world-readable from day one (the full history ships when visibility flips): no secrets, no client data, no internal Cyberpedia material, ever.
+- **Skills install (public contract):** `npx skills add System-Desgin/AgentDS --skill design-systems`
 - **Contact / security reports:** contact@oday-bakkour.com
 - **Licensing:** code Apache-2.0 · catalog content (`content/`) CC BY 4.0 with per-entry upstream notices
 

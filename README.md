@@ -1,7 +1,7 @@
 # AgentDS
 
-[![skills.sh](https://skills.sh/b/System-Design/AgentDS)](https://www.skills.sh/)
-[![CI](https://github.com/System-Design/AgentDS/actions/workflows/ci.yml/badge.svg)](https://github.com/System-Design/AgentDS/actions/workflows/ci.yml)
+[![skills.sh](https://skills.sh/b/System-Desgin/AgentDS)](https://www.skills.sh/)
+[![CI](https://github.com/System-Desgin/AgentDS/actions/workflows/ci.yml/badge.svg)](https://github.com/System-Desgin/AgentDS/actions/workflows/ci.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](./LICENSE)
 [![Content: CC BY 4.0](https://img.shields.io/badge/content-CC%20BY%204.0-lightgrey.svg)](./content/LICENSE)
 
@@ -12,7 +12,7 @@
 
 - **Web:** https://agent-ds.oday-bakkour.com
 - **API:** https://api.agent-ds.oday-bakkour.com (read-only, no key)
-- **Install:** `npx skills add System-Design/AgentDS --skill design-systems`
+- **Install:** `npx skills add System-Desgin/AgentDS --skill design-systems`
 - **License:** code Apache-2.0 · catalog content ([`content/`](./content)) CC BY 4.0
 - **Contact / security:** contact@oday-bakkour.com
 
@@ -37,7 +37,7 @@ Every published file passes `npx @google/design.md lint` and a human QA gate.
 
 | Agent       | Quickest path                                                    | Also works                                                                 |
 | ----------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| Claude Code | `npx skills add System-Design/AgentDS --skill design-systems`    | Drop a fetched `DESIGN.md` in the repo root; reference it from `CLAUDE.md` |
+| Claude Code | `npx skills add System-Desgin/AgentDS --skill design-systems`    | Drop a fetched `DESIGN.md` in the repo root; reference it from `CLAUDE.md` |
 | Cursor      | Fetched `DESIGN.md` in repo root + a pointer in `.cursor/rules/` | `curl` from the API in a rule                                              |
 | Codex       | Fetched `DESIGN.md` in repo root + a pointer in `AGENTS.md`      | skills.sh (where supported)                                                |
 | Copilot     | Fetched `DESIGN.md` + `.github/copilot-instructions.md` pointer  | —                                                                          |

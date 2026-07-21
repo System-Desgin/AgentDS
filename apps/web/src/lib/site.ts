@@ -9,7 +9,7 @@ export const SITE_NAME = "AgentDS";
 export const SITE_DESCRIPTION =
   "A free, curated catalog of agent-ready design system files (DESIGN.md + tokens) with previews and a public fetch API.";
 
-export const INSTALL_COMMAND = "npx skills add System-Design/AgentDS --skill design-systems";
+export const INSTALL_COMMAND = "npx skills add System-Desgin/AgentDS --skill design-systems";
 
-export const GITHUB_URL = "https://github.com/System-Design/AgentDS";
+export const GITHUB_URL = "https://github.com/System-Desgin/AgentDS";
 export const CONTACT_EMAIL = "contact@oday-bakkour.com";
