@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Why AgentDS exists, how entries are produced and verified, and the legal ground rules for Official Systems and Brand Looks.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

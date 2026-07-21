@@ -92,6 +92,7 @@ export async function generateMetadata({
   return {
     title: `Use DESIGN.md with ${snippet.label}`,
     description: `Set up ${snippet.label} to follow an AgentDS design system file.`,
+    alternates: { canonical: `/agents/${agent}` },
   };
 }
 

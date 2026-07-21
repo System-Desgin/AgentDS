@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "What is DESIGN.md?",
   description:
     "DESIGN.md is an open format from Google Labs: machine-readable design tokens plus human-readable rationale in one markdown file any coding agent can follow.",
+  alternates: { canonical: "/what-is-design-md" },
 };
 
 const EXAMPLE = `---
