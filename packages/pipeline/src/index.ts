@@ -8,7 +8,8 @@ export { runExport } from "./commands/export";
 export { buildMetaTemplate } from "./templates/meta-template";
 export { buildQaTemplate } from "./templates/qa-template";
 export { buildFrontMatter, assembleDesignMd } from "./templates/design-md";
-export { buildLicenseNotice } from "./templates/license-notice";
+// Moved to @agentds/shared (the API bundles at ingest too); re-exported for compatibility.
+export { buildLicenseNotice } from "@agentds/shared";
 
 export { flattenTokens } from "./extract/parse-dtcg";
 export { parseCssVars } from "./extract/parse-css";

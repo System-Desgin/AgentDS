@@ -1,1 +1,10 @@
-export type { ApiEnvelope, PaginatedEnvelope, ProblemDetails } from "./api";
+export type {
+  ApiEnvelope,
+  CategoryWithCount,
+  LintSummaryDto,
+  PaginatedEnvelope,
+  ProblemDetails,
+  SystemCountersDto,
+  SystemDetail,
+  SystemListItem,
+} from "./api";

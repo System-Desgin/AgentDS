@@ -1,8 +1,6 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
     "module": "commonjs",
     "moduleResolution": "node10",
     "experimentalDecorators": true,
@@ -13,6 +11,7 @@
     // one strictness carve-out; `any` remains banned and everything else strict.
     "strictPropertyInitialization": false
   },
-  "include": ["src/**/*.ts"],
+  // rootDir/outDir live in tsconfig.build.json — typecheck also covers test/.
+  "include": ["src/**/*.ts", "test/**/*.ts", "prisma.config.ts"],
   "exclude": ["dist", "node_modules"]
 }

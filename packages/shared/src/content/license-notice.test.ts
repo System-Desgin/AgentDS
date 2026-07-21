@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { metaSchema, type Meta } from "@agentds/shared";
+import { metaSchema, type Meta } from "../schemas/meta-schema";
 import { buildLicenseNotice } from "./license-notice";
 
 function meta(overrides: Record<string, unknown> = {}): Meta {

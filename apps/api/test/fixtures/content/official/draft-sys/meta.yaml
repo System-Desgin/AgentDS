@@ -1,0 +1,22 @@
+slug: draft-sys
+name: Draft System
+path: official
+maker: Example Co
+summary: Fixture entry still awaiting QA sign-off.
+description: A draft fixture entry — ingested but never listed or served.
+categories:
+  - saas-product
+tags: []
+best_for: []
+license:
+  spdx: MIT
+  url: https://opensource.org/license/mit
+provenance:
+  source_type: npm
+  package: "@example/tokens"
+  version: 0.1.0
+  extracted_at: "2026-07-01"
+links: {}
+restricted: false
+status: draft
+spec_version: alpha

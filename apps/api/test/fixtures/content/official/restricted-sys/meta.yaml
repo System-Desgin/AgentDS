@@ -1,0 +1,23 @@
+slug: restricted-sys
+name: Restricted System
+path: official
+maker: Example State
+summary: Fixture entry whose files are legally restricted.
+description: A published but restricted fixture entry — file endpoints return 451.
+categories:
+  - government
+tags: []
+best_for: []
+license:
+  spdx: MIT
+  url: https://opensource.org/license/mit
+provenance:
+  source_type: repo
+  repo: https://github.com/example/restricted
+  commit: abc1234
+  extracted_at: "2026-07-01"
+links: {}
+restricted: true
+restricted_reason: Visual identity legally restricted to the issuing state.
+status: published
+spec_version: alpha

@@ -49,3 +49,6 @@ Thumbs.db
 # Misc
 *.pem
 .vercel/
+
+# API test fixtures: bundle.zip is produced by ingest during test runs
+apps/api/test/fixtures/content/**/bundle.zip

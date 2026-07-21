@@ -1,9 +1,10 @@
-import type { Meta } from "@agentds/shared";
+import type { Meta } from "../schemas/meta-schema";
 
 /**
  * Build the LICENSE-NOTICE.txt included in every bundle.zip: AgentDS's CC BY 4.0
  * attribution plus the upstream source's own license/provenance, and the
- * independence disclaimer for Brand Looks.
+ * independence disclaimer for Brand Looks. Shared because both the pipeline
+ * (export command) and the API (bundle pre-build at ingest) produce bundles.
  */
 export function buildLicenseNotice(meta: Meta): string {
   const lines: string[] = [];
