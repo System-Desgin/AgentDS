@@ -34,6 +34,10 @@ export const metadata: Metadata = {
     template: `%s · ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
+  robots: { index: true, follow: true },
+  publisher: SITE_NAME,
+  creator: "Oday Bakkour",
+  authors: [{ name: "Oday Bakkour", url: SITE_URL }],
   openGraph: {
     siteName: SITE_NAME,
     type: "website",

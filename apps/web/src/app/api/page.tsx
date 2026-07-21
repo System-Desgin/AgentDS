@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "API",
   description:
     "The AgentDS public fetch API: read-only JSON + raw-file endpoints for every published design system.",
+  alternates: { canonical: "/api" },
 };
 
 const ENDPOINTS = [
