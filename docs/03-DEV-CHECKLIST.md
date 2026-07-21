@@ -142,7 +142,7 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 - [x] Pipeline output review (2026-07-21): sweep of all 42 published DESIGN.md files — zero HTML/script/embed tags; preview renderer test keeps asserting script-free server markup
 
 ### Launch
-- [~] Lighthouse (mobile emulation, production, 2026-07-21): home **99/96/96/100**, detail pages 92-93 perf (LCP waited on the render-blocking specimen-fonts stylesheet — now deferred to post-paint + preconnect; re-measure after deploy)
+- [x] Lighthouse ≥95 perf/a11y/SEO on home + 3 detail pages — **met** (mobile emulation, production, 2026-07-21): home **99**/96/100, carbon **98**/97/100, stripe **97**/97/100 (CLS 0), spectrum **96**/97/100. Two fixes en route: specimen-fonts stylesheet deferred off the critical path (was render-blocking, LCP 3.3s), then specimens clamped to one clipped line (font swap had introduced CLS 0.318)
 - [~] 404/500 pages: 404 returns real status; root `error.tsx` + `global-error.tsx` added (styled to DESIGN.md) — _remaining: Uptime Kuma on Dokploy + alerting (owner)_
 - [~] Launch assets: copy for PH/HN/X/LinkedIn drafted in `docs/06-LAUNCH-COPY.md` — _remaining: demo GIF (prompt → on-system UI) and comparison screenshot_
 - [ ] Publish, submit to skills.sh visibility channels, awesome-lists PRs where appropriate
