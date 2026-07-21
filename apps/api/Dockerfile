@@ -21,8 +21,9 @@ RUN pnpm --filter api exec prisma generate \
   && pnpm --filter @agentds/shared build \
   && pnpm --filter api build
 # Produce a self-contained, production-only deployment of the api package
-# (workspace deps are injected as real files, not symlinks).
-RUN pnpm --filter api --prod deploy /prod/api
+# (workspace deps copied in as real files, not symlinks). pnpm 10 requires
+# --legacy for this unless the workspace opts into injected packages.
+RUN pnpm --filter api --prod deploy --legacy /prod/api
 
 # ---- Runtime stage: minimal, non-root ----
 FROM base AS runtime
