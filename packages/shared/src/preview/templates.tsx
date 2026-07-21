@@ -54,9 +54,29 @@ function luminance(hex: string): number {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 
-/** Black or white, whichever reads on the given background. */
+/** WCAG contrast ratio between two hex colors. */
+function contrast(a: string, b: string): number {
+  const la = luminance(a);
+  const lb = luminance(b);
+  const [hi, lo] = la > lb ? [la, lb] : [lb, la];
+  return (hi + 0.05) / (lo + 0.05);
+}
+
+/** Black or white, whichever contrasts better on the given background. */
 function textOn(bg: string): string {
-  return luminance(bg) > 0.35 ? "#161616" : "#FFFFFF";
+  return contrast("#161616", bg) >= contrast("#FFFFFF", bg) ? "#161616" : "#FFFFFF";
+}
+
+/**
+ * First candidate that reads at WCAG AA (4.5:1) on every given background;
+ * black/white is the last resort. Templates combine tokens more freely than
+ * the lint-checked component pairs, so text roles are contrast-guarded here.
+ */
+function ensureText(candidates: (string | null)[], bgs: string[]): string {
+  for (const candidate of candidates) {
+    if (candidate && bgs.every((bg) => contrast(candidate, bg) >= 4.5)) return candidate;
+  }
+  return textOn(bgs[0] ?? "#FFFFFF");
 }
 
 function pick(colors: Record<string, string>, names: string[]): string | null {
@@ -79,6 +99,10 @@ export interface SampleTheme {
   success: string;
   warning: string;
   error: string;
+  /** AA-guaranteed text variants of the status colors (vs surface + surfaceAlt). */
+  successText: string;
+  warningText: string;
+  errorText: string;
   radiusSm: number;
   radiusMd: number;
   radiusLg: number;
@@ -105,30 +129,42 @@ export function deriveTheme(tokens: DesignTokens): SampleTheme {
       "fill",
       "card",
     ]) ?? (dark ? "#262626" : "#F4F4F4");
-  const text =
-    pick(colors, ["on-surface", "text", "foreground", "content-primary", "ink"]) ?? textOn(surface);
-  const textMuted =
-    pick(colors, [
-      "on-surface-variant",
-      "text-secondary",
-      "muted",
-      "helper",
-      "content-secondary",
-      "subdued",
-    ]) ?? text;
+  const text = ensureText(
+    [pick(colors, ["on-surface", "text", "foreground", "content-primary", "ink"])],
+    [surface, surfaceAlt],
+  );
+  const textMuted = ensureText(
+    [
+      pick(colors, [
+        "on-surface-variant",
+        "text-secondary",
+        "muted",
+        "helper",
+        "content-secondary",
+        "subdued",
+      ]),
+      text,
+    ],
+    [surface, surfaceAlt],
+  );
   const border =
     pick(colors, ["border", "border-subtle", "outline", "divider", "border-weak", "hairline"]) ??
     surfaceAlt;
   const primary = pick(colors, ["primary", "accent", "brand", "action"]) ?? "#0F62FE";
   const onPrimary = pick(colors, ["on-primary", "on-accent", "on-brand"]) ?? textOn(primary);
-  const link =
-    pick(colors, ["link", "accent", "primary-bright", "interactive", "action"]) ?? primary;
+  const link = ensureText(
+    [pick(colors, ["link", "accent", "primary-bright", "interactive", "action"]), primary, text],
+    [surface],
+  );
   const success =
     pick(colors, ["success", "positive", "ok", "green"]) ?? (dark ? "#42BE65" : "#24A148");
   const warning =
     pick(colors, ["warning", "attention", "caution"]) ?? (dark ? "#F1C21B" : "#B36200");
   const error =
     pick(colors, ["error", "danger", "negative", "critical"]) ?? (dark ? "#FA4D56" : "#DA1E28");
+  const successText = ensureText([success, text], [surface, surfaceAlt]);
+  const warningText = ensureText([warning, text], [surface, surfaceAlt]);
+  const errorText = ensureText([error, text], [surface, surfaceAlt]);
 
   const rounded = (tokens.rounded ?? {}) as Record<string, string | number>;
   const radius = (names: string[], fallback: number): number => {
@@ -174,6 +210,9 @@ export function deriveTheme(tokens: DesignTokens): SampleTheme {
     success,
     warning,
     error,
+    successText,
+    warningText,
+    errorText,
     radiusSm,
     radiusMd,
     radiusLg,
@@ -251,20 +290,21 @@ function Badge({
   children,
 }: Tpl & { tone: "success" | "warning" | "error"; children: ReactNode }) {
   const bg = tone === "success" ? t.success : tone === "warning" ? t.warning : t.error;
-  return (
-    <span
-      style={{
-        backgroundColor: bg,
-        borderRadius: 999,
-        color: textOn(bg),
-        fontSize: 11,
-        fontWeight: 600,
-        padding: "3px 10px",
-      }}
-    >
-      {children}
-    </span>
-  );
+  const label = textOn(bg);
+  const base: CSSProperties = {
+    borderRadius: 999,
+    fontSize: 11,
+    fontWeight: 600,
+    padding: "3px 10px",
+  };
+  // Filled only when the fill supports AA label text; mid-tone status colors
+  // (some greens/yellows) can't, so those render as outline badges instead.
+  if (contrast(label, bg) >= 4.5) {
+    return <span style={{ ...base, backgroundColor: bg, color: label }}>{children}</span>;
+  }
+  const toneText =
+    tone === "success" ? t.successText : tone === "warning" ? t.warningText : t.errorText;
+  return <span style={{ ...base, border: `1px solid ${bg}`, color: toneText }}>{children}</span>;
 }
 
 function Toggle({ t, on }: Tpl & { on: boolean }) {
@@ -391,10 +431,10 @@ export function DashboardTemplate({
 
         <div style={{ display: "grid", gap: t.unit, gridTemplateColumns: "repeat(4, 1fr)" }}>
           {[
-            ["Revenue", "$128.4K", "▲ 12.5%", t.success],
-            ["Customers", "2,847", "▲ 8.1%", t.success],
-            ["Average order", "$45.10", "▲ 3.2%", t.success],
-            ["Churn", "1.9%", "▲ 0.2%", t.error],
+            ["Revenue", "$128.4K", "▲ 12.5%", t.successText],
+            ["Customers", "2,847", "▲ 8.1%", t.successText],
+            ["Average order", "$45.10", "▲ 3.2%", t.successText],
+            ["Churn", "1.9%", "▲ 0.2%", t.errorText],
           ].map(([label, value, delta, tone]) => (
             <div
               key={label}
@@ -573,7 +613,7 @@ export function LoginTemplate({
           >
             Ship on-system UI from day one.
           </div>
-          <div style={{ fontSize: 14, opacity: 0.85 }}>
+          <div style={{ fontSize: 14 }}>
             One account for every workspace, report, and integration in {name}.
           </div>
         </div>
@@ -763,7 +803,9 @@ export function SettingsTemplate({
             }}
           >
             <div>
-              <div style={{ color: t.error, fontSize: 14, fontWeight: 600 }}>Delete workspace</div>
+              <div style={{ color: t.errorText, fontSize: 14, fontWeight: 600 }}>
+                Delete workspace
+              </div>
               <div style={{ color: t.textMuted, fontSize: 12, marginTop: 4 }}>
                 Removes every report and API key. This cannot be undone.
               </div>

@@ -120,7 +120,7 @@ export default async function SystemDetailPage({ params }: { params: Promise<{ s
           aria-label="Breadcrumb"
           className="font-mono text-[0.8125rem] uppercase tracking-[0.04em] text-on-surface-variant"
         >
-          <Link href="/systems" className="text-accent hover:underline">
+          <Link href="/systems" className="text-accent underline">
             catalog
           </Link>{" "}
           / {slug}
@@ -215,17 +215,17 @@ export default async function SystemDetailPage({ params }: { params: Promise<{ s
                   className="group flex flex-col gap-3 rounded-lg border border-border bg-surface-variant p-4 transition-colors duration-150 ease-out hover:border-accent"
                 >
                   {Template ? (
-                    <span
+                    <div
                       aria-hidden="true"
-                      className="pointer-events-none block h-40 overflow-hidden rounded-md border border-border bg-surface"
+                      className="pointer-events-none h-40 overflow-hidden rounded-md border border-border bg-surface"
                     >
-                      <span
-                        className="block origin-top-left"
+                      <div
+                        className="origin-top-left"
                         style={{ transform: "scale(0.25)", width: 1400 }}
                       >
                         <Template tokens={tokens} name={system.name} />
-                      </span>
-                    </span>
+                      </div>
+                    </div>
                   ) : null}
                   <span className="font-display text-lg font-semibold text-primary">{t.name}</span>
                   <span className="text-sm leading-relaxed text-on-surface-variant">
@@ -300,7 +300,7 @@ export default async function SystemDetailPage({ params }: { params: Promise<{ s
                 <div className="flex flex-col gap-3">
                   <p className="font-mono text-[0.8125rem] tracking-[0.04em] text-on-surface-variant">
                     target: {agent.file} ·{" "}
-                    <Link href={`/agents/${agent.id}`} className="text-accent hover:underline">
+                    <Link href={`/agents/${agent.id}`} className="text-accent underline">
                       full guide →
                     </Link>
                   </p>
@@ -333,12 +333,7 @@ export default async function SystemDetailPage({ params }: { params: Promise<{ s
             </div>
             <div className="flex flex-wrap gap-4 font-mono text-[0.8125rem] uppercase tracking-[0.04em]">
               {Object.entries(system.links as Record<string, string>).map(([key, url]) => (
-                <a
-                  key={key}
-                  href={url}
-                  rel="noopener noreferrer"
-                  className="text-accent hover:underline"
-                >
+                <a key={key} href={url} rel="noopener noreferrer" className="text-accent underline">
                   {key.replace(/_/g, " ")} ↗
                 </a>
               ))}
