@@ -1,8 +1,17 @@
 # Launch copy — AgentDS
 
 Drafts for PH / HN / X / LinkedIn. Voice per DESIGN.md writing rules: plain,
-specific, active. The demo GIF (prompt → on-system UI) and the before/after
-screenshot slot into every channel — produce those first.
+specific, active.
+
+**Assets (in `docs/assets/launch/`):**
+
+- `demo.gif` — install → prompt → agent reads DESIGN.md → on-system Carbon
+  dashboard → end card (1000×562, 5 scenes, 64KB)
+- `comparison.png` — same prompt side by side: generic AI default vs with
+  carbon DESIGN.md (2320×810)
+- `carbon-dashboard.png` — clean still of the on-system result
+
+Where a draft says [demo GIF] or [comparison screenshot], attach these.
 
 ## Product Hunt
 
