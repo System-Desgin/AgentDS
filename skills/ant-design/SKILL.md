@@ -6,6 +6,18 @@ license: Skill code Apache-2.0; bundled DESIGN.md CC BY 4.0.
 
 # Ant Design design system
 
+Build UI that follows Ant Design — a vivid brand blue, crisp neutrals, and dense data-rich enterprise layouts.
+
+## When to use this skill
+
+Use this skill when the user:
+
+- Asks for Ant Design, antd, or a data-heavy admin/back-office look
+- Builds CRUD apps, admin panels, or dense enterprise dashboards
+- Wants the real antd default-theme tokens instead of guessed values
+
+## Apply it
+
 1. Read the bundled `DESIGN.md` in this skill's directory — it contains the
    antd default-theme tokens and usage rules.
 2. Copy it into the project root as `DESIGN.md` (or merge on the user's direction).

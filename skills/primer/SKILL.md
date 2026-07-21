@@ -6,6 +6,18 @@ license: Skill code Apache-2.0; bundled DESIGN.md CC BY 4.0.
 
 # Primer (GitHub) design system
 
+Build UI that follows GitHub's Primer design system — a calm neutral canvas, accent blue reserved for interaction, dense legible text-first layouts.
+
+## When to use this skill
+
+Use this skill when the user:
+
+- Asks for Primer, a GitHub-style UI, or a developer-tool look
+- Builds text-heavy, information-dense product screens, lists, or code-centric UIs
+- Wants Primer's real functional tokens (Mona Sans, canvas/muted surfaces, semantic status colors) instead of guessed values
+
+## Apply it
+
 1. Read the bundled `DESIGN.md` in this skill's directory — it contains Primer's
    tokens (functional colors, type, spacing, borders) and usage rules.
 2. Copy it into the project root as `DESIGN.md` (or merge on the user's direction).

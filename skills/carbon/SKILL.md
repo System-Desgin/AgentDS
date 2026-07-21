@@ -6,6 +6,18 @@ license: Skill code Apache-2.0; bundled DESIGN.md CC BY 4.0.
 
 # Carbon (IBM) design system
 
+Build UI that follows IBM's Carbon design system — precise, enterprise-scale, IBM Blue on a neutral field with a strict 8px rhythm.
+
+## When to use this skill
+
+Use this skill when the user:
+
+- Asks for Carbon, an IBM-style UI, or an engineered enterprise look
+- Builds data-dense consoles, dashboards, tables, or admin forms
+- Wants Carbon's real tokens (IBM Plex type, 8px grid, semantic status colors) instead of guessed values
+
+## Apply it
+
 1. Read the bundled `DESIGN.md` in this skill's directory — it contains Carbon's
    tokens (colors, typography, spacing, radius, components) and usage rules.
 2. Copy it into the project root as `DESIGN.md` (or merge on the user's direction).

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { CopyButton } from "../components/copy-button";
 import { SystemCard } from "../components/system-card";
 import { fetchCatalog } from "../lib/api";
-import { INSTALL_COMMAND } from "../lib/site";
+import { INSTALL_COMMAND, SKILLS_SH_URL } from "../lib/site";
 
 const HOW_IT_WORKS = [
   {
@@ -13,7 +13,7 @@ const HOW_IT_WORKS = [
   {
     step: "02",
     title: "Give it to your agent",
-    body: "Copy the DESIGN.md into your repo, fetch it from the API, or install the skill. Every agent — Claude Code, Cursor, Kiro, Windsurf, Codex — reads the same file.",
+    body: "Copy the DESIGN.md into your repo, fetch it from the API, or install the skill. Every agent — Claude Code, Cursor, Kiro, Windsurf, Codex, OpenCode, Pi — reads the same file.",
   },
   {
     step: "03",
@@ -46,6 +46,13 @@ export default async function HomePage() {
             <code className="font-mono text-sm text-code-accent">{INSTALL_COMMAND}</code>
           </div>
           <CopyButton text={INSTALL_COMMAND} label="copy" />
+          <a
+            href={SKILLS_SH_URL}
+            rel="noopener noreferrer"
+            className="rounded-full border border-border bg-surface-variant px-4 py-2 font-mono text-[0.8125rem] font-medium uppercase tracking-[0.04em] text-on-surface-variant transition-colors duration-150 ease-out hover:border-accent hover:text-accent"
+          >
+            listed on skills.sh →
+          </a>
         </div>
       </section>
 

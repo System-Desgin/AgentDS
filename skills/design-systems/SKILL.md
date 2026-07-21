@@ -6,11 +6,29 @@ license: Skill code Apache-2.0; bundled DESIGN.md files CC BY 4.0 (see NOTICE in
 
 # AgentDS design systems
 
-AgentDS is a free catalog of agent-ready design system files. Each entry is a
-single `DESIGN.md`: design tokens (colors, typography, spacing, radius,
+Give a coding agent a real design system instead of generic AI defaults.
+
+AgentDS is a free catalog of 40+ agent-ready design system files. Each entry is
+a single `DESIGN.md`: design tokens (colors, typography, spacing, radius,
 components) in YAML front matter plus concise usage rules written for coding
-agents. Catalog: https://agent-ds.oday-bakkour.com — API base:
+agents — covering Official Systems (Carbon, Material 3, Primer, Fluent 2,
+Cloudscape, Ant Design, and more, extracted from their published token
+packages) and Brand Looks (independent analyses of famous product sites).
+Catalog: https://agent-ds.oday-bakkour.com — API base:
 `https://api.agent-ds.oday-bakkour.com`.
+
+## When to use this skill
+
+Use this skill when the user:
+
+- Asks to make an app or component "look like" a known design system or product
+  (Carbon, Material, GitHub, Stripe, Linear, and 35+ more)
+- Asks for a `DESIGN.md`, design tokens, a color palette, or a type scale to
+  standardize UI work
+- Asks what design systems are available, or which fits their product
+  (dashboard, dev tool, e-commerce, mobile app)
+- Wants a design system created for their own product from scratch
+- Complains that generated UI looks generic, inconsistent, or "AI-flavored"
 
 ## Workflow 1 — "Make this look like <system>"
 

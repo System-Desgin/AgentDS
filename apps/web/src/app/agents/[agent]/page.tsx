@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { AGENT_SNIPPETS } from "../../../lib/agent-snippets";
 import { INSTALL_COMMAND } from "../../../lib/site";
 
-/** Per-agent integration guides (Phase 3 checklist: /agents/[agent] ×6). */
+/** Per-agent integration guides (Phase 3 checklist ×6, extended in Phase 4 with OpenCode + Pi). */
 
 const GUIDES: Record<string, { intro: string; steps: string[] }> = {
   "claude-code": {
@@ -55,6 +55,24 @@ const GUIDES: Record<string, { intro: string; steps: string[] }> = {
     steps: [
       "Fetch the DESIGN.md into the repo root.",
       "Reference it from .github/copilot-instructions.md so generations follow the tokens.",
+    ],
+  },
+  opencode: {
+    intro:
+      "OpenCode follows the AGENTS.md convention — it reads AGENTS.md at the repo root on every session, so one design-system section covers all UI work.",
+    steps: [
+      "Fetch the DESIGN.md into the repo root.",
+      "Add a '## UI & design system' section in AGENTS.md referencing the file.",
+      "Alternatively, install the AgentDS skill with --agent opencode and ask for a system by name.",
+    ],
+  },
+  pi: {
+    intro:
+      "Pi loads AGENTS.md at startup from the project and its parent directories. Add a design-system section once, then /reload picks it up.",
+    steps: [
+      "Fetch the DESIGN.md into the repo root.",
+      "Add a '## UI & design system' section in AGENTS.md referencing the file.",
+      "Run /reload in pi (or restart it) so the changed context file is loaded.",
     ],
   },
 };
