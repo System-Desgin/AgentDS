@@ -1,0 +1,40 @@
+slug: linear
+name: Linear
+path: brand-look
+maker: "Linear Orbit, Inc."
+summary: "Independent take on Linear's dark-first look: near-black surfaces, muted indigo accent, hairline borders, compact Inter type."
+description: >-
+  Brand Look modeled on the publicly observable visual language of linear.app:
+  a dark-first product-marketing style built on deep near-black surfaces, soft
+  off-white text, and a single muted indigo-violet accent. Structure comes from
+  hairline borders at low contrast rather than shadows, type is compact Inter
+  with tight negative-tracked headings, and motion is extremely restrained.
+  Tokens model the dark theme, matching the site's default presentation.
+categories:
+  - saas-product
+  - dev-tools
+  - marketing-site
+tags:
+  - linear
+  - dark-ui
+  - indigo
+best_for:
+  - Dark-first product marketing pages
+  - Developer tool interfaces
+  - Focused, keyboard-driven SaaS surfaces
+license:
+  spdx: CC-BY-4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: "License covers this independent analysis only, not Linear's brand assets; Inter (OFL, Google Fonts) is used directly, JetBrains Mono (OFL) stands in for code."
+provenance:
+  source_type: css-analysis
+  urls:
+    - https://linear.app
+    - https://linear.app/features
+    - https://linear.app/method
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://linear.app
+status: draft
+spec_version: alpha

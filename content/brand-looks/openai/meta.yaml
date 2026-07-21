@@ -1,0 +1,40 @@
+slug: openai
+name: OpenAI
+path: brand-look
+maker: OpenAI
+summary: OpenAI's observed look — editorial monochrome minimalism, white fields, near-black type and pill CTAs, airy text, gradient art.
+description: >-
+  Independent analysis of the visual language observable on OpenAI's public
+  marketing pages and platform documentation. The look is editorial monochrome
+  minimalism: white and off-white surfaces, near-black text and pill-shaped
+  black CTAs, large airy type at generous line lengths, and almost no chrome.
+  The heritage green survives only as a restrained accent, and imagery is
+  abstract gradient art. Tokens substitute Inter and JetBrains Mono.
+categories:
+  - marketing-site
+  - docs-content
+  - dev-tools
+tags:
+  - openai
+  - monochrome
+  - editorial
+best_for:
+  - Editorial marketing and blog pages
+  - Clean developer documentation
+  - Minimal AI product sites
+license:
+  spdx: CC-BY-4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: Independent analysis, CC BY 4.0; the observed proprietary custom sans is not redistributable — tokens substitute Inter / JetBrains Mono.
+provenance:
+  source_type: css-analysis
+  urls:
+    - https://openai.com
+    - https://platform.openai.com/docs
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://openai.com
+  docs: https://platform.openai.com/docs
+status: draft
+spec_version: alpha

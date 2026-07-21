@@ -1,0 +1,40 @@
+slug: discord
+name: Discord
+path: brand-look
+maker: "Discord Inc."
+summary: "Independent take on Discord's dark chat look: blurple actions, layered near-black greys, chunky rounded buttons, bold playful type."
+description: >-
+  Brand Look modeled on the publicly observable visual language of discord.com
+  and the app presentation it showcases: a layered ramp of near-black grey
+  surfaces, soft off-white text, and the signature blurple carrying primary
+  actions and brand moments. Buttons are chunky with friendly 8px corners,
+  display type is bold and playful beside cartoon illustration accents, and
+  green, yellow, and red status colors punctuate the muted grey field. Tokens
+  model the dark presentation, matching the brand's default look.
+categories:
+  - mobile-first
+  - marketing-site
+  - saas-product
+tags:
+  - discord
+  - blurple
+  - dark-ui
+best_for:
+  - Community and chat products
+  - Playful dark-first marketing pages
+  - Gaming-adjacent social apps
+license:
+  spdx: CC-BY-4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: "License covers this independent analysis only, not Discord's brand assets; the observed proprietary rounded sans is substituted with Inter (OFL, Google Fonts), JetBrains Mono (OFL) stands in for code."
+provenance:
+  source_type: css-analysis
+  urls:
+    - https://discord.com
+    - https://discord.com/download
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://discord.com
+status: draft
+spec_version: alpha

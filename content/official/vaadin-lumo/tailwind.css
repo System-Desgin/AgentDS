@@ -1,0 +1,48 @@
+@theme {
+  --color-primary: #006af5;
+  --color-on-primary: #ffffff;
+  --color-primary-text: #005fdb;
+  --color-primary-tint: #e4f0ff;
+  --color-surface: #ffffff;
+  --color-contrast-5: #f3f5f7;
+  --color-contrast-10: #e8ebef;
+  --color-on-surface: #263445;
+  --color-on-surface-variant: #616d7c;
+  --color-border: #c4cad3;
+  --color-success: #0a7637;
+  --color-error: #ca150c;
+  --color-warning: #ffcc00;
+  --font-display: "Inter";
+  --font-heading-lg: "Inter";
+  --font-heading: "Inter";
+  --font-body: "Inter";
+  --font-body-sm: "Inter";
+  --font-label: "Inter";
+  --font-code: "JetBrains Mono";
+  --text-display: 2.5rem;
+  --text-heading-lg: 1.75rem;
+  --text-heading: 1.375rem;
+  --text-body: 1rem;
+  --text-body-sm: 0.875rem;
+  --text-label: 0.875rem;
+  --text-code: 0.875rem;
+  --font-weight-display: 600;
+  --font-weight-heading-lg: 600;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-sm: 400;
+  --font-weight-label: 500;
+  --font-weight-code: 400;
+  --radius-sm: 4px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+  --spacing-xxs: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 64px;
+}
+

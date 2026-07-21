@@ -1,0 +1,39 @@
+slug: garden
+name: Garden
+path: official
+maker: Zendesk
+summary: Zendesk's open-source design system — calm service-desk clarity in a cool blue and kale palette, with disciplined accessibility.
+description: >-
+  Garden is Zendesk's open-source design system for support software. Its
+  tokens ship as versioned npm packages (@zendeskgarden/css-variables), giving
+  exact, verifiable values. The look is approachable and calm: a white field, a
+  14px system-type base built for dense agent workspaces, 4px-based radii, and
+  a cool palette where blue carries interaction, kale carries chrome, and every
+  status hue is tuned to pass WCAG AA out of the box.
+categories:
+  - saas-product
+  - enterprise-dashboard
+  - docs-content
+tags:
+  - zendesk
+  - garden
+  - support
+best_for:
+  - Support and help-desk product UIs
+  - Dense agent-facing dashboards
+  - Teams standardizing agent output on Garden
+license:
+  spdx: Apache-2.0
+  url: https://github.com/zendeskgarden/css-components/blob/main/LICENSE.md
+  notes: Garden ships no brand font (native system stack); previews substitute open Inter and JetBrains Mono, originals named in prose only.
+provenance:
+  source_type: npm
+  package: "@zendeskgarden/css-variables"
+  version: 7.0.0
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://garden.zendesk.com
+  github: https://github.com/zendeskgarden
+status: draft
+spec_version: alpha

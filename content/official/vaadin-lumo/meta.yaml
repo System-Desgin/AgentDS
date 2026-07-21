@@ -1,0 +1,39 @@
+slug: vaadin-lumo
+name: Vaadin Lumo
+path: official
+maker: Vaadin
+summary: Vaadin's default Lumo theme — friendly rounded controls, airy spacing, and a clear blue primary for pragmatic business apps.
+description: >-
+  Lumo is the default design system of the Vaadin web framework, shipped as
+  CSS custom properties (--lumo-*) in @vaadin/vaadin-lumo-styles. Its
+  character is business-app pragmatism with a friendly face: an hsl-based
+  blue primary, softly rounded 0.25em/0.5em corners, a compact size scale for
+  controls, and a system font stack. Values here are the Lumo light theme,
+  with alpha-based contrast tints composited over the white base color.
+categories:
+  - enterprise-dashboard
+  - saas-product
+  - data-dense
+tags:
+  - vaadin
+  - lumo
+  - web-components
+best_for:
+  - Business apps built on Vaadin components
+  - Enterprise dashboards and admin consoles
+  - Data-heavy CRUD screens and forms
+license:
+  spdx: Apache-2.0
+  url: https://github.com/vaadin/web-components/blob/main/packages/vaadin-lumo-styles/LICENSE
+  notes: Lumo ships no font binaries — it uses a system font stack; catalog previews stand in Inter (and JetBrains Mono for code).
+provenance:
+  source_type: npm
+  package: "@vaadin/vaadin-lumo-styles"
+  version: 25.2.5
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://vaadin.com/docs/latest/styling/lumo
+  github: https://github.com/vaadin/web-components
+status: draft
+spec_version: alpha

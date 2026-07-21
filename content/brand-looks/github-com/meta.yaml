@@ -1,0 +1,39 @@
+slug: github-com
+name: "GitHub.com"
+path: brand-look
+maker: "GitHub, Inc."
+summary: GitHub's marketing-site look — near-black glow heroes, huge Mona Sans headlines, white feature sections, and the green sign-up CTA.
+description: >-
+  Independent analysis of the look observable on GitHub's public marketing
+  pages (github.com/home and the features pages) — distinct from Primer,
+  GitHub's product design system, which this catalog covers as an official
+  entry. The marketing look is theatrical where Primer is calm: near-black
+  heroes with purple, blue, and green glow moments, huge tightly tracked
+  headlines, oversized stats, code-editor art, and one green sign-up CTA.
+categories:
+  - marketing-site
+  - dev-tools
+  - docs-content
+tags:
+  - github
+  - mona-sans
+  - dark-hero
+best_for:
+  - Developer-tool marketing sites
+  - Dark launch and landing pages
+  - Feature announcement pages
+license:
+  spdx: CC-BY-4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: Independent analysis, CC BY 4.0; observed Mona Sans is open (SIL OFL) but not preview-loadable — tokens substitute Inter / JetBrains Mono.
+provenance:
+  source_type: css-analysis
+  urls:
+    - https://github.com/home
+    - https://github.com/features
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://github.com/home
+status: draft
+spec_version: alpha

@@ -1,0 +1,40 @@
+slug: supabase
+name: Supabase
+path: brand-look
+maker: "Supabase, Inc."
+summary: "Independent take on Supabase's dark-first look: near-black surfaces, the signature green accent, hairline borders, code-forward type."
+description: >-
+  Brand Look modeled on the publicly observable visual language of supabase.com
+  and its docs: a dark-first developer style built on deep near-black surfaces,
+  muted gray secondary text, and one signature green accent carrying CTAs,
+  links, and brand moments. Green fills take dark text, structure comes from
+  hairline low-alpha borders rather than shadows, radii stay in a tight 6-8px
+  band, and code blocks sit front-and-center. Tokens model the dark theme.
+categories:
+  - dev-tools
+  - saas-product
+  - docs-content
+tags:
+  - supabase
+  - dark-ui
+  - green
+best_for:
+  - Dark-first developer tool interfaces
+  - Docs and code-heavy content sites
+  - Backend platform marketing pages
+license:
+  spdx: CC-BY-4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: "License covers this independent analysis only, not Supabase's brand assets; the site's custom Circular-style sans maps to Inter (OFL) per the substitution map, JetBrains Mono (OFL) stands in for code."
+provenance:
+  source_type: css-analysis
+  urls:
+    - https://supabase.com
+    - https://supabase.com/dashboard
+    - https://supabase.com/docs
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://supabase.com
+status: draft
+spec_version: alpha

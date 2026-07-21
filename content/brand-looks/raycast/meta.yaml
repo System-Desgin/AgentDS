@@ -1,0 +1,41 @@
+slug: raycast
+name: Raycast
+path: brand-look
+maker: "Raycast Technologies Inc."
+summary: "Independent take on Raycast's dark launcher look: charcoal surfaces, coral accent, kbd chips, and compact Inter type."
+description: >-
+  Brand Look modeled on the publicly observable visual language of raycast.com
+  and its extension store: a dark-first launcher aesthetic built on deep
+  charcoal surfaces with subtle translucency and blur cues, white primary text
+  over muted gray secondary, and the signature red-coral accent with supporting
+  sunset-gradient brand moments in orange and pink. Chrome is compact and
+  keyboard-centric — big rounded panels, small precise labels, kbd chips, and
+  restrained glow shadows. Tokens model the dark presentation, the site's
+  default.
+categories:
+  - dev-tools
+  - marketing-site
+  - saas-product
+tags:
+  - raycast
+  - dark-ui
+  - coral
+best_for:
+  - Dark launcher-style product pages
+  - Keyboard-driven developer tools
+  - Command-palette SaaS surfaces
+license:
+  spdx: CC-BY-4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: "License covers this independent analysis only, not Raycast's brand assets; Inter (OFL, Google Fonts) is used directly, JetBrains Mono (OFL) stands in for monospace."
+provenance:
+  source_type: css-analysis
+  urls:
+    - https://www.raycast.com
+    - https://www.raycast.com/store
+  extracted_at: "2026-07-21"
+restricted: false
+links:
+  official_site: https://www.raycast.com
+status: draft
+spec_version: alpha

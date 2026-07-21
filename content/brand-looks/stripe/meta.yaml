@@ -1,0 +1,40 @@
+slug: stripe
+name: Stripe
+path: brand-look
+maker: "Stripe, Inc."
+summary: "Stripe's observed web look: blurple accents over deep navy and near-white, pill CTAs, generous whitespace, and code-first docs."
+description: >-
+  An independent analysis of the design language visible on Stripe's public
+  marketing pages and developer docs: a blurple brand accent set against deep
+  navy and near-white sections, an animated gradient hero, tracked uppercase
+  eyebrow labels, generous section whitespace, and a docs UI built on precise
+  grays with code-first presentation. Written as inspiration for an original
+  system; not an official Stripe design system.
+categories:
+  - fintech
+  - marketing-site
+  - docs-content
+tags:
+  - stripe
+  - blurple
+  - payments
+best_for:
+  - Fintech marketing sites
+  - Developer-facing landing pages
+  - Code-first documentation
+license:
+  spdx: CC-BY-4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: "Independent analysis (catalog content, CC BY 4.0); the observed proprietary grotesk is substituted with Inter, and Source Code Pro stands in for the docs monospace."
+provenance:
+  source_type: css-analysis
+  urls:
+    - https://stripe.com
+    - https://stripe.com/payments
+    - https://docs.stripe.com
+  extracted_at: "2026-07-21"
+links:
+  official_site: https://stripe.com
+restricted: false
+status: draft
+spec_version: alpha

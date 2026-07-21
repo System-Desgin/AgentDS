@@ -1,0 +1,38 @@
+slug: netflix
+name: Netflix
+path: brand-look
+maker: Netflix, Inc.
+summary: "Netflix's observed cinematic dark look: pure-black and near-black surfaces, poster-led carousels, and one signature red CTA."
+description: >-
+  An independent analysis of the design language visible on Netflix's public
+  marketing and browse pages: a cinematic pure-black backdrop with near-black
+  browse surfaces, white titles over muted gray metadata, very heavy display
+  type, poster-art carousels with minimal chrome, modest 4-8px corners, and
+  one signature red reserved for the primary CTA and brand badges — always
+  carrying white text. Written as inspiration for an original system.
+categories:
+  - mobile-first
+  - marketing-site
+tags:
+  - netflix
+  - dark-ui
+  - streaming
+best_for:
+  - Dark cinematic media apps
+  - Poster-led content carousels
+  - Single-accent marketing and signup pages
+license:
+  spdx: CC-BY-4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  notes: "Independent analysis (catalog content, CC BY 4.0); the observed proprietary brand sans is substituted with Inter in tokens."
+provenance:
+  source_type: css-analysis
+  urls:
+    - https://www.netflix.com
+    - https://about.netflix.com
+  extracted_at: "2026-07-21"
+links:
+  official_site: https://www.netflix.com
+restricted: false
+status: draft
+spec_version: alpha

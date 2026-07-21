@@ -1,0 +1,44 @@
+slug: atlassian
+name: Atlassian Design System
+path: official
+maker: Atlassian
+summary: Atlassian's design system — the confident brand blue, calm neutrals, and dense-but-friendly patterns behind Jira, Confluence, and Trello.
+description: >-
+  The Atlassian Design System drives Jira, Confluence, Trello, and the rest of
+  Atlassian's product suite. Its tokens ship from the atlassian-frontend-mirror
+  repository as versioned JSON, giving exact light-theme values: a confident
+  brand blue (#1868DB), a calm neutral text ramp, an 8px-based spacing scale,
+  and a small radius scale that keeps controls at 6px. Dense enough for work
+  management, friendly enough for everyday teams.
+categories:
+  - saas-product
+  - enterprise-dashboard
+  - data-dense
+tags:
+  - atlassian
+  - atlaskit
+  - jira
+best_for:
+  - Project and work-management UIs
+  - Dense B2B product screens
+  - Teams matching Atlassian product conventions
+license:
+  spdx: Apache-2.0
+  url: https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/3cdf019baa859e25cfd38137480a548d04a4fe41/design-system/tokens/LICENSE
+  notes: Atlassian Sans and Atlassian Mono are proprietary; tokens substitute Inter and JetBrains Mono, with the originals named in prose only.
+provenance:
+  source_type: repo
+  repo: https://bitbucket.org/atlassian/atlassian-frontend-mirror
+  commit: 3cdf019baa859e25cfd38137480a548d04a4fe41
+  urls:
+    - https://bitbucket.org/atlassian/atlassian-frontend-mirror/raw/3cdf019baa859e25cfd38137480a548d04a4fe41/design-system/tokens/figma/atlassian-light.json
+    - https://bitbucket.org/atlassian/atlassian-frontend-mirror/raw/3cdf019baa859e25cfd38137480a548d04a4fe41/design-system/tokens/figma/atlassian-spacing.json
+    - https://bitbucket.org/atlassian/atlassian-frontend-mirror/raw/3cdf019baa859e25cfd38137480a548d04a4fe41/design-system/tokens/figma/atlassian-typography.json
+    - https://bitbucket.org/atlassian/atlassian-frontend-mirror/raw/3cdf019baa859e25cfd38137480a548d04a4fe41/design-system/tokens/figma/atlassian-shape.json
+  extracted_at: "2026-07-21"
+links:
+  official_site: https://atlassian.design
+  docs: https://atlassian.design/foundations/tokens
+restricted: false
+status: draft
+spec_version: alpha
