@@ -74,6 +74,7 @@ describe("preview renderer", () => {
 describe("font resolution", () => {
   it("keeps Google-hosted families and substitutes proprietary ones", () => {
     expect(resolvePreviewFamily("IBM Plex Sans")).toBe("IBM Plex Sans");
+    expect(resolvePreviewFamily("Mona Sans")).toBe("Mona Sans");
     expect(resolvePreviewFamily("SF Pro Display")).toBe("Inter");
     expect(resolvePreviewFamily("Totally Unknown Font")).toBeNull();
     expect(resolvePreviewFamily("system-ui")).toBeNull();
