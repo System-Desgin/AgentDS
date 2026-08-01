@@ -5,12 +5,13 @@ import { runExtract } from "./commands/extract";
 import { runGenerate } from "./commands/generate";
 import { runValidate } from "./commands/validate";
 import { runExport } from "./commands/export";
+import { runVerify } from "./commands/verify";
 
 const program = new Command();
 
 program
   .name("agentds-pipeline")
-  .description("AgentDS content pipeline: extract | generate | validate | export | new")
+  .description("AgentDS content pipeline: extract | generate | validate | verify | export | new")
   .version("0.0.0");
 
 program
@@ -37,6 +38,16 @@ program
   .argument("<slug>", "entry slug")
   .description("Validate meta.yaml + run the official DESIGN.md linter (Phase 1)")
   .action((slug: string) => runValidate(slug));
+
+program
+  .command("verify")
+  .argument("[slug]", "entry slug (omit with --all)")
+  .option("--all", "verify every catalog entry")
+  .option("--fix", "rewrite drifted values to the source value, preserving WCAG AA")
+  .description("Check a published DESIGN.md's tokens against its cited source")
+  .action((slug: string | undefined, options: { all?: boolean; fix?: boolean }) =>
+    runVerify(slug, options),
+  );
 
 program
   .command("export")

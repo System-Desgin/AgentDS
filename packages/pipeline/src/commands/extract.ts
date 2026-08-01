@@ -5,6 +5,7 @@ import { parseMetaYaml } from "@agentds/shared";
 import { findEntryDir } from "../lib/paths";
 import { extractNpmTokens } from "../extract/npm-tokens";
 import { extractRepoJson } from "../extract/repo-json";
+import { captureSiteCss, type SiteCapture } from "../extract/site-css";
 import type { ExtractResult } from "../model/tokens";
 
 function today(): string {
@@ -48,23 +49,40 @@ export async function runExtract(slug: string): Promise<void> {
     }
     result = await extractRepoJson(provenance.urls, extractedAt);
   } else {
-    console.log(pc.yellow("css-analysis extraction is a documented manual capture (Brand Looks)."));
+    if (!provenance.urls?.length) {
+      console.error(pc.red("css-analysis provenance requires `urls` (public page URLs)."));
+      process.exitCode = 1;
+      return;
+    }
+    console.log(pc.dim(`Capturing public CSS from ${provenance.urls.length} page(s)…`));
+    const capture = await captureSiteCss(provenance.urls, extractedAt);
+    if (!capture.files.length) {
+      console.error(pc.red("No pages or stylesheets could be fetched — check the URLs."));
+      process.exitCode = 1;
+      return;
+    }
     console.log(
       pc.dim(
-        "Collect :root custom properties + computed styles of canonical elements per\n" +
-          "docs/04-DATA-SOURCES.md §5, then hand-author tokens.raw.json.",
+        `  ${capture.colors.length} colors · ${capture.fontStacks.length} font stacks · ` +
+          `${capture.radii.length} radii from ${capture.files.length} file(s)`,
       ),
     );
-    return;
+    result = capture;
   }
 
   const tokenCount = Object.keys(result.rawTokens).length;
+  const capture = "colors" in result ? (result as SiteCapture) : null;
   const payload = {
     slug,
     extractedAt,
     source: provenance,
     files: result.files,
     tokenCount,
+    // Site captures also record the observed palette/type/radius surface, which
+    // is what `verify` diffs a published DESIGN.md against.
+    ...(capture
+      ? { colors: capture.colors, fontStacks: capture.fontStacks, radii: capture.radii }
+      : {}),
     tokens: result.rawTokens,
   };
   await writeFile(join(entry.dir, "tokens.raw.json"), JSON.stringify(payload, null, 2), "utf8");

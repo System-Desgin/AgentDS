@@ -87,6 +87,105 @@ function pick(colors: Record<string, string>, names: string[]): string | null {
   return null;
 }
 
+/** Hue angle (0-360), saturation and lightness (0-1) of a hex color. */
+function hsl(hex: string): { h: number; s: number; l: number } | null {
+  const rgb = hexToRgb(hex);
+  if (!rgb) return null;
+  const [r, g, b] = rgb.map((c) => c / 255) as [number, number, number];
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  const l = (max + min) / 2;
+  const d = max - min;
+  if (d === 0) return { h: 0, s: 0, l };
+  const s = d / (1 - Math.abs(2 * l - 1));
+  let h: number;
+  if (max === r) h = ((g - b) / d) % 6;
+  else if (max === g) h = (b - r) / d + 2;
+  else h = (r - g) / d + 4;
+  h *= 60;
+  return { h: h < 0 ? h + 360 : h, s, l };
+}
+
+/** Hue windows for the status roles, in degrees. */
+const STATUS_HUES: Record<string, [number, number]> = {
+  success: [80, 170],
+  warning: [25, 65],
+  error: [330, 20],
+};
+
+function hueInWindow(h: number, [start, end]: [number, number]): boolean {
+  return start <= end ? h >= start && h <= end : h >= start || h <= end;
+}
+
+/**
+ * Find a status color inside the system's *own* palette.
+ *
+ * Previously an absent `success`/`warning`/`error` token fell back to a
+ * hard-coded IBM Carbon value, so a third of the catalog rendered Carbon's
+ * green, amber and red in its sample screens — wrong for the system and a
+ * large part of why every preview looked alike. Searching the declared palette
+ * by hue keeps the screen in the system's own language, and the neutral
+ * fallback below is derived from the system's text color rather than a brand
+ * we happen to also catalog.
+ */
+function deriveStatus(
+  colors: Record<string, string>,
+  role: keyof typeof STATUS_HUES,
+  named: string[],
+  backgrounds: string[],
+  text: string,
+): string {
+  const explicit = pick(colors, named);
+  if (explicit) return explicit;
+
+  const window = STATUS_HUES[role] as [number, number];
+  const candidates = Object.values(colors)
+    .map((value) => ({ value, hsl: hsl(value) }))
+    .filter(
+      (c): c is { value: string; hsl: { h: number; s: number; l: number } } =>
+        c.hsl !== null && c.hsl.s >= 0.25 && c.hsl.l > 0.12 && c.hsl.l < 0.88,
+    )
+    .filter((c) => hueInWindow(c.hsl.h, window))
+    // Prefer the member that reads clearly on this system's surfaces.
+    .sort(
+      (a, b) =>
+        Math.min(...backgrounds.map((bg) => contrast(b.value, bg))) -
+        Math.min(...backgrounds.map((bg) => contrast(a.value, bg))),
+    );
+
+  const best = candidates[0];
+  if (best) return best.value;
+  // No hue of that family exists in this system: stay neutral in its own ink.
+  return text;
+}
+
+/** The most chromatic color in a palette — the brand color, when unnamed. */
+function mostSaturated(colors: Record<string, string>): string | null {
+  let best: { value: string; score: number } | null = null;
+  for (const value of Object.values(colors)) {
+    const c = hsl(value);
+    if (!c || c.l < 0.1 || c.l > 0.9) continue;
+    const score = c.s;
+    if (score >= 0.2 && (!best || score > best.score)) best = { value, score };
+  }
+  return best?.value ?? null;
+}
+
+/** Font size in px for a typography level, falling back through the scale. */
+function scaleSize(
+  typography: Record<string, Record<string, string | number>>,
+  levels: string[],
+  fallback: number,
+): number {
+  for (const level of levels) {
+    const raw = typography[level]?.["fontSize"];
+    if (raw === undefined) continue;
+    const px = dimensionToPx(raw as string | number);
+    if (px !== null && px >= 8 && px <= 96) return Math.round(px);
+  }
+  return fallback;
+}
+
 export interface SampleTheme {
   surface: string;
   surfaceAlt: string;
@@ -111,6 +210,12 @@ export interface SampleTheme {
   displayFont: string;
   monoFont: string;
   displayWeight: number;
+  /** Type sizes in px, read from the system's own scale. */
+  sizeDisplay: number;
+  sizeHeading: number;
+  sizeBody: number;
+  sizeSmall: number;
+  sizeLabel: number;
 }
 
 /** Resolve a system's token vocabulary onto the roles the templates use. */
@@ -150,18 +255,39 @@ export function deriveTheme(tokens: DesignTokens): SampleTheme {
   const border =
     pick(colors, ["border", "border-subtle", "outline", "divider", "border-weak", "hairline"]) ??
     surfaceAlt;
-  const primary = pick(colors, ["primary", "accent", "brand", "action"]) ?? "#0F62FE";
+  // A system with no named primary still has a brand color in its palette;
+  // reaching for a fixed blue made unrelated systems share one accent.
+  const primary =
+    pick(colors, ["primary", "accent", "brand", "action", "interactive", "primary-bright"]) ??
+    mostSaturated(colors) ??
+    text;
   const onPrimary = pick(colors, ["on-primary", "on-accent", "on-brand"]) ?? textOn(primary);
   const link = ensureText(
     [pick(colors, ["link", "accent", "primary-bright", "interactive", "action"]), primary, text],
     [surface],
   );
-  const success =
-    pick(colors, ["success", "positive", "ok", "green"]) ?? (dark ? "#42BE65" : "#24A148");
-  const warning =
-    pick(colors, ["warning", "attention", "caution"]) ?? (dark ? "#F1C21B" : "#B36200");
-  const error =
-    pick(colors, ["error", "danger", "negative", "critical"]) ?? (dark ? "#FA4D56" : "#DA1E28");
+  const statusGrounds = [surface, surfaceAlt];
+  const success = deriveStatus(
+    colors,
+    "success",
+    ["success", "positive", "ok", "green"],
+    statusGrounds,
+    text,
+  );
+  const warning = deriveStatus(
+    colors,
+    "warning",
+    ["warning", "attention", "caution"],
+    statusGrounds,
+    text,
+  );
+  const error = deriveStatus(
+    colors,
+    "error",
+    ["error", "danger", "negative", "critical"],
+    statusGrounds,
+    text,
+  );
   const successText = ensureText([success, text], [surface, surfaceAlt]);
   const warningText = ensureText([warning, text], [surface, surfaceAlt]);
   const errorText = ensureText([error, text], [surface, surfaceAlt]);
@@ -198,6 +324,19 @@ export function deriveTheme(tokens: DesignTokens): SampleTheme {
     typography["display"]?.["fontWeight"] ?? typography["heading"]?.["fontWeight"];
   const displayWeight = Number(displayWeightRaw) || 600;
 
+  // Sample screens used fixed pixel sizes, so a compact system and an airy one
+  // rendered at identical scale. Reading the declared scale lets each system's
+  // typographic proportions show through.
+  const sizeBody = scaleSize(typography, ["body", "body-md", "body-lg"], 14);
+  const sizeSmall = scaleSize(typography, ["body-sm", "body-small", "caption"], sizeBody - 1);
+  const sizeLabel = scaleSize(typography, ["label", "overline", "caption"], sizeSmall - 1);
+  const sizeHeading = scaleSize(typography, ["heading", "heading-md", "title"], sizeBody + 8);
+  const sizeDisplay = scaleSize(
+    typography,
+    ["display", "heading-lg", "headline-lg", "title-lg"],
+    sizeHeading + 8,
+  );
+
   return {
     surface,
     surfaceAlt,
@@ -221,6 +360,11 @@ export function deriveTheme(tokens: DesignTokens): SampleTheme {
     displayFont,
     monoFont,
     displayWeight,
+    sizeDisplay,
+    sizeHeading,
+    sizeBody,
+    sizeSmall,
+    sizeLabel,
   };
 }
 
@@ -240,7 +384,7 @@ function Button({
     borderRadius: t.radiusSm,
     display: "inline-block",
     fontFamily: t.bodyFont,
-    fontSize: 14,
+    fontSize: t.sizeBody,
     fontWeight: 500,
     lineHeight: 1,
     padding: `${t.unit * 0.75}px ${t.unit}px`,
@@ -266,7 +410,9 @@ function Field({
 }: Tpl & { label: string; value: string; focus?: boolean }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-      <span style={{ color: t.textMuted, fontSize: 12, letterSpacing: "0.02em" }}>{label}</span>
+      <span style={{ color: t.textMuted, fontSize: t.sizeLabel, letterSpacing: "0.02em" }}>
+        {label}
+      </span>
       <span
         style={{
           backgroundColor: t.surfaceAlt,
@@ -274,7 +420,7 @@ function Field({
           borderRadius: t.radiusSm,
           boxShadow: focus ? `0 0 0 2px ${t.primary}33` : undefined,
           color: t.text,
-          fontSize: 14,
+          fontSize: t.sizeBody,
           padding: `${t.unit * 0.65}px ${t.unit * 0.75}px`,
         }}
       >
@@ -293,7 +439,7 @@ function Badge({
   const label = textOn(bg);
   const base: CSSProperties = {
     borderRadius: 999,
-    fontSize: 11,
+    fontSize: t.sizeLabel - 1,
     fontWeight: 600,
     padding: "3px 10px",
   };
@@ -369,7 +515,13 @@ export function DashboardTemplate({
           <span
             style={{ backgroundColor: t.primary, borderRadius: t.radiusSm, height: 22, width: 22 }}
           />
-          <span style={{ fontFamily: t.displayFont, fontSize: 15, fontWeight: t.displayWeight }}>
+          <span
+            style={{
+              fontFamily: t.displayFont,
+              fontSize: t.sizeBody + 1,
+              fontWeight: t.displayWeight,
+            }}
+          >
             {name}
           </span>
         </div>
@@ -382,7 +534,7 @@ export function DashboardTemplate({
                 borderLeft: i === 0 ? `3px solid ${t.primary}` : "3px solid transparent",
                 borderRadius: t.radiusSm,
                 color: i === 0 ? t.text : t.textMuted,
-                fontSize: 14,
+                fontSize: t.sizeBody,
                 padding: `${t.unit * 0.5}px ${t.unit * 0.75}px`,
               }}
             >
@@ -391,7 +543,7 @@ export function DashboardTemplate({
           ))}
         </nav>
         <div style={{ borderTop: `1px solid ${t.border}`, marginTop: "auto", paddingTop: t.unit }}>
-          <span style={{ color: t.textMuted, fontSize: 12 }}>help@example.com</span>
+          <span style={{ color: t.textMuted, fontSize: t.sizeLabel }}>help@example.com</span>
         </div>
       </aside>
 
@@ -405,13 +557,13 @@ export function DashboardTemplate({
       >
         <header style={{ alignItems: "center", display: "flex", justifyContent: "space-between" }}>
           <div>
-            <div style={{ color: t.textMuted, fontSize: 12, marginBottom: 4 }}>
+            <div style={{ color: t.textMuted, fontSize: t.sizeLabel, marginBottom: 4 }}>
               Analytics / Revenue
             </div>
             <h1
               style={{
                 fontFamily: t.displayFont,
-                fontSize: 24,
+                fontSize: t.sizeDisplay,
                 fontWeight: t.displayWeight,
                 margin: 0,
               }}
@@ -440,18 +592,20 @@ export function DashboardTemplate({
               key={label}
               style={{ backgroundColor: t.surfaceAlt, borderRadius: t.radiusMd, padding: t.unit }}
             >
-              <div style={{ color: t.textMuted, fontSize: 12 }}>{label}</div>
+              <div style={{ color: t.textMuted, fontSize: t.sizeLabel }}>{label}</div>
               <div
                 style={{
                   fontFamily: t.displayFont,
-                  fontSize: 26,
+                  fontSize: t.sizeDisplay,
                   fontWeight: t.displayWeight,
                   marginTop: 8,
                 }}
               >
                 {value}
               </div>
-              <div style={{ color: tone, fontSize: 12, marginTop: 8 }}>{delta} vs last month</div>
+              <div style={{ color: tone, fontSize: t.sizeLabel, marginTop: 8 }}>
+                {delta} vs last month
+              </div>
             </div>
           ))}
         </div>
@@ -460,7 +614,7 @@ export function DashboardTemplate({
           <section
             style={{ border: `1px solid ${t.border}`, borderRadius: t.radiusMd, padding: t.unit }}
           >
-            <h2 style={{ fontSize: 14, fontWeight: 600, margin: `0 0 ${t.unit}px` }}>
+            <h2 style={{ fontSize: t.sizeBody, fontWeight: 600, margin: `0 0 ${t.unit}px` }}>
               Monthly performance
             </h2>
             <div
@@ -488,7 +642,7 @@ export function DashboardTemplate({
               style={{
                 color: t.textMuted,
                 display: "flex",
-                fontSize: 11,
+                fontSize: t.sizeLabel - 1,
                 justifyContent: "space-between",
                 marginTop: 8,
               }}
@@ -502,16 +656,16 @@ export function DashboardTemplate({
           <section
             style={{ border: `1px solid ${t.border}`, borderRadius: t.radiusMd, padding: t.unit }}
           >
-            <h2 style={{ fontSize: 14, fontWeight: 600, margin: `0 0 ${t.unit}px` }}>
+            <h2 style={{ fontSize: t.sizeBody, fontWeight: 600, margin: `0 0 ${t.unit}px` }}>
               Recent activity
             </h2>
-            <table style={{ borderCollapse: "collapse", fontSize: 13, width: "100%" }}>
+            <table style={{ borderCollapse: "collapse", fontSize: t.sizeSmall, width: "100%" }}>
               <tbody>
                 {ROWS.slice(0, 4).map(([label, value, when, tone]) => (
                   <tr key={label}>
                     <td style={{ borderBottom: `1px solid ${t.border}`, padding: "9px 4px" }}>
                       <div>{label}</div>
-                      <div style={{ color: t.textMuted, fontSize: 11 }}>{when}</div>
+                      <div style={{ color: t.textMuted, fontSize: t.sizeLabel - 1 }}>{when}</div>
                     </td>
                     <td
                       style={{
@@ -542,7 +696,7 @@ export function DashboardTemplate({
               </tbody>
             </table>
             <div style={{ marginTop: t.unit * 0.75 }}>
-              <span style={{ color: t.link, fontSize: 13 }}>View all activity →</span>
+              <span style={{ color: t.link, fontSize: t.sizeSmall }}>View all activity →</span>
             </div>
           </section>
         </div>
@@ -606,14 +760,14 @@ export function LoginTemplate({
           <div
             style={{
               fontFamily: t.displayFont,
-              fontSize: 28,
+              fontSize: t.sizeDisplay,
               fontWeight: t.displayWeight,
               lineHeight: 1.2,
             }}
           >
             Ship on-system UI from day one.
           </div>
-          <div style={{ fontSize: 14 }}>
+          <div style={{ fontSize: t.sizeBody }}>
             One account for every workspace, report, and integration in {name}.
           </div>
         </div>
@@ -623,14 +777,14 @@ export function LoginTemplate({
             <h1
               style={{
                 fontFamily: t.displayFont,
-                fontSize: 22,
+                fontSize: t.sizeHeading,
                 fontWeight: t.displayWeight,
                 margin: 0,
               }}
             >
               Sign in
             </h1>
-            <div style={{ color: t.textMuted, fontSize: 13, marginTop: 6 }}>
+            <div style={{ color: t.textMuted, fontSize: t.sizeSmall, marginTop: 6 }}>
               New here? <span style={{ color: t.link }}>Create an account</span>
             </div>
           </div>
@@ -639,22 +793,22 @@ export function LoginTemplate({
           <div style={{ alignItems: "center", display: "flex", justifyContent: "space-between" }}>
             <span style={{ alignItems: "center", display: "inline-flex", gap: 8 }}>
               <Toggle t={t} name={name} on />
-              <span style={{ color: t.textMuted, fontSize: 13 }}>Remember me</span>
+              <span style={{ color: t.textMuted, fontSize: t.sizeSmall }}>Remember me</span>
             </span>
-            <span style={{ color: t.link, fontSize: 13 }}>Forgot password?</span>
+            <span style={{ color: t.link, fontSize: t.sizeSmall }}>Forgot password?</span>
           </div>
           <Button t={t} name={name}>
             Sign in
           </Button>
           <div style={{ alignItems: "center", display: "flex", gap: 12 }}>
             <span style={{ backgroundColor: t.border, flex: 1, height: 1 }} />
-            <span style={{ color: t.textMuted, fontSize: 12 }}>or</span>
+            <span style={{ color: t.textMuted, fontSize: t.sizeLabel }}>or</span>
             <span style={{ backgroundColor: t.border, flex: 1, height: 1 }} />
           </div>
           <Button t={t} name={name} kind="secondary">
             Continue with SSO
           </Button>
-          <div style={{ color: t.textMuted, fontSize: 12, lineHeight: 1.5 }}>
+          <div style={{ color: t.textMuted, fontSize: t.sizeLabel, lineHeight: 1.5 }}>
             Protected by two-factor authentication. By continuing you agree to the terms of service.
           </div>
         </div>
@@ -683,11 +837,13 @@ export function SettingsTemplate({
       }}
     >
       <div style={{ margin: "0 auto", maxWidth: 760 }}>
-        <div style={{ color: t.textMuted, fontSize: 12, marginBottom: 4 }}>{name} / Settings</div>
+        <div style={{ color: t.textMuted, fontSize: t.sizeLabel, marginBottom: 4 }}>
+          {name} / Settings
+        </div>
         <h1
           style={{
             fontFamily: t.displayFont,
-            fontSize: 24,
+            fontSize: t.sizeDisplay,
             fontWeight: t.displayWeight,
             margin: 0,
           }}
@@ -709,7 +865,7 @@ export function SettingsTemplate({
               style={{
                 borderBottom: i === 0 ? `2px solid ${t.primary}` : "2px solid transparent",
                 color: i === 0 ? t.text : t.textMuted,
-                fontSize: 14,
+                fontSize: t.sizeBody,
                 fontWeight: i === 0 ? 600 : 400,
                 padding: `${t.unit * 0.6}px ${t.unit * 0.75}px`,
               }}
@@ -737,7 +893,7 @@ export function SettingsTemplate({
                 color: t.textMuted,
                 display: "inline-flex",
                 fontFamily: t.displayFont,
-                fontSize: 22,
+                fontSize: t.sizeHeading,
                 fontWeight: t.displayWeight,
                 height: 56,
                 justifyContent: "center",
@@ -747,8 +903,10 @@ export function SettingsTemplate({
               A
             </span>
             <div>
-              <div style={{ fontSize: 15, fontWeight: 600 }}>Ada Lovelace</div>
-              <div style={{ color: t.textMuted, fontSize: 13 }}>Owner · joined March 2025</div>
+              <div style={{ fontSize: t.sizeBody + 1, fontWeight: 600 }}>Ada Lovelace</div>
+              <div style={{ color: t.textMuted, fontSize: t.sizeSmall }}>
+                Owner · joined March 2025
+              </div>
             </div>
             <span style={{ marginLeft: "auto" }}>
               <Button t={t} name={name} kind="secondary">
@@ -784,8 +942,8 @@ export function SettingsTemplate({
                 style={{ alignItems: "center", display: "flex", gap: t.unit }}
               >
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: 14, fontWeight: 500 }}>{title}</div>
-                  <div style={{ color: t.textMuted, fontSize: 12 }}>{sub}</div>
+                  <div style={{ fontSize: t.sizeBody, fontWeight: 500 }}>{title}</div>
+                  <div style={{ color: t.textMuted, fontSize: t.sizeLabel }}>{sub}</div>
                 </div>
                 <Toggle t={t} name={name} on={on as boolean} />
               </div>
@@ -803,10 +961,10 @@ export function SettingsTemplate({
             }}
           >
             <div>
-              <div style={{ color: t.errorText, fontSize: 14, fontWeight: 600 }}>
+              <div style={{ color: t.errorText, fontSize: t.sizeBody, fontWeight: 600 }}>
                 Delete workspace
               </div>
-              <div style={{ color: t.textMuted, fontSize: 12, marginTop: 4 }}>
+              <div style={{ color: t.textMuted, fontSize: t.sizeLabel, marginTop: 4 }}>
                 Removes every report and API key. This cannot be undone.
               </div>
             </div>
