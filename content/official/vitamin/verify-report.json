@@ -1,0 +1,131 @@
+{
+  "slug": "vitamin",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "/src/base-colors.css",
+    "/src/legacy-colors.css",
+    "/dist/index-base10.css",
+    "/dist/index-base10.less",
+    "/dist/index-base10.scss",
+    "/src/themes/core-dark.css",
+    "/src/themes/core-light.css",
+    "/src/themes/default.css",
+    "/dist/index.css",
+    "/dist/index.less",
+    "/dist/index.scss",
+    "/src/typography.css"
+  ],
+  "sourceColorCount": 40,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#007dbc",
+      "nearest": "#007dbc",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "action",
+      "value": "#00699d",
+      "nearest": "#00689d",
+      "deltaE": 0.46,
+      "verdict": "close"
+    },
+    {
+      "token": "accent",
+      "value": "#ffe928",
+      "nearest": "#ffea28",
+      "deltaE": 0.3,
+      "verdict": "close"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-secondary",
+      "value": "#f7f8f9",
+      "nearest": "#f7f8f9",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-tertiary",
+      "value": "#eff1f3",
+      "nearest": "#eff1f3",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#001018",
+      "nearest": "#001018",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-secondary",
+      "value": "#4e5d6b",
+      "nearest": "#4e5d6b",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-tertiary",
+      "value": "#687787",
+      "nearest": "#687787",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#d9dde1",
+      "nearest": "#d9dde1",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "positive",
+      "value": "#23a942",
+      "nearest": "#23a942",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#ff600a",
+      "nearest": "#ff600a",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "negative",
+      "value": "#e32c26",
+      "nearest": "#e32c26",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 12,
+    "close": 2,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 14
+  }
+}

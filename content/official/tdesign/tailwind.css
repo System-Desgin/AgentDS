@@ -1,14 +1,14 @@
 @theme {
   --color-primary: #0052d9;
-  --color-on-primary: #ffffff;
+  --color-on-primary: #000000;
   --color-primary-light: #f2f3ff;
   --color-link: #003cab;
-  --color-surface: #ffffff;
+  --color-surface: #000000;
   --color-surface-variant: #f3f3f3;
   --color-surface-page: #eeeeee;
-  --color-on-surface: #191919;
-  --color-on-surface-variant: #666666;
-  --color-placeholder: #999999;
+  --color-on-surface: #181818;
+  --color-on-surface-variant: #5e5e5e;
+  --color-placeholder: #a6a6a6;
   --color-border: #dddddd;
   --color-border-subtle: #e8e8e8;
   --color-success: #2ba471;

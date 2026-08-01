@@ -16,7 +16,7 @@ colors:
   border: "#D9DDE1"
   positive: "#23A942"
   warning: "#FF600A"
-  negative: "#E32630"
+  negative: "#E32C26"
 typography:
   display:
     fontFamily: Roboto
@@ -154,7 +154,7 @@ friendly rather than corporate.
   light surfaces.
 - **border (`#D9DDE1`)** — hairlines, dividers, and the 2px secondary-button
   outline.
-- **positive (`#23A942`) / warning (`#FF600A`) / negative (`#E32630`)** — the
+- **positive (`#23A942`) / warning (`#FF600A`) / negative (`#E32C26`)** — the
   semantic set. Negative passes AA as text on white and doubles as the
   discount red in pricing. Positive and warning clear only the 3:1
   large-text/UI threshold on white, so keep them to icons, bold short labels,

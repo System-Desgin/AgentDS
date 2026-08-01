@@ -1,0 +1,119 @@
+{
+  "slug": "vaadin-lumo",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "/src/props/color.css",
+    "/src/global/color-scheme.css",
+    "/src/mixins/field-base.css",
+    "/dist/lumo.css",
+    "/dist/utility.css",
+    "/src/utilities/border.css",
+    "/src/global/badge.css"
+  ],
+  "sourceColorCount": 109,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#006af5",
+      "nearest": "#006af5",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-text",
+      "value": "#005fdb",
+      "nearest": "#005fdb",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-tint",
+      "value": "#e4f0ff",
+      "nearest": "#e2eefe",
+      "deltaE": 0.6,
+      "verdict": "close"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "contrast-5",
+      "value": "#f5f9ff",
+      "nearest": "#f5f9ff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "contrast-10",
+      "value": "#f5f9ff",
+      "nearest": "#f5f9ff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#263445",
+      "nearest": "#233348",
+      "deltaE": 1.84,
+      "verdict": "close"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#097faa",
+      "nearest": "#097faa",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#d1e3fa",
+      "nearest": "#d1e3fa",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#0a7637",
+      "nearest": "#0a7637",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#ca150c",
+      "nearest": "#ca150c",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#ffcc00",
+      "nearest": "#ffcc00",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 11,
+    "close": 2,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 13
+  }
+}

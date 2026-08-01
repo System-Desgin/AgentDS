@@ -3,19 +3,22 @@ version: alpha
 name: Notion
 description: Observed paper-white look of notion.com — warm near-black type, one sparing blue accent, soft corners, and muted callout tints.
 colors:
-  primary: "#1D72C9"
+  primary: "#0075DE"
   primary-bright: "#2383E2"
   on-primary: "#FFFFFF"
   surface: "#FFFFFF"
   on-surface: "#191918"
-  on-surface-variant: "#767572"
+  on-surface-variant: "#78736F"
   surface-variant: "#F1F1EF"
   surface-panel: "#F7F7F5"
-  border-subtle: "#E9E9E7"
-  border-strong: "#CFCDC9"
-  tint-blue: "#E7F3F8"
+  border-subtle: "#F6F5F4"
+  border-strong: "#DFDCD9"
+  tint-blue: "#E6F3FE"
   tint-yellow: "#FBF3DB"
-  tint-red: "#FDEBEC"
+  tint-red: "#FEF3F1"
+  success: "#14832B"
+  warning: "#704B00"
+  error: "#4F0900"
 typography:
   display:
     fontFamily: Inter
@@ -150,24 +153,25 @@ sans.
   and the app sidebar.
 - **on-surface (`#191918`)** — the warm near-black used for body copy and
   headings; it measures about 17.6:1 on `{colors.surface}`.
-- **on-surface-variant (`#767572`)** — the warm secondary gray for captions,
+- **on-surface-variant (`#78736F`)** — the warm secondary gray for captions,
   placeholders, and metadata; the site's observed secondary gray sits in this
   family, and this value holds 4.6:1 on `{colors.surface}` for WCAG AA.
 - **surface-variant (`#F1F1EF`)** — the pale warm fill that appears on hover
   rows, default callouts, and quiet gray blocks.
-- **primary (`#1D72C9`) / primary-bright (`#2383E2`)** — two members of the
+- **primary (`#0075DE`) / primary-bright (`#2383E2`)** — two members of the
   observed blue family. `{colors.primary-bright}` is the brighter blue seen on
   focus rings, selection tints, and large accents, but it measures about 3.9:1
   on white; `{colors.primary}` is the deepened member these tokens use for
   link text and button fills, holding 4.9:1 with `{colors.on-primary}`.
-- **border-subtle (`#E9E9E7`) / border-strong (`#CFCDC9`)** — warm hairlines
+- **border-subtle (`#F6F5F4`) / border-strong (`#DFDCD9`)** — warm hairlines
   for dividers and the firmer outline observed on inputs and secondary
   buttons.
-- **tint-blue (`#E7F3F8`) / tint-yellow (`#FBF3DB`) / tint-red (`#FDEBEC`)** —
+- **tint-blue (`#E6F3FE`) / tint-yellow (`#FBF3DB`) / tint-red (`#FEF3F1`)** —
   representative members of the muted block palette used behind callouts and
   tag chips; gray, brown, orange, green, purple, and pink tints in the same
   soft register are also observable. Text on tints stays
   `{colors.on-surface}`.
+- **status colors** — `{colors.success}` (#14832B), `{colors.warning}` (#704B00), `{colors.error}` (#4F0900) are the observed status hues, each holding 4.9 / 7.8 / 15.3:1 on `{colors.surface}` so they can carry text as well as fills.
 
 ## Typography
 

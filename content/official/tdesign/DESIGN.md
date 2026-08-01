@@ -4,15 +4,15 @@ name: TDesign
 description: Tencent's enterprise design system — pragmatic and compact, led by TDesign Blue on a cool gray field.
 colors:
   primary: "#0052D9"
-  on-primary: "#FFFFFF"
+  on-primary: "#000000"
   primary-light: "#F2F3FF"
   link: "#003CAB"
-  surface: "#FFFFFF"
+  surface: "#000000"
   surface-variant: "#F3F3F3"
   surface-page: "#EEEEEE"
-  on-surface: "#191919"
-  on-surface-variant: "#666666"
-  placeholder: "#999999"
+  on-surface: "#181818"
+  on-surface-variant: "#5E5E5E"
+  placeholder: "#A6A6A6"
   border: "#DDDDDD"
   border-subtle: "#E8E8E8"
   success: "#2BA471"
@@ -152,12 +152,12 @@ calm: consoles, dashboards, settings surfaces, and form-heavy workflows.
 - **primary-light (`#F2F3FF`)** — step 1 of the same ramp; the fill behind
   selected menu items and checked options, carrying `{colors.primary}` text.
 - **link (`#003CAB`)** — a darker blue (ramp step 8) for standalone text links.
-- **surface (`#FFFFFF`) / surface-variant (`#F3F3F3`) / surface-page
+- **surface (`#000000`) / surface-variant (`#F3F3F3`) / surface-page
   (`#EEEEEE`)** — the container-on-page model: white cards and inputs sit on a
   gray page; the light-gray variant fills tags, table headers, and secondary
   panels.
-- **on-surface (`#191919`) / on-surface-variant (`#666666`) / placeholder
-  (`#999999`)** — the text hierarchy. TDesign defines these as black at 90%,
+- **on-surface (`#181818`) / on-surface-variant (`#5E5E5E`) / placeholder
+  (`#A6A6A6`)** — the text hierarchy. TDesign defines these as black at 90%,
   60%, and 40% alpha; values here are flattened over the white container.
 - **border (`#DDDDDD`) / border-subtle (`#E8E8E8`)** — control outlines and
   quiet dividers from the gray ramp.

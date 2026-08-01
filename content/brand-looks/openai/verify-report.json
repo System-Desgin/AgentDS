@@ -1,0 +1,117 @@
+{
+  "slug": "openai",
+  "path": "brand-look",
+  "status": "published",
+  "sourceType": "css-analysis",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "https://platform.openai.com/docs",
+    "https://academy.openai.com/",
+    "https://academy.openai.com/_next/static/css/44f0b715c34a5384.css?dpl=prod-df46564-4d01cf281256d04130fd1dd4db63709b",
+    "https://academy.openai.com/_next/static/css/a703850ebc20bf54.css?dpl=prod-df46564-4d01cf281256d04130fd1dd4db63709b",
+    "https://academy.openai.com/_next/static/css/a017279ac8cd0c67.css?dpl=prod-df46564-4d01cf281256d04130fd1dd4db63709b"
+  ],
+  "sourceColorCount": 234,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#0d0d0d",
+      "nearest": "#0a0a0a",
+      "deltaE": 0.53,
+      "verdict": "close"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#f7f7f8",
+      "nearest": "#f7f7f7",
+      "deltaE": 0.54,
+      "verdict": "close"
+    },
+    {
+      "token": "surface-muted",
+      "value": "#ececec",
+      "nearest": "#eaeaea",
+      "deltaE": 0.43,
+      "verdict": "close"
+    },
+    {
+      "token": "on-surface",
+      "value": "#0d0d0d",
+      "nearest": "#0a0a0a",
+      "deltaE": 0.53,
+      "verdict": "close"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#5d5d5d",
+      "nearest": "#616161",
+      "deltaE": 1.46,
+      "verdict": "close"
+    },
+    {
+      "token": "border",
+      "value": "#e6e6e6",
+      "nearest": "#e5e5e5",
+      "deltaE": 0.22,
+      "verdict": "close"
+    },
+    {
+      "token": "border-strong",
+      "value": "#888888",
+      "nearest": "#888888",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "accent",
+      "value": "#04b17d",
+      "nearest": "#04b17d",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#037251",
+      "nearest": "#037251",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#e49c49",
+      "nearest": "#e49c49",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#b20905",
+      "nearest": "#b20905",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 7,
+    "close": 6,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 13
+  }
+}

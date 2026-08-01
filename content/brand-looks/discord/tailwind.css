@@ -1,19 +1,19 @@
 @theme {
   --color-primary: #5865f2;
   --color-on-primary: #ffffff;
-  --color-link: #00a8fc;
+  --color-link: #00aff7;
   --color-surface: #313338;
   --color-surface-variant: #2b2d31;
   --color-surface-sunken: #1e1f22;
-  --color-neutral: #4e5058;
+  --color-neutral: #4f545c;
   --color-on-surface: #dbdee1;
-  --color-on-surface-variant: #b5bac1;
+  --color-on-surface-variant: #bdbfc0;
   --color-muted: #949ba4;
   --color-border: #3f4147;
   --color-success: #23a55a;
-  --color-warning: #f0b232;
+  --color-warning: #ffc107;
   --color-error: #f23f43;
-  --color-error-text: #fa777c;
+  --color-error-text: #ff776d;
   --font-display: "Inter";
   --font-heading-lg: "Inter";
   --font-heading: "Inter";

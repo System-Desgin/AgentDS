@@ -5,19 +5,19 @@ description: Observed dark-first look of discord.com — blurple actions on a la
 colors:
   primary: "#5865F2"
   on-primary: "#FFFFFF"
-  link: "#00A8FC"
+  link: "#00AFF7"
   surface: "#313338"
   surface-variant: "#2B2D31"
   surface-sunken: "#1E1F22"
-  neutral: "#4E5058"
+  neutral: "#4F545C"
   on-surface: "#DBDEE1"
-  on-surface-variant: "#B5BAC1"
+  on-surface-variant: "#BDBFC0"
   muted: "#949BA4"
   border: "#3F4147"
   success: "#23A55A"
-  warning: "#F0B232"
+  warning: "#FFC107"
   error: "#F23F43"
-  error-text: "#FA777C"
+  error-text: "#FF776D"
 typography:
   display:
     fontFamily: Inter
@@ -155,7 +155,7 @@ only.
   comes from stepping down this ramp, not from shadows.
 - **on-surface (`#DBDEE1`)** — the soft off-white used for body and chat-style
   text; headings push toward white for emphasis.
-- **on-surface-variant (`#B5BAC1`) / muted (`#949BA4`)** — the cool grey
+- **on-surface-variant (`#BDBFC0`) / muted (`#949BA4`)** — the cool grey
   secondary text family: the lighter grey for navigation labels and captions,
   the darker grey for timestamps, hints, and placeholder-style text. The muted
   grey sits at the WCAG AA threshold on `{colors.surface}` and reads more
@@ -164,16 +164,16 @@ only.
 - **primary (`#5865F2`)** — the signature saturated blue-violet, used as a fill
   for primary buttons, brand badges, and selection moments, always with
   `{colors.on-primary}` text.
-- **link (`#00A8FC`)** — the bright cyan-blue observed on inline links in
+- **link (`#00AFF7`)** — the bright cyan-blue observed on inline links in
   chat-style content.
-- **neutral (`#4E5058`)** — the mid-grey fill for secondary buttons and quiet
+- **neutral (`#4F545C`)** — the mid-grey fill for secondary buttons and quiet
   controls.
 - **border (`#3F4147`)** — low-contrast hairlines that separate panels and list
   regions.
-- **success (`#23A55A`) / warning (`#F0B232`) / error (`#F23F43`)** — the
+- **success (`#23A55A`) / warning (`#FFC107`) / error (`#F23F43`)** — the
   status family observed in presence dots, badges, and alerts. Warning reads as
   text on the grey ramp; green and red do not, so green is used as a fill with
-  dark text and red text routes through **error-text (`#FA777C`)**, the lighter
+  dark text and red text routes through **error-text (`#FF776D`)**, the lighter
   red that passes AA on `{colors.surface}`.
 
 ## Typography

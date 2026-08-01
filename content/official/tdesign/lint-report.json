@@ -2,8 +2,23 @@
   "findings": [
     {
       "severity": "warning",
-      "path": "components.badge-count",
-      "message": "textColor (#ffffff) on backgroundColor (#d54941) has contrast ratio 4.32:1, below WCAG AA minimum of 4.5:1."
+      "path": "components.button-primary",
+      "message": "textColor (#000000) on backgroundColor (#0052d9) has contrast ratio 3.21:1, below WCAG AA minimum of 4.5:1."
+    },
+    {
+      "severity": "warning",
+      "path": "components.button-default",
+      "message": "textColor (#181818) on backgroundColor (#000000) has contrast ratio 1.18:1, below WCAG AA minimum of 4.5:1."
+    },
+    {
+      "severity": "warning",
+      "path": "components.card",
+      "message": "textColor (#181818) on backgroundColor (#000000) has contrast ratio 1.18:1, below WCAG AA minimum of 4.5:1."
+    },
+    {
+      "severity": "warning",
+      "path": "components.input",
+      "message": "textColor (#181818) on backgroundColor (#000000) has contrast ratio 1.18:1, below WCAG AA minimum of 4.5:1."
     },
     {
       "severity": "info",
@@ -12,7 +27,7 @@
   ],
   "summary": {
     "errors": 0,
-    "warnings": 1,
+    "warnings": 4,
     "infos": 1
   }
 }

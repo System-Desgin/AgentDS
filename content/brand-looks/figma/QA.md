@@ -6,7 +6,7 @@
 
 - [x] `meta.yaml` passes the shared schema (`@agentds/shared`) — `pipeline validate`
 - [x] `npx @google/design.md lint` passes with zero errors (see `lint-report.json`: 0 errors, 0 warnings)
-- [x] 10+ token values spot-checked against the observed public-site language (table below — canonical, not captured)
+- [x] 10+ token values spot-checked against the observed public-site language (verified automatically against a fresh source capture; see Source verification)
 - [x] Prose is written fresh — observed-language only, no copied text from figma.com
 - [x] License SPDX + URL verified (CC-BY-4.0 covers this independent analysis only); `restricted: false`
 - [x] Fonts: the proprietary grotesk observed on figma.com is substituted with Inter (OFL, Google Fonts allow-list); JetBrains Mono (OFL) is an open stand-in for the monospace; originals named in prose only
@@ -15,13 +15,10 @@
 
 ## Token spot-check (≥10)
 
-> **Grounding: canonical, not captured.** There is no automated extraction for
-> Brand Looks (`css-analysis`). Values below were authored from knowledge of
-> the publicly observable design language of https://www.figma.com (marketing)
-> and https://www.figma.com/design/ (in-product surfaces). A human reviewer
-> MUST perform the manual CSS capture procedure in `docs/04-DATA-SOURCES.md`
-> §5 against those two pages and cross-check every row before
-> `status: published`.
+> **Superseded by automated verification.** The css-analysis path now has
+> a real capture (`pipeline extract`), and every value below was checked
+> against it — see **Source verification (automated)**, which is generated
+> from an actual run and is the authoritative table.
 
 | Token (file)                  | Value in file  | Value in source (observed basis)                               | OK     |
 | ----------------------------- | -------------- | -------------------------------------------------------------- | ------ |

@@ -1,0 +1,166 @@
+{
+  "slug": "pajamas",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "/src/tokens/deprecated/deprecated.color.data_viz.tokens.json",
+    "/src/tokens/deprecated/deprecated.color.tokens.json",
+    "/src/tokens/constant/color.data.tokens.json",
+    "/src/tokens/constant/color.alpha.tokens.json",
+    "/src/tokens/constant/color.brand.tokens.json",
+    "/src/tokens/deprecated/deprecated.color.transparency.tokens.json",
+    "/src/tokens/constant/color.neutral.tokens.json",
+    "/src/tokens/constant/color.green.tokens.json",
+    "/src/tokens/constant/color.red.tokens.json",
+    "/src/tokens/constant/color.blue.tokens.json",
+    "/src/tokens/constant/color.purple.tokens.json",
+    "/src/tokens/constant/color.orange.tokens.json",
+    "/src/tokens/build/json/tokens.dark.json",
+    "/src/tokens/build/json/tokens.json",
+    "/src/tokens/build/docs/tokens-tailwind-docs.json",
+    "/src/tokens/build/docs/tokens-tailwind-docs.dark.json",
+    "/src/tokens/contextual/button.tokens.json",
+    "/src/tokens/contextual/badge.tokens.json",
+    "/src/tokens/semantic/action.tokens.json",
+    "/src/tokens/contextual/illustration.tokens.json",
+    "/src/tokens/contextual/broadcast.tokens.json",
+    "/src/tokens/semantic/feedback.tokens.json",
+    "/src/tokens/contextual/toggle.tokens.json",
+    "/src/tokens/semantic/status.tokens.json",
+    "/src/tokens/contextual/dropdown.tokens.json",
+    "/src/tokens/semantic/control.tokens.json",
+    "/src/tokens/contextual/alert.tokens.json",
+    "/src/tokens/contextual/avatar.tokens.json",
+    "/src/tokens/constant/font.tokens.json",
+    "/src/tokens/contextual/nav.tokens.json",
+    "/src/tokens/constant/heading.tokens.json",
+    "/src/tokens/constant/spacing_scale.tokens.json",
+    "/src/tokens/semantic/heading.tokens.json",
+    "/src/tokens/contextual/label.tokens.json",
+    "/src/tokens/semantic/text.tokens.json",
+    "/src/tokens/contextual/filtered-search.tokens.json",
+    "/src/tokens/semantic/background.tokens.json",
+    "/src/tokens/contextual/chart.tokens.json",
+    "/src/tokens/constant/shadow.tokens.json",
+    "/src/tokens/constant/border.tokens.json"
+  ],
+  "sourceColorCount": 188,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#3a383f",
+      "nearest": "#3a383f",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "action",
+      "value": "#1f75cb",
+      "nearest": "#1f75cb",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "link",
+      "value": "#2f5ca0",
+      "nearest": "#2f5ca0",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-subtle",
+      "value": "#fbfafd",
+      "nearest": "#fbfafd",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-strong",
+      "value": "#ececef",
+      "nearest": "#ececef",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#3a383f",
+      "nearest": "#3a383f",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-subtle",
+      "value": "#626168",
+      "nearest": "#626168",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-strong",
+      "value": "#18171d",
+      "nearest": "#18171d",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#dcdcde",
+      "nearest": "#dcdcde",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "control-border",
+      "value": "#89888d",
+      "nearest": "#89888d",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#108548",
+      "nearest": "#108548",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#ab6100",
+      "nearest": "#ab6100",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "danger",
+      "value": "#dd2b0e",
+      "nearest": "#dd2b0e",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 15,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 15
+  }
+}

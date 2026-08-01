@@ -1,0 +1,117 @@
+{
+  "slug": "nvidia",
+  "path": "brand-look",
+  "status": "published",
+  "sourceType": "css-analysis",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "https://www.nvidia.com",
+    "https://www.nvidia.com/etc.clientlibs/nvidiaweb/clientlibs/clientlib-site.min.1474fb5190b61b54fcb323ae9dab6a52.css",
+    "https://www.nvidia.com/etc.clientlibs/nvidiaweb/clientlibs/clientlib-base.min.8684b0f16f804cac8396aa31fdf033e6.css",
+    "https://www.nvidia.com/etc.clientlibs/nvidiaweb/clientlibs/clientlib-nvgdccart.min.d41d8cd98f00b204e9800998ecf8427e.css",
+    "https://www.nvidia.com/en-us/geforce/"
+  ],
+  "sourceColorCount": 102,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#76b900",
+      "nearest": "#76b900",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#000000",
+      "nearest": "#000000",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#000000",
+      "nearest": "#000000",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#1a1a1a",
+      "nearest": "#1a1a1a",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-muted",
+      "value": "#262626",
+      "nearest": "#222222",
+      "deltaE": 1.26,
+      "verdict": "close"
+    },
+    {
+      "token": "on-surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#cccccc",
+      "nearest": "#cccccc",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "helper",
+      "value": "#999999",
+      "nearest": "#999999",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#333333",
+      "nearest": "#333333",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-strong",
+      "value": "#666666",
+      "nearest": "#666666",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#76b900",
+      "nearest": "#76b900",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#ffbc01",
+      "nearest": "#ffbc01",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#f44336",
+      "nearest": "#f44336",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 12,
+    "close": 1,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 13
+  }
+}

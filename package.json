@@ -22,6 +22,7 @@
     "format:check": "prettier --check .",
     "audit": "pnpm audit --audit-level=moderate",
     "validate:content": "pnpm --filter @agentds/shared build && node scripts/validate-content.mjs",
+    "check:verification": "node scripts/check-verification.mjs",
     "pipeline": "pnpm --filter @agentds/pipeline start",
     "prepare": "husky"
   },

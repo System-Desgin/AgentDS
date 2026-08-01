@@ -31,9 +31,11 @@ provenance:
   urls:
     - https://www.figma.com
     - https://www.figma.com/design/
-  extracted_at: "2026-07-21"
+    - https://www.figma.com/blog/
+    - https://www.figma.com/community
+  extracted_at: "2026-08-01"
 links:
   official_site: https://www.figma.com
 restricted: false
-status: published
+status: draft
 spec_version: alpha

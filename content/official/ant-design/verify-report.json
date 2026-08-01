@@ -1,0 +1,116 @@
+{
+  "slug": "ant-design",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "/es/version/token-meta.json",
+    "/lib/version/token-meta.json",
+    "/es/version/token.json",
+    "/lib/version/token.json"
+  ],
+  "sourceColorCount": 38,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#1677ff",
+      "nearest": "#1677ff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#000c17",
+      "nearest": "#000c17",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-hover",
+      "value": "#4096ff",
+      "nearest": "#4096ff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "link",
+      "value": "#1677ff",
+      "nearest": "#1677ff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#000c17",
+      "nearest": "#000c17",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#050505",
+      "nearest": "#050505",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#002140",
+      "nearest": "#002140",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#f5f5f5",
+      "nearest": "#f5f5f5",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "fill",
+      "value": "#f0f0f0",
+      "nearest": "#f0f0f0",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#d9d9d9",
+      "nearest": "#d9d9d9",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#8eff1e",
+      "nearest": "#8eff1e",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#faad14",
+      "nearest": "#ffaf05",
+      "deltaE": 0.98,
+      "verdict": "close"
+    },
+    {
+      "token": "error",
+      "value": "#ff4d4f",
+      "nearest": "#ff4d4f",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 12,
+    "close": 1,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 13
+  }
+}

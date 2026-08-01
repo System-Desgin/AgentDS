@@ -14,8 +14,8 @@ colors:
   border: "#333333"
   border-strong: "#666666"
   success: "#76B900"
-  warning: "#FFB300"
-  error: "#FF5252"
+  warning: "#FFBC01"
+  error: "#F44336"
 typography:
   display:
     fontFamily: Work Sans
@@ -158,7 +158,7 @@ and high-performance.
 - **success (`#76B900`)** — status green; the same hue as
   `{colors.primary}`, since the observed pages use one green for both
   roles.
-- **warning (`#FFB300`) / error (`#FF5252`)** — amber and red status hues
+- **warning (`#FFBC01`) / error (`#F44336`)** — amber and red status hues
   legible on the dark surfaces; amber also works as a fill behind black
   text.
 

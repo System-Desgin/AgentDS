@@ -17,6 +17,7 @@ colors:
   positive: "#05834E"
   notice: "#C24E00"
   negative: "#D73220"
+  warning: "#724800"
 typography:
   display:
     fontFamily: Source Sans 3
@@ -162,6 +163,7 @@ theme.
   on white and as fills under white text.
 
 Every pairing above meets WCAG AA 4.5:1 against its stated background.
+- **status colors** — `{colors.warning}` (#724800) are the observed status hues, each holding 7.9:1 on `{colors.surface}` so they can carry text as well as fills.
 
 ## Typography
 

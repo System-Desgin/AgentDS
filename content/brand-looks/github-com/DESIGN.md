@@ -18,6 +18,9 @@ colors:
   glow-purple: "#A371F7"
   glow-blue: "#79C0FF"
   glow-green: "#3FB950"
+  success: "#006222"
+  warning: "#523F00"
+  error: "#730019"
 typography:
   display:
     fontFamily: Inter
@@ -167,6 +170,7 @@ family. Reach for it on developer-facing launch and landing pages.
 - **border (`#D1D9E0`) / hero-border (`#30363D`)** — 1px hairlines on white
   and on dark sections respectively; neither is used as text.
 - **accent (`#0969DA`)** — the observed link blue on light surfaces (5.2:1).
+- **status colors** — `{colors.success}` (#006222), `{colors.warning}` (#523F00), `{colors.error}` (#730019) are the observed status hues, each holding 7.6 / 10.1 / 12.0:1 on `{colors.surface}` so they can carry text as well as fills.
 
 ## Typography
 

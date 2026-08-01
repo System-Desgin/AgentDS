@@ -1,0 +1,129 @@
+{
+  "slug": "vercel",
+  "path": "brand-look",
+  "status": "published",
+  "sourceType": "css-analysis",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "https://vercel.com",
+    "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/3kj06ogg-3xgx.css",
+    "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/0a50qtl0l53-z.css",
+    "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/1nqh7532ivmbm.css",
+    "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/3u82rwmj_1n8p.css",
+    "https://vercel.com/design",
+    "https://vercel.com/vc-ap-b3331f/_next/static/immutable/chunks/328y7_b581oob.css",
+    "https://vercel.com/vc-ap-b3331f/_next/static/immutable/chunks/0vob45pdybo2z.css",
+    "https://vercel.com/vc-ap-b3331f/_next/static/immutable/chunks/26iwqpkk7qoud.css",
+    "https://vercel.com/vc-ap-b3331f/_next/static/immutable/chunks/1cr218pgwwu4_.css",
+    "https://nextjs.org",
+    "https://nextjs.org/_next/static/immutable/chunks/3qo2-0rh2tmoe.css",
+    "https://nextjs.org/_next/static/immutable/chunks/1_zrgowp78oux.css",
+    "https://nextjs.org/_next/static/immutable/chunks/3m0ev7n-8skg_.css",
+    "https://nextjs.org/_next/static/immutable/chunks/3hcatbgun-7ra.css",
+    "https://nextjs.org/_next/static/immutable/chunks/3qdogvjdzhund.css",
+    "https://nextjs.org/_next/static/immutable/chunks/38ji0tyaf5arx.css"
+  ],
+  "sourceColorCount": 510,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#000000",
+      "nearest": "#000000",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#fafafa",
+      "nearest": "#fafafa",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-muted",
+      "value": "#f2f2f2",
+      "nearest": "#f2f2f2",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#171717",
+      "nearest": "#171717",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#666666",
+      "nearest": "#666666",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#eaeaea",
+      "nearest": "#eaeaea",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-strong",
+      "value": "#999999",
+      "nearest": "#999999",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "accent",
+      "value": "#0070f3",
+      "nearest": "#0070f3",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#ee0000",
+      "nearest": "#ee0000",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#f5a623",
+      "nearest": "#f5a623",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#00661d",
+      "nearest": "#00661d",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 13,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 13
+  }
+}

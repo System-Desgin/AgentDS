@@ -8,11 +8,11 @@ colors:
   primary-text: "#005FDB"
   primary-tint: "#E4F0FF"
   surface: "#FFFFFF"
-  contrast-5: "#F3F5F7"
-  contrast-10: "#E8EBEF"
+  contrast-5: "#F5F9FF"
+  contrast-10: "#F5F9FF"
   on-surface: "#263445"
-  on-surface-variant: "#616D7C"
-  border: "#C4CAD3"
+  on-surface-variant: "#097FAA"
+  border: "#D1E3FA"
   success: "#0A7637"
   error: "#CA150C"
   warning: "#FFCC00"
@@ -140,13 +140,13 @@ apps that should feel approachable rather than austere.
   clears WCAG AA.
 - **primary-tint (`#E4F0FF`)** — the 10 percent primary tint behind default
   badges and selected rows; text on it is `{colors.primary-text}`.
-- **surface (`#FFFFFF`) / contrast-5 (`#F3F5F7`) / contrast-10 (`#E8EBEF`)** —
+- **surface (`#FFFFFF`) / contrast-5 (`#F5F9FF`) / contrast-10 (`#F5F9FF`)** —
   Lumo derives every neutral from one contrast ramp: the white base, a whisper
   of gray-blue for secondary buttons and panels, and a firmer step for input
   fills and dividers.
-- **on-surface (`#263445`) / on-surface-variant (`#616D7C`)** — body text and
+- **on-surface (`#263445`) / on-surface-variant (`#097FAA`)** — body text and
   secondary text, both blue-tinted grays from the same contrast ramp.
-- **border (`#C4CAD3`)** — the 30 percent contrast step for outlined cards and
+- **border (`#D1E3FA`)** — the 30 percent contrast step for outlined cards and
   control borders.
 - **success (`#0A7637`) / error (`#CA150C`)** — text-grade status greens and
   reds; their solid fill variants carry `{colors.on-primary}` text.

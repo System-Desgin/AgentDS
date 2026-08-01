@@ -1,0 +1,52 @@
+name: Verify sources
+
+# Network half of the publish gate. Re-extracts every entry's cited source and
+# compares it to the published tokens, so upstream drift (a design system
+# repaletting, a marketing site redesign) surfaces as a failing run instead of
+# quietly making the catalog wrong. Kept off PRs on purpose: it depends on
+# third-party availability and must not block unrelated changes.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Verify a single entry (blank = all)"
+        required: false
+
+jobs:
+  verify:
+    name: tokens vs. upstream source
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Verify against upstream
+        run: |
+          if [ -n "${{ inputs.slug }}" ]; then
+            pnpm pipeline verify "${{ inputs.slug }}"
+          else
+            pnpm pipeline verify --all
+          fi
+
+      - name: Upload verification reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verify-reports
+          path: content/**/verify-report.json
+          if-no-files-found: warn

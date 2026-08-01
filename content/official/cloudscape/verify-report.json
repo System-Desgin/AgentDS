@@ -1,0 +1,97 @@
+{
+  "slug": "cloudscape",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": ["/index-visual-refresh.json"],
+  "sourceColorCount": 237,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#006ce0",
+      "nearest": "#006ce0",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#0f141a",
+      "nearest": "#0f141a",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#424650",
+      "nearest": "#424650",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-selected",
+      "value": "#f0fbff",
+      "nearest": "#f0fbff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#c6c6cd",
+      "nearest": "#c6c6cd",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-strong",
+      "value": "#8c8c94",
+      "nearest": "#8c8c94",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#00802f",
+      "nearest": "#00802f",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#855900",
+      "nearest": "#855900",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#db0000",
+      "nearest": "#db0000",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 11,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 11
+  }
+}

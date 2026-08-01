@@ -3,19 +3,19 @@ version: alpha
 name: Flowbite
 description: A Tailwind-native component system — Inter, an electric brand blue, and utility-first neutrals.
 colors:
-  primary: "#1C64F2"
+  primary: "#155DFC"
   on-primary: "#FFFFFF"
-  primary-strong: "#1A56DB"
-  link: "#1C64F2"
+  primary-strong: "#155DFC"
+  link: "#155DFC"
   surface: "#FFFFFF"
   on-surface: "#111827"
   on-surface-variant: "#6B7280"
   surface-variant: "#F9FAFB"
   fill: "#F3F4F6"
   border: "#E5E7EB"
-  success: "#0E9F6E"
-  warning: "#9F580A"
-  error: "#E02424"
+  success: "#009966"
+  warning: "#A65F00"
+  error: "#E7000B"
 typography:
   display:
     fontFamily: Inter
@@ -135,15 +135,15 @@ admin UIs that should feel current and utility-first.
 
 ## Colors
 
-- **primary (`#1C64F2`) / on-primary (`#FFFFFF`)** — the electric brand blue for
-  primary actions; **primary-strong (`#1A56DB`)** for hover/pressed.
-- **link (`#1C64F2`)** — inline links.
+- **primary (`#155DFC`) / on-primary (`#FFFFFF`)** — the electric brand blue for
+  primary actions; **primary-strong (`#155DFC`)** for hover/pressed.
+- **link (`#155DFC`)** — inline links.
 - **surface (`#FFFFFF`) / surface-variant (`#F9FAFB`)** — content and section
   backgrounds; **fill (`#F3F4F6`)** for neutral badges and quiet fills.
 - **on-surface (`#111827`) / on-surface-variant (`#6B7280`)** — primary and
   secondary text (Tailwind gray-900 / gray-500).
 - **border (`#E5E7EB`)** — the default control and divider line.
-- **success (`#0E9F6E`) / warning (`#9F580A`) / error (`#E02424`)** — status
+- **success (`#009966`) / warning (`#A65F00`) / error (`#E7000B`)** — status
   colours; success as a fill with dark text, warning as text, error as a fill.
 
 All text pairings above meet WCAG AA against their stated backgrounds.

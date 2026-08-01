@@ -1,0 +1,125 @@
+{
+  "slug": "netflix",
+  "path": "brand-look",
+  "status": "published",
+  "sourceType": "css-analysis",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "https://www.netflix.com",
+    "https://assets.nflxext.com/web/ffe/wp/@nf-web-ui/ui-shared/dist/less/signup/nmhp/nmhp.1afe2e52bff213979e1d.css",
+    "https://about.netflix.com",
+    "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css",
+    "https://about.netflix.com/_next/static/css/1aca52c0deb41e51.css"
+  ],
+  "sourceColorCount": 43,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#e50914",
+      "nearest": "#e50914",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-dim",
+      "value": "#c11119",
+      "nearest": "#c11119",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "background",
+      "value": "#000000",
+      "nearest": "#000000",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#141414",
+      "nearest": "#161616",
+      "deltaE": 0.56,
+      "verdict": "close"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#181818",
+      "nearest": "#161616",
+      "deltaE": 0.61,
+      "verdict": "close"
+    },
+    {
+      "token": "surface-raised",
+      "value": "#333333",
+      "nearest": "#2d2d2d",
+      "deltaE": 1.92,
+      "verdict": "close"
+    },
+    {
+      "token": "on-surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#b3b3b3",
+      "nearest": "#b3b3b3",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "muted",
+      "value": "#808080",
+      "nearest": "#808080",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-subtle",
+      "value": "#404040",
+      "nearest": "#414141",
+      "deltaE": 0.33,
+      "verdict": "close"
+    },
+    {
+      "token": "success",
+      "value": "#3dcc4a",
+      "nearest": "#3dcc4a",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#ff6803",
+      "nearest": "#ff6803",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#eb3942",
+      "nearest": "#eb3942",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 10,
+    "close": 4,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 14
+  }
+}

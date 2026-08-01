@@ -1,0 +1,124 @@
+{
+  "slug": "moon",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "/lib/moon-base.css",
+    "/lib/bitcasino.css",
+    "/lib/bitcasinoNew.css",
+    "/lib/livecasino.css",
+    "/lib/comms.css",
+    "/lib/betadda.css",
+    "/lib/sportsbet.css",
+    "/lib/moon.css",
+    "/lib/tradeart.css",
+    "/lib/empire.css",
+    "/lib/bombayClub.css",
+    "/lib/tradeartMiniBetting.css"
+  ],
+  "sourceColorCount": 270,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#5c33cf",
+      "nearest": "#5c33cf",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "accent",
+      "value": "#1bd29a",
+      "nearest": "#1bd29a",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#f6f7f9",
+      "nearest": "#f6f7f9",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#000000",
+      "nearest": "#000000",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#687083",
+      "nearest": "#687083",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#dcdee3",
+      "nearest": "#dcdee3",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "info",
+      "value": "#3448f0",
+      "nearest": "#3448f0",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#49b356",
+      "nearest": "#49b356",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#ffb319",
+      "nearest": "#ffb319",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#ff4e64",
+      "nearest": "#ff4e64",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error-strong",
+      "value": "#d33030",
+      "nearest": "#d33030",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 13,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 13
+  }
+}

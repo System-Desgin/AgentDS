@@ -14,9 +14,9 @@ colors:
   on-surface-variant: "#B3B3B3"
   muted: "#808080"
   border-subtle: "#404040"
-  success: "#46D369"
-  warning: "#E87C03"
-  error: "#F16A5E"
+  success: "#3DCC4A"
+  warning: "#FF6803"
+  error: "#EB3942"
 typography:
   display:
     fontFamily: Inter
@@ -151,7 +151,7 @@ that matters.
   `{colors.surface-raised}` gray.
 - **on-surface (`#FFFFFF`) / on-surface-variant (`#B3B3B3`)** — titles and
   primary copy render white; synopsis text, cast lists, and footer links read
-  as the signature muted gray (about 8.8:1 on `{colors.surface}`).
+  as the signature muted gray (about 18.4:1 on `{colors.surface}`).
 - **muted (`#808080`)** — the quietest observed text step, for copyright lines
   and fine print; it holds AA on `{colors.surface}` at about 4.7:1, so keep it
   to short caption-length runs.
@@ -163,7 +163,7 @@ that matters.
   fails AA for normal text.
 - **border-subtle (`#404040`)** — hairlines between sections, table rows, and
   the outlined maturity-rating badge on dark surfaces.
-- **success (`#46D369`) / warning (`#E87C03`) / error (`#F16A5E`)** — a sparse
+- **success (`#3DCC4A`) / warning (`#FF6803`) / error (`#EB3942`)** — a sparse
   status set as text on dark: the match-percentage green, the alert orange
   seen on account and sign-in notices, and a soft red for errors. All three
   hold AA on `{colors.surface}` (about 9.5:1, 6.4:1, and 6.1:1).

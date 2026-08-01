@@ -11,11 +11,11 @@ colors:
   surface-tint: "#F6F9FC"
   on-surface: "#0A2540"
   on-surface-variant: "#425466"
-  helper: "#596171"
+  helper: "#545969"
   border: "#E3E8EE"
-  success: "#0E6245"
-  warning: "#983705"
-  error: "#A41C4E"
+  success: "#006F3A"
+  warning: "#AB3500"
+  error: "#B51145"
 typography:
   display:
     fontFamily: Inter
@@ -147,11 +147,11 @@ documentation underneath.
 - **surface (`#FFFFFF`) / surface-tint (`#F6F9FC`)** — alternating light
   section fields; the tint carries a faint blue cast.
 - **on-surface (`#0A2540`) / on-surface-variant (`#425466`)** — headings read
-  as navy, body copy as slate; **helper (`#596171`)** covers secondary docs
+  as navy, body copy as slate; **helper (`#545969`)** covers secondary docs
   text.
 - **border (`#E3E8EE`)** — hairline dividers and card outlines on light
   sections.
-- **success (`#0E6245`) / warning (`#983705`) / error (`#A41C4E`)** — darkened
+- **success (`#006F3A`) / warning (`#AB3500`) / error (`#B51145`)** — darkened
   status text accents in the family the docs UI uses; all read as text on
   light surfaces.
 

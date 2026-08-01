@@ -1,0 +1,132 @@
+{
+  "slug": "spectrum",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "/src/color-palette.json",
+    "/src/color-aliases.json",
+    "/src/color-component.json",
+    "/src/semantic-color-palette.json",
+    "/dist/json/variables.json",
+    "/src/typography.json"
+  ],
+  "sourceColorCount": 609,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#3b63fb",
+      "nearest": "#3b63fb",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "background",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "layer-1",
+      "value": "#f8f8f8",
+      "nearest": "#f8f8f8",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "gray-100",
+      "value": "#e9e9e9",
+      "nearest": "#e9e9e9",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "neutral-content",
+      "value": "#292929",
+      "nearest": "#292929",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "neutral-subdued",
+      "value": "#505050",
+      "nearest": "#505050",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "helper",
+      "value": "#717171",
+      "nearest": "#717171",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#dadada",
+      "nearest": "#dadada",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-strong",
+      "value": "#8f8f8f",
+      "nearest": "#8f8f8f",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "focus",
+      "value": "#4b75ff",
+      "nearest": "#4b75ff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "positive",
+      "value": "#05834e",
+      "nearest": "#05834e",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "notice",
+      "value": "#c24e00",
+      "nearest": "#c24e00",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "negative",
+      "value": "#d73220",
+      "nearest": "#d73220",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#724800",
+      "nearest": "#724800",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 15,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 15
+  }
+}

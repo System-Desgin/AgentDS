@@ -90,11 +90,12 @@ Everything the pipeline and content team pull from. **All URLs and package names
 Repeatable, documented, defensible (this is what separates us from sloppy scraping):
 
 1. **Scope:** public marketing/product pages only; no login walls, no assets downloaded, no logos redistributed.
-2. **Capture:** in-browser — collect `:root` CSS custom properties; computed styles of canonical elements (body, h1–h3, primary/secondary CTA, card, input, nav): color, font stack, size/weight/line-height/letter-spacing, radius, shadow, spacing rhythm. Record page URLs + capture date in provenance.
+2. **Capture:** automated — `pnpm pipeline extract <slug>` fetches the provenance URLs, follows their linked stylesheets and inline `<style>` blocks, and harvests the `:root` custom-property layer plus every literal color, font stack and radius. It reads hex, `rgb()`, `hsl()`, the OKLab family, and `color-mix(… transparent …)` (composited over both light and dark ground), because modern sites publish in all of them. Output is `tokens.raw.json`; page URLs + capture date go in provenance. Sites that expose no CSS token layer (JS-rendered or bot-blocked) come back thin — that is reported, not papered over, and such an entry cannot be published.
 3. **Normalize** into the DESIGN.md token schema with semantic role mapping (primary/surface/on-surface…).
 4. **Fonts:** name the observed family in prose; token `fontFamily` uses a licensed Google-Fonts substitute from our fixed substitution map (e.g., proprietary grotesk → Inter; SF Pro → Inter; custom serif → Source Serif 4).
 5. **Disclaimer header (mandatory, injected by pipeline):** "Independent analysis of publicly observable design patterns. Not affiliated with, endorsed by, or sponsored by {maker}. All trademarks belong to their owners. Use as inspiration for an original system."
 6. Same `generate → lint → export → QA` steps as Official path.
+7. **Verify before publish:** `pnpm pipeline verify <slug>` re-extracts the cited source and compares every published color to it using CIEDE2000 (exact / close ΔE ≤ 2 / drift ≤ 5 / unmatched > 5). `--fix` re-grounds drifted values on the real source color, keeping every component pair at WCAG AA and recomputing the contrast ratios quoted in prose. A published entry must carry a passing report — enforced offline on every PR by `scripts/check-verification.mjs`, and re-run against live upstreams weekly by `.github/workflows/verify-sources.yml`.
 
 Reference collections for calibration only — never copy their files: `VoltAgent/awesome-design-md` (getdesign.md), `VoltAgent/awesome-claude-design`, designmd.app/library, `marvkr/better-design`.
 

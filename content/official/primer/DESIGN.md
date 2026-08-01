@@ -16,6 +16,7 @@ colors:
   on-emphasis: "#FFFFFF"
   danger: "#CF222E"
   attention: "#9A6700"
+  success: "#007728"
 typography:
   display:
     fontFamily: Mona Sans
@@ -147,6 +148,7 @@ workflow: information-dense, quiet, and precise.
   states; keep them semantic.
 
 All text pairings above meet WCAG AA against their stated backgrounds.
+- **status colors** — `{colors.success}` (#007728) are the observed status hues, each holding 5.7:1 on `{colors.surface}` so they can carry text as well as fills.
 
 ## Typography
 

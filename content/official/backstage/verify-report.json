@@ -1,0 +1,118 @@
+{
+  "slug": "backstage",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": ["/dist/base/palettes.esm.js", "/dist/base/pageTheme.esm.js"],
+  "sourceColorCount": 61,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#1f5493",
+      "nearest": "#1f5493",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#f8f8f8",
+      "nearest": "#f8f8f8",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "paper",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#000000",
+      "nearest": "#000000",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "text-subtle",
+      "value": "#6e6e6e",
+      "nearest": "#6e6e6e",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#e6e6e6",
+      "nearest": "#e6e6e6",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "link",
+      "value": "#0a6ebe",
+      "nearest": "#0a6ebe",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "header",
+      "value": "#171717",
+      "nearest": "#171717",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-header",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "nav-muted",
+      "value": "#b5b5b5",
+      "nearest": "#b5b5b5",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#1db954",
+      "nearest": "#1db954",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#ff9800",
+      "nearest": "#ff9800",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#e22134",
+      "nearest": "#e22134",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 14,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 14
+  }
+}

@@ -1,13 +1,18 @@
 {
   "findings": [
     {
+      "severity": "warning",
+      "path": "colors.warning",
+      "message": "'warning' is defined but never referenced by any component."
+    },
+    {
       "severity": "info",
-      "message": "Design system defines 14 colors, 7 typography scales, 5 rounding levels, 8 spacing tokens, 14 components."
+      "message": "Design system defines 15 colors, 7 typography scales, 5 rounding levels, 8 spacing tokens, 14 components."
     }
   ],
   "summary": {
     "errors": 0,
-    "warnings": 0,
+    "warnings": 1,
     "infos": 1
   }
 }

@@ -61,7 +61,7 @@ curl -fsSL https://api.agent-ds.oday-bakkour.com/v1/systems/carbon/design.md
 apps/web/          Next.js (App Router, RSC, Tailwind v4) — deployed on Vercel
 apps/api/          NestJS (Express) + Prisma + PostgreSQL — Docker on Dokploy
 packages/shared/   zod schemas (meta.yaml, API DTOs), types, taxonomy constants
-packages/pipeline/ content CLI: extract | generate | validate | export | new
+packages/pipeline/ content CLI: extract | generate | validate | verify | export | new
 content/           official/<slug>/ and brand-looks/<slug>/ catalog entries
 skills/            Agent Skills (SKILL.md) — master skill + flagship singles
 docs/              project docs (idea, PRD, checklist, data sources)

@@ -1,0 +1,133 @@
+{
+  "slug": "dsfr",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "/.config/colors.json",
+    "/dist/utility/colors/colors.css",
+    "/dist/utility/colors/colors.main.css",
+    "/dist/utility/colors/colors.legacy.css",
+    "/dist/scheme/scheme.css",
+    "/src/module/elevation/variable/_colors.scss",
+    "/dist/utility/colors/colors.min.css"
+  ],
+  "sourceColorCount": 564,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#000091",
+      "nearest": "#000091",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-soft",
+      "value": "#e3e3fd",
+      "nearest": "#e3e3fd",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "red-marianne",
+      "value": "#e1000f",
+      "nearest": "#e1000f",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-alt",
+      "value": "#f6f6f6",
+      "nearest": "#f6f6f6",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-contrast",
+      "value": "#eeeeee",
+      "nearest": "#ededed",
+      "deltaE": 0.21,
+      "verdict": "close"
+    },
+    {
+      "token": "on-surface",
+      "value": "#3a3a3a",
+      "nearest": "#3a3a3a",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-title",
+      "value": "#161616",
+      "nearest": "#161616",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-mention",
+      "value": "#666666",
+      "nearest": "#666666",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#dddddd",
+      "nearest": "#dfdfdf",
+      "deltaE": 0.45,
+      "verdict": "close"
+    },
+    {
+      "token": "info",
+      "value": "#0063cb",
+      "nearest": "#0063cb",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#18753c",
+      "nearest": "#18753c",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#b34000",
+      "nearest": "#b34000",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#ce0500",
+      "nearest": "#ce0500",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 13,
+    "close": 2,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 15
+  }
+}

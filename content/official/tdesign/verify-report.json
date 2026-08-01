@@ -1,0 +1,130 @@
+{
+  "slug": "tdesign",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "/dist/tdesign.css",
+    "/dist/tdesign.min.css",
+    "/esm/common/style/web/_global.less",
+    "/es/button/style/index.css"
+  ],
+  "sourceColorCount": 98,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#0052d9",
+      "nearest": "#0052d9",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#000000",
+      "nearest": "#000000",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-light",
+      "value": "#f2f3ff",
+      "nearest": "#f2f3ff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "link",
+      "value": "#003cab",
+      "nearest": "#003cab",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#000000",
+      "nearest": "#000000",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#f3f3f3",
+      "nearest": "#f3f3f3",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-page",
+      "value": "#eeeeee",
+      "nearest": "#eeeeee",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#181818",
+      "nearest": "#181818",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#5e5e5e",
+      "nearest": "#5e5e5e",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "placeholder",
+      "value": "#a6a6a6",
+      "nearest": "#a6a6a6",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#dddddd",
+      "nearest": "#dddddd",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-subtle",
+      "value": "#e8e8e8",
+      "nearest": "#e8e8e8",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#2ba471",
+      "nearest": "#2ba471",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#e37318",
+      "nearest": "#e37318",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#d54941",
+      "nearest": "#d54941",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 15,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 15
+  }
+}

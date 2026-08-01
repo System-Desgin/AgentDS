@@ -31,3 +31,8 @@ jobs:
 
       - name: Validate content (meta.yaml + DESIGN.md lint)
         run: node scripts/validate-content.mjs
+
+      # Offline: every published entry must carry a passing, current source
+      # verification. The network re-check runs in `verify-sources.yml`.
+      - name: Check source verification
+        run: node scripts/check-verification.mjs

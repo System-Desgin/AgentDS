@@ -31,7 +31,8 @@ provenance:
   urls:
     - https://openai.com
     - https://platform.openai.com/docs
-  extracted_at: "2026-07-21"
+    - https://academy.openai.com/
+  extracted_at: "2026-08-01"
 restricted: false
 links:
   official_site: https://openai.com

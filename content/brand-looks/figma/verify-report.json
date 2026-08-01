@@ -1,0 +1,130 @@
+{
+  "slug": "figma",
+  "path": "brand-look",
+  "status": "published",
+  "sourceType": "css-analysis",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "https://www.figma.com",
+    "https://www.figma.com/_netlify/_next/static/css/617e0bc399c83bea.css",
+    "https://www.figma.com/design/",
+    "https://www.figma.com/blog/"
+  ],
+  "sourceColorCount": 12,
+  "inconclusive": true,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#000000",
+      "nearest": "#000000",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "action",
+      "value": "#0d99ff",
+      "nearest": "#00b6ff",
+      "deltaE": 10.46,
+      "verdict": "unmatched"
+    },
+    {
+      "token": "action-deep",
+      "value": "#0a6dba",
+      "nearest": "#00b6ff",
+      "deltaE": 25.01,
+      "verdict": "unmatched"
+    },
+    {
+      "token": "on-action",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#f5f5f5",
+      "nearest": "#ffffff",
+      "deltaE": 2.01,
+      "verdict": "drift"
+    },
+    {
+      "token": "on-surface",
+      "value": "#1e1e1e",
+      "nearest": "#222222",
+      "deltaE": 1.26,
+      "verdict": "close"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#666666",
+      "nearest": "#404040",
+      "deltaE": 13.27,
+      "verdict": "unmatched"
+    },
+    {
+      "token": "border",
+      "value": "#e6e6e6",
+      "nearest": "#d6d7da",
+      "deltaE": 3.71,
+      "verdict": "drift"
+    },
+    {
+      "token": "brand-red",
+      "value": "#f24e1e",
+      "nearest": "#972121",
+      "deltaE": 24.14,
+      "verdict": "unmatched"
+    },
+    {
+      "token": "brand-orange",
+      "value": "#ff7262",
+      "nearest": "#ffb3b3",
+      "deltaE": 16.6,
+      "verdict": "unmatched"
+    },
+    {
+      "token": "brand-purple",
+      "value": "#a259ff",
+      "nearest": "#d6d7da",
+      "deltaE": 36.38,
+      "verdict": "unmatched"
+    },
+    {
+      "token": "brand-blue",
+      "value": "#1abcfe",
+      "nearest": "#00b6ff",
+      "deltaE": 2.23,
+      "verdict": "drift"
+    },
+    {
+      "token": "brand-green",
+      "value": "#0acf83",
+      "nearest": "#e4ff97",
+      "deltaE": 23.3,
+      "verdict": "unmatched"
+    }
+  ],
+  "missingRoles": ["success", "warning", "error"],
+  "score": {
+    "exact": 4,
+    "close": 1,
+    "drift": 3,
+    "unmatched": 7,
+    "total": 15
+  }
+}

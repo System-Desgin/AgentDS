@@ -1,0 +1,130 @@
+{
+  "slug": "atlassian",
+  "path": "official",
+  "status": "published",
+  "sourceType": "repo",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "https://bitbucket.org/atlassian/atlassian-frontend-mirror/raw/3cdf019baa859e25cfd38137480a548d04a4fe41/design-system/tokens/figma/atlassian-light.json",
+    "https://bitbucket.org/atlassian/atlassian-frontend-mirror/raw/3cdf019baa859e25cfd38137480a548d04a4fe41/design-system/tokens/figma/atlassian-spacing.json",
+    "https://bitbucket.org/atlassian/atlassian-frontend-mirror/raw/3cdf019baa859e25cfd38137480a548d04a4fe41/design-system/tokens/figma/atlassian-typography.json",
+    "https://bitbucket.org/atlassian/atlassian-frontend-mirror/raw/3cdf019baa859e25cfd38137480a548d04a4fe41/design-system/tokens/figma/atlassian-shape.json"
+  ],
+  "sourceColorCount": 118,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#1868db",
+      "nearest": "#1868db",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-sunken",
+      "value": "#f8f8f8",
+      "nearest": "#f8f8f8",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-selected",
+      "value": "#e9f2fe",
+      "nearest": "#e9f2fe",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#292a2e",
+      "nearest": "#292a2e",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-subtle",
+      "value": "#505258",
+      "nearest": "#505258",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-subtlest",
+      "value": "#6b6e76",
+      "nearest": "#6b6e76",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#8c8f97",
+      "nearest": "#8c8f97",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#4c6b1f",
+      "nearest": "#4c6b1f",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success-subtle",
+      "value": "#efffd6",
+      "nearest": "#efffd6",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#9e4c00",
+      "nearest": "#9e4c00",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning-subtle",
+      "value": "#fff5db",
+      "nearest": "#fff5db",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "danger",
+      "value": "#ae2e24",
+      "nearest": "#ae2e24",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "danger-subtle",
+      "value": "#ffeceb",
+      "nearest": "#ffeceb",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 15,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 15
+  }
+}

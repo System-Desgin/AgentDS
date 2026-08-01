@@ -1,0 +1,122 @@
+{
+  "slug": "amplify-ui",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "/dist/theme.css",
+    "/dist/styles.layer.css",
+    "/dist/styles.css",
+    "/dist/styles/base.layer.css",
+    "/dist/styles/base.css",
+    "/dist/styles/button.layer.css",
+    "/dist/styles/button.css",
+    "/dist/styles/toggleButton.layer.css",
+    "/dist/styles/toggleButton.css",
+    "/dist/styles/liveness.layer.css"
+  ],
+  "sourceColorCount": 66,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#047d95",
+      "nearest": "#047d95",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-hover",
+      "value": "#005566",
+      "nearest": "#005566",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#fafafa",
+      "nearest": "#fafafa",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-tertiary",
+      "value": "#eff0f0",
+      "nearest": "#eff0f0",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#0d1926",
+      "nearest": "#0d1a26",
+      "deltaE": 1.09,
+      "verdict": "close"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#304050",
+      "nearest": "#304050",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#89949f",
+      "nearest": "#89949f",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "focus",
+      "value": "#00404c",
+      "nearest": "#00404d",
+      "deltaE": 0.56,
+      "verdict": "close"
+    },
+    {
+      "token": "success",
+      "value": "#365e3d",
+      "nearest": "#365e3d",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#663300",
+      "nearest": "#663300",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#660000",
+      "nearest": "#660000",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 11,
+    "close": 2,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 13
+  }
+}

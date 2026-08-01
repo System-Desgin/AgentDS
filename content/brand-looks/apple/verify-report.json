@@ -1,0 +1,151 @@
+{
+  "slug": "apple",
+  "path": "brand-look",
+  "status": "published",
+  "sourceType": "css-analysis",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "https://www.apple.com",
+    "https://www.apple.com/api-www/global-elements/global-header/v1/assets/globalheader.css",
+    "https://www.apple.com/ac/globalfooter/8/en_US/styles/ac-globalfooter.built.css",
+    "https://www.apple.com/ac/localnav/9/styles/ac-localnav.built.css",
+    "https://www.apple.com/v/home/a/styles/main.built.css",
+    "https://www.apple.com/v/home/a/styles/home.built.css",
+    "https://www.apple.com/v/home/a/built/styles/home-gallery.built.css",
+    "https://www.apple.com/v/home/a/styles/inline-media.built.css",
+    "https://www.apple.com/home/built/styles/home_58k68i7d.built.css",
+    "https://www.apple.com/mac/",
+    "https://www.apple.com/api-www/global-elements/global-footer/v1/en_US/styles/ac-globalfooter.built.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/498a874b708d3e34.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/dec5f538b5b0f461.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/3e83321b8891f345.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/501e2f39342b9727.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/2caa76f2fa3e0658.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/c6e26319d48b5a53.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/5f6f373de3bb27f0.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/2a1dfd4ca8a530d2.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/d3c0449160015d61.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/18c7717d1ab29662.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/f5e952f28142f9b6.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/4ae1daace98e8008.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/ca5ffcae0c9c515d.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/e97863cbb3b76e3d.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/a229096baa046f8d.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/66ff488325dc9905.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/bfbc6d7e729de945.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/0e480c0f4fcc3948.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/1f0a71fbe937ca4a.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/51000e145a3a2a18.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/67f01a261c657e9a.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/9eecdfa3b58ac8da.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/cb070c6a2c42979c.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/7c5d1417216bf24a.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/a91369e7a8ecc6d9.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/4f24d0f95a802ef6.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/f0cdbc3f94918df0.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/a0e4784527c34313.css"
+  ],
+  "sourceColorCount": 58,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#1d1d1f",
+      "nearest": "#1d1d1f",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#f5f5f7",
+      "nearest": "#f5f5f7",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "accent",
+      "value": "#0071e3",
+      "nearest": "#0071e3",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-accent",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "link",
+      "value": "#0066cc",
+      "nearest": "#0066cc",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-tint",
+      "value": "#f5f5f7",
+      "nearest": "#f5f5f7",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#1d1d1f",
+      "nearest": "#1d1d1f",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#6e6e73",
+      "nearest": "#6e6e73",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#d2d2d7",
+      "nearest": "#d2d2d7",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "promo",
+      "value": "#b64400",
+      "nearest": "#b64400",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#008009",
+      "nearest": "#008009",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#e30000",
+      "nearest": "#e30000",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": ["warning"],
+  "score": {
+    "exact": 13,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 13
+  }
+}

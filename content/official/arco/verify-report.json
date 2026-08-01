@@ -1,0 +1,119 @@
+{
+  "slug": "arco",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "/dist/css/arco.css",
+    "/es/style/theme/color/colors.less",
+    "/lib/style/theme/color/colors.less",
+    "/es/style/theme/color/compiled-colors.less",
+    "/lib/style/theme/color/compiled-colors.less",
+    "/es/Button/style/token.less",
+    "/lib/Button/style/token.less"
+  ],
+  "sourceColorCount": 273,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#165dff",
+      "nearest": "#165dff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-active",
+      "value": "#0e42d2",
+      "nearest": "#0e42d2",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#1d2129",
+      "nearest": "#1d2129",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#4e5969",
+      "nearest": "#4e5969",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "helper",
+      "value": "#86909c",
+      "nearest": "#86909c",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#f2f3f5",
+      "nearest": "#f2f3f5",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#e5e6eb",
+      "nearest": "#e5e6eb",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#00b42a",
+      "nearest": "#00b42a",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#ff7d00",
+      "nearest": "#ff7d00",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning-surface",
+      "value": "#fff7e8",
+      "nearest": "#fff7e8",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#f53f3f",
+      "nearest": "#f53f3f",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 13,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 13
+  }
+}
