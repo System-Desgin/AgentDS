@@ -1,0 +1,111 @@
+{
+  "slug": "garden",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": ["/dist/index.json"],
+  "sourceColorCount": 206,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#1f73b7",
+      "nearest": "#1f73b7",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-subtle",
+      "value": "#f8f9f9",
+      "nearest": "#f8f9f9",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#293239",
+      "nearest": "#293239",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-subtle",
+      "value": "#5c6970",
+      "nearest": "#5c6970",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#d8dcde",
+      "nearest": "#d8dcde",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-subtle",
+      "value": "#e8eaec",
+      "nearest": "#e8eaec",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "chrome",
+      "value": "#16494f",
+      "nearest": "#16494f",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-chrome",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#037f52",
+      "nearest": "#037f52",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#ac5918",
+      "nearest": "#ac5918",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "danger",
+      "value": "#cd3642",
+      "nearest": "#cd3642",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 13,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 13
+  }
+}

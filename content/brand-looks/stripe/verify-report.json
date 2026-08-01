@@ -1,0 +1,159 @@
+{
+  "slug": "stripe",
+  "path": "brand-look",
+  "status": "published",
+  "sourceType": "css-analysis",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "https://stripe.com",
+    "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/9d3a49263f73db6f.css",
+    "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/35cbae6c6f4a503d.css",
+    "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/4350a5f4483c2425.css",
+    "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/81e6dcea22f0c372.css",
+    "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/4b78f0f4457ea12a.css",
+    "https://stripe.com/payments",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-Icon-646136cd9e336d8c18d7.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-AnimatedIcon-0b7478e1f9234aae8838.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-UserLogoGrid-930af23f11b69821da1d.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-StickyNav-6c78e29ea5cfb2168e46.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-FixedNav-63a783cf2826ecb9f0ab.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-SideBySide-d07041961b33c14f1390.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-FeatureCardCheckoutGraphic-f0477b495e25b667c8d8.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-CardField-b5eed93d40ea8f24d704.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-GraphicFormFieldInputGrid-255377d9b46fdf089db8.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-Field-ea906aa31d4012757deb.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-Form-401d42df82b6e8482f06.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-ProductFeatureCard-77165362395384a24096.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-FullWidthFeatureCarouselItemWrapper-70f0c3ce5a282e6f9d4b.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-PaymentLinksGraphic-753863ac92f9f068a566.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-PaymentLinksReceiptGraphic-68e48fc32d105e52ee0c.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-PaymentLinksPowdurGraphic-9983a18fe02dbcdc092e.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-EmbeddedFormGraphic-bf8da656a1ef74c5738d.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-ElementsGraphic-1bd478e390acb5a035f6.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-FullWidthFeatureCarousel-ac41b2c8352b3b6b66ff.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-FullWidthFeatureCarouselNav-cd08e649e5a8f5f2c7a7.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-FullWidthCarousel-ca581ba22d8ecfdc500f.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-FullWidthFeatureCarouselMobileNav-63084e1d2039bb133cbc.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-CopyBody-53e41f469a3d5703a2be.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-OnlinePaymentsLinkAnimation-da0ffd56bd7970112aa5.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-TestimonialCard-f571cb85f3b3177a729f.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-Quote-cec80e5b222b69deac03.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-CarouselNavItem-cc451deb288bdf225ae3.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-TestimonialCarousel-07d514920dab5364a9bd.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-DocumentWithArrowsIcon-202fa3c9a7b9c61f22fe.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-GlobalPaymentCarousel-15cca2d6f9b7a8113f23.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-SegmentedControlButton-aadfb95da1ea7a8c74b3.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-SegmentedControl-0bdc9f3eb4e086154756.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-GlobalPaymentUSForm-921cadbe85a525027c11.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-PaymentElementAccordionGraphicItem-117dccdd4da95a81579b.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-PaymentElementAccordionGraphicPaymentMethodIcon-3bdc757cee776580c7c3.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-PaymentElementAccordionGraphicAction-b2a8114966be4024ecb9.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-PaymentElementAccordionGraphicActionIcon-cce2626e310c1e2605d3.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-PaymentElementAccordionGraphicSelectionPanel-7ec964b0dc4c54f37d6a.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-PaymentElementAccordionGraphic-dce4cbf621bb4cd01359.css",
+    "https://docs.stripe.com"
+  ],
+  "sourceColorCount": 562,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#0a2540",
+      "nearest": "#0a2540",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "accent",
+      "value": "#635bff",
+      "nearest": "#635bff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-accent",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-tint",
+      "value": "#f6f9fc",
+      "nearest": "#f6f9fc",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#0a2540",
+      "nearest": "#0a2540",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#425466",
+      "nearest": "#425466",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "helper",
+      "value": "#545969",
+      "nearest": "#545969",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#e3e8ee",
+      "nearest": "#e3e7ec",
+      "deltaE": 0.58,
+      "verdict": "close"
+    },
+    {
+      "token": "success",
+      "value": "#006f3a",
+      "nearest": "#006f3a",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#ab3500",
+      "nearest": "#ab3500",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#b51145",
+      "nearest": "#b51145",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 12,
+    "close": 1,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 13
+  }
+}

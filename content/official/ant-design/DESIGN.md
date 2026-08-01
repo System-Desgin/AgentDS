@@ -4,16 +4,16 @@ name: Ant Design
 description: Ant Group's enterprise UI system — a vivid brand blue, crisp neutrals, and dense data-rich layouts.
 colors:
   primary: "#1677FF"
-  on-primary: "#FFFFFF"
+  on-primary: "#000C17"
   primary-hover: "#4096FF"
   link: "#1677FF"
-  surface: "#FFFFFF"
-  on-surface: "#1F1F1F"
-  on-surface-variant: "#595959"
+  surface: "#000C17"
+  on-surface: "#050505"
+  on-surface-variant: "#002140"
   surface-variant: "#F5F5F5"
   fill: "#F0F0F0"
   border: "#D9D9D9"
-  success: "#52C41A"
+  success: "#8EFF1E"
   warning: "#FAAD14"
   error: "#FF4D4F"
 typography:
@@ -135,15 +135,15 @@ enterprise apps that need a large, consistent component vocabulary.
 
 ## Colors
 
-- **primary (`#1677FF`) / on-primary (`#FFFFFF`)** — the vivid brand blue for
+- **primary (`#1677FF`) / on-primary (`#000C17`)** — the vivid brand blue for
   primary actions and selection; **primary-hover (`#4096FF`)** for hover.
 - **link (`#1677FF`)** — inline links.
-- **surface (`#FFFFFF`) / surface-variant (`#F5F5F5`)** — content background and
+- **surface (`#000C17`) / surface-variant (`#F5F5F5`)** — content background and
   the page/layout backdrop; **fill (`#F0F0F0`)** for tags and quiet fills.
-- **on-surface (`#1F1F1F`) / on-surface-variant (`#595959`)** — primary and
+- **on-surface (`#050505`) / on-surface-variant (`#002140`)** — primary and
   secondary text.
 - **border (`#D9D9D9`)** — the default control and divider line.
-- **success (`#52C41A`) / warning (`#FAAD14`) / error (`#FF4D4F`)** — status
+- **success (`#8EFF1E`) / warning (`#FAAD14`) / error (`#FF4D4F`)** — status
   colours; success/warning read best as fills with dark text, error as a fill.
 
 Note: Ant's palette is intentionally vivid — some brand/status pairings sit near

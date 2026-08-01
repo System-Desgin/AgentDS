@@ -7,11 +7,11 @@
   --color-on-surface: #0d0d0d;
   --color-on-surface-variant: #5d5d5d;
   --color-border: #e6e6e6;
-  --color-border-strong: #8e8e8e;
-  --color-accent: #10a37f;
-  --color-success: #077d55;
-  --color-warning: #e8a33d;
-  --color-error: #b42318;
+  --color-border-strong: #888888;
+  --color-accent: #04b17d;
+  --color-success: #037251;
+  --color-warning: #e49c49;
+  --color-error: #b20905;
   --font-display: "Inter";
   --font-display-serif: "Source Serif 4";
   --font-heading-lg: "Inter";

@@ -11,11 +11,11 @@ colors:
   on-surface: "#0D0D0D"
   on-surface-variant: "#5D5D5D"
   border: "#E6E6E6"
-  border-strong: "#8E8E8E"
-  accent: "#10A37F"
-  success: "#077D55"
-  warning: "#E8A33D"
-  error: "#B42318"
+  border-strong: "#888888"
+  accent: "#04B17D"
+  success: "#037251"
+  warning: "#E49C49"
+  error: "#B20905"
 typography:
   display:
     fontFamily: Inter
@@ -164,13 +164,13 @@ documentation that should feel calm, literary, and confident.
 - **on-surface (`#0D0D0D`) / on-surface-variant (`#5D5D5D`)** — primary text
   is the same near-black as the CTAs; secondary copy, captions, and muted nav
   items sit at a mid gray.
-- **border (`#E6E6E6`) / border-strong (`#8E8E8E`)** — quiet hairlines on
+- **border (`#E6E6E6`) / border-strong (`#888888`)** — quiet hairlines on
   inputs, tables, and dividers, with a darker gray for focused or hovered
   outlines and the occasional stronger rule. Neither is used as text.
-- **accent (`#10A37F`)** — the heritage green, observed only in restrained
+- **accent (`#04B17D`)** — the heritage green, observed only in restrained
   moments (badges, small highlights). It is a fill behind dark text, never
-  text itself: it reads at about 3.2:1 on white.
-- **success (`#077D55`) / warning (`#E8A33D`) / error (`#B42318`)** — an
+  text itself: it reads at about 2.8:1 on white.
+- **success (`#037251`) / warning (`#E49C49`) / error (`#B20905`)** — an
   AA-safe status set modeled for this look; observed status color on the
   public pages is sparse (see QA). Warning amber is a fill behind dark text.
 

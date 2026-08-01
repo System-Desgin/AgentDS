@@ -1,0 +1,104 @@
+{
+  "slug": "carbon",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": ["/scss/_theme.scss", "/css/styles.css"],
+  "sourceColorCount": 109,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#0f62fe",
+      "nearest": "#0f62fe",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#161616",
+      "nearest": "#161616",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#525252",
+      "nearest": "#525252",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#f4f4f4",
+      "nearest": "#f4f4f4",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "helper",
+      "value": "#6f6f6f",
+      "nearest": "#6f6f6f",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-subtle",
+      "value": "#e0e0e0",
+      "nearest": "#e0e0e0",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-strong",
+      "value": "#8d8d8d",
+      "nearest": "#8d8d8d",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#24a148",
+      "nearest": "#24a148",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#f1c21b",
+      "nearest": "#f1c21b",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#da1e28",
+      "nearest": "#da1e28",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 12,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 12
+  }
+}

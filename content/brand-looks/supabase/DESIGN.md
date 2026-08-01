@@ -14,7 +14,7 @@ colors:
   border-strong: "#3E3E3E"
   success: "#3ECF8E"
   warning: "#F5A623"
-  error: "#F87171"
+  error: "#FF6369"
 typography:
   display:
     fontFamily: Inter
@@ -152,12 +152,12 @@ docs field, and the set is kept WCAG-AA consistent end to end.
   both pass WCAG AA on every surface token.
 - **primary (`#3ECF8E`)** — the signature green seen on primary CTAs, the
   logo mark, and inline highlights. It is bright enough to read as text on
-  the dark field (9.39:1 on `{colors.surface}`), and as a fill it takes dark
+  the dark field (9.4:1 on `{colors.surface}`), and as a fill it takes dark
   `{colors.on-primary}` text — the pairing observed on the site's buttons.
 - **border-subtle (`#2E2E2E`) / border-strong (`#3E3E3E`)** — solid
   equivalents of the low-alpha hairlines that outline cards, tables, and
   inputs; subtle for structure, strong for interactive outlines.
-- **success (`#3ECF8E`) / warning (`#F5A623`) / error (`#F87171`)** — the
+- **success (`#3ECF8E`) / warning (`#F5A623`) / error (`#FF6369`)** — the
   status family; the brand green doubles as the positive voice, with amber
   and soft red observed in docs callouts and product imagery. All read as
   text on `{colors.surface}` at AA or better.

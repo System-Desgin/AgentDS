@@ -1,0 +1,152 @@
+{
+  "slug": "slds",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "/design-tokens/dist/primitive.raw.json",
+    "/design-tokens/dist/primitive.ios.json",
+    "/design-tokens/dist/palettes.raw.json",
+    "/design-tokens/dist/colors.raw.json",
+    "/design-tokens/dist/primitive.json",
+    "/design-tokens/dist/palettes.json",
+    "/design-tokens/dist/transparent-colors.raw.json",
+    "/design-tokens/dist/colors.json",
+    "/design-tokens/dist/transparent-colors.json",
+    "/design-tokens/dist/theme-one-salesforce.raw.json",
+    "/design-tokens/dist/theme-one-salesforce.ios.json",
+    "/design-tokens/dist/theme-one-salesforce.json",
+    "/ui.aura-tokens.json",
+    "/ui.component-tokens.json",
+    "/design-tokens/dist/ui-force.raw.json",
+    "/design-tokens/dist/ui-force.ios.json",
+    "/design-tokens/dist/bg-standard.raw.json",
+    "/design-tokens/dist/hooks.raw.json",
+    "/design-tokens/dist/bg-standard.ios.json",
+    "/design-tokens/dist/slds-hooks.raw.json",
+    "/design-tokens/dist/components.raw.json",
+    "/design-tokens/dist/components.ios.json",
+    "/design-tokens/dist/bg-actions.raw.json",
+    "/design-tokens/dist/bg-actions.ios.json",
+    "/design-tokens/dist/ui-force.json",
+    "/design-tokens/dist/ui-analytics.raw.json",
+    "/design-tokens/dist/bg-custom.raw.json",
+    "/design-tokens/dist/bg-standard.json",
+    "/design-tokens/dist/bg-custom.ios.json",
+    "/design-tokens/dist/ui-analytics.ios.json",
+    "/design-tokens/dist/font.raw.json",
+    "/design-tokens/dist/hooks.json",
+    "/design-tokens/dist/ui-marketing.raw.json",
+    "/design-tokens/dist/components.json",
+    "/design-tokens/dist/slds-hooks.json",
+    "/design-tokens/dist/var-spacing.raw.json",
+    "/design-tokens/dist/ui-marketing.ios.json",
+    "/design-tokens/dist/sizing.raw.json",
+    "/design-tokens/dist/bg-actions.json",
+    "/design-tokens/dist/var-spacing.ios.json"
+  ],
+  "sourceColorCount": 370,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#0176d3",
+      "nearest": "#0176d3",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-hover",
+      "value": "#014486",
+      "nearest": "#014486",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#f3f3f3",
+      "nearest": "#f3f3f3",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#181818",
+      "nearest": "#181818",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#444444",
+      "nearest": "#444444",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "link",
+      "value": "#0b5cab",
+      "nearest": "#0b5cab",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#c9c9c9",
+      "nearest": "#c9c9c9",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-strong",
+      "value": "#747474",
+      "nearest": "#747474",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#2e844a",
+      "nearest": "#2e844a",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#a96404",
+      "nearest": "#a96404",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#ba0517",
+      "nearest": "#ba0517",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 13,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 13
+  }
+}

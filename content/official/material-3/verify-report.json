@@ -1,0 +1,125 @@
+{
+  "slug": "material-3",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": ["/tokens/versions/v0_192/_md-ref-palette.scss", "/color/_color.scss"],
+  "sourceColorCount": 76,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#6750a4",
+      "nearest": "#6750a4",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-container",
+      "value": "#eaddff",
+      "nearest": "#eaddff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary-container",
+      "value": "#21005d",
+      "nearest": "#21005d",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "secondary-container",
+      "value": "#e8def8",
+      "nearest": "#e8def8",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-secondary-container",
+      "value": "#1d192b",
+      "nearest": "#1d192b",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#fef7ff",
+      "nearest": "#fef7ff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#1d1b20",
+      "nearest": "#1d1b20",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-container",
+      "value": "#f3edf7",
+      "nearest": "#f3edf7",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#e7e0ec",
+      "nearest": "#e7e0ec",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#49454f",
+      "nearest": "#49454f",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "outline",
+      "value": "#79747e",
+      "nearest": "#79747e",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "outline-variant",
+      "value": "#cac4d0",
+      "nearest": "#cac4d0",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#b3261e",
+      "nearest": "#b3261e",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-error",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": ["success", "warning"],
+  "score": {
+    "exact": 15,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 15
+  }
+}

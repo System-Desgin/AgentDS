@@ -8,14 +8,14 @@ colors:
   surface: "#0A0A0A"
   on-surface: "#FFFFFF"
   surface-variant: "#161618"
-  on-surface-variant: "#A6A6AD"
-  border-subtle: "#242428"
-  border-strong: "#3A3A40"
-  brand-orange: "#FF9F45"
-  brand-pink: "#F06BB5"
-  success: "#4FC183"
+  on-surface-variant: "#9C9C9D"
+  border-subtle: "#2A2A2B"
+  border-strong: "#434345"
+  brand-orange: "#FF9217"
+  brand-pink: "#FF67A7"
+  success: "#59D499"
   warning: "#FFC531"
-  error: "#F14C4C"
+  error: "#F83A3A"
 typography:
   display:
     fontFamily: Inter
@@ -156,19 +156,19 @@ the set stays verifiable and WCAG-AA consistent.
   page field and the lifted panel tone used for cards, inputs, and the
   launcher-style chrome; on the site these panels often carry translucency and
   background blur, flattened here to solid values.
-- **on-surface (`#FFFFFF`) / on-surface-variant (`#A6A6AD`)** — white primary
+- **on-surface (`#FFFFFF`) / on-surface-variant (`#9C9C9D`)** — white primary
   text and the muted gray secondary text; both pass WCAG AA on either surface.
 - **primary (`#FF6363`)** — the red-coral accent seen on calls to action,
   links, and brand moments. It passes AA as text on `{colors.surface}`
   (6.8:1); as a fill it takes dark `{colors.on-primary}` text, because white
   on coral fails AA.
-- **brand-orange (`#FF9F45`) / brand-pink (`#F06BB5`)** — solid endpoints of
+- **brand-orange (`#FF9217`) / brand-pink (`#FF67A7`)** — solid endpoints of
   the sunset-gradient moments observed in hero art and store imagery;
   decorative fills only, never text colours.
-- **border-subtle (`#242428`) / border-strong (`#3A3A40`)** — solid
+- **border-subtle (`#2A2A2B`) / border-strong (`#434345`)** — solid
   equivalents of the site's low-alpha hairlines; subtle for structure, strong
   for interactive outlines.
-- **success (`#4FC183`) / warning (`#FFC531`) / error (`#F14C4C`)** — a status
+- **success (`#59D499`) / warning (`#FFC531`) / error (`#F83A3A`)** — a status
   family consistent with the dark UI; all read as text on `{colors.surface}`
   at AA or better. Error stays a harder red so it never blurs into the coral
   brand accent.

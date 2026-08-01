@@ -1,0 +1,159 @@
+{
+  "slug": "forma-36",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "/dist/json/colors/colors-dataviz.json",
+    "/dist/json/colors/colors-dataviz-categorical.json",
+    "/dist/json/colors/colors-dataviz-sequential.json",
+    "/dist/json/colors/colors-orange.json",
+    "/dist/json/colors/colors-purple.json",
+    "/dist/json/colors/colors-yellow.json",
+    "/dist/json/colors/colors-green.json",
+    "/dist/json/colors/colors-blue.json",
+    "/dist/json/colors/colors-red.json",
+    "/dist/json/colors/colors-gray.json",
+    "/dist/json/colors/colors-dataviz-semantic.json",
+    "/dist/json/colors/colors-elements.json",
+    "/dist/json/colors/colors-elements-deprecated.json",
+    "/dist/json/colors/colors-orange-deprecated.json",
+    "/dist/json/colors/colors-purple-deprecated.json",
+    "/dist/json/colors/colors-yellow-deprecated.json",
+    "/dist/json/colors/colors-green-deprecated.json",
+    "/dist/json/colors/colors-text.json",
+    "/dist/json/colors/colors-blue-deprecated.json",
+    "/dist/json/colors/colors-text-deprecated.json",
+    "/dist/json/colors/colors-red-deprecated.json",
+    "/dist/json/colors/colors-semantic.json",
+    "/dist/json/colors/colors-contrast.json",
+    "/dist/json/colors/colors-contrast-deprecated.json",
+    "/dist/json/colors/colors-coral.json",
+    "/dist/json/colors/colors-peach.json",
+    "/dist/json/colors/colors-coral-deprecated.json",
+    "/dist/json/colors/colors-peach-deprecated.json",
+    "/dist/json/colors/colors-mint.json",
+    "/dist/json/colors/colors-mint-deprecated.json",
+    "/dist/json/colors/colors-ice.json",
+    "/dist/json/colors/colors-ice-deprecated.json",
+    "/dist/json/colors/colors-black.json",
+    "/dist/json/colors/colors-white.json",
+    "/dist/json/typography/font-base.json",
+    "/dist/json/typography/line-height.json",
+    "/dist/json/typography/font-size.json",
+    "/dist/json/typography/font-stack.json",
+    "/dist/json/colors/scale-orange.json",
+    "/dist/json/colors/scale-purple.json"
+  ],
+  "sourceColorCount": 95,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#0059c8",
+      "nearest": "#0059c8",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-strong",
+      "value": "#0041ab",
+      "nearest": "#0041ab",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-tint",
+      "value": "#e8f5ff",
+      "nearest": "#e8f5ff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#f7f9fa",
+      "nearest": "#f7f9fa",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#1b273a",
+      "nearest": "#1b273a",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#414d63",
+      "nearest": "#414d63",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "subdued",
+      "value": "#67728a",
+      "nearest": "#67728a",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#cfd9e0",
+      "nearest": "#cfd9e0",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-subtle",
+      "value": "#e7ebee",
+      "nearest": "#e7ebee",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "positive",
+      "value": "#006d23",
+      "nearest": "#006d23",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#cc4500",
+      "nearest": "#cc4500",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "negative",
+      "value": "#bd002a",
+      "nearest": "#bd002a",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 14,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 14
+  }
+}

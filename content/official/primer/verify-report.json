@@ -1,0 +1,159 @@
+{
+  "slug": "primer",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "/src/tokens/fallback/color-fallbacks.json",
+    "/dist/styleLint/functional/themes/dark-colorblind.json",
+    "/dist/styleLint/functional/themes/light-colorblind.json",
+    "/dist/docs/functional/themes/dark-colorblind.json",
+    "/dist/docs/functional/themes/light-colorblind.json",
+    "/dist/figma/themes/dark-colorblind.json",
+    "/dist/figma/themes/light-colorblind.json",
+    "/dist/fallbacks/color-fallbacks.json",
+    "/dist/deprecated/theme.json",
+    "/src/tokens/removed.json",
+    "/dist/styleLint/functional/themes/dark-dimmed.json",
+    "/dist/styleLint/functional/themes/dark-tritanopia.json",
+    "/dist/styleLint/functional/themes/dark.json",
+    "/dist/styleLint/functional/themes/dark-colorblind-high-contrast.json",
+    "/dist/styleLint/functional/themes/light.json",
+    "/dist/styleLint/functional/themes/light-tritanopia.json",
+    "/dist/styleLint/functional/themes/light-colorblind-high-contrast.json",
+    "/dist/docs/functional/themes/dark-dimmed.json",
+    "/dist/docs/functional/themes/dark-tritanopia.json",
+    "/dist/docs/functional/themes/dark.json",
+    "/dist/docs/functional/themes/dark-colorblind-high-contrast.json",
+    "/dist/docs/functional/themes/light.json",
+    "/dist/docs/functional/themes/light-tritanopia.json",
+    "/dist/docs/functional/themes/light-colorblind-high-contrast.json",
+    "/dist/figma/themes/light-tritanopia.json",
+    "/dist/figma/themes/dark-tritanopia.json",
+    "/dist/figma/themes/dark-dimmed.json",
+    "/dist/figma/themes/dark.json",
+    "/dist/figma/themes/light.json",
+    "/dist/figma/scales/light-high-constrast.json",
+    "/dist/figma/scales/dark-high-constrast.json",
+    "/dist/figma/scales/dark-dimmed.json",
+    "/dist/figma/scales/light.json",
+    "/dist/figma/scales/dark.json",
+    "/dist/styleLint/functional/typography/typography.json",
+    "/dist/docs/functional/typography/typography.json",
+    "/dist/styleLint/base/typography/typography.json",
+    "/dist/docs/base/typography/typography.json",
+    "/dist/figma/typography/typography.json",
+    "/dist/styleLint/functional/spacing/space.json"
+  ],
+  "sourceColorCount": 660,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#1f883d",
+      "nearest": "#1f883d",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "accent",
+      "value": "#0969da",
+      "nearest": "#0969da",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-accent",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#1f2328",
+      "nearest": "#1f2328",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#f6f8fa",
+      "nearest": "#f6f8fa",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#59636e",
+      "nearest": "#59636e",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#d1d9e0",
+      "nearest": "#d1d9e0",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "emphasis",
+      "value": "#25292e",
+      "nearest": "#25292e",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-emphasis",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "danger",
+      "value": "#cf222e",
+      "nearest": "#cf222e",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "attention",
+      "value": "#9a6700",
+      "nearest": "#9a6700",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#007728",
+      "nearest": "#007728",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 14,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 14
+  }
+}

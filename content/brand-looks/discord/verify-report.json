@@ -1,0 +1,130 @@
+{
+  "slug": "discord",
+  "path": "brand-look",
+  "status": "published",
+  "sourceType": "css-analysis",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "https://discord.com",
+    "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/css/discord-2022.shared.7cf25a327.min.css",
+    "https://discord.com/w/assets/1cab095e9147685cece9a11a92ebf9c91982c98f/styles.css",
+    "https://discord.com/download"
+  ],
+  "sourceColorCount": 401,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#5865f2",
+      "nearest": "#5865f2",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "link",
+      "value": "#00aff7",
+      "nearest": "#00aff7",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#313338",
+      "nearest": "#313338",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#2b2d31",
+      "nearest": "#2b2e32",
+      "deltaE": 0.67,
+      "verdict": "close"
+    },
+    {
+      "token": "surface-sunken",
+      "value": "#1e1f22",
+      "nearest": "#202225",
+      "deltaE": 1.11,
+      "verdict": "close"
+    },
+    {
+      "token": "neutral",
+      "value": "#4f545c",
+      "nearest": "#4f545c",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#dbdee1",
+      "nearest": "#dbdee1",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#bdbfc0",
+      "nearest": "#bdbfc0",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "muted",
+      "value": "#949ba4",
+      "nearest": "#949ba4",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#3f4147",
+      "nearest": "#43464d",
+      "deltaE": 1.75,
+      "verdict": "close"
+    },
+    {
+      "token": "success",
+      "value": "#23a55a",
+      "nearest": "#3ba55d",
+      "deltaE": 1.52,
+      "verdict": "close"
+    },
+    {
+      "token": "warning",
+      "value": "#ffc107",
+      "nearest": "#ffc107",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#f23f43",
+      "nearest": "#f23f43",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error-text",
+      "value": "#ff776d",
+      "nearest": "#ff776d",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 11,
+    "close": 4,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 15
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "slug": "semi",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "/scss/_palette.scss",
+    "/scss/global.scss",
+    "/scss/animation.scss",
+    "/scss/mixin.scss"
+  ],
+  "sourceColorCount": 440,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#0064fa",
+      "nearest": "#0064fa",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-tint",
+      "value": "#eaf5ff",
+      "nearest": "#eaf5ff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#1c1f23",
+      "nearest": "#1c1f23",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#41464c",
+      "nearest": "#41464c",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "helper",
+      "value": "#6b7075",
+      "nearest": "#6b7075",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "fill",
+      "value": "#f5f5f5",
+      "nearest": "#f9f9f9",
+      "deltaE": 0.81,
+      "verdict": "close"
+    },
+    {
+      "token": "border",
+      "value": "#ededed",
+      "nearest": "#e6e8ea",
+      "deltaE": 1.69,
+      "verdict": "close"
+    },
+    {
+      "token": "success",
+      "value": "#3bb346",
+      "nearest": "#3bb346",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success-tint",
+      "value": "#ecf7ec",
+      "nearest": "#ecf7ec",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#fc8800",
+      "nearest": "#fc8800",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning-tint",
+      "value": "#fff8ea",
+      "nearest": "#fff8ea",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "danger",
+      "value": "#f93920",
+      "nearest": "#f93920",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "danger-tint",
+      "value": "#fef2ed",
+      "nearest": "#fef2ed",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 13,
+    "close": 2,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 15
+  }
+}

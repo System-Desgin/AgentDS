@@ -1,0 +1,137 @@
+{
+  "slug": "paste",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "/dist/tokens.raw.json",
+    "/dist/themes/sendgrid/tokens.raw.json",
+    "/dist/themes/twilio/tokens.raw.json",
+    "/dist/themes/twilio-dark/tokens.raw.json",
+    "/dist/themes/dark/tokens.raw.json",
+    "/dist/themes/evergreen/tokens.raw.json",
+    "/dist/tokens.ios.json",
+    "/dist/themes/sendgrid/tokens.ios.json",
+    "/dist/themes/twilio/tokens.ios.json",
+    "/dist/themes/dark/tokens.ios.json",
+    "/dist/themes/evergreen/tokens.ios.json",
+    "/dist/themes/twilio-dark/tokens.ios.json",
+    "/dist/themes/twilio/tokens.json",
+    "/dist/themes/twilio-dark/tokens.json",
+    "/dist/themes/evergreen/tokens.json",
+    "/dist/tokens.json",
+    "/dist/themes/sendgrid/tokens.json",
+    "/dist/themes/dark/tokens.json"
+  ],
+  "sourceColorCount": 155,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#006dfa",
+      "nearest": "#006dfa",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-strong",
+      "value": "#001489",
+      "nearest": "#001489",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary-strong",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "link",
+      "value": "#0263e0",
+      "nearest": "#0263e0",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#121c2d",
+      "nearest": "#121c2d",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#f4f4f6",
+      "nearest": "#f4f4f6",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#606b85",
+      "nearest": "#606b85",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#8b93aa",
+      "nearest": "#8b93aa",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-weak",
+      "value": "#cacdd8",
+      "nearest": "#cacdd8",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#14b053",
+      "nearest": "#14b053",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#f47c22",
+      "nearest": "#f47c22",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#c72323",
+      "nearest": "#c72323",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 14,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 14
+  }
+}

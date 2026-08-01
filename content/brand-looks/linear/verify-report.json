@@ -1,0 +1,162 @@
+{
+  "slug": "linear",
+  "path": "brand-look",
+  "status": "published",
+  "sourceType": "css-analysis",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "https://linear.app",
+    "https://static.linear.app/web/_next/static/css/Providers.qSrgnk7B.css",
+    "https://static.linear.app/web/_next/static/css/Toast.pcGZUK31.css",
+    "https://static.linear.app/web/_next/static/css/Grid.Cds8fjKR.css",
+    "https://static.linear.app/web/_next/static/css/StatusPage.BYDaMjMd.css",
+    "https://static.linear.app/web/_next/static/css/Link.Tpxbzi3N.css",
+    "https://static.linear.app/web/_next/static/css/utils.5l1Pf81z.css",
+    "https://static.linear.app/web/_next/static/css/Button.dcAi4KbO.css",
+    "https://static.linear.app/web/_next/static/css/Header.DrX8EJz9.css",
+    "https://static.linear.app/web/_next/static/css/Flex.BEZjGLsi.css",
+    "https://static.linear.app/web/_next/static/css/ThemeToggle._YM9yPbG.css",
+    "https://static.linear.app/web/_next/static/css/IconButton.3p32EmO1.css",
+    "https://static.linear.app/web/_next/static/css/KBD.ByHmXOx_.css",
+    "https://static.linear.app/web/_next/static/css/Tooltip.mgHd0F-S.css",
+    "https://static.linear.app/web/_next/static/css/Icon.Bl8l9ltc.css",
+    "https://static.linear.app/web/_next/static/css/color.C-dCEHFh.css",
+    "https://static.linear.app/web/_next/static/css/Spacer.mYgpGelO.css",
+    "https://static.linear.app/web/_next/static/css/CommandMenu.DVY7V9_S.css",
+    "https://static.linear.app/web/_next/static/css/Image.BUY_OmUN.css",
+    "https://static.linear.app/web/_next/static/css/Zoom.krMPHN5w.css",
+    "https://static.linear.app/web/_next/static/css/SidePanel.CAzmaQlh.css",
+    "https://static.linear.app/web/_next/static/css/SidePanelRenderer.DoWKbQcF.css",
+    "https://static.linear.app/web/_next/static/css/DefaultRenderer.DJc-J-pv.css",
+    "https://static.linear.app/web/_next/static/css/tweet-info-created-at.C873vD7S.css",
+    "https://static.linear.app/web/_next/static/css/Tabs.UwA_7SNX.css",
+    "https://static.linear.app/web/_next/static/css/tweet-media-video.Do8maEW8.css",
+    "https://static.linear.app/web/_next/static/css/quoted-tweet-container.g1D8GTJu.css",
+    "https://static.linear.app/web/_next/static/css/VideoPlayer.DNAZEJf0.css",
+    "https://static.linear.app/web/_next/static/css/Badge.CNOVCKsB.css",
+    "https://static.linear.app/web/_next/static/css/CopyButton.BluMS353.css",
+    "https://static.linear.app/web/_next/static/css/Collapsibles.CKjyh1cv.css",
+    "https://static.linear.app/web/_next/static/css/Note.4CaDvCAO.css",
+    "https://static.linear.app/web/_next/static/css/LinkAnchor.DtA2msdz.css",
+    "https://static.linear.app/web/_next/static/css/Separator.RnTSqYU1.css",
+    "https://static.linear.app/web/_next/static/css/Stats.B54k2VBO.css",
+    "https://static.linear.app/web/_next/static/css/Dialog.CwVvSJva.css",
+    "https://static.linear.app/web/_next/static/css/Hero.D42gc8OB.css",
+    "https://static.linear.app/web/_next/static/css/NewHeroIllustration.WjPxlfcr.css",
+    "https://static.linear.app/web/_next/static/css/PreviewLinkIcon.Q6nTXUvX.css",
+    "https://static.linear.app/web/_next/static/css/Logos.CSMdNI7r.css",
+    "https://static.linear.app/web/_next/static/css/Marquee.Dz6fDVMv.css",
+    "https://linear.app/features",
+    "https://static.linear.app/web/_next/static/css/WorkflowCard.DVby0x6k.css",
+    "https://static.linear.app/web/_next/static/css/Scrollable.CN1mhzWj.css",
+    "https://static.linear.app/web/_next/static/css/typography.x1XGuNl0.css",
+    "https://static.linear.app/web/_next/static/css/index.BKpArWeN.css",
+    "https://static.linear.app/web/_next/static/css/page.DueQH5Z-.css",
+    "https://static.linear.app/web/_next/static/css/CTA.CDNJI-Em.css",
+    "https://static.linear.app/web/_next/static/css/Header.BReZm_YW.css",
+    "https://static.linear.app/web/_next/static/css/Icon.B18TDZc7.css",
+    "https://static.linear.app/web/_next/static/css/LayoutContent.D8YYVbao.css",
+    "https://static.linear.app/web/_next/static/css/Layout.tvkMFESE.css",
+    "https://linear.app/method",
+    "https://static.linear.app/web/_next/static/css/VennIllustration.BYljLSAF.css",
+    "https://static.linear.app/web/_next/static/css/Bleed.CbcodEv9.css",
+    "https://static.linear.app/web/_next/static/css/layout.me_tBAbq.css",
+    "https://static.linear.app/web/_next/static/css/page.DrsRTbwK.css"
+  ],
+  "sourceColorCount": 111,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#5e6ad2",
+      "nearest": "#5e6ad2",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-bright",
+      "value": "#828fff",
+      "nearest": "#828fff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#08090a",
+      "nearest": "#08090a",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#f7f8f8",
+      "nearest": "#f7f8f8",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#141516",
+      "nearest": "#141516",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#8a8f98",
+      "nearest": "#8a8f98",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-subtle",
+      "value": "#23252a",
+      "nearest": "#23252a",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-strong",
+      "value": "#34363c",
+      "nearest": "#34343a",
+      "deltaE": 1.35,
+      "verdict": "close"
+    },
+    {
+      "token": "success",
+      "value": "#00ba7c",
+      "nearest": "#00ba7c",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#f0bf00",
+      "nearest": "#f0bf00",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#eb5757",
+      "nearest": "#eb5757",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 11,
+    "close": 1,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 12
+  }
+}

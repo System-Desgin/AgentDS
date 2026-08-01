@@ -1,0 +1,121 @@
+{
+  "slug": "supabase",
+  "path": "brand-look",
+  "status": "published",
+  "sourceType": "css-analysis",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "https://supabase.com",
+    "https://frontend-assets.supabase.com/www/3a3661019f4f/_next/static/css/440c143c26a742d1.css?dpl=dpl_FVDZ92SY9w2ctDyzNJ7a5is7tbFg",
+    "https://frontend-assets.supabase.com/www/3a3661019f4f/_next/static/css/aa91926bde5f8fff.css?dpl=dpl_FVDZ92SY9w2ctDyzNJ7a5is7tbFg",
+    "https://frontend-assets.supabase.com/www/3a3661019f4f/_next/static/css/e6a8352b8d255f66.css?dpl=dpl_FVDZ92SY9w2ctDyzNJ7a5is7tbFg",
+    "https://frontend-assets.supabase.com/www/3a3661019f4f/_next/static/css/556a706f3f4c02c8.css?dpl=dpl_FVDZ92SY9w2ctDyzNJ7a5is7tbFg",
+    "https://supabase.com/dashboard",
+    "https://frontend-assets.supabase.com/studio/3a3661019f4f/_next/static/chunks/21fwcopk7nhcs.css?dpl=dpl_7AYSS38tV5uPzFkpPJC6KqGbPEYF",
+    "https://frontend-assets.supabase.com/studio/3a3661019f4f/_next/static/chunks/0p3bjrlvz_oxo.css?dpl=dpl_7AYSS38tV5uPzFkpPJC6KqGbPEYF",
+    "https://frontend-assets.supabase.com/studio/3a3661019f4f/_next/static/chunks/05kz_ygrt7dfb.css?dpl=dpl_7AYSS38tV5uPzFkpPJC6KqGbPEYF",
+    "https://frontend-assets.supabase.com/studio/3a3661019f4f/_next/static/chunks/3yxzti2zvqsj5.css?dpl=dpl_7AYSS38tV5uPzFkpPJC6KqGbPEYF",
+    "https://supabase.com/docs",
+    "https://frontend-assets.supabase.com/docs/3a3661019f4f/_next/static/css/8311f7d92fdf6f40.css?dpl=dpl_CkM8JNu1EeYtLVAqdcnTc7Z9kdqi",
+    "https://frontend-assets.supabase.com/docs/3a3661019f4f/_next/static/css/b044c9b96f25bd68.css?dpl=dpl_CkM8JNu1EeYtLVAqdcnTc7Z9kdqi",
+    "https://frontend-assets.supabase.com/docs/3a3661019f4f/_next/static/css/d70cd62ff5023e0b.css?dpl=dpl_CkM8JNu1EeYtLVAqdcnTc7Z9kdqi",
+    "https://frontend-assets.supabase.com/docs/3a3661019f4f/_next/static/css/a785e7297dcce309.css?dpl=dpl_CkM8JNu1EeYtLVAqdcnTc7Z9kdqi",
+    "https://frontend-assets.supabase.com/docs/3a3661019f4f/_next/static/css/c61bfa50fa822b60.css?dpl=dpl_CkM8JNu1EeYtLVAqdcnTc7Z9kdqi"
+  ],
+  "sourceColorCount": 633,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#3ecf8e",
+      "nearest": "#3ecf8e",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#0f0f0f",
+      "nearest": "#060809",
+      "deltaE": 1.53,
+      "verdict": "close"
+    },
+    {
+      "token": "surface",
+      "value": "#121212",
+      "nearest": "#161616",
+      "deltaE": 1.08,
+      "verdict": "close"
+    },
+    {
+      "token": "surface-deep",
+      "value": "#0f0f0f",
+      "nearest": "#060809",
+      "deltaE": 1.53,
+      "verdict": "close"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#1c1c1c",
+      "nearest": "#1c1c1c",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#fafafa",
+      "nearest": "#fafafa",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#898989",
+      "nearest": "#888888",
+      "deltaE": 0.36,
+      "verdict": "close"
+    },
+    {
+      "token": "border-subtle",
+      "value": "#2e2e2e",
+      "nearest": "#2e2e2e",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-strong",
+      "value": "#3e3e3e",
+      "nearest": "#3e3e3e",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#3ecf8e",
+      "nearest": "#3ecf8e",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#f5a623",
+      "nearest": "#f1a10d",
+      "deltaE": 1.45,
+      "verdict": "close"
+    },
+    {
+      "token": "error",
+      "value": "#ff6369",
+      "nearest": "#ff6369",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 7,
+    "close": 5,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 12
+  }
+}

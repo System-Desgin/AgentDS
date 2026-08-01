@@ -8,8 +8,8 @@ colors:
   on-primary: "#FFFFFF"
   surface: "#FFFFFF"
   on-surface: "#1C1F23"
-  on-surface-variant: "#494C4F"
-  helper: "#727477"
+  on-surface-variant: "#41464C"
+  helper: "#6B7075"
   fill: "#F5F5F5"
   border: "#EDEDED"
   success: "#3BB346"
@@ -145,8 +145,8 @@ tools that should feel crisp, quiet, and engineered for both themes.
 - **surface (`#FFFFFF`) / fill (`#F5F5F5`)** — the page field and the light
   grey fill Semi uses for inputs and secondary buttons; in the source these
   fills are grey at low opacity, flattened here for solid rendering.
-- **on-surface (`#1C1F23`) / on-surface-variant (`#494C4F`) / helper
-  (`#727477`)** — Semi's three text strengths, from primary copy down to
+- **on-surface (`#1C1F23`) / on-surface-variant (`#41464C`) / helper
+  (`#6B7075`)** — Semi's three text strengths, from primary copy down to
   helper and placeholder text.
 - **border (`#EDEDED`)** — the default hairline for dividers, card outlines,
   and table rules; structure comes from these lines, not shadows.

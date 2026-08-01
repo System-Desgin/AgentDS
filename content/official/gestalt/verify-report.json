@@ -1,0 +1,152 @@
+{
+  "slug": "gestalt",
+  "path": "official",
+  "status": "published",
+  "sourceType": "npm",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "/tokens/vr-theme-web-mapping/base-color.json",
+    "/tokens/classic/base-color.json",
+    "/tokens/vr-theme-web-mapping/base-color-dataviz-dark.json",
+    "/tokens/vr-theme-web-mapping/base-color-dataviz-light.json",
+    "/tokens/classic/base-color-dataviz-dark.json",
+    "/tokens/classic/base-color-dataviz-light.json",
+    "/tokens/classic/comp-web-color-light.json",
+    "/tokens/classic/comp-web-color-dark.json",
+    "/tokens/vr-theme-web-mapping/comp-web-color-dark.json",
+    "/tokens/vr-theme-web-mapping/comp-web-color-light.json",
+    "/tokens/classic/sema-color-dark.json",
+    "/tokens/vr-theme-web-mapping/sema-color.json",
+    "/tokens/classic/sema-color-light.json",
+    "/tokens/classic/sema-color-dataviz-dark.json",
+    "/tokens/vr-theme-web-mapping/sema-color-dataviz-dark.json",
+    "/tokens/vr-theme-web-mapping/sema-color-dataviz-light.json",
+    "/tokens/classic/sema-color-dataviz-light.json",
+    "/tokens/vr-theme/$themes.json",
+    "/dist/json/vr-theme-web-mapping/variables-font-lineheight-default.json",
+    "/dist/json/vr-theme/variables-font-lineheight-default.json",
+    "/dist/json/vr-theme-web-mapping/variables-light.json",
+    "/dist/json/vr-theme-web-mapping/variables-dark.json",
+    "/dist/json/vr-theme/variables-light.json",
+    "/dist/json/vr-theme/variables-dark.json",
+    "/dist/json/classic/variables-light.json",
+    "/dist/json/classic/variables-dark.json",
+    "/tokens/vr-theme/sema/color/light/default.json",
+    "/tokens/vr-theme/sema/color/dark/default.json",
+    "/tokens/vr-theme/base/color/default.json",
+    "/tokens/vr-theme/sema/text/language/default.json",
+    "/tokens/vr-theme-web-mapping/base-space.json",
+    "/tokens/classic/base-font.json",
+    "/dist/json/vr-theme-web-mapping/variables-font-lineheight-ck.json",
+    "/dist/json/vr-theme-web-mapping/variables-font-lineheight-ja.json",
+    "/dist/json/vr-theme-web-mapping/variables-font-lineheight-th.json",
+    "/dist/json/vr-theme-web-mapping/variables-font-lineheight-vi.json",
+    "/dist/json/vr-theme-web-mapping/variables-font-lineheight-tall.json",
+    "/tokens/classic/base-space.json",
+    "/dist/json/vr-theme/variables-font-lineheight-ck.json",
+    "/dist/json/vr-theme/variables-font-lineheight-ja.json"
+  ],
+  "sourceColorCount": 253,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#e60023",
+      "nearest": "#e60023",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-strong",
+      "value": "#b60000",
+      "nearest": "#b60000",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#e9e9e9",
+      "nearest": "#e9e9e9",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#111111",
+      "nearest": "#111111",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#767676",
+      "nearest": "#767676",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#cdcdcd",
+      "nearest": "#cdcdcd",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-strong",
+      "value": "#767676",
+      "nearest": "#767676",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "info",
+      "value": "#0074e8",
+      "nearest": "#0074e8",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#008753",
+      "nearest": "#008753",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#bd5b00",
+      "nearest": "#bd5b00",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#cc0000",
+      "nearest": "#cc0000",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 13,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 13
+  }
+}

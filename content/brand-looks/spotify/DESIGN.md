@@ -14,7 +14,7 @@ colors:
   border-subtle: "#292929"
   success: "#1ED760"
   warning: "#FFA42B"
-  error: "#F15E6C"
+  error: "#F3727F"
 typography:
   display:
     fontFamily: Inter
@@ -159,7 +159,7 @@ accent for the one action that matters.
   `{colors.on-primary}` (black) content.
 - **border-subtle (`#292929`)** — hairline dividers between list rows and
   page sections on the dark field.
-- **success (`#1ED760`) / warning (`#FFA42B`) / error (`#F15E6C`)** — status
+- **success (`#1ED760`) / warning (`#FFA42B`) / error (`#F3727F`)** — status
   text on dark surfaces; positive states reuse the bright green, and the
   warning amber and soft error red stay legible against `{colors.surface}`.
 

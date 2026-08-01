@@ -1,0 +1,123 @@
+{
+  "slug": "airbnb",
+  "path": "brand-look",
+  "status": "published",
+  "sourceType": "css-analysis",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "https://www.airbnb.com",
+    "https://a0.muscache.com/airbnb/static/packages/web/common/frontend/core-guest-spa/entrypoints/client.b4fe7ce6ac.css",
+    "https://www.airbnb.com/help",
+    "https://a0.muscache.com/airbnb/static/packages/web/common/frontend/cep-help-center/entrypoints/client.f1102d3e51.css"
+  ],
+  "sourceColorCount": 310,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#ff385c",
+      "nearest": "#ff385c",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-deep",
+      "value": "#d70466",
+      "nearest": "#d70466",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#f7f7f7",
+      "nearest": "#f7f7f7",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#222222",
+      "nearest": "#222222",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#6a6a6a",
+      "nearest": "#6a6a6a",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "helper",
+      "value": "#717171",
+      "nearest": "#717171",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#dddddd",
+      "nearest": "#dddddd",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-subtle",
+      "value": "#ebebeb",
+      "nearest": "#ebebeb",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "outline",
+      "value": "#b0b0b0",
+      "nearest": "#b0b0b0",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#008a05",
+      "nearest": "#008a05",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#c13515",
+      "nearest": "#c13515",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#765700",
+      "nearest": "#765700",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 14,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 14
+  }
+}

@@ -16,6 +16,7 @@ colors:
   outline: "#B0B0B0"
   success: "#008A05"
   error: "#C13515"
+  warning: "#765700"
 typography:
   display:
     fontFamily: Inter
@@ -162,6 +163,7 @@ action per view.
 All component text pairings in this file pass WCAG AA 4.5:1;
 `{colors.success}` on white passes narrowly at about 4.5:1, so keep it to
 short status lines.
+- **status colors** — `{colors.warning}` (#765700) are the observed status hues, each holding 6.7:1 on `{colors.surface}` so they can carry text as well as fills.
 
 ## Typography
 

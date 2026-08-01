@@ -1,0 +1,108 @@
+{
+  "slug": "spotify",
+  "path": "brand-look",
+  "status": "published",
+  "sourceType": "css-analysis",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "https://open.spotify.com",
+    "https://open.spotifycdn.com/cdn/build/mobile-web-player/mobile-web-player.637f4722.css",
+    "https://www.spotify.com"
+  ],
+  "sourceColorCount": 119,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#1db954",
+      "nearest": "#1db954",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#000000",
+      "nearest": "#000000",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-bright",
+      "value": "#1ed760",
+      "nearest": "#1ed760",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#121212",
+      "nearest": "#121212",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#181818",
+      "nearest": "#181818",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-raised",
+      "value": "#1f1f1f",
+      "nearest": "#1f1f1f",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#a7a7a7",
+      "nearest": "#a7a7a7",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-subtle",
+      "value": "#292929",
+      "nearest": "#292929",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#1ed760",
+      "nearest": "#1ed760",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#ffa42b",
+      "nearest": "#ffa42b",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#f3727f",
+      "nearest": "#f3727f",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 12,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 12
+  }
+}

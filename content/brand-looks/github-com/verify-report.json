@@ -1,0 +1,180 @@
+{
+  "slug": "github-com",
+  "path": "brand-look",
+  "status": "published",
+  "sourceType": "css-analysis",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "https://github.com/home",
+    "https://github.githubassets.com/assets/light-e2591d2392bd4749.css",
+    "https://github.githubassets.com/assets/light_high_contrast-8868d78e42bfa938.css",
+    "https://github.githubassets.com/assets/dark-af3e8f6e07ad6ccb.css",
+    "https://github.githubassets.com/assets/dark_high_contrast-da3f7378682e25f2.css",
+    "https://github.githubassets.com/assets/light_colorblind-08450e2a88296329.css",
+    "https://github.githubassets.com/assets/light_colorblind_high_contrast-052e466d4b0f43ea.css",
+    "https://github.githubassets.com/assets/light_tritanopia-b7c2d5dbeadcb97c.css",
+    "https://github.githubassets.com/assets/light_tritanopia_high_contrast-21891f55a0f7a95c.css",
+    "https://github.githubassets.com/assets/dark_colorblind-0ff8e3b794124807.css",
+    "https://github.githubassets.com/assets/dark_colorblind_high_contrast-9a3df0c893e9bb2a.css",
+    "https://github.githubassets.com/assets/dark_tritanopia-d8350b594c0e256a.css",
+    "https://github.githubassets.com/assets/dark_tritanopia_high_contrast-62e148948f579638.css",
+    "https://github.githubassets.com/assets/dark_dimmed-00e55c5f278f5b9d.css",
+    "https://github.githubassets.com/assets/dark_dimmed_high_contrast-bc4aaeb8198d2acd.css",
+    "https://github.githubassets.com/assets/primer-primitives-cb12c8180b69cce3.css",
+    "https://github.githubassets.com/assets/primer-bb3e7caff8347285.css",
+    "https://github.githubassets.com/assets/global-f00afbf6455ca63c.css",
+    "https://github.githubassets.com/assets/github-cf976967feea1e66.css",
+    "https://github.githubassets.com/assets/site-90074dbf2d8071b5.css",
+    "https://github.githubassets.com/assets/landing-pages-44288f2c24a4c584.css",
+    "https://github.githubassets.com/assets/home-9b7c451c90b8cd38.css",
+    "https://github.githubassets.com/assets/app-runtime.10d17cde84a94fc8.module.css",
+    "https://github.githubassets.com/assets/react-core.05491d4dc1b748c6.module.css",
+    "https://github.githubassets.com/assets/primer-react-css.b3626a0bebbc56d2.module.css",
+    "https://github.githubassets.com/assets/primer-react-brand-css.566b06f97d781cc2.module.css",
+    "https://github.githubassets.com/assets/11446.98682e98383e42c4.module.css",
+    "https://github.githubassets.com/assets/landing-pages.55e768ea65b01234.module.css",
+    "https://github.githubassets.com/assets/keyboard-shortcuts-dialog.fb427f3445f8553c.module.css",
+    "https://github.githubassets.com/assets/marketing-global-banner.997ade9097ab6deb.module.css",
+    "https://github.githubassets.com/assets/marketing-navigation.3e7fc046419929ad.module.css",
+    "https://github.githubassets.com/assets/marketing-footer.9fcfc7b94447a854.module.css",
+    "https://github.com/features"
+  ],
+  "sourceColorCount": 1048,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#238636",
+      "nearest": "#238636",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#1f2328",
+      "nearest": "#1f2328",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#59636e",
+      "nearest": "#59636e",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#f6f8fa",
+      "nearest": "#f6f8fa",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border",
+      "value": "#d1d9e0",
+      "nearest": "#d1d9e0",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "hero",
+      "value": "#0d1117",
+      "nearest": "#0d1117",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-hero",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-hero-muted",
+      "value": "#9198a1",
+      "nearest": "#9198a1",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "hero-border",
+      "value": "#30363d",
+      "nearest": "#30363d",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "accent",
+      "value": "#0969da",
+      "nearest": "#0969da",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "glow-purple",
+      "value": "#a371f7",
+      "nearest": "#a371f7",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "glow-blue",
+      "value": "#79c0ff",
+      "nearest": "#79c0ff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "glow-green",
+      "value": "#3fb950",
+      "nearest": "#3fb950",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#006222",
+      "nearest": "#006222",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#523f00",
+      "nearest": "#523f00",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#730019",
+      "nearest": "#730019",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 18,
+    "close": 0,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 18
+  }
+}

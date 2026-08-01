@@ -1,0 +1,154 @@
+{
+  "slug": "notion",
+  "path": "brand-look",
+  "status": "published",
+  "sourceType": "css-analysis",
+  "verifiedAt": "2026-08-01",
+  "sources": [
+    "https://www.notion.com",
+    "https://www.notion.com/_next/static/css/d52dbbe860122862.css",
+    "https://www.notion.com/_next/static/css/e1b2b6f8952eccaf.css",
+    "https://www.notion.com/_next/static/css/488ded2b270a3ff6.css",
+    "https://www.notion.com/_next/static/css/13df31d340f15c61.css",
+    "https://www.notion.com/_next/static/css/cb52c3487a5e71ba.css",
+    "https://www.notion.com/_next/static/css/5d712e448443f157.css",
+    "https://www.notion.com/_next/static/css/7e090617cf3310ff.css",
+    "https://www.notion.com/_next/static/css/e45e7769ccf495dd.css",
+    "https://www.notion.com/_next/static/css/950d305dd3dbb999.css",
+    "https://www.notion.com/_next/static/css/11ca44fa40fe1af7.css",
+    "https://www.notion.com/_next/static/css/e0cb55acb34bef83.css",
+    "https://www.notion.com/_next/static/css/453b1dbcfa74d725.css",
+    "https://www.notion.com/_next/static/css/ecf28241255f9aab.css",
+    "https://www.notion.com/_next/static/css/a7c5c8a97d62b5e1.css",
+    "https://www.notion.com/_next/static/css/16225a7e586f71cb.css",
+    "https://www.notion.com/_next/static/css/43b9924bdaab8c97.css",
+    "https://www.notion.com/product",
+    "https://www.notion.com/help",
+    "https://www.notion.com/_next/static/css/376fb694c6a64efd.css",
+    "https://www.notion.com/_next/static/css/6bfdef341adf737a.css"
+  ],
+  "sourceColorCount": 116,
+  "inconclusive": false,
+  "colors": [
+    {
+      "token": "primary",
+      "value": "#0075de",
+      "nearest": "#0075de",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "primary-bright",
+      "value": "#2383e2",
+      "nearest": "#2383e2",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-primary",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface",
+      "value": "#ffffff",
+      "nearest": "#ffffff",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface",
+      "value": "#191918",
+      "nearest": "#191918",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "on-surface-variant",
+      "value": "#78736f",
+      "nearest": "#78736f",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "surface-variant",
+      "value": "#f1f1ef",
+      "nearest": "#f6f5f4",
+      "deltaE": 1.22,
+      "verdict": "close"
+    },
+    {
+      "token": "surface-panel",
+      "value": "#f7f7f5",
+      "nearest": "#f9f9f8",
+      "deltaE": 0.67,
+      "verdict": "close"
+    },
+    {
+      "token": "border-subtle",
+      "value": "#f6f5f4",
+      "nearest": "#f6f5f4",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "border-strong",
+      "value": "#dfdcd9",
+      "nearest": "#dfdcd9",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "tint-blue",
+      "value": "#e6f3fe",
+      "nearest": "#e6f3fe",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "tint-yellow",
+      "value": "#fbf3db",
+      "nearest": "#fff5e0",
+      "deltaE": 1.77,
+      "verdict": "close"
+    },
+    {
+      "token": "tint-red",
+      "value": "#fef3f1",
+      "nearest": "#fef3f1",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "success",
+      "value": "#14832b",
+      "nearest": "#14832b",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "warning",
+      "value": "#704b00",
+      "nearest": "#704b00",
+      "deltaE": 0,
+      "verdict": "exact"
+    },
+    {
+      "token": "error",
+      "value": "#4f0900",
+      "nearest": "#4f0900",
+      "deltaE": 0,
+      "verdict": "exact"
+    }
+  ],
+  "missingRoles": [],
+  "score": {
+    "exact": 13,
+    "close": 3,
+    "drift": 0,
+    "unmatched": 0,
+    "total": 16
+  }
+}

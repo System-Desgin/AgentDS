@@ -15,6 +15,7 @@ colors:
   accent: "#0070F3"
   error: "#EE0000"
   warning: "#F5A623"
+  success: "#00661D"
 typography:
   display:
     fontFamily: Inter
@@ -163,6 +164,7 @@ marketing pages that should feel fast, terse, and engineered.
 Black-on-white pairings are maximally contrasted by construction. The blue
 and red text roles sit at roughly 4.5:1 on pure white, so they are used on
 `{colors.surface}` only — not on the gray surfaces.
+- **status colors** — `{colors.success}` (#00661D) are the observed status hues, each holding 7.2:1 on `{colors.surface}` so they can carry text as well as fills.
 
 ## Typography
 
