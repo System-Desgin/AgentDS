@@ -30,7 +30,7 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — agent-ready design systems`,
+    default: `${SITE_NAME} — source-verified design systems for coding agents`,
     template: `%s · ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,

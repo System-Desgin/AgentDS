@@ -1,6 +1,6 @@
 import { existsSync } from "node:fs";
 import { readFile, readdir } from "node:fs/promises";
-import { dirname, join } from "node:path";
+import { join } from "node:path";
 import {
   buildTokenSummary,
   extractDesignFrontMatter,
@@ -30,16 +30,15 @@ const CONTENT_PATHS = [
 ] as const;
 
 function findContentDir(): string | null {
-  const configured = process.env["CONTENT_DIR"];
-  if (configured && existsSync(join(configured, "official"))) return configured;
-  let dir = process.cwd();
-  for (let depth = 0; depth < 12; depth += 1) {
-    const candidate = join(dir, "content");
-    if (existsSync(join(candidate, "official"))) return candidate;
-    const parent = dirname(dir);
-    if (parent === dir) break;
-    dir = parent;
-  }
+  // Vercel runs from the repository root; local `next` commands run from
+  // apps/web. Keep both paths static so output tracing cannot escape into an
+  // arbitrary parent directory.
+  const repositoryContent = join(process.cwd(), "content");
+  if (existsSync(join(repositoryContent, "official"))) return repositoryContent;
+
+  const workspaceContent = join(process.cwd(), "..", "..", "content");
+  if (existsSync(join(workspaceContent, "official"))) return workspaceContent;
+
   return null;
 }
 

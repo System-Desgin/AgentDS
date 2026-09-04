@@ -1,0 +1,67 @@
+name: Bug report
+description: Report a reproducible problem in the website, API, pipeline, or skills.
+title: "bug: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Do not include secrets, private source material, or personal data.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Website
+        - Public API
+        - Content pipeline
+        - Agent skill
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include the page, endpoint, command, or system slug involved.
+      placeholder: Describe the observed behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction
+      description: Provide the smallest sequence that reproduces the problem.
+      placeholder: |
+        1. Run …
+        2. Open …
+        3. Observe …
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      description: A commit SHA, deployed URL, package version, or skill hash.
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Logs and screenshots are useful after removing sensitive data.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues for this problem.
+          required: true
+        - label: I removed secrets, private material, and personal data.
+          required: true

@@ -1,0 +1,3 @@
+Create a polished, responsive single-page revenue dashboard for a B2B analytics product. Include a top navigation, page heading, date-range control, one primary action, four KPI tiles (revenue, customers, average order, churn), a monthly-revenue bar chart built with HTML and CSS, and a top-regions table with status. Use realistic static data and accessible semantic HTML.
+
+Work only in this directory. If DESIGN.md exists, read it before designing and follow its tokens and rules. Write a single self-contained index.html with embedded CSS. Use six-digit hexadecimal literals for every CSS color. Do not use JavaScript, frameworks, libraries, images, external fonts, or network requests. Do not explain the result; only create index.html.

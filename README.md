@@ -5,10 +5,10 @@
 [![License: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](./LICENSE)
 [![Content: CC BY 4.0](https://img.shields.io/badge/content-CC%20BY%204.0-lightgrey.svg)](./content/LICENSE)
 
-> A free, curated catalog of agent-ready design system files (`DESIGN.md` +
-> tokens) with visual previews, purpose guidance, and a public fetch API — so
-> any coding agent (Claude Code, Cursor, Codex, Copilot, Windsurf, Kiro…) can
-> build UI that follows a real design system instead of generic AI defaults.
+> Source-verified official design systems for coding agents. AgentDS translates
+> published token packages and repositories into `DESIGN.md`, DTCG tokens, and
+> Tailwind CSS—with provenance and a verification report for every published
+> file.
 
 - **Web:** https://agent-ds.oday-bakkour.com
 - **API:** https://api.agent-ds.oday-bakkour.com (read-only, no key)
@@ -16,22 +16,83 @@
 - **License:** code Apache-2.0 · catalog content ([`content/`](./content)) CC BY 4.0
 - **Contact / security:** contact@oday-bakkour.com
 
-> Status: **Phase 4 — content sprint + skills.sh.** The 10 Tier-1 Official
-> Systems are published; the Tier-2 batch and Brand Looks ship as drafts behind
-> the human QA gate; the `skills/` directory is live (see
-> [`docs/03-DEV-CHECKLIST.md`](./docs/03-DEV-CHECKLIST.md)).
+> **Catalog status:** 42 entries: 27 Official Systems and 15 Brand Looks. 41 are
+> published; the Figma Brand Look remains a draft behind the human QA gate. The
+> `skills/` directory and public API are live.
 
-## What's here
+## See the tokens at work
 
-Two catalog paths:
+[![A revenue dashboard using Carbon's verified palette, type, spacing, radii, and status roles](./docs/assets/launch/carbon-dashboard.png)](https://agent-ds.oday-bakkour.com/systems/carbon/preview/dashboard)
 
-- **Official Systems** — `DESIGN.md` files generated from real, published
-  open-source token packages (Carbon, Material 3, Primer, Fluent 2, Cloudscape…)
-  with recorded provenance.
+The [live Carbon preview](https://agent-ds.oday-bakkour.com/systems/carbon/preview/dashboard)
+is server-rendered directly from the catalog's `DESIGN.md` tokens. Its source is
+`@carbon/styles@1.110.0`; the current verification report records exact matches
+for all 12 published color roles. It is an approximation of Carbon's visual
+language, not IBM's official component library.
+
+### Same brief, one added file
+
+[![Two dashboards generated from the same prompt, without and with Carbon DESIGN.md](./docs/assets/launch/comparison.png)](./benchmarks/carbon-dashboard/README.md)
+
+In a [reproducible Codex benchmark](./benchmarks/carbon-dashboard/README.md), the
+baseline passed **0/7** source-level Carbon checks and the run with `DESIGN.md`
+passed **5/7**. The treatment used Carbon's primary, typeface, radii, status
+colors, and no-shadow rule, but still invented unpublished colors and off-scale
+spacing. The exact prompt, model settings, generated HTML, hashes, evaluator,
+and limitations are committed—this is evidence of stronger steering, not a
+claim of perfect compliance.
+
+### From install to on-system UI
+
+![Terminal installation followed by an agent generating a Carbon-aligned dashboard](./docs/assets/launch/demo.gif)
+
+## Try Carbon in 60 seconds
+
+Install the catalog skill from skills.sh:
+
+```bash
+npx skills add System-Desgin/AgentDS --skill design-systems
+```
+
+Then ask your agent: `Use the Carbon design system to build a revenue dashboard.`
+The skill selects the bundled Carbon file and tells the agent to follow its
+tokens and rules. Prefer a plain file instead? Fetch the same verified source:
+
+```bash
+curl -fsSL https://api.agent-ds.oday-bakkour.com/v1/systems/carbon/design.md \
+  -o DESIGN.md
+```
+
+## Why AgentDS
+
+Official Systems are built from the system's real, versioned token source—not
+from a visual approximation of its marketing site. Publication requires all of
+the following:
+
+- `meta.yaml` validated against the shared schema.
+- `DESIGN.md` passing the official Google linter with zero errors.
+- `verify-report.json` grounding every published color in the cited source.
+- Human-signed `QA.md`, recorded provenance, and upstream license attribution.
+
+The normalized tokens remain the source of truth, so upstream drift can be
+re-checked without rewriting values from memory.
+
+The installable master skill also pins every downloadable text artifact by
+SHA-256. Its shell and Python helpers reject non-canonical slugs, unlisted
+artifacts, and changed responses before replacing a local file. Bundled
+archetypes remain fully offline.
+
+## Two catalog paths
+
+- **Official Systems** — the primary catalog: Carbon, Material 3, Primer,
+  Fluent 2, Cloudscape, and other real open-source systems extracted from their
+  published packages or repositories.
 - **Brand Looks** — independent visual-language analyses of famous product
-  sites, each carrying a mandatory non-affiliation disclaimer.
+  sites, each sourced from public CSS and carrying a mandatory non-affiliation
+  disclaimer. Use them as inspiration for an original system.
 
-Every published file passes `npx @google/design.md lint` and a human QA gate.
+Every published entry passes the same schema, lint, source-verification, and
+human QA gates.
 
 ## Use it with your agent
 
@@ -122,7 +183,10 @@ See [`docs/`](./docs) for the full plan: `01-PROJECT-IDEA.md`, `02-PRD.md`,
 
 ## Contributing
 
-Conventional Commits are enforced (`feat:`, `fix:`, `content:`, `docs:`,
-`chore:`…). Run `pnpm lint && pnpm typecheck && pnpm test` before pushing.
-Read [`CLAUDE.md`](./CLAUDE.md) and [`DESIGN.md`](./DESIGN.md) first — they hold
-the non-negotiable rules for this codebase.
+Found a stale token, missing system, or rough edge? Read
+[`CONTRIBUTING.md`](./CONTRIBUTING.md), then use the matching issue form or send
+a focused pull request. Content values must come from their cited source and
+pass the full verification workflow; never enter a token from memory.
+
+If AgentDS saves you prompt iteration, star the repository. Stars help other
+agent builders find the source-verified catalog.

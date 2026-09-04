@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-09-04T15:49:18.087Z",
+  "generator": {
+    "cli": "codex-cli 0.153.2",
+    "model": "gpt-5.6-sol",
+    "reasoningEffort": "medium",
+    "sandbox": "workspace-write",
+    "ephemeral": true,
+    "ignoredUserConfig": true,
+    "ignoredExecPolicyRules": true
+  },
+  "inputs": {
+    "prompt": "benchmarks/carbon-dashboard/prompt.txt",
+    "promptSha256": "8be1af2cc4163b6d5c2bfc6a16e755cccbce920ac76ff04912c4771377081f87",
+    "treatmentDesign": "content/official/carbon/DESIGN.md",
+    "treatmentDesignSha256": "35db589370202f332a295537528d2d1ed2da250556e4bd3f7d70defb2e7c0c26",
+    "onlyTreatmentInputDifference": "DESIGN.md"
+  },
+  "outputs": {
+    "baselineSha256": "713d3eca2840a67da4a6b859034980a3f093edfbeec77959f10632221d55cf95",
+    "carbonSha256": "da13261be0b7ed66fb655a1d8f498a9b202a0b0816a69be409378086606e89c6"
+  },
+  "agentFinalMessages": {
+    "baseline": "",
+    "carbon": ""
+  }
+}

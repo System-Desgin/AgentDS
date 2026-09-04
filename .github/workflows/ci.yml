@@ -40,8 +40,17 @@ jobs:
       - name: Test
         run: pnpm test
 
+      - name: Benchmark evidence integrity
+        run: pnpm benchmark:check
+
+      - name: Skill download security
+        run: pnpm skill:test
+
       - name: Build
         run: pnpm build
+
+      - name: Web output trace scope
+        run: pnpm web:trace:check
 
       - name: Dependency audit
         run: pnpm audit --audit-level=high

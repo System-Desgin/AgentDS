@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { PURPOSE_CATEGORIES } from "@agentds/shared";
 import { SAMPLE_TEMPLATES } from "@agentds/shared/preview";
 import { AGENT_SNIPPETS } from "../lib/agent-snippets";
 import { fetchAllSlugs, fetchCatalog } from "../lib/api";
@@ -12,6 +13,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const agentRoutes = AGENT_SNIPPETS.map((agent) => ({
     url: `${SITE_URL}/agents/${agent.id}`,
     changeFrequency: "monthly" as const,
+  }));
+  const categoryRoutes = PURPOSE_CATEGORIES.map((category) => ({
+    url: `${SITE_URL}/systems/category/${category}`,
+    changeFrequency: "weekly" as const,
   }));
   const systemRoutes = (await fetchAllSlugs()).map((slug) => ({
     url: `${SITE_URL}/systems/${slug}`,
@@ -36,5 +41,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         changeFrequency: "monthly" as const,
       })),
     );
-  return [...staticRoutes, ...agentRoutes, ...systemRoutes, ...previewRoutes];
+  return [...staticRoutes, ...agentRoutes, ...categoryRoutes, ...systemRoutes, ...previewRoutes];
 }
