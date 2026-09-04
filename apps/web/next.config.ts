@@ -1,4 +1,8 @@
 import type { NextConfig } from "next";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const REPOSITORY_ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 
 const API_ORIGIN = new URL(
   process.env["NEXT_PUBLIC_API_URL"] ?? "https://api.agent-ds.oday-bakkour.com",
@@ -50,10 +54,22 @@ const nextConfig: NextConfig = {
   // Consume the workspace shared package directly (compiled JS + types).
   transpilePackages: ["@agentds/shared"],
   poweredByHeader: false,
-  // Bundle the catalog content into the server output so the site can serve
-  // files when the API is unreachable (Phase 3: graceful fallback).
+  // Trace from the monorepo root, but bundle only the two files the graceful
+  // API fallback reads. Patterns remain relative to this Next.js project.
+  outputFileTracingRoot: REPOSITORY_ROOT,
   outputFileTracingIncludes: {
-    "/**": ["../../content/**"],
+    "/*": ["../../content/**/meta.yaml", "../../content/**/DESIGN.md"],
+  },
+  outputFileTracingExcludes: {
+    "/*": [
+      "../../content/LICENSE",
+      "../../content/README.md",
+      "../../content/**/QA.md",
+      "../../content/**/lint-report.json",
+      "../../content/**/tailwind.css",
+      "../../content/**/tokens.json",
+      "../../content/**/verify-report.json",
+    ],
   },
   headers() {
     return Promise.resolve([{ source: "/(.*)", headers: securityHeaders }]);

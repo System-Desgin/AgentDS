@@ -22,6 +22,7 @@
     "format:check": "prettier --check .",
     "audit": "pnpm audit --audit-level=moderate",
     "benchmark:check": "node benchmarks/carbon-dashboard/check.mjs",
+    "web:trace:check": "node scripts/check-web-trace.mjs",
     "skill:integrity": "node scripts/generate-skill-integrity.mjs",
     "skill:test": "sh skills/design-systems/scripts/test-fetch-helpers.sh",
     "validate:content": "pnpm --filter @agentds/shared build && node scripts/validate-content.mjs",
