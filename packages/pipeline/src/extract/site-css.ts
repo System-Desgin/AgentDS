@@ -74,6 +74,33 @@ export function inlineStyles(html: string): string[] {
 }
 
 /**
+ * CSS declarations and literal colors attached directly to public markup.
+ *
+ * Some sites render their palette through server-side SVG icons instead of a
+ * stylesheet. Those `fill`, `stroke`, and gradient-stop attributes are just as
+ * observable as a CSS declaration. Script bodies are removed first so colors
+ * in serialized CMS data or JavaScript source never enter the evidence set.
+ */
+export function inlinePresentationValues(html: string): string[] {
+  const markup = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+  const values: string[] = [];
+
+  for (const match of markup.matchAll(/\bstyle\s*=\s*(["'])(.*?)\1/gi)) {
+    if (match[2]) values.push(match[2]);
+  }
+
+  const vectorTag =
+    /<(?:svg|g|path|rect|circle|ellipse|line|polyline|polygon|stop|text|use)\b[^>]*>/gi;
+  for (const [tag] of markup.matchAll(vectorTag)) {
+    for (const match of tag.matchAll(/\b(?:fill|stroke|stop-color)\s*=\s*(["'])(.*?)\1/gi)) {
+      if (match[2]) values.push(match[2]);
+    }
+  }
+
+  return values;
+}
+
+/**
  * Custom-property declarations (`--name: value`) in source order. Values keep
  * their raw text so `var()` chains can be resolved afterwards.
  */
@@ -182,7 +209,7 @@ export async function captureSiteCss(urls: string[], extractedAt: string): Promi
     const html = await fetchText(pageUrl);
     if (html === null) continue;
     sources.push(pageUrl);
-    sheets.push(...inlineStyles(html));
+    sheets.push(...inlineStyles(html), ...inlinePresentationValues(html));
     for (const href of stylesheetUrls(html, pageUrl)) {
       if (sources.includes(href)) continue;
       const css = await fetchText(href);
