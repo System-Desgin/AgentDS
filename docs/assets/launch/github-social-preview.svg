@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title description">
+  <title id="title">AgentDS — source-verified design systems for coding agents</title>
+  <desc id="description">A warm editorial card showing the AgentDS install command and a passing source verification report.</desc>
+
+  <rect width="1280" height="640" fill="#FAF7F2" />
+  <path d="M0 96H1280" stroke="#E3DBC9" />
+
+  <g font-family="ui-monospace, 'SFMono-Regular', Consolas, monospace" font-size="18" font-weight="600" letter-spacing="1.4">
+    <text x="72" y="59" fill="#17150F">## AgentDS</text>
+    <text x="1208" y="59" fill="#57503F" text-anchor="end">DESIGN.MD CATALOG</text>
+  </g>
+
+  <g transform="translate(72 144)">
+    <text x="0" y="0" fill="#BC4A26" font-family="ui-monospace, 'SFMono-Regular', Consolas, monospace" font-size="16" font-weight="600" letter-spacing="1.2">## SOURCE-VERIFIED DESIGN SYSTEMS</text>
+
+    <text x="0" y="82" fill="#17150F" font-family="Georgia, 'Times New Roman', serif" font-size="60" font-weight="600" letter-spacing="-1.4">Real design systems,</text>
+    <text x="0" y="148" fill="#17150F" font-family="Georgia, 'Times New Roman', serif" font-size="60" font-weight="600" letter-spacing="-1.4">ready for coding agents.</text>
+
+    <text x="0" y="200" fill="#57503F" font-family="Inter, Arial, sans-serif" font-size="22">Carbon, Material 3, Primer, Fluent 2, Cloudscape, and more—</text>
+    <text x="0" y="234" fill="#57503F" font-family="Inter, Arial, sans-serif" font-size="22">translated from published token sources, not visual guesses.</text>
+
+    <rect x="0" y="273" width="669" height="62" rx="10" fill="#201D14" />
+    <text x="22" y="311" fill="#D9A054" font-family="ui-monospace, 'SFMono-Regular', Consolas, monospace" font-size="16">npx skills add System-Desgin/AgentDS --skill design-systems</text>
+
+    <g transform="translate(0 378)" font-family="ui-monospace, 'SFMono-Regular', Consolas, monospace" font-size="16" fill="#57503F">
+      <text x="0" y="0">41 PUBLISHED FILES</text>
+      <circle cx="205" cy="-6" r="2.5" fill="#BC4A26" />
+      <text x="222" y="0">8 AGENT SKILLS</text>
+      <circle cx="390" cy="-6" r="2.5" fill="#BC4A26" />
+      <text x="407" y="0">FREE API</text>
+      <circle cx="518" cy="-6" r="2.5" fill="#BC4A26" />
+      <text x="535" y="0">NO ACCOUNT</text>
+    </g>
+  </g>
+
+  <g transform="translate(802 132)">
+    <rect width="406" height="440" rx="16" fill="#201D14" />
+    <text x="28" y="48" fill="#D9A054" font-family="ui-monospace, 'SFMono-Regular', Consolas, monospace" font-size="17" font-weight="600">verify-report.json</text>
+    <rect x="286" y="24" width="91" height="30" rx="15" fill="#3F6B42" />
+    <text x="331.5" y="44" fill="#FAF7F2" font-family="ui-monospace, 'SFMono-Regular', Consolas, monospace" font-size="11" font-weight="600" letter-spacing="1" text-anchor="middle">REQUIRED</text>
+    <path d="M28 76H378" stroke="#E3DBC9" opacity="0.75" />
+
+    <g font-family="ui-monospace, 'SFMono-Regular', Consolas, monospace">
+      <g fill="#D9A054" font-size="12" font-weight="600" letter-spacing="1">
+        <text x="28" y="116">SOURCE:</text>
+        <text x="28" y="180">TOKENS:</text>
+        <text x="28" y="244">FORMAT:</text>
+        <text x="28" y="308">REVIEW:</text>
+      </g>
+      <g fill="#F1EADA" font-size="16" font-weight="600">
+        <text x="28" y="143">package@version or repo@commit</text>
+        <text x="28" y="207">compared with cited source</text>
+        <text x="28" y="271">DESIGN.md lint · zero errors</text>
+        <text x="28" y="335">human QA required</text>
+      </g>
+      <path d="M28 372H378" stroke="#E3DBC9" opacity="0.75" />
+      <circle cx="39" cy="404" r="6" fill="#3F6B42" />
+      <text x="58" y="410" fill="#D9A054" font-size="16" font-weight="600">publish_gate: passed</text>
+    </g>
+  </g>
+</svg>

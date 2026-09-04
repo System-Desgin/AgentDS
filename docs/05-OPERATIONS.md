@@ -1,7 +1,7 @@
 # Operations runbook — AgentDS
 
 Secrets, rotation, backups, deploys, and incident basics. Written for the
-owner; nothing here contains a secret value (CLAUDE.md rule 14).
+owner; nothing here contains a secret value (CLAUDE.md rule 15).
 
 ## Secrets inventory
 
@@ -14,7 +14,7 @@ owner; nothing here contains a secret value (CLAUDE.md rule 14).
 | `DOKPLOY_WEBHOOK_URL` | GitHub Actions secret | `deploy.yml` redeploy trigger | Regenerate in Dokploy, update the secret |
 | `NEXT_PUBLIC_UMAMI_SRC` / `NEXT_PUBLIC_UMAMI_WEBSITE_ID` | Vercel env | analytics script slot | Public-ish, not sensitive |
 
-`ANTHROPIC_API_KEY` must never exist in any environment (CLAUDE.md rule 17).
+`ANTHROPIC_API_KEY` must never exist in any environment (CLAUDE.md rule 18).
 
 ## Rotation procedures
 

@@ -64,6 +64,7 @@ const nextConfig: NextConfig = {
     "/*": [
       "../../content/LICENSE",
       "../../content/README.md",
+      "../../content/**/bundle.zip",
       "../../content/**/QA.md",
       "../../content/**/lint-report.json",
       "../../content/**/tailwind.css",
