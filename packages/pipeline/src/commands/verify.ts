@@ -13,6 +13,7 @@ import { collectHexes, deltaE, nearestColor, normalizeHex } from "../lib/color";
 import { captureSiteCss } from "../extract/site-css";
 import { extractNpmTokens, MIN_PALETTE_COLORS } from "../extract/npm-tokens";
 import {
+  applyColorTokenChanges,
   applySubstitution,
   contrastPairs,
   groundColors,
@@ -142,23 +143,25 @@ const VERDICT_COLOR: Record<Verdict, (s: string) => string> = {
 
 /**
  * Rewrite an entry so every color traces to its source, then regenerate the
- * derived artifacts. Front matter, prose and the QA spot-check table all embed
- * the same hex strings, so the substitution is applied to each of them —
- * leaving the prose stale would make the file contradict its own tokens.
+ * derived artifacts. Front-matter values are rewritten by token name; prose
+ * and QA hexes are substituted only when the old value maps unambiguously to
+ * one new value. Ambiguous prose is reported for human review instead of
+ * risking an unrelated token with the same hex.
  */
 async function applyFix(
   dir: string,
   design: DesignTokens,
   sourceColors: Set<string>,
 ): Promise<ColorChange[]> {
+  const publishedColors = (design.colors ?? {}) as Record<string, string>;
   const result = groundColors(
-    (design.colors ?? {}) as Record<string, string>,
+    publishedColors,
     sourceColors,
     contrastPairs((design.components ?? {}) as Record<string, Record<string, string | number>>),
   );
   if (result.changes.length === 0) return [];
 
-  const { map, ambiguous } = substitutionMap(result.changes);
+  const { map, ambiguous } = substitutionMap(result.changes, publishedColors);
   if (ambiguous.length) {
     console.log(
       pc.yellow(
@@ -169,7 +172,8 @@ async function applyFix(
 
   const designPath = join(dir, "DESIGN.md");
   const original = await readFile(designPath, "utf8");
-  const substituted = applySubstitution(original, map);
+  const globallySubstituted = applySubstitution(original, map);
+  const substituted = applyColorTokenChanges(globallySubstituted, result.changes);
 
   // Ratios quoted in the prose were measured against the old values, so they
   // have to be recomputed or the file ships wrong accessibility numbers.

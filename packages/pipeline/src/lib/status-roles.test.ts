@@ -79,7 +79,14 @@ describe("documentStatusTokens", () => {
     const out = documentStatusTokens(md, { success: "#14832b" }, "#ffffff");
     expect(out).toContain("`{colors.success}` (#14832B)");
     expect(out).toContain("on `{colors.surface}`");
+    expect(out).toContain("is the observed status hue");
     expect(out.indexOf("status colors")).toBeLessThan(out.indexOf("## Typography"));
+  });
+
+  it("uses plural grammar for multiple roles", () => {
+    const md = "intro\n\n## Colors\n\n- **primary** — the blue.\n\n## Typography\n\nbody\n";
+    const out = documentStatusTokens(md, { success: "#14832b", error: "#e32d14" }, "#ffffff");
+    expect(out).toContain("are the observed status hues");
   });
 
   it("leaves the document alone when nothing was added", () => {

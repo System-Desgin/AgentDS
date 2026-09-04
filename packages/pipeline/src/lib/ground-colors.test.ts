@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { applySubstitution, contrastPairs, groundColors, substitutionMap } from "./ground-colors";
+import {
+  applyColorTokenChanges,
+  applySubstitution,
+  contrastPairs,
+  groundColors,
+  substitutionMap,
+} from "./ground-colors";
 
 describe("contrastPairs", () => {
   it("picks out components that put text on a background", () => {
@@ -85,6 +91,38 @@ describe("substitutionMap", () => {
     ]);
     expect(map.size).toBe(0);
     expect(ambiguous).toEqual(["#000000"]);
+  });
+
+  it("refuses a global rewrite when an unchanged token shares the old value", () => {
+    const { map, ambiguous } = substitutionMap(
+      [{ token: "on-action", from: "#FFFFFF", to: "#252D41", deltaE: 40 }],
+      { surface: "#FFFFFF", "on-action": "#FFFFFF" },
+    );
+    expect(map.size).toBe(0);
+    expect(ambiguous).toEqual(["#ffffff"]);
+  });
+});
+
+describe("applyColorTokenChanges", () => {
+  it("rewrites only the named token when another token shares its value", () => {
+    const markdown = [
+      "---",
+      "colors:",
+      '  surface: "#FFFFFF"',
+      '  on-action: "#FFFFFF"',
+      "typography:",
+      "  body:",
+      "    fontFamily: Inter",
+      "---",
+      "",
+      "The page uses #FFFFFF.",
+    ].join("\n");
+    const result = applyColorTokenChanges(markdown, [
+      { token: "on-action", from: "#FFFFFF", to: "#252d41", deltaE: 40 },
+    ]);
+    expect(result).toContain('  surface: "#FFFFFF"');
+    expect(result).toContain('  on-action: "#252D41"');
+    expect(result).toContain("The page uses #FFFFFF.");
   });
 });
 
