@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security report
+    url: https://github.com/System-Desgin/AgentDS/security/policy
+    about: Report vulnerabilities privately. Do not open a public issue.
+  - name: Questions and ideas
+    url: https://github.com/System-Desgin/AgentDS/discussions
+    about: Ask for help or discuss ideas that are not actionable bug reports.

@@ -1,0 +1,53 @@
+name: Report source drift
+description: Report a catalog token that no longer matches its cited upstream source.
+title: "content: verify "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Source corrections are high priority. Please link exact upstream evidence; do not paste proprietary files.
+  - type: input
+    id: slug
+    attributes:
+      label: AgentDS slug
+      placeholder: carbon
+    validations:
+      required: true
+  - type: input
+    id: token
+    attributes:
+      label: Token or claim
+      placeholder: colors.primary
+    validations:
+      required: true
+  - type: input
+    id: upstream
+    attributes:
+      label: Upstream evidence
+      description: Link the package version, repository commit, or exact public source page.
+      placeholder: https://github.com/…
+    validations:
+      required: true
+  - type: textarea
+    id: mismatch
+    attributes:
+      label: Observed mismatch
+      description: State the AgentDS value and the upstream value with enough detail to reproduce the check.
+    validations:
+      required: true
+  - type: textarea
+    id: verify
+    attributes:
+      label: Verification command or steps
+      placeholder: pnpm pipeline verify carbon
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: The evidence is public and does not contain proprietary material.
+          required: true
+        - label: I searched existing source-drift reports.
+          required: true

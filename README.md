@@ -34,6 +34,23 @@ language, not IBM's official component library.
 
 ![Terminal installation followed by an agent generating a Carbon-aligned dashboard](./docs/assets/launch/demo.gif)
 
+## Try Carbon in 60 seconds
+
+Install the catalog skill from skills.sh:
+
+```bash
+npx skills add System-Desgin/AgentDS --skill design-systems
+```
+
+Then ask your agent: `Use the Carbon design system to build a revenue dashboard.`
+The skill selects the bundled Carbon file and tells the agent to follow its
+tokens and rules. Prefer a plain file instead? Fetch the same verified source:
+
+```bash
+curl -fsSL https://api.agent-ds.oday-bakkour.com/v1/systems/carbon/design.md \
+  -o DESIGN.md
+```
+
 ## Why AgentDS
 
 Official Systems are built from the system's real, versioned token source—not
@@ -149,7 +166,10 @@ See [`docs/`](./docs) for the full plan: `01-PROJECT-IDEA.md`, `02-PRD.md`,
 
 ## Contributing
 
-Conventional Commits are enforced (`feat:`, `fix:`, `content:`, `docs:`,
-`chore:`…). Run `pnpm lint && pnpm typecheck && pnpm test` before pushing.
-Read [`CLAUDE.md`](./CLAUDE.md) and [`DESIGN.md`](./DESIGN.md) first — they hold
-the non-negotiable rules for this codebase.
+Found a stale token, missing system, or rough edge? Read
+[`CONTRIBUTING.md`](./CONTRIBUTING.md), then use the matching issue form or send
+a focused pull request. Content values must come from their cited source and
+pass the full verification workflow; never enter a token from memory.
+
+If AgentDS saves you prompt iteration, star the repository. Stars help other
+agent builders find the source-verified catalog.

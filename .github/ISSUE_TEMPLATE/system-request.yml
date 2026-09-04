@@ -1,0 +1,66 @@
+name: Request a design system
+description: Propose an Official System or Brand Look for the AgentDS catalog.
+title: "catalog: add "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Propose the source before preparing content. Maintainers will check licensing and provenance first.
+  - type: input
+    id: name
+    attributes:
+      label: System name
+      placeholder: Carbon Design System
+    validations:
+      required: true
+  - type: dropdown
+    id: path
+    attributes:
+      label: Catalog path
+      options:
+        - Official System — published open-source tokens
+        - Brand Look — independent analysis of public CSS
+        - Unsure
+    validations:
+      required: true
+  - type: input
+    id: maker
+    attributes:
+      label: Maker
+      placeholder: IBM
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Token source
+      description: Link the npm package, repository, or public CSS pages.
+      placeholder: https://github.com/… or https://www.npmjs.com/package/…
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: License evidence
+      description: Link the upstream license or terms that cover the proposed source.
+      placeholder: https://github.com/…/LICENSE
+    validations:
+      required: true
+  - type: textarea
+    id: value
+    attributes:
+      label: Why it belongs
+      description: Name the UI use cases and what makes this system meaningfully distinct.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched the catalog and existing requests for this system.
+          required: true
+        - label: I understand that token values cannot be entered from memory or visual guessing.
+          required: true
