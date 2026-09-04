@@ -5,7 +5,7 @@ import { DashboardTemplate, googleFontsUrl } from "@agentds/shared/preview";
 import { CopyButton } from "../components/copy-button";
 import { SpecimenFonts } from "../components/specimen-fonts";
 import { SystemCard } from "../components/system-card";
-import { fetchCatalog, fetchDesignMd, fetchSystem } from "../lib/api";
+import { fetchCatalog, fetchCategories, fetchDesignMd, fetchSystem } from "../lib/api";
 import { INSTALL_COMMAND, SITE_DESCRIPTION, SITE_NAME, SITE_URL, SKILLS_SH_URL } from "../lib/site";
 import carbonVerification from "../../../../content/official/carbon/verify-report.json";
 
@@ -52,8 +52,9 @@ const VERIFICATION_ROWS = [
 ] as const;
 
 export default async function HomePage() {
-  const [featured, carbon, carbonDesignMd] = await Promise.all([
+  const [featured, categories, carbon, carbonDesignMd] = await Promise.all([
     fetchCatalog({ sort: "most-fetched" }),
+    fetchCategories(),
     fetchSystem("carbon"),
     fetchDesignMd("carbon"),
   ]);
@@ -301,6 +302,36 @@ export default async function HomePage() {
             </span>
           </Link>
         </div>
+      </section>
+
+      <section aria-labelledby="purposes-heading" className="flex flex-col gap-6">
+        <div className="flex flex-col gap-3">
+          <h2
+            id="purposes-heading"
+            className="font-display text-4xl font-semibold leading-[1.15] text-primary"
+          >
+            Find the right system for the work.
+          </h2>
+          <p className="max-w-[64ch] leading-relaxed text-on-surface-variant">
+            Start with the interface you are building. Each category combines Official Systems and
+            clearly labeled Brand Looks that fit the same job.
+          </p>
+        </div>
+        <nav aria-label="Browse design-system purposes" className="border-y border-border py-5">
+          <ul className="grid list-none gap-x-8 gap-y-3 p-0 sm:grid-cols-2 lg:grid-cols-3">
+            {categories.map((category) => (
+              <li key={category.id}>
+                <Link
+                  href={`/systems/category/${category.id}`}
+                  className="flex items-baseline justify-between gap-4 font-mono text-[0.8125rem] text-on-surface-variant transition-colors duration-150 ease-out hover:text-accent"
+                >
+                  <span>{category.label}</span>
+                  <span aria-label={`${category.count} systems`}>{category.count}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </section>
 
       {/* Featured grid */}

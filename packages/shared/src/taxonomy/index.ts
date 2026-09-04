@@ -1,5 +1,6 @@
 export {
   PURPOSE_CATEGORIES,
+  PURPOSE_CATEGORY_DESCRIPTIONS,
   PURPOSE_CATEGORY_LABELS,
   isPurposeCategory,
   type PurposeCategory,
