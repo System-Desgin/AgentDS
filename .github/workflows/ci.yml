@@ -40,6 +40,9 @@ jobs:
       - name: Test
         run: pnpm test
 
+      - name: Benchmark evidence integrity
+        run: pnpm benchmark:check
+
       - name: Build
         run: pnpm build
 

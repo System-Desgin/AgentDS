@@ -244,6 +244,20 @@ export default async function HomePage() {
                     </dt>
                     <dd className="mt-1 text-sm font-medium text-primary">{carbonFont}</dd>
                   </div>
+                  <div className="border-t border-border pt-5">
+                    <dt className="font-mono text-[0.6875rem] uppercase tracking-[0.04em] text-on-surface-variant">
+                      recorded agent run
+                    </dt>
+                    <dd className="mt-1 font-mono text-sm font-medium text-primary">
+                      0/7 baseline → 5/7 with DESIGN.md
+                    </dd>
+                    <a
+                      href="https://github.com/System-Desgin/AgentDS/tree/main/benchmarks/carbon-dashboard"
+                      className="mt-2 inline-block font-mono text-[0.6875rem] uppercase tracking-[0.04em] text-accent hover:underline"
+                    >
+                      inspect exact inputs →
+                    </a>
+                  </div>
                 </dl>
                 <p className="mt-auto border-t border-border pt-5 text-xs leading-relaxed text-on-surface-variant">
                   Approximation of Carbon&apos;s visual language, not IBM&apos;s official component

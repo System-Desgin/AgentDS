@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Revenue analytics dashboard for Northstar.">
+  <title>Revenue overview | Northstar</title>
+  <style>
+    :root {
+      --primary: #0F62FE;
+      --primary-hover: #0043CE;
+      --surface: #FFFFFF;
+      --surface-variant: #F4F4F4;
+      --surface-hover: #E8E8E8;
+      --text: #161616;
+      --text-secondary: #525252;
+      --helper: #6F6F6F;
+      --border: #E0E0E0;
+      --border-strong: #8D8D8D;
+      --success: #24A148;
+      --success-bg: #DEFBE6;
+      --warning: #F1C21B;
+      --warning-bg: #FFF1C2;
+      --error: #DA1E28;
+      --error-bg: #FFF1F1;
+      --nav: #161616;
+      --nav-muted: #C6C6C6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      color-scheme: light;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--surface);
+      color: var(--text);
+      font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    button,
+    select {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 20;
+      padding: 8px 16px;
+      background: var(--surface);
+      color: var(--primary);
+      transform: translateY(-160%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .topbar {
+      min-height: 48px;
+      display: flex;
+      align-items: stretch;
+      background: var(--nav);
+      color: var(--surface);
+      border-bottom: 1px solid #393939;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 256px;
+      padding: 0 24px;
+      border-right: 1px solid #393939;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 18px;
+      height: 18px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+    }
+
+    .brand-mark span {
+      background: var(--primary);
+    }
+
+    .topbar nav {
+      flex: 1;
+    }
+
+    .topbar ul {
+      height: 100%;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .topbar nav a {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      color: var(--nav-muted);
+      font-size: 0.875rem;
+      text-decoration: none;
+    }
+
+    .topbar nav a:hover {
+      background: #262626;
+      color: var(--surface);
+    }
+
+    .topbar nav a[aria-current="page"] {
+      color: var(--surface);
+    }
+
+    .topbar nav a[aria-current="page"]::after {
+      position: absolute;
+      right: 16px;
+      bottom: 0;
+      left: 16px;
+      height: 3px;
+      background: var(--primary);
+      content: "";
+    }
+
+    .account {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 24px;
+      color: var(--nav-muted);
+      font-size: 0.875rem;
+    }
+
+    .avatar {
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      background: #393939;
+      color: var(--surface);
+      border-radius: 50%;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    main {
+      width: min(1440px, 100%);
+      margin: 0 auto;
+      padding: 40px 32px 64px;
+    }
+
+    .page-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .eyebrow {
+      margin: 0 0 4px;
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+      font-size: clamp(1.75rem, 3vw, 2rem);
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .intro {
+      margin-bottom: 0;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .head-actions {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    .field-wrap {
+      display: grid;
+      gap: 4px;
+    }
+
+    .field-wrap label {
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    select {
+      min-width: 184px;
+      height: 48px;
+      padding: 0 40px 0 16px;
+      background-color: var(--surface-variant);
+      color: var(--text);
+      border: 0;
+      border-bottom: 1px solid var(--border-strong);
+      border-radius: 2px 2px 0 0;
+      cursor: pointer;
+    }
+
+    .primary-button {
+      min-height: 48px;
+      padding: 12px 18px;
+      background: var(--primary);
+      color: var(--surface);
+      border: 0;
+      border-radius: 2px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 120ms ease;
+    }
+
+    .primary-button:hover {
+      background: var(--primary-hover);
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin-bottom: 32px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .kpi {
+      min-height: 176px;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 24px;
+      background: var(--surface-variant);
+    }
+
+    .kpi-label {
+      margin-bottom: auto;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .kpi-value {
+      margin: 22px 0 6px;
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .kpi-foot {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--helper);
+      font-size: 0.75rem;
+    }
+
+    .trend {
+      font-weight: 600;
+    }
+
+    .trend.up {
+      color: var(--success);
+    }
+
+    .trend.down {
+      color: var(--error);
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(360px, 1fr);
+      gap: 24px;
+    }
+
+    .panel {
+      min-width: 0;
+      border-top: 1px solid var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .panel-head {
+      min-height: 80px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      margin-bottom: 2px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .panel-subtitle,
+    .panel-meta {
+      margin: 0;
+      color: var(--helper);
+      font-size: 0.75rem;
+    }
+
+    .panel-meta {
+      padding-top: 5px;
+      white-space: nowrap;
+    }
+
+    .chart-summary {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 20px 0 8px 48px;
+    }
+
+    .chart-total {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .chart-note {
+      color: var(--helper);
+      font-size: 0.75rem;
+    }
+
+    .chart {
+      position: relative;
+      height: 300px;
+      display: grid;
+      grid-template-columns: 40px repeat(12, minmax(18px, 1fr));
+      grid-template-rows: 1fr 30px;
+      column-gap: 8px;
+      padding-top: 12px;
+    }
+
+    .plot-grid {
+      position: absolute;
+      top: 12px;
+      right: 0;
+      bottom: 30px;
+      left: 48px;
+      z-index: 0;
+      background: repeating-linear-gradient(to bottom, var(--border) 0, var(--border) 1px, var(--surface) 1px, var(--surface) 25%);
+      border-bottom: 1px solid var(--border-strong);
+    }
+
+    .axis {
+      position: relative;
+      z-index: 1;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 8px;
+      color: var(--helper);
+      font-size: 0.6875rem;
+      text-align: right;
+    }
+
+    .bar-group {
+      position: relative;
+      z-index: 1;
+      grid-row: 1 / 3;
+      display: grid;
+      grid-template-rows: 1fr 30px;
+      min-width: 0;
+    }
+
+    .bar-track {
+      display: flex;
+      align-items: flex-end;
+      height: 100%;
+      padding: 0 3px;
+    }
+
+    .bar {
+      position: relative;
+      width: 100%;
+      height: var(--value);
+      min-height: 4px;
+      background: var(--primary);
+      transition: background-color 120ms ease;
+    }
+
+    .bar:hover {
+      background: var(--primary-hover);
+    }
+
+    .bar:focus-visible {
+      outline: 2px solid var(--text);
+      outline-offset: 2px;
+    }
+
+    .bar-label {
+      align-self: center;
+      color: var(--helper);
+      font-size: 0.6875rem;
+      text-align: center;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    th,
+    td {
+      height: 54px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    th {
+      height: 44px;
+      background: var(--surface-variant);
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    th:first-child,
+    td:first-child {
+      padding-left: 16px;
+    }
+
+    th:last-child,
+    td:last-child {
+      padding-right: 16px;
+    }
+
+    tbody tr:hover {
+      background: var(--surface-variant);
+    }
+
+    .region-name {
+      font-weight: 600;
+    }
+
+    .money,
+    .share {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 2px 8px;
+      border-radius: 2px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .status::before {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      content: "";
+    }
+
+    .status.on-track {
+      background: var(--success-bg);
+      color: #0E6027;
+    }
+
+    .status.on-track::before {
+      background: var(--success);
+    }
+
+    .status.watch {
+      background: var(--warning-bg);
+      color: var(--text);
+    }
+
+    .status.watch::before {
+      background: #B28600;
+    }
+
+    .status.at-risk {
+      background: var(--error-bg);
+      color: #A2191F;
+    }
+
+    .status.at-risk::before {
+      background: var(--error);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 1040px) {
+      .account span:not(.avatar) {
+        display: none;
+      }
+
+      .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        min-width: 0;
+        flex: 1;
+      }
+
+      .account {
+        padding: 0 16px;
+      }
+
+      .topbar nav {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        border-top: 1px solid #393939;
+      }
+
+      .topbar nav a {
+        min-height: 44px;
+      }
+
+      main {
+        padding: 32px 16px 48px;
+      }
+
+      .page-head {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .head-actions {
+        align-items: stretch;
+      }
+
+      .field-wrap,
+      select {
+        width: 100%;
+      }
+
+      .chart {
+        column-gap: 4px;
+      }
+
+      .bar-track {
+        padding: 0 1px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .head-actions {
+        flex-direction: column;
+      }
+
+      .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .kpi {
+        min-height: 152px;
+      }
+
+      .panel-head {
+        min-height: 0;
+      }
+
+      .chart-summary {
+        padding-left: 0;
+      }
+
+      .chart {
+        height: 260px;
+        grid-template-columns: 34px repeat(12, minmax(12px, 1fr));
+      }
+
+      .plot-grid {
+        left: 42px;
+      }
+
+      .bar-label {
+        font-size: 0.625rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Northstar home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+      <span>Northstar</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="#" aria-current="page">Overview</a></li>
+        <li><a href="#revenue-chart">Revenue</a></li>
+        <li><a href="#regions">Customers</a></li>
+        <li><a href="#regions">Reports</a></li>
+      </ul>
+    </nav>
+    <div class="account" aria-label="Signed in account">
+      <span>Acme, Inc.</span>
+      <span class="avatar" aria-hidden="true">AR</span>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <header class="page-head">
+      <div>
+        <p class="eyebrow">Performance</p>
+        <h1>Revenue overview</h1>
+        <p class="intro">Track recurring revenue, customer health, and regional performance.</p>
+      </div>
+      <div class="head-actions">
+        <div class="field-wrap">
+          <label for="date-range">Reporting period</label>
+          <select id="date-range" name="date-range">
+            <option selected>Jan 1 – Dec 31, 2025</option>
+            <option>Jan 1 – Dec 31, 2024</option>
+            <option>Last 90 days</option>
+          </select>
+        </div>
+        <button class="primary-button" type="button">Export report</button>
+      </div>
+    </header>
+
+    <section class="kpi-grid" aria-labelledby="key-metrics-title">
+      <h2 class="sr-only" id="key-metrics-title">Key performance indicators</h2>
+      <article class="kpi">
+        <div class="kpi-label">Annual revenue</div>
+        <p class="kpi-value">$3.84M</p>
+        <div class="kpi-foot"><span class="trend up">↑ 18.2%</span><span>vs. prior year</span></div>
+      </article>
+      <article class="kpi">
+        <div class="kpi-label">Active customers</div>
+        <p class="kpi-value">1,248</p>
+        <div class="kpi-foot"><span class="trend up">↑ 8.6%</span><span>vs. prior year</span></div>
+      </article>
+      <article class="kpi">
+        <div class="kpi-label">Average order value</div>
+        <p class="kpi-value">$3,077</p>
+        <div class="kpi-foot"><span class="trend up">↑ 3.4%</span><span>vs. prior year</span></div>
+      </article>
+      <article class="kpi">
+        <div class="kpi-label">Customer churn</div>
+        <p class="kpi-value">2.8%</p>
+        <div class="kpi-foot"><span class="trend down">↑ 0.3 pts</span><span>vs. prior year</span></div>
+      </article>
+    </section>
+
+    <div class="dashboard-grid">
+      <section class="panel" id="revenue-chart" aria-labelledby="revenue-title">
+        <header class="panel-head">
+          <div>
+            <h2 id="revenue-title">Monthly revenue</h2>
+            <p class="panel-subtitle">Recognized revenue, USD</p>
+          </div>
+          <p class="panel-meta">Updated Dec 31</p>
+        </header>
+        <div class="chart-summary">
+          <span class="chart-total">$3,842,000</span>
+          <span class="chart-note">FY 2025 total</span>
+        </div>
+        <figure style="margin: 0;">
+          <figcaption class="sr-only">Bar chart of monthly revenue in thousands of US dollars. Revenue rises from $248,000 in January to $398,000 in December.</figcaption>
+          <div class="chart" role="img" aria-label="Monthly revenue: January 248 thousand dollars, February 262 thousand, March 278 thousand, April 294 thousand, May 306 thousand, June 315 thousand, July 327 thousand, August 319 thousand, September 340 thousand, October 368 thousand, November 387 thousand, December 398 thousand.">
+            <div class="plot-grid" aria-hidden="true"></div>
+            <div class="axis" aria-hidden="true"><span>$400k</span><span>$300k</span><span>$200k</span><span>$100k</span><span>$0</span></div>
+            <div class="bar-group"><div class="bar-track"><div class="bar" style="--value: 62%;" tabindex="0" aria-label="January, $248,000"></div></div><span class="bar-label">Jan</span></div>
+            <div class="bar-group"><div class="bar-track"><div class="bar" style="--value: 66%;" tabindex="0" aria-label="February, $262,000"></div></div><span class="bar-label">Feb</span></div>
+            <div class="bar-group"><div class="bar-track"><div class="bar" style="--value: 70%;" tabindex="0" aria-label="March, $278,000"></div></div><span class="bar-label">Mar</span></div>
+            <div class="bar-group"><div class="bar-track"><div class="bar" style="--value: 74%;" tabindex="0" aria-label="April, $294,000"></div></div><span class="bar-label">Apr</span></div>
+            <div class="bar-group"><div class="bar-track"><div class="bar" style="--value: 77%;" tabindex="0" aria-label="May, $306,000"></div></div><span class="bar-label">May</span></div>
+            <div class="bar-group"><div class="bar-track"><div class="bar" style="--value: 79%;" tabindex="0" aria-label="June, $315,000"></div></div><span class="bar-label">Jun</span></div>
+            <div class="bar-group"><div class="bar-track"><div class="bar" style="--value: 82%;" tabindex="0" aria-label="July, $327,000"></div></div><span class="bar-label">Jul</span></div>
+            <div class="bar-group"><div class="bar-track"><div class="bar" style="--value: 80%;" tabindex="0" aria-label="August, $319,000"></div></div><span class="bar-label">Aug</span></div>
+            <div class="bar-group"><div class="bar-track"><div class="bar" style="--value: 85%;" tabindex="0" aria-label="September, $340,000"></div></div><span class="bar-label">Sep</span></div>
+            <div class="bar-group"><div class="bar-track"><div class="bar" style="--value: 92%;" tabindex="0" aria-label="October, $368,000"></div></div><span class="bar-label">Oct</span></div>
+            <div class="bar-group"><div class="bar-track"><div class="bar" style="--value: 97%;" tabindex="0" aria-label="November, $387,000"></div></div><span class="bar-label">Nov</span></div>
+            <div class="bar-group"><div class="bar-track"><div class="bar" style="--value: 100%;" tabindex="0" aria-label="December, $398,000"></div></div><span class="bar-label">Dec</span></div>
+          </div>
+        </figure>
+      </section>
+
+      <section class="panel" id="regions" aria-labelledby="regions-title">
+        <header class="panel-head">
+          <div>
+            <h2 id="regions-title">Top regions</h2>
+            <p class="panel-subtitle">Revenue contribution by market</p>
+          </div>
+          <p class="panel-meta">5 regions</p>
+        </header>
+        <div class="table-wrap">
+          <table>
+            <caption class="sr-only">Top regions ranked by revenue, including share and performance status.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Region</th>
+                <th scope="col">Revenue</th>
+                <th scope="col">Share</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="region-name">North America</td>
+                <td class="money">$1.46M</td>
+                <td class="share">38.0%</td>
+                <td><span class="status on-track">On track</span></td>
+              </tr>
+              <tr>
+                <td class="region-name">Western Europe</td>
+                <td class="money">$984K</td>
+                <td class="share">25.6%</td>
+                <td><span class="status on-track">On track</span></td>
+              </tr>
+              <tr>
+                <td class="region-name">Asia Pacific</td>
+                <td class="money">$718K</td>
+                <td class="share">18.7%</td>
+                <td><span class="status watch">Watch</span></td>
+              </tr>
+              <tr>
+                <td class="region-name">Middle East</td>
+                <td class="money">$432K</td>
+                <td class="share">11.2%</td>
+                <td><span class="status on-track">On track</span></td>
+              </tr>
+              <tr>
+                <td class="region-name">Latin America</td>
+                <td class="money">$248K</td>
+                <td class="share">6.5%</td>
+                <td><span class="status at-risk">At risk</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

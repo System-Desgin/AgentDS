@@ -7,8 +7,9 @@ specific, active.
 
 - `demo.gif` — install → prompt → agent reads DESIGN.md → on-system Carbon
   dashboard → end card (1000×562, 5 scenes, 64KB)
-- `comparison.png` — same prompt side by side: generic AI default vs with
-  carbon DESIGN.md (2320×810)
+- `comparison.png` — an actual recorded Codex run from the same prompt, without
+  and with Carbon DESIGN.md (2400×1000); exact source, hashes, settings, and
+  evaluator live in `benchmarks/carbon-dashboard/`
 - `carbon-dashboard.png` — clean still of the on-system result
 
 Where a draft says [demo GIF] or [comparison screenshot], attach these.
@@ -43,6 +44,11 @@ Every file is linted with Google's official design.md linter, WCAG-checked,
 and served over a free read-only API. Ask me anything about how the extraction
 pipeline works — the whole thing is open source (Apache-2.0 code, CC BY 4.0
 content).
+
+I also committed a reproducible same-prompt benchmark. The baseline passed 0/7
+static Carbon checks; adding Carbon DESIGN.md moved the result to 5/7. The two
+remaining failures are published too: the agent still invented colors and
+off-scale spacing, so AgentDS improves steering but does not replace review.
 
 ## Show HN
 
@@ -101,6 +107,10 @@ like Linear" finally means something.
 
 [comparison screenshot]
 
+The screenshot is an actual recorded Codex run: 0/7 Carbon checks without the
+file, 5/7 with it. Exact prompt, HTML, model settings, hashes, and evaluator are
+in the repo. The remaining drift is disclosed, not cropped out.
+
 **4/** Works with any agent that reads a file: Claude Code, Cursor, Codex,
 Copilot, Windsurf, Kiro, OpenCode, Pi.
 
@@ -128,6 +138,11 @@ products everyone wants to look like: Stripe, Linear, Notion, Vercel.
 
 Point your agent at one file and "build me a dashboard" stops producing the
 same generic UI every time.
+
+I tested that claim with a reproducible same-prompt Codex run. The baseline
+passed 0/7 source-level Carbon checks; the result with DESIGN.md passed 5/7.
+The generated source and the two failed checks are public too, because stronger
+design steering is useful evidence even when it is not perfect compliance.
 
 Browse: https://agent-ds.oday-bakkour.com
 Install: npx skills add System-Desgin/AgentDS --skill design-systems

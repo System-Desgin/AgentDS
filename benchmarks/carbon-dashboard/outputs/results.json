@@ -1,0 +1,165 @@
+{
+  "methodology": "Static source analysis of the two generated, self-contained HTML files.",
+  "rubric": {
+    "verifiedPaletteOnly": "Every six-digit hex color is present in Carbon tokens.json.",
+    "primaryTokenUsed": "Carbon interaction blue #0F62FE is present.",
+    "carbonTypefaceUsed": "The CSS names IBM Plex Sans.",
+    "carbonRadiiOnly": "Every literal border radius is 0, 2, 4, 8, or 9999px.",
+    "carbonSpacingOnly": "Every literal margin, padding, and gap pixel value is on Carbon's published scale.",
+    "noDropShadows": "No non-none box-shadow or text-shadow declaration is present.",
+    "semanticStatusTokensUsed": "Carbon success #24A148 and error #DA1E28 are both present."
+  },
+  "carbonTokenSource": "content/official/carbon/tokens.json",
+  "allowedCarbonColors": [
+    "#0F62FE",
+    "#161616",
+    "#24A148",
+    "#525252",
+    "#6F6F6F",
+    "#8D8D8D",
+    "#DA1E28",
+    "#E0E0E0",
+    "#F1C21B",
+    "#F4F4F4",
+    "#FFFFFF"
+  ],
+  "outputs": {
+    "baseline": {
+      "score": {
+        "passed": 0,
+        "total": 7
+      },
+      "checks": {
+        "verifiedPaletteOnly": false,
+        "primaryTokenUsed": false,
+        "carbonTypefaceUsed": false,
+        "carbonRadiiOnly": false,
+        "carbonSpacingOnly": false,
+        "noDropShadows": false,
+        "semanticStatusTokensUsed": false
+      },
+      "evidence": {
+        "colors": [
+          "#18221F",
+          "#185440",
+          "#276B53",
+          "#326B76",
+          "#59635F",
+          "#9A5B13",
+          "#A4423B",
+          "#C7E168",
+          "#D4D9CF",
+          "#DCECE5",
+          "#DFE2DA",
+          "#E0F0F2",
+          "#E3E6DE",
+          "#EEF5D1",
+          "#F4F5F0",
+          "#FBE7E4",
+          "#FFF0D4",
+          "#FFFFFF"
+        ],
+        "matchingColors": ["#FFFFFF"],
+        "foreignColors": [
+          "#18221F",
+          "#185440",
+          "#276B53",
+          "#326B76",
+          "#59635F",
+          "#9A5B13",
+          "#A4423B",
+          "#C7E168",
+          "#D4D9CF",
+          "#DCECE5",
+          "#DFE2DA",
+          "#E0F0F2",
+          "#E3E6DE",
+          "#EEF5D1",
+          "#F4F5F0",
+          "#FBE7E4",
+          "#FFF0D4"
+        ],
+        "radiusValuesPx": [2, 3, 6, 8, 9, 10, 14, 999],
+        "spacingValuesPx": [
+          1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 20, 21, 22, 24, 28, 30, 31, 34,
+          36, 38, 42, 45, 47, 60
+        ],
+        "shadowDeclarations": [
+          "0 5px 12px var(--shadow)",
+          "0 6px 20px var(--shadow)",
+          "0 6px 20px var(--shadow)"
+        ]
+      }
+    },
+    "carbon": {
+      "score": {
+        "passed": 5,
+        "total": 7
+      },
+      "checks": {
+        "verifiedPaletteOnly": false,
+        "primaryTokenUsed": true,
+        "carbonTypefaceUsed": true,
+        "carbonRadiiOnly": true,
+        "carbonSpacingOnly": false,
+        "noDropShadows": true,
+        "semanticStatusTokensUsed": true
+      },
+      "evidence": {
+        "colors": [
+          "#0043CE",
+          "#0E6027",
+          "#0F62FE",
+          "#161616",
+          "#24A148",
+          "#262626",
+          "#393939",
+          "#525252",
+          "#6F6F6F",
+          "#8D8D8D",
+          "#A2191F",
+          "#B28600",
+          "#C6C6C6",
+          "#DA1E28",
+          "#DEFBE6",
+          "#E0E0E0",
+          "#E8E8E8",
+          "#F1C21B",
+          "#F4F4F4",
+          "#FFF1C2",
+          "#FFF1F1",
+          "#FFFFFF"
+        ],
+        "matchingColors": [
+          "#0F62FE",
+          "#161616",
+          "#24A148",
+          "#525252",
+          "#6F6F6F",
+          "#8D8D8D",
+          "#DA1E28",
+          "#E0E0E0",
+          "#F1C21B",
+          "#F4F4F4",
+          "#FFFFFF"
+        ],
+        "foreignColors": [
+          "#0043CE",
+          "#0E6027",
+          "#262626",
+          "#393939",
+          "#A2191F",
+          "#B28600",
+          "#C6C6C6",
+          "#DEFBE6",
+          "#E8E8E8",
+          "#FFF1C2",
+          "#FFF1F1"
+        ],
+        "radiusValuesPx": [2],
+        "spacingValuesPx": [-1, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 18, 20, 22, 24, 32, 40, 48, 64],
+        "shadowDeclarations": []
+      }
+    }
+  }
+}

@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Revenue performance dashboard for Northstar Analytics">
+  <title>Revenue Overview — Northstar</title>
+  <style>
+    :root {
+      --ink: #18221f;
+      --ink-soft: #59635f;
+      --paper: #f4f5f0;
+      --surface: #ffffff;
+      --line: #e3e6de;
+      --line-strong: #d4d9cf;
+      --green: #276b53;
+      --green-deep: #185440;
+      --green-soft: #dcece5;
+      --lime: #c7e168;
+      --lime-soft: #eef5d1;
+      --amber: #9a5b13;
+      --amber-soft: #fff0d4;
+      --red: #a4423b;
+      --red-soft: #fbe7e4;
+      --blue: #326b76;
+      --blue-soft: #e0f0f2;
+      --shadow: #dfe2da;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    body {
+      min-width: 320px;
+      margin: 0;
+      background:
+        radial-gradient(circle at 92% 2%, var(--lime-soft) 0, var(--paper) 26rem),
+        var(--paper);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    button,
+    select {
+      font: inherit;
+    }
+
+    button,
+    select,
+    a {
+      -webkit-tap-highlight-color: #ffffff;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topbar {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .nav-shell {
+      display: flex;
+      align-items: center;
+      max-width: 1440px;
+      min-height: 70px;
+      margin: 0 auto;
+      padding: 0 34px;
+      gap: 36px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      flex: 0 0 auto;
+      gap: 11px;
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      place-items: center;
+      border-radius: 9px;
+      background: var(--ink);
+    }
+
+    .brand-mark::before {
+      width: 12px;
+      height: 12px;
+      border: 3px solid var(--lime);
+      border-radius: 50% 50% 18% 50%;
+      content: "";
+      transform: rotate(45deg);
+    }
+
+    .nav-links {
+      display: flex;
+      align-self: stretch;
+      margin: 0;
+      padding: 0;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      color: var(--ink-soft);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible,
+    .nav-links a[aria-current="page"] {
+      color: var(--ink);
+    }
+
+    .nav-links a[aria-current="page"]::after {
+      position: absolute;
+      right: 0;
+      bottom: -1px;
+      left: 0;
+      height: 3px;
+      border-radius: 3px 3px 0 0;
+      background: var(--green);
+      content: "";
+    }
+
+    .account {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      gap: 11px;
+    }
+
+    .account-copy {
+      display: grid;
+      line-height: 1.25;
+      text-align: right;
+    }
+
+    .account-copy strong {
+      font-size: 13px;
+    }
+
+    .account-copy span {
+      color: var(--ink-soft);
+      font-size: 11px;
+    }
+
+    .avatar {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      background: var(--green-soft);
+      color: var(--green-deep);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    main {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 45px 34px 60px;
+    }
+
+    .page-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 30px;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(35px, 5vw, 52px);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 1.05;
+    }
+
+    .subtitle {
+      max-width: 610px;
+      margin: 11px 0 0;
+      color: var(--ink-soft);
+      font-size: 15px;
+    }
+
+    .head-actions {
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+      gap: 10px;
+    }
+
+    .range-control {
+      position: relative;
+    }
+
+    .range-control label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    select,
+    .primary-action {
+      min-height: 43px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    select {
+      min-width: 164px;
+      padding: 0 36px 0 14px;
+      border: 1px solid var(--line-strong);
+      background: var(--surface);
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .primary-action {
+      border: 1px solid var(--green-deep);
+      padding: 0 17px;
+      background: var(--green);
+      color: #ffffff;
+      box-shadow: 0 5px 12px var(--shadow);
+      cursor: pointer;
+    }
+
+    .primary-action:hover {
+      background: var(--green-deep);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--lime);
+      outline-offset: 3px;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .kpi {
+      min-width: 0;
+      padding: 21px 21px 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: 0 6px 20px var(--shadow);
+    }
+
+    .kpi-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .kpi h2 {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .kpi-icon {
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--green-soft);
+      color: var(--green-deep);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .metric-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .metric {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 31px);
+      font-weight: 750;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .trend {
+      flex: 0 0 auto;
+      border-radius: 999px;
+      padding: 4px 7px;
+      background: var(--green-soft);
+      color: var(--green-deep);
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .trend.down-good {
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    .trend.down-bad {
+      background: var(--red-soft);
+      color: var(--red);
+    }
+
+    .comparison {
+      margin: 10px 0 0;
+      color: var(--ink-soft);
+      font-size: 11px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(330px, 0.8fr);
+      gap: 14px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: 0 6px 20px var(--shadow);
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 21px 22px 0;
+      gap: 20px;
+    }
+
+    .panel h2 {
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: -0.015em;
+    }
+
+    .panel-note {
+      margin: 4px 0 0;
+      color: var(--ink-soft);
+      font-size: 11px;
+    }
+
+    .chart-total {
+      text-align: right;
+    }
+
+    .chart-total strong,
+    .chart-total span {
+      display: block;
+    }
+
+    .chart-total strong {
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .chart-total span {
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .chart-wrap {
+      padding: 28px 22px 20px;
+    }
+
+    .chart {
+      display: grid;
+      grid-template-columns: 37px minmax(0, 1fr);
+      grid-template-rows: 238px 24px;
+      gap: 8px 10px;
+    }
+
+    .y-axis {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 1px;
+      color: var(--ink-soft);
+      font-size: 10px;
+      text-align: right;
+    }
+
+    .plot {
+      display: grid;
+      position: relative;
+      grid-template-columns: repeat(12, 1fr);
+      align-items: end;
+      height: 238px;
+      padding: 0 7px;
+      border-bottom: 1px solid var(--line-strong);
+      gap: clamp(5px, 1vw, 13px);
+      background: repeating-linear-gradient(to bottom, var(--line) 0, var(--line) 1px, #ffffff 1px, #ffffff 59px);
+    }
+
+    .bar {
+      position: relative;
+      height: var(--height);
+      min-height: 12px;
+      border-radius: 6px 6px 2px 2px;
+      background: var(--green);
+      cursor: default;
+    }
+
+    .bar:hover,
+    .bar:focus-visible {
+      background: var(--green-deep);
+    }
+
+    .bar::before {
+      position: absolute;
+      right: 50%;
+      bottom: calc(100% + 8px);
+      z-index: 2;
+      min-width: 48px;
+      padding: 4px 6px;
+      border-radius: 6px;
+      background: var(--ink);
+      color: #ffffff;
+      content: attr(data-value);
+      font-size: 10px;
+      font-weight: 700;
+      opacity: 0;
+      pointer-events: none;
+      text-align: center;
+      transform: translateX(50%) translateY(4px);
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .bar:hover::before,
+    .bar:focus-visible::before {
+      opacity: 1;
+      transform: translateX(50%) translateY(0);
+    }
+
+    .x-axis {
+      display: grid;
+      grid-column: 2;
+      grid-template-columns: repeat(12, 1fr);
+      padding: 0 7px;
+      gap: clamp(5px, 1vw, 13px);
+      color: var(--ink-soft);
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .chart-legend {
+      display: flex;
+      align-items: center;
+      margin: 16px 0 0 47px;
+      color: var(--ink-soft);
+      font-size: 11px;
+      gap: 7px;
+    }
+
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      padding: 17px 22px 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    th {
+      padding: 9px 7px;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink-soft);
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    td {
+      padding: 14px 7px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: middle;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    th:nth-child(2),
+    td:nth-child(2) {
+      text-align: right;
+    }
+
+    .region {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 700;
+    }
+
+    .region-code {
+      display: grid;
+      width: 28px;
+      height: 28px;
+      flex: 0 0 auto;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--paper);
+      color: var(--ink-soft);
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .revenue-cell strong,
+    .revenue-cell span {
+      display: block;
+    }
+
+    .revenue-cell span {
+      color: var(--ink-soft);
+      font-size: 10px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 4px 7px;
+      background: var(--green-soft);
+      color: var(--green-deep);
+      font-size: 10px;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+
+    .status.watch {
+      background: var(--amber-soft);
+      color: var(--amber);
+    }
+
+    .status::before {
+      width: 5px;
+      height: 5px;
+      margin-right: 5px;
+      border-radius: 50%;
+      background: currentColor;
+      content: "";
+    }
+
+    .table-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2px 0 0;
+      padding: 15px 7px 0;
+      border-top: 1px solid var(--line);
+      color: var(--ink-soft);
+      font-size: 11px;
+    }
+
+    .table-summary strong {
+      color: var(--ink);
+      font-size: 12px;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        display: none;
+      }
+
+      .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-shell {
+        min-height: 62px;
+        padding: 0 18px;
+      }
+
+      .account-copy {
+        display: none;
+      }
+
+      main {
+        padding: 31px 16px 42px;
+      }
+
+      .page-head {
+        display: block;
+        margin-bottom: 24px;
+      }
+
+      .head-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 22px;
+      }
+
+      select,
+      .primary-action {
+        width: 100%;
+      }
+
+      .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .kpi {
+        padding: 18px;
+      }
+
+      .kpi-top {
+        margin-bottom: 14px;
+      }
+
+      .chart-wrap,
+      .table-wrap {
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+
+      .panel-head {
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+
+      .chart {
+        grid-template-columns: 32px minmax(0, 1fr);
+        grid-template-rows: 210px 24px;
+        gap: 8px 6px;
+      }
+
+      .plot {
+        height: 210px;
+        gap: 4px;
+        background: repeating-linear-gradient(to bottom, var(--line) 0, var(--line) 1px, #ffffff 1px, #ffffff 52px);
+      }
+
+      .x-axis {
+        gap: 4px;
+      }
+
+      .x-axis span:nth-child(even) {
+        visibility: hidden;
+      }
+
+      .chart-legend {
+        margin-left: 38px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto;
+        transition-duration: 0.01ms;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="#" aria-label="Northstar home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Northstar</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#" aria-current="page">Overview</a></li>
+        <li><a href="#revenue-chart">Revenue</a></li>
+        <li><a href="#regions">Customers</a></li>
+        <li><a href="#regions">Reports</a></li>
+      </ul>
+      <div class="account" aria-label="Signed in as Maya Chen">
+        <span class="account-copy">
+          <strong>Maya Chen</strong>
+          <span>Finance admin</span>
+        </span>
+        <span class="avatar" aria-hidden="true">MC</span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <header class="page-head">
+      <div>
+        <p class="eyebrow">Performance center</p>
+        <h1>Revenue overview</h1>
+        <p class="subtitle">A clear view of recurring revenue, customer momentum, and regional performance.</p>
+      </div>
+      <div class="head-actions">
+        <div class="range-control">
+          <label for="date-range">Reporting period</label>
+          <select id="date-range" name="date-range">
+            <option selected>Jan 1 – Dec 31, 2025</option>
+            <option>Last 90 days</option>
+            <option>Last 30 days</option>
+          </select>
+        </div>
+        <button class="primary-action" type="button">Export report</button>
+      </div>
+    </header>
+
+    <section class="kpi-grid" aria-label="Key performance indicators">
+      <article class="kpi">
+        <div class="kpi-top">
+          <h2>Total revenue</h2>
+          <span class="kpi-icon" aria-hidden="true">$</span>
+        </div>
+        <div class="metric-row">
+          <p class="metric">$8.42M</p>
+          <span class="trend" aria-label="Up 18.2 percent">↗ 18.2%</span>
+        </div>
+        <p class="comparison">Compared with $7.12M last year</p>
+      </article>
+
+      <article class="kpi">
+        <div class="kpi-top">
+          <h2>Active customers</h2>
+          <span class="kpi-icon" aria-hidden="true">C</span>
+        </div>
+        <div class="metric-row">
+          <p class="metric">2,486</p>
+          <span class="trend" aria-label="Up 12.6 percent">↗ 12.6%</span>
+        </div>
+        <p class="comparison">278 net new customers this year</p>
+      </article>
+
+      <article class="kpi">
+        <div class="kpi-top">
+          <h2>Average order</h2>
+          <span class="kpi-icon" aria-hidden="true">A</span>
+        </div>
+        <div class="metric-row">
+          <p class="metric">$3,387</p>
+          <span class="trend" aria-label="Up 5.1 percent">↗ 5.1%</span>
+        </div>
+        <p class="comparison">Compared with $3,223 last year</p>
+      </article>
+
+      <article class="kpi">
+        <div class="kpi-top">
+          <h2>Customer churn</h2>
+          <span class="kpi-icon" aria-hidden="true">%</span>
+        </div>
+        <div class="metric-row">
+          <p class="metric">2.8%</p>
+          <span class="trend down-good" aria-label="Down 0.7 percentage points">↘ 0.7 pts</span>
+        </div>
+        <p class="comparison">Below the 3.2% annual target</p>
+      </article>
+    </section>
+
+    <div class="content-grid">
+      <section class="panel" id="revenue-chart" aria-labelledby="chart-title">
+        <header class="panel-head">
+          <div>
+            <h2 id="chart-title">Monthly revenue</h2>
+            <p class="panel-note">Recognized revenue across all plans</p>
+          </div>
+          <div class="chart-total" aria-label="December revenue 892 thousand dollars, up 16.4 percent">
+            <strong>$892K</strong>
+            <span>↗ 16.4%</span>
+          </div>
+        </header>
+        <div class="chart-wrap">
+          <div class="chart" role="img" aria-label="Bar chart of monthly revenue in thousands of dollars: January 548, February 592, March 617, April 654, May 638, June 701, July 725, August 754, September 792, October 817, November 846, December 892.">
+            <div class="y-axis" aria-hidden="true">
+              <span>$1M</span>
+              <span>$750K</span>
+              <span>$500K</span>
+              <span>$250K</span>
+              <span>$0</span>
+            </div>
+            <div class="plot" aria-hidden="true">
+              <span class="bar" style="--height:54.8%" data-value="$548K"></span>
+              <span class="bar" style="--height:59.2%" data-value="$592K"></span>
+              <span class="bar" style="--height:61.7%" data-value="$617K"></span>
+              <span class="bar" style="--height:65.4%" data-value="$654K"></span>
+              <span class="bar" style="--height:63.8%" data-value="$638K"></span>
+              <span class="bar" style="--height:70.1%" data-value="$701K"></span>
+              <span class="bar" style="--height:72.5%" data-value="$725K"></span>
+              <span class="bar" style="--height:75.4%" data-value="$754K"></span>
+              <span class="bar" style="--height:79.2%" data-value="$792K"></span>
+              <span class="bar" style="--height:81.7%" data-value="$817K"></span>
+              <span class="bar" style="--height:84.6%" data-value="$846K"></span>
+              <span class="bar" style="--height:89.2%" data-value="$892K"></span>
+            </div>
+            <div class="x-axis" aria-hidden="true">
+              <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
+              <span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+            </div>
+          </div>
+          <p class="chart-legend"><span class="legend-dot" aria-hidden="true"></span>Recognized revenue (USD)</p>
+        </div>
+      </section>
+
+      <section class="panel" id="regions" aria-labelledby="regions-title">
+        <header class="panel-head">
+          <div>
+            <h2 id="regions-title">Top regions</h2>
+            <p class="panel-note">Ranked by annual revenue</p>
+          </div>
+        </header>
+        <div class="table-wrap">
+          <table>
+            <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Top performing sales regions and their status</caption>
+            <thead>
+              <tr>
+                <th scope="col">Region</th>
+                <th scope="col">Revenue</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="region"><span class="region-code">NA</span>North America</span></td>
+                <td class="revenue-cell"><strong>$3.21M</strong><span>38.1% share</span></td>
+                <td><span class="status">Ahead</span></td>
+              </tr>
+              <tr>
+                <td><span class="region"><span class="region-code">EU</span>Europe</span></td>
+                <td class="revenue-cell"><strong>$2.44M</strong><span>29.0% share</span></td>
+                <td><span class="status">On track</span></td>
+              </tr>
+              <tr>
+                <td><span class="region"><span class="region-code">AP</span>Asia Pacific</span></td>
+                <td class="revenue-cell"><strong>$1.67M</strong><span>19.8% share</span></td>
+                <td><span class="status">Ahead</span></td>
+              </tr>
+              <tr>
+                <td><span class="region"><span class="region-code">ME</span>Middle East</span></td>
+                <td class="revenue-cell"><strong>$684K</strong><span>8.1% share</span></td>
+                <td><span class="status watch">Watch</span></td>
+              </tr>
+              <tr>
+                <td><span class="region"><span class="region-code">LA</span>Latin America</span></td>
+                <td class="revenue-cell"><strong>$421K</strong><span>5.0% share</span></td>
+                <td><span class="status">On track</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="table-summary" aria-label="Five regions represent 100 percent of revenue">
+            <span>5 active regions</span>
+            <strong>100% coverage</strong>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

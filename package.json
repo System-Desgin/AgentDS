@@ -21,8 +21,10 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "audit": "pnpm audit --audit-level=moderate",
+    "benchmark:check": "node benchmarks/carbon-dashboard/check.mjs",
     "validate:content": "pnpm --filter @agentds/shared build && node scripts/validate-content.mjs",
     "check:verification": "node scripts/check-verification.mjs",
+    "benchmark:carbon": "node scripts/run-carbon-benchmark.mjs",
     "pipeline": "pnpm --filter @agentds/pipeline start",
     "prepare": "husky"
   },

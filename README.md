@@ -30,6 +30,18 @@ is server-rendered directly from the catalog's `DESIGN.md` tokens. Its source is
 for all 12 published color roles. It is an approximation of Carbon's visual
 language, not IBM's official component library.
 
+### Same brief, one added file
+
+[![Two dashboards generated from the same prompt, without and with Carbon DESIGN.md](./docs/assets/launch/comparison.png)](./benchmarks/carbon-dashboard/README.md)
+
+In a [reproducible Codex benchmark](./benchmarks/carbon-dashboard/README.md), the
+baseline passed **0/7** source-level Carbon checks and the run with `DESIGN.md`
+passed **5/7**. The treatment used Carbon's primary, typeface, radii, status
+colors, and no-shadow rule, but still invented unpublished colors and off-scale
+spacing. The exact prompt, model settings, generated HTML, hashes, evaluator,
+and limitations are committed—this is evidence of stronger steering, not a
+claim of perfect compliance.
+
 ### From install to on-system UI
 
 ![Terminal installation followed by an agent generating a Carbon-aligned dashboard](./docs/assets/launch/demo.gif)
