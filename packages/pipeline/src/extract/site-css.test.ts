@@ -3,6 +3,7 @@ import {
   colorOf,
   customProperties,
   fontFamilies,
+  inlinePresentationValues,
   inlineStyles,
   lengthToPx,
   resolveValue,
@@ -33,6 +34,33 @@ describe("inlineStyles", () => {
       "a{color:red}",
       "b{}",
     ]);
+  });
+});
+
+describe("inlinePresentationValues", () => {
+  it("collects inline CSS and SVG presentation colors", () => {
+    const html = `
+      <div style="background:#123456;color:var(--ink)"></div>
+      <svg fill="none">
+        <path fill="#0D99FF" stroke='#000000'></path>
+        <stop stop-color="#FFFFFF"></stop>
+      </svg>
+    `;
+    expect(inlinePresentationValues(html)).toEqual([
+      "background:#123456;color:var(--ink)",
+      "none",
+      "#0D99FF",
+      "#000000",
+      "#FFFFFF",
+    ]);
+  });
+
+  it("ignores scripts and unrelated attributes", () => {
+    const html = `
+      <script>const serialized = '<path fill="#DEADBE">';</script>
+      <img src="image.svg#ABCDEF" alt="sample">
+    `;
+    expect(inlinePresentationValues(html)).toEqual([]);
   });
 });
 
