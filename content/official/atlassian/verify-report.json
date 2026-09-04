@@ -3,7 +3,7 @@
   "path": "official",
   "status": "published",
   "sourceType": "repo",
-  "verifiedAt": "2026-08-01",
+  "verifiedAt": "2026-09-04",
   "sources": [
     "https://bitbucket.org/atlassian/atlassian-frontend-mirror/raw/3cdf019baa859e25cfd38137480a548d04a4fe41/design-system/tokens/figma/atlassian-light.json",
     "https://bitbucket.org/atlassian/atlassian-frontend-mirror/raw/3cdf019baa859e25cfd38137480a548d04a4fe41/design-system/tokens/figma/atlassian-spacing.json",

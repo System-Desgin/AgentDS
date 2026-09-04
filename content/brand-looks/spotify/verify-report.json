@@ -3,10 +3,10 @@
   "path": "brand-look",
   "status": "published",
   "sourceType": "css-analysis",
-  "verifiedAt": "2026-08-01",
+  "verifiedAt": "2026-09-04",
   "sources": [
     "https://open.spotify.com",
-    "https://open.spotifycdn.com/cdn/build/mobile-web-player/mobile-web-player.637f4722.css",
+    "https://open.spotifycdn.com/cdn/build/mobile-web-player/mobile-web-player.9a9ddf9a.css",
     "https://www.spotify.com"
   ],
   "sourceColorCount": 119,

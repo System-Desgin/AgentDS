@@ -3,15 +3,15 @@
   "path": "brand-look",
   "status": "published",
   "sourceType": "css-analysis",
-  "verifiedAt": "2026-08-01",
+  "verifiedAt": "2026-09-04",
   "sources": [
     "https://www.nvidia.com",
-    "https://www.nvidia.com/etc.clientlibs/nvidiaweb/clientlibs/clientlib-site.min.1474fb5190b61b54fcb323ae9dab6a52.css",
+    "https://www.nvidia.com/etc.clientlibs/nvidiaweb/clientlibs/clientlib-site.min.4bc41d6211db48d6007515e960b1001b.css",
     "https://www.nvidia.com/etc.clientlibs/nvidiaweb/clientlibs/clientlib-base.min.8684b0f16f804cac8396aa31fdf033e6.css",
     "https://www.nvidia.com/etc.clientlibs/nvidiaweb/clientlibs/clientlib-nvgdccart.min.d41d8cd98f00b204e9800998ecf8427e.css",
     "https://www.nvidia.com/en-us/geforce/"
   ],
-  "sourceColorCount": 102,
+  "sourceColorCount": 101,
   "inconclusive": false,
   "colors": [
     {

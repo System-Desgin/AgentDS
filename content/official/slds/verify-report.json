@@ -3,10 +3,9 @@
   "path": "official",
   "status": "published",
   "sourceType": "npm",
-  "verifiedAt": "2026-08-01",
+  "verifiedAt": "2026-09-04",
   "sources": [
     "/design-tokens/dist/primitive.raw.json",
-    "/design-tokens/dist/primitive.ios.json",
     "/design-tokens/dist/palettes.raw.json",
     "/design-tokens/dist/colors.raw.json",
     "/design-tokens/dist/primitive.json",

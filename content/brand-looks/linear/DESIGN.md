@@ -12,7 +12,7 @@ colors:
   on-surface-variant: "#8A8F98"
   border-subtle: "#23252A"
   border-strong: "#34363C"
-  success: "#00BA7C"
+  success: "#27A644"
   warning: "#F0BF00"
   error: "#EB5757"
 typography:
@@ -155,7 +155,7 @@ signature look and is what these values keep WCAG-AA consistent.
 - **border-subtle (`#23252A`) / border-strong (`#34363C`)** — solid equivalents
   of the site's low-alpha hairlines; subtle for structure, strong for
   interactive outlines.
-- **success (`#00BA7C`) / warning (`#F0BF00`) / error (`#EB5757`)** — the
+- **success (`#27A644`) / warning (`#F0BF00`) / error (`#EB5757`)** — the
   status family observed in product imagery; all read as text on
   `{colors.surface}` at AA or better.
 

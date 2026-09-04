@@ -3,14 +3,15 @@
   "path": "brand-look",
   "status": "published",
   "sourceType": "css-analysis",
-  "verifiedAt": "2026-08-01",
+  "verifiedAt": "2026-09-04",
   "sources": [
     "https://stripe.com",
     "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/9d3a49263f73db6f.css",
-    "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/35cbae6c6f4a503d.css",
-    "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/4350a5f4483c2425.css",
-    "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/81e6dcea22f0c372.css",
-    "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/4b78f0f4457ea12a.css",
+    "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/3194942a3bd6eca4.css",
+    "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/f5d7a0708b41b5bf.css",
+    "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/a1c84e4fb55f87e2.css",
+    "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/c3ca6e08b62a6ac3.css",
+    "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/77c2d00e5c6eead8.css",
     "https://stripe.com/payments",
     "https://b.stripecdn.com/mkt-statics-srv/assets/v1-Icon-646136cd9e336d8c18d7.css",
     "https://b.stripecdn.com/mkt-statics-srv/assets/v1-AnimatedIcon-0b7478e1f9234aae8838.css",
@@ -24,6 +25,7 @@
     "https://b.stripecdn.com/mkt-statics-srv/assets/v1-Field-ea906aa31d4012757deb.css",
     "https://b.stripecdn.com/mkt-statics-srv/assets/v1-Form-401d42df82b6e8482f06.css",
     "https://b.stripecdn.com/mkt-statics-srv/assets/v1-ProductFeatureCard-77165362395384a24096.css",
+    "https://b.stripecdn.com/mkt-statics-srv/assets/v1-List-f0dd86d0ff490fdd7e75.css",
     "https://b.stripecdn.com/mkt-statics-srv/assets/v1-FullWidthFeatureCarouselItemWrapper-70f0c3ce5a282e6f9d4b.css",
     "https://b.stripecdn.com/mkt-statics-srv/assets/v1-PaymentLinksGraphic-753863ac92f9f068a566.css",
     "https://b.stripecdn.com/mkt-statics-srv/assets/v1-PaymentLinksReceiptGraphic-68e48fc32d105e52ee0c.css",
@@ -53,7 +55,7 @@
     "https://b.stripecdn.com/mkt-statics-srv/assets/v1-PaymentElementAccordionGraphic-dce4cbf621bb4cd01359.css",
     "https://docs.stripe.com"
   ],
-  "sourceColorCount": 562,
+  "sourceColorCount": 582,
   "inconclusive": false,
   "colors": [
     {
