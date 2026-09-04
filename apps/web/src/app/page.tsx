@@ -26,7 +26,7 @@ const HOW_IT_WORKS = [
   {
     step: "01",
     title: "Pick a system",
-    body: "Browse Official Systems extracted from real token packages, or Brand Looks — independent analyses of famous product sites.",
+    body: "Start with an Official System extracted from its published token source. Brand Looks are available when you want observed visual inspiration.",
   },
   {
     step: "02",
@@ -36,8 +36,15 @@ const HOW_IT_WORKS = [
   {
     step: "03",
     title: "Ship on-system UI",
-    body: "Your agent references real tokens instead of inventing values: exact palettes, type scales, spacing, and component defaults.",
+    body: "Your agent follows source-grounded palettes, type scales, spacing, and component defaults instead of inventing them.",
   },
+] as const;
+
+const VERIFICATION_ROWS = [
+  ["source", "package@version or repo@commit"],
+  ["tokens", "compared with the cited source"],
+  ["format", "DESIGN.md lint · zero errors"],
+  ["review", "human QA required"],
 ] as const;
 
 export default async function HomePage() {
@@ -49,33 +56,67 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_JSON_LD) }}
       />
-      {/* Hero thesis */}
-      <section className="flex max-w-[720px] flex-col gap-6">
-        <p className="font-mono text-[0.8125rem] font-medium uppercase tracking-[0.04em] text-accent">
-          ## agent-ready design systems
-        </p>
-        <h1 className="font-display text-[3.25rem] font-semibold leading-[1.08] tracking-[-0.02em] text-primary">
-          Your coding agent is a brilliant engineer with no taste. Hand it a design system.
-        </h1>
-        <p className="max-w-[64ch] text-lg leading-[1.65] text-on-surface-variant">
-          AgentDS is a free catalog of <code className="font-mono text-base">DESIGN.md</code> files
-          — machine-readable design tokens plus human-readable rationale — extracted from real
-          design systems and famous product sites. One file, and any agent builds UI that follows
-          the system instead of generic defaults.
-        </p>
-        <div className="flex flex-wrap items-center gap-3">
-          <div className="flex items-center gap-3 rounded-md bg-code-bg px-4 py-3">
-            <code className="font-mono text-sm text-code-accent">{INSTALL_COMMAND}</code>
+      {/* Hero thesis + verification receipt */}
+      <section className="grid items-start gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(280px,0.65fr)] lg:gap-16">
+        <div className="flex max-w-[720px] flex-col gap-6">
+          <p className="font-mono text-[0.8125rem] font-medium uppercase tracking-[0.04em] text-accent">
+            ## source-verified design systems
+          </p>
+          <h1 className="font-display text-[3.25rem] font-semibold leading-[1.08] tracking-[-0.02em] text-primary">
+            Real design systems, translated for coding agents.
+          </h1>
+          <p className="max-w-[64ch] text-lg leading-[1.65] text-on-surface-variant">
+            Use Carbon, Material 3, Primer, Fluent 2, Cloudscape, and more from their published
+            token sources—not a visual guess. AgentDS turns each one into a verified{" "}
+            <code className="font-mono text-base">DESIGN.md</code> your agent can follow.
+          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-3 rounded-md bg-code-bg px-4 py-3">
+              <code className="font-mono text-sm text-code-accent">{INSTALL_COMMAND}</code>
+            </div>
+            <CopyButton text={INSTALL_COMMAND} label="copy" />
+            <a
+              href={SKILLS_SH_URL}
+              rel="noopener noreferrer"
+              className="rounded-full border border-border bg-surface-variant px-4 py-2 font-mono text-[0.8125rem] font-medium uppercase tracking-[0.04em] text-on-surface-variant transition-colors duration-150 ease-out hover:border-accent hover:text-accent"
+            >
+              listed on skills.sh →
+            </a>
           </div>
-          <CopyButton text={INSTALL_COMMAND} label="copy" />
-          <a
-            href={SKILLS_SH_URL}
-            rel="noopener noreferrer"
-            className="rounded-full border border-border bg-surface-variant px-4 py-2 font-mono text-[0.8125rem] font-medium uppercase tracking-[0.04em] text-on-surface-variant transition-colors duration-150 ease-out hover:border-accent hover:text-accent"
-          >
-            listed on skills.sh →
-          </a>
+          <p className="font-mono text-[0.8125rem] text-on-surface-variant">
+            {featured.total} published files · free API · no account
+          </p>
         </div>
+
+        <aside
+          aria-labelledby="verification-heading"
+          className="rounded-md bg-code-bg p-6 text-code-fg"
+        >
+          <div className="flex items-center justify-between gap-4 border-b border-border pb-4">
+            <h2
+              id="verification-heading"
+              className="font-mono text-[0.8125rem] font-medium text-code-accent"
+            >
+              verify-report.json
+            </h2>
+            <span className="rounded-full bg-success px-3 py-1 font-mono text-[0.6875rem] uppercase tracking-[0.04em] text-on-primary">
+              required
+            </span>
+          </div>
+          <dl className="flex flex-col gap-4 py-5">
+            {VERIFICATION_ROWS.map(([term, description]) => (
+              <div key={term} className="grid gap-1">
+                <dt className="font-mono text-[0.6875rem] uppercase tracking-[0.04em] text-code-accent">
+                  {term}:
+                </dt>
+                <dd className="font-mono text-sm leading-relaxed text-code-fg">{description}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="border-t border-border pt-4 font-mono text-sm text-code-accent">
+            publish_gate: passed
+          </p>
+        </aside>
       </section>
 
       {/* Path split */}
@@ -84,20 +125,23 @@ export default async function HomePage() {
           id="paths-heading"
           className="font-mono text-[0.8125rem] font-medium uppercase tracking-[0.04em] text-on-surface-variant"
         >
-          ## two paths
+          ## choose a source
         </h2>
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-5">
           <Link
             href="/systems?path=official"
-            className="group flex flex-col gap-3 rounded-lg border border-border bg-surface-variant p-6 transition-colors duration-150 ease-out hover:border-accent"
+            className="group flex flex-col gap-3 rounded-lg border border-border bg-surface-variant p-6 transition-colors duration-150 ease-out hover:border-accent md:col-span-3"
           >
+            <span className="w-fit rounded-sm border border-border bg-surface px-2.5 py-1 font-mono text-[0.6875rem] tracking-[0.04em] text-on-surface-variant">
+              source: package@version / repo@commit
+            </span>
             <h3 className="font-display text-2xl font-semibold text-primary group-hover:text-accent">
               Official Systems
             </h3>
             <p className="max-w-[60ch] leading-relaxed text-on-surface-variant">
-              Generated from real open-source token packages — Carbon, Material 3, Primer, Fluent 2,
-              Cloudscape and more. Provenance-pinned: package@version, extraction date, and a lint
-              report on every entry.
+              Real open-source design systems, distilled from their published tokens. Every entry
+              records provenance, compares its colors with the cited source, passes the official
+              linter, and requires human QA before publication.
             </p>
             <span className="mt-auto font-mono text-[0.8125rem] uppercase tracking-[0.04em] text-accent">
               browse official →
@@ -105,15 +149,17 @@ export default async function HomePage() {
           </Link>
           <Link
             href="/systems?path=brand-look"
-            className="group flex flex-col gap-3 rounded-lg border border-border bg-surface-variant p-6 transition-colors duration-150 ease-out hover:border-accent"
+            className="group flex flex-col gap-3 rounded-lg border border-border p-6 transition-colors duration-150 ease-out hover:border-accent md:col-span-2"
           >
+            <span className="w-fit rounded-sm border border-border bg-surface px-2.5 py-1 font-mono text-[0.6875rem] tracking-[0.04em] text-on-surface-variant">
+              source: public CSS
+            </span>
             <h3 className="font-display text-2xl font-semibold text-primary group-hover:text-accent">
               Brand Looks
             </h3>
             <p className="max-w-[60ch] leading-relaxed text-on-surface-variant">
-              Independent analyses of the publicly observable visual language of famous product
-              sites — captured from public CSS, normalized to the same token schema, clearly
-              disclaimed.
+              Independent, clearly disclaimed analyses of publicly observable product-site patterns.
+              Use them as inspiration for an original visual system.
             </p>
             <span className="mt-auto font-mono text-[0.8125rem] uppercase tracking-[0.04em] text-accent">
               browse brand looks →

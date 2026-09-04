@@ -5,10 +5,10 @@
 [![License: Apache-2.0](https://img.shields.io/badge/code-Apache--2.0-blue.svg)](./LICENSE)
 [![Content: CC BY 4.0](https://img.shields.io/badge/content-CC%20BY%204.0-lightgrey.svg)](./content/LICENSE)
 
-> A free, curated catalog of agent-ready design system files (`DESIGN.md` +
-> tokens) with visual previews, purpose guidance, and a public fetch API — so
-> any coding agent (Claude Code, Cursor, Codex, Copilot, Windsurf, Kiro…) can
-> build UI that follows a real design system instead of generic AI defaults.
+> Source-verified official design systems for coding agents. AgentDS translates
+> published token packages and repositories into `DESIGN.md`, DTCG tokens, and
+> Tailwind CSS—with provenance and a verification report for every published
+> file.
 
 - **Web:** https://agent-ds.oday-bakkour.com
 - **API:** https://api.agent-ds.oday-bakkour.com (read-only, no key)
@@ -16,22 +16,35 @@
 - **License:** code Apache-2.0 · catalog content ([`content/`](./content)) CC BY 4.0
 - **Contact / security:** contact@oday-bakkour.com
 
-> Status: **Phase 4 — content sprint + skills.sh.** The 10 Tier-1 Official
-> Systems are published; the Tier-2 batch and Brand Looks ship as drafts behind
-> the human QA gate; the `skills/` directory is live (see
-> [`docs/03-DEV-CHECKLIST.md`](./docs/03-DEV-CHECKLIST.md)).
+> **Catalog status:** 42 entries: 27 Official Systems and 15 Brand Looks. 41 are
+> published; the Figma Brand Look remains a draft behind the human QA gate. The
+> `skills/` directory and public API are live.
 
-## What's here
+## Why AgentDS
 
-Two catalog paths:
+Official Systems are built from the system's real, versioned token source—not
+from a visual approximation of its marketing site. Publication requires all of
+the following:
 
-- **Official Systems** — `DESIGN.md` files generated from real, published
-  open-source token packages (Carbon, Material 3, Primer, Fluent 2, Cloudscape…)
-  with recorded provenance.
+- `meta.yaml` validated against the shared schema.
+- `DESIGN.md` passing the official Google linter with zero errors.
+- `verify-report.json` grounding every published color in the cited source.
+- Human-signed `QA.md`, recorded provenance, and upstream license attribution.
+
+The normalized tokens remain the source of truth, so upstream drift can be
+re-checked without rewriting values from memory.
+
+## Two catalog paths
+
+- **Official Systems** — the primary catalog: Carbon, Material 3, Primer,
+  Fluent 2, Cloudscape, and other real open-source systems extracted from their
+  published packages or repositories.
 - **Brand Looks** — independent visual-language analyses of famous product
-  sites, each carrying a mandatory non-affiliation disclaimer.
+  sites, each sourced from public CSS and carrying a mandatory non-affiliation
+  disclaimer. Use them as inspiration for an original system.
 
-Every published file passes `npx @google/design.md lint` and a human QA gate.
+Every published entry passes the same schema, lint, source-verification, and
+human QA gates.
 
 ## Use it with your agent
 

@@ -7,7 +7,7 @@ export const API_URL =
 
 export const SITE_NAME = "AgentDS";
 export const SITE_DESCRIPTION =
-  "A free, curated catalog of agent-ready design system files (DESIGN.md + tokens) with previews and a public fetch API.";
+  "Source-verified official design systems for coding agents, published as DESIGN.md files, tokens, Tailwind CSS, and a free fetch API.";
 
 export const INSTALL_COMMAND = "npx skills add System-Desgin/AgentDS --skill design-systems";
 
