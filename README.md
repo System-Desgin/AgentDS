@@ -20,6 +20,20 @@
 > published; the Figma Brand Look remains a draft behind the human QA gate. The
 > `skills/` directory and public API are live.
 
+## See the tokens at work
+
+[![A revenue dashboard using Carbon's verified palette, type, spacing, radii, and status roles](./docs/assets/launch/carbon-dashboard.png)](https://agent-ds.oday-bakkour.com/systems/carbon/preview/dashboard)
+
+The [live Carbon preview](https://agent-ds.oday-bakkour.com/systems/carbon/preview/dashboard)
+is server-rendered directly from the catalog's `DESIGN.md` tokens. Its source is
+`@carbon/styles@1.110.0`; the current verification report records exact matches
+for all 12 published color roles. It is an approximation of Carbon's visual
+language, not IBM's official component library.
+
+### From install to on-system UI
+
+![Terminal installation followed by an agent generating a Carbon-aligned dashboard](./docs/assets/launch/demo.gif)
+
 ## Why AgentDS
 
 Official Systems are built from the system's real, versioned token source—not

@@ -13,7 +13,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-[1200px] flex-wrap items-center gap-x-6 gap-y-2 px-6 py-4">
         <Link
           href="/"
-          className="font-mono text-sm font-medium tracking-[0.04em] text-primary transition-colors duration-150 ease-out hover:text-accent"
+          className="shrink-0 whitespace-nowrap font-mono text-sm font-medium tracking-[0.04em] text-primary transition-colors duration-150 ease-out hover:text-accent"
         >
           ## AgentDS
         </Link>
