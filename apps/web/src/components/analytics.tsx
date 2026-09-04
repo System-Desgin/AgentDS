@@ -1,7 +1,7 @@
 import Script from "next/script";
 
 /**
- * Self-hosted Umami (cookieless, aggregate-only — CLAUDE.md rule 15). Renders
+ * Self-hosted Umami (cookieless, aggregate-only — CLAUDE.md rule 16). Renders
  * nothing until both env vars are configured, so dev/preview stay script-free.
  */
 export function Analytics() {

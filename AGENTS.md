@@ -42,9 +42,9 @@ pnpm lint && pnpm typecheck  # must pass before any commit
 pnpm test                    # unit; pnpm test:e2e for api supertest suite
 pnpm --filter api prisma migrate dev    # DB migrations (never edit applied migrations)
 pnpm pipeline <cmd> <slug>   # extract | generate | validate | verify | export | new
-                             # generate = headless Codex (Codex -p), versioned prompts,
+                             # generate = headless Claude Code (claude -p), versioned prompts,
                              # billed to the plan's Agent SDK credit — NO API key
-/generate-system <slug>      # interactive alternative, run inside Codex
+/generate-system <slug>      # interactive alternative, run inside Claude Code
 pnpm pipeline verify <slug> [--fix]     # tokens vs. the cited source (CIEDE2000); --fix re-grounds
 pnpm pipeline verify --all              # whole catalog; hits the network
 pnpm check:verification                 # offline publish gate (what CI runs on content PRs)
@@ -81,7 +81,7 @@ npx @google/design.md lint <file>       # official linter — gate for all conte
 15. Secrets live only in Vercel/Dokploy env; `.env*` is gitignored; `.env.example` documents keys without values. Never print secrets in logs or commit history.
 16. No PII anywhere: counters and analytics are aggregate and cookieless. Don't add tracking beyond the existing Umami + `/v1/events`.
 17. Run `pnpm audit` after adding dependencies; prefer zero-dependency solutions for small utilities.
-18. **Generation billing:** pipeline generation uses Codex under the owner's Max plan — interactive sessions draw plan limits; `Codex -p` draws the plan's monthly Agent SDK credit. **Never set `ANTHROPIC_API_KEY` in any repo environment, script, or CI**: its presence silently reroutes `Codex -p` billing to a pay-per-token API account.
+18. **Generation billing:** pipeline generation uses Claude Code under the owner's Max plan — interactive sessions draw plan limits; `claude -p` draws the plan's monthly Agent SDK credit. **Never set `ANTHROPIC_API_KEY` in any repo environment, script, or CI**: its presence silently reroutes `claude -p` billing to a pay-per-token API account.
 
 ## Conventions
 
