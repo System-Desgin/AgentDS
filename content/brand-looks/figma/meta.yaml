@@ -2,12 +2,12 @@ slug: figma
 name: Figma
 path: brand-look
 maker: "Figma, Inc."
-summary: "Figma's observed web look: white fields, near-black ink, a five-color brand set as accents, blue in-product actions, and 5-6px corners."
+summary: "Figma's observed web look: white fields, near-black ink, vivid illustration accents, blue in-product actions, and 5-6px corners."
 description: >-
   An independent analysis of the design language visible on Figma's public
-  marketing and product pages: white and near-white fields under near-black
-  ink, a five-color brand set (red-orange, orange, purple, blue, green) used
-  as accents and illustration rather than UI chrome, a bright blue for
+  marketing and product pages: white fields under near-black ink, a vivid
+  accent family (red-orange, red, purple, blue, green) used in illustration
+  rather than UI chrome, a bright blue for
   in-product primary actions, compact 5-6px corners, and dense tool panels
   set against airy marketing sections. Not an official Figma design system.
 categories:
@@ -37,5 +37,5 @@ provenance:
 links:
   official_site: https://www.figma.com
 restricted: false
-status: draft
+status: published
 spec_version: alpha

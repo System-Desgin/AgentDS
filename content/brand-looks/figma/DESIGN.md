@@ -6,18 +6,19 @@ colors:
   primary: "#000000"
   on-primary: "#FFFFFF"
   action: "#0D99FF"
-  action-deep: "#0A6DBA"
-  on-action: "#FFFFFF"
+  action-deep: "#0D99FF"
+  on-action: "#252D41"
   surface: "#FFFFFF"
-  surface-variant: "#F5F5F5"
+  surface-variant: "#FFFFFF"
   on-surface: "#1E1E1E"
-  on-surface-variant: "#666666"
-  border: "#E6E6E6"
-  brand-red: "#F24E1E"
-  brand-orange: "#FF7262"
-  brand-purple: "#A259FF"
-  brand-blue: "#1ABCFE"
-  brand-green: "#0ACF83"
+  on-surface-variant: "#404040"
+  border: "#D6D7DA"
+  brand-red: "#FF5C16"
+  brand-orange: "#FF3737"
+  brand-purple: "#9747FF"
+  brand-blue: "#00B6FF"
+  brand-green: "#24CB71"
+  error: "#972121"
 typography:
   display:
     fontFamily: Inter
@@ -141,7 +142,7 @@ components:
 ## Overview
 
 Figma's public pages read as a creative tool that takes work seriously.
-The structure is monochrome: white and near-white fields
+The structure is monochrome: white fields
 (`{colors.surface}`, `{colors.surface-variant}`) under near-black ink,
 observed as true black `{colors.primary}` on marketing pages and the softer
 `{colors.on-surface}` family inside the product. The five-color brand set
@@ -160,33 +161,34 @@ monochrome structure, disciplined density, color saved for delight.
   headlines, body copy, and solid CTA fills on the marketing pages sit in
   true black on white.
 - **on-surface (`#1E1E1E`)** — the softer near-black text family observed in
-  the product UI; **on-surface-variant (`#666666`)** covers secondary text on
+  the product UI; **on-surface-variant (`#404040`)** covers secondary text on
   both kinds of page.
 - **action (`#0D99FF`)** — the bright product blue observed on in-product
-  primary buttons, selection, and focus. White on it measures about 3.0:1,
-  so these tokens use it as an accent under dark text; see the contrast
+  primary buttons, selection, and focus. White on it measures 2.99:1, so
+  these tokens pair it with dark `{colors.on-action}` text; see the contrast
   note below.
-- **action-deep (`#0A6DBA`)** — the darker end of the product blue family
-  (hover and pressed territory); the fill this file gives action buttons so
-  their white label holds AA.
-- **surface (`#FFFFFF`) / surface-variant (`#F5F5F5`)** — the white field and
-  the near-white gray used for marketing tiles and secondary panels.
-- **border (`#E6E6E6`)** — the hairline that structures panels, toolbars, and
+- **action-deep (`#0D99FF`)** — a compatibility alias for the same observed
+  action blue. The public capture did not expose a distinct darker action
+  value, so this file does not invent one.
+- **surface (`#FFFFFF`) / surface-variant (`#FFFFFF`)** — the white field and
+  white secondary surfaces, separated by border, spacing, or layout rather
+  than an invented gray fill.
+- **border (`#D6D7DA`)** — the hairline that structures panels, toolbars, and
   property rows.
-- **brand-red (`#F24E1E`) / brand-orange (`#FF7262`) / brand-purple
-  (`#A259FF`) / brand-blue (`#1ABCFE`) / brand-green (`#0ACF83`)** — the
-  five-color set from the logo mark, observed as illustration fills and
-  accents only.
+- **brand-red (`#FF5C16`) / brand-orange (`#FF3737`) / brand-purple
+  (`#9747FF`) / brand-blue (`#00B6FF`) / brand-green (`#24CB71`)** — the
+  vivid accent family observed in public inline illustrations and
+  presentation markup, not a claim about canonical logo tokens.
 
-Contrast notes: white text fails WCAG AA on all five brand hues (about 2.0:1
-to 3.9:1) and on `{colors.action}` itself (about 3.0:1), so every vivid fill
-carries dark text. `{colors.primary}` black passes on each brand hue (5.4:1
-to 10.3:1) and on `{colors.action}` (about 7.0:1), while `{colors.on-surface}`
-falls just short on `{colors.brand-purple}` (about 4.3:1) — badges here
-always use `{colors.primary}` text. The observed product button pairs white
-on flat `{colors.action}`, which fails AA; rather than publish that pairing,
-`button-action` fills with `{colors.action-deep}`, where `{colors.on-action}`
-white measures about 5.4:1 (decision documented in QA).
+Contrast notes: `{colors.on-action}` on `{colors.action}` measures 4.59:1
+and passes WCAG AA for normal text; white on the same blue measures 2.99:1
+and fails. `{colors.primary}` black passes on every accent hue (4.66:1 to
+9.86:1), so badges consistently use black text. `{colors.on-surface}` on
+`{colors.brand-purple}` measures only 3.70:1 and is not a substitute.
+
+- **status colors** — `{colors.error}` (`#972121`) is the observed status
+  hue, holding 8.22:1 on `{colors.surface}` so it can carry text as well as
+  fills.
 
 ## Typography
 
@@ -260,8 +262,8 @@ demo loops.
 - **Do** set headlines and CTAs in `{colors.primary}` ink on
   `{colors.surface}`; **don't** set long copy in any brand hue.
 - **Do** put dark text on brand-hue and `{colors.action}` fills; **don't**
-  put white text on them — every one fails AA under white. White labels
-  belong on `{colors.primary}` and `{colors.action-deep}` fills only.
+  assume one foreground works for every vivid fill. Use the token pairings
+  defined here and recheck contrast if a background changes.
 - **Do** reserve the action blues (`{colors.action}`, `{colors.action-deep}`)
   for product-style actions, selection, and focus; **don't** spread them
   across marketing surfaces that already carry black CTAs.
@@ -283,9 +285,9 @@ When generating UI in this look:
 1. Reference tokens by name (`{colors.action}`, `{spacing.sm}`,
    `{typography.label}`); never hardcode raw values.
 2. Every text/background pairing must pass WCAG AA 4.5:1. In practice: white
-   text sits only on `{colors.primary}` or `{colors.action-deep}` fills;
-   brand hues and `{colors.action}` take `{colors.primary}` dark text; plain
-   `{colors.action}` marks selection, focus rings, and accents.
+   text sits on `{colors.primary}`; brand hues take `{colors.primary}` dark
+   text; and `{colors.action}` takes `{colors.on-action}`. Plain action blue
+   also marks selection, focus rings, and accents.
 3. Default composition: `{colors.surface}` field, `{colors.primary}` ink and
    CTAs, `{colors.surface-variant}` tiles, one brand-hue accent moment per
    section, `{colors.action}` only inside product-style UI.
