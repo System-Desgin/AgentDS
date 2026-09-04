@@ -3,7 +3,7 @@
   "path": "brand-look",
   "status": "published",
   "sourceType": "css-analysis",
-  "verifiedAt": "2026-08-01",
+  "verifiedAt": "2026-09-04",
   "sources": [
     "https://www.apple.com",
     "https://www.apple.com/api-www/global-elements/global-header/v1/assets/globalheader.css",
@@ -13,7 +13,7 @@
     "https://www.apple.com/v/home/a/styles/home.built.css",
     "https://www.apple.com/v/home/a/built/styles/home-gallery.built.css",
     "https://www.apple.com/v/home/a/styles/inline-media.built.css",
-    "https://www.apple.com/home/built/styles/home_58k68i7d.built.css",
+    "https://www.apple.com/home/built/styles/home_1qb7owdk.built.css",
     "https://www.apple.com/mac/",
     "https://www.apple.com/api-www/global-elements/global-footer/v1/en_US/styles/ac-globalfooter.built.css",
     "https://www.apple.com/_apps/artisan/_next/static/css/498a874b708d3e34.css",
@@ -22,7 +22,7 @@
     "https://www.apple.com/_apps/artisan/_next/static/css/501e2f39342b9727.css",
     "https://www.apple.com/_apps/artisan/_next/static/css/2caa76f2fa3e0658.css",
     "https://www.apple.com/_apps/artisan/_next/static/css/c6e26319d48b5a53.css",
-    "https://www.apple.com/_apps/artisan/_next/static/css/5f6f373de3bb27f0.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/46b3eb92d109754b.css",
     "https://www.apple.com/_apps/artisan/_next/static/css/2a1dfd4ca8a530d2.css",
     "https://www.apple.com/_apps/artisan/_next/static/css/d3c0449160015d61.css",
     "https://www.apple.com/_apps/artisan/_next/static/css/18c7717d1ab29662.css",
@@ -39,13 +39,13 @@
     "https://www.apple.com/_apps/artisan/_next/static/css/67f01a261c657e9a.css",
     "https://www.apple.com/_apps/artisan/_next/static/css/9eecdfa3b58ac8da.css",
     "https://www.apple.com/_apps/artisan/_next/static/css/cb070c6a2c42979c.css",
-    "https://www.apple.com/_apps/artisan/_next/static/css/7c5d1417216bf24a.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/a15cbd66c8f0eb7d.css",
     "https://www.apple.com/_apps/artisan/_next/static/css/a91369e7a8ecc6d9.css",
     "https://www.apple.com/_apps/artisan/_next/static/css/4f24d0f95a802ef6.css",
-    "https://www.apple.com/_apps/artisan/_next/static/css/f0cdbc3f94918df0.css",
+    "https://www.apple.com/_apps/artisan/_next/static/css/a36c0457aa7c5eab.css",
     "https://www.apple.com/_apps/artisan/_next/static/css/a0e4784527c34313.css"
   ],
-  "sourceColorCount": 58,
+  "sourceColorCount": 59,
   "inconclusive": false,
   "colors": [
     {

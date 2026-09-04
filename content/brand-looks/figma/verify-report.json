@@ -1,9 +1,9 @@
 {
   "slug": "figma",
   "path": "brand-look",
-  "status": "published",
+  "status": "draft",
   "sourceType": "css-analysis",
-  "verifiedAt": "2026-08-01",
+  "verifiedAt": "2026-09-04",
   "sources": [
     "https://www.figma.com",
     "https://www.figma.com/_netlify/_next/static/css/617e0bc399c83bea.css",

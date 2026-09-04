@@ -3,28 +3,19 @@
   "path": "brand-look",
   "status": "published",
   "sourceType": "css-analysis",
-  "verifiedAt": "2026-08-01",
+  "verifiedAt": "2026-09-04",
   "sources": [
     "https://www.raycast.com",
-    "https://www.raycast.com/_next/static/css/fb4feeee9aa67523.css",
-    "https://www.raycast.com/_next/static/css/184af1c5bdf1b5db.css",
-    "https://www.raycast.com/_next/static/css/f1de5538ee4eef17.css",
-    "https://www.raycast.com/_next/static/css/be8fb847a3fae0d1.css",
-    "https://www.raycast.com/_next/static/css/5038a0f8e1dbb537.css",
-    "https://www.raycast.com/_next/static/css/7895ac7aab38a613.css",
-    "https://www.raycast.com/_next/static/css/af9f5781b0bfa376.css",
-    "https://www.raycast.com/_next/static/css/a59e492e46719f4d.css",
-    "https://www.raycast.com/_next/static/css/f69dfddfbe7ba2a0.css",
-    "https://www.raycast.com/_next/static/css/3563776b487bdaf8.css",
-    "https://www.raycast.com/_next/static/css/528589a8d5014a85.css",
-    "https://www.raycast.com/_next/static/css/c645df5701d05f92.css",
+    "https://www.raycast.com/_next/static/immutable/chunks/3kx5useibgx0u.css",
+    "https://www.raycast.com/_next/static/immutable/chunks/1b0jltvt992iz.css",
+    "https://www.raycast.com/_next/static/immutable/chunks/05x2280ggw--1.css",
+    "https://www.raycast.com/_next/static/immutable/chunks/3ph4u6fkcfqxz.css",
+    "https://www.raycast.com/_next/static/immutable/chunks/3vd0w84w7zy93.css",
     "https://www.raycast.com/store",
-    "https://www.raycast.com/_next/static/css/d710333527a8b041.css",
-    "https://www.raycast.com/_next/static/css/152ba8e82cdeb326.css",
-    "https://www.raycast.com/_next/static/css/3cfd1aa866e84566.css",
-    "https://www.raycast.com/_next/static/css/89c5100fc6f90404.css"
+    "https://www.raycast.com/_next/static/immutable/chunks/2pg99bczh7-11.css",
+    "https://www.raycast.com/_next/static/immutable/chunks/19h3v6jtlz3qr.css"
   ],
-  "sourceColorCount": 129,
+  "sourceColorCount": 104,
   "inconclusive": false,
   "colors": [
     {
@@ -58,8 +49,8 @@
     {
       "token": "surface-variant",
       "value": "#161618",
-      "nearest": "#19191a",
-      "deltaE": 1.17,
+      "nearest": "#151619",
+      "deltaE": 0.86,
       "verdict": "close"
     },
     {
@@ -72,9 +63,9 @@
     {
       "token": "border-subtle",
       "value": "#2a2a2b",
-      "nearest": "#2a2a2b",
-      "deltaE": 0,
-      "verdict": "exact"
+      "nearest": "#282828",
+      "deltaE": 0.98,
+      "verdict": "close"
     },
     {
       "token": "border-strong",
@@ -92,8 +83,8 @@
     },
     {
       "token": "brand-pink",
-      "value": "#ff67a7",
-      "nearest": "#ff67a7",
+      "value": "#f28c8c",
+      "nearest": "#f28c8c",
       "deltaE": 0,
       "verdict": "exact"
     },
@@ -114,15 +105,15 @@
     {
       "token": "error",
       "value": "#f83a3a",
-      "nearest": "#f83a3a",
-      "deltaE": 0,
-      "verdict": "exact"
+      "nearest": "#ff3c3c",
+      "deltaE": 1.47,
+      "verdict": "close"
     }
   ],
   "missingRoles": [],
   "score": {
-    "exact": 9,
-    "close": 4,
+    "exact": 7,
+    "close": 6,
     "drift": 0,
     "unmatched": 0,
     "total": 13

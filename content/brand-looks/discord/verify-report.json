@@ -3,11 +3,11 @@
   "path": "brand-look",
   "status": "published",
   "sourceType": "css-analysis",
-  "verifiedAt": "2026-08-01",
+  "verifiedAt": "2026-09-04",
   "sources": [
     "https://discord.com",
-    "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/css/discord-2022.shared.7cf25a327.min.css",
-    "https://discord.com/w/assets/1cab095e9147685cece9a11a92ebf9c91982c98f/styles.css",
+    "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/css/discord-2022.shared.1df62f29d.min.css",
+    "https://discord.com/w/assets/2213ba75fb529dbbdd2112144a7beb3e793746db/styles.css",
     "https://discord.com/download"
   ],
   "sourceColorCount": 401,

@@ -3,14 +3,14 @@
   "path": "brand-look",
   "status": "published",
   "sourceType": "css-analysis",
-  "verifiedAt": "2026-08-01",
+  "verifiedAt": "2026-09-04",
   "sources": [
     "https://www.airbnb.com",
-    "https://a0.muscache.com/airbnb/static/packages/web/common/frontend/core-guest-spa/entrypoints/client.b4fe7ce6ac.css",
+    "https://a0.muscache.com/airbnb/static/packages/web/common/frontend/core-guest-spa/entrypoints/client.6a2dd64a0f.css",
     "https://www.airbnb.com/help",
-    "https://a0.muscache.com/airbnb/static/packages/web/common/frontend/cep-help-center/entrypoints/client.f1102d3e51.css"
+    "https://a0.muscache.com/airbnb/static/packages/web/common/frontend/cep-help-center/entrypoints/client.ce7c6f4d55.css"
   ],
-  "sourceColorCount": 310,
+  "sourceColorCount": 329,
   "inconclusive": false,
   "colors": [
     {

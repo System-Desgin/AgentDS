@@ -12,7 +12,7 @@ colors:
   border-subtle: "#2A2A2B"
   border-strong: "#434345"
   brand-orange: "#FF9217"
-  brand-pink: "#FF67A7"
+  brand-pink: "#F28C8C"
   success: "#59D499"
   warning: "#FFC531"
   error: "#F83A3A"
@@ -162,7 +162,7 @@ the set stays verifiable and WCAG-AA consistent.
   links, and brand moments. It passes AA as text on `{colors.surface}`
   (6.8:1); as a fill it takes dark `{colors.on-primary}` text, because white
   on coral fails AA.
-- **brand-orange (`#FF9217`) / brand-pink (`#FF67A7`)** — solid endpoints of
+- **brand-orange (`#FF9217`) / brand-pink (`#F28C8C`)** — solid endpoints of
   the sunset-gradient moments observed in hero art and store imagery;
   decorative fills only, never text colours.
 - **border-subtle (`#2A2A2B`) / border-strong (`#434345`)** — solid
