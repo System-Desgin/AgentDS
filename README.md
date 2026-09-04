@@ -16,9 +16,9 @@
 - **License:** code Apache-2.0 · catalog content ([`content/`](./content)) CC BY 4.0
 - **Contact / security:** contact@oday-bakkour.com
 
-> **Catalog status:** 42 entries: 27 Official Systems and 15 Brand Looks. 41 are
-> published; the Figma Brand Look remains a draft behind the human QA gate. The
-> `skills/` directory and public API are live.
+> **Catalog status:** 42 published entries: 27 Official Systems and 15 Brand
+> Looks. Every entry passes the schema, lint, source-verification, and human QA
+> gates. The `skills/` directory and public API are live.
 
 ## See the tokens at work
 

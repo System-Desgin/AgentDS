@@ -34,10 +34,9 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 ## Phase 1 — Content pipeline + first 10 systems (Weeks 2–3)
 
 > **Status (verified 2026-09-04):** the complete pipeline is exercised across 42
-> entries. All 41 published entries have passing schema, lint, verification, and
-> human QA gates; Figma remains the sole draft because its source extraction is
-> correctly reported as inconclusive. A clean GitHub Actions run on the refreshed
-> content branch verified every published source against upstream.
+> published entries. Every entry has passing schema, lint, verification, and
+> human QA gates. Figma's public HTML/CSS/SVG adapter recovered sufficient source
+> evidence to close the final draft, and the protected content workflow passed.
 
 ### Pipeline (`packages/pipeline`) — F-6/F-7/F-8
 - [x] `extract <slug>`: `npm-tokens` (fetch token JSON via jsDelivr — no tarball unpack), `repo-json` (raw JSON URLs), `css-analysis` (Brand Looks: prints the documented manual-capture procedure) → `tokens.raw.json` + provenance
@@ -50,14 +49,14 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 
 ### First content batch (prove the pipeline end-to-end)
 - [x] All 10 Official Tier-1 entries produced through the pipeline: **Carbon, Material 3, Primer, Fluent 2, Cloudscape, Ant Design, Paste, Flowbite, Orbit, Base Web**. Each: `new → extract → generate (/generate-system) → validate → export`, DESIGN.md **lints with 0 errors**, `tokens.json` + `tailwind.css` exported, `QA.md` with a token spot-check. **Published 2026-07-21** (owner-directed sign-off recorded in each QA.md; the open preview-render box was closed by rendering every entry through the Phase 3 renderer first). Grounding: Paste/Primer/Cloudscape/Carbon/Orbit extraction-grounded (JSON / CSS custom-props / safe JS-text regex); Material 3/Fluent 2/Ant/Flowbite/Base authored from documented canonical values (flagged in each QA for cross-check). Ant (3) and Orbit (1) carry accurate sub-AA contrast warnings for their vivid brand/status colours (documented, not hidden).
-- [x] Verify every source link/package used through the live-source verifier. The 2026-09-04 sweep exposed two real upstream drifts (Linear and Raycast); `verify --fix` re-grounded them, and the refreshed branch then passed the full clean-checkout workflow ([run 33895585887](https://github.com/System-Desgin/AgentDS/actions/runs/33895585887)). Figma stays draft because its extractor recovered too little source evidence.
+- [x] Verify every source link/package used through the live-source verifier. The 2026-09-04 sweep exposed two real upstream drifts (Linear and Raycast); `verify --fix` re-grounded them, and the refreshed branch then passed the full clean-checkout workflow ([run 33895585887](https://github.com/System-Desgin/AgentDS/actions/runs/33895585887)). Figma's expanded public HTML/CSS/SVG extraction subsequently grounded all 16 color roles (15 exact, 1 close) and passed the protected content workflow ([run 33899505985](https://github.com/System-Desgin/AgentDS/actions/runs/33899505985)).
 - [x] Spot-check ≥10 tokens per system, recorded in each `QA.md`; every published entry has human sign-off and a passing `verify-report.json`
 
 ## Phase 2 — Backend API (Weeks 3–4) — F-4/F-5
 
 > **Status (verified 2026-09-04):** the API is feature-complete, green, and live
 > on Dokploy. Production health reports the database up; the public catalog
-> serves 41 published entries, including DSFR's intentional restricted state.
+> serves 42 published entries, including DSFR's intentional restricted state.
 > The suite contains 38 tests including Supertest e2e coverage.
 
 - [x] NestJS scaffold (Express adapter): modules `systems`, `categories`, `events`, `ingest`, `health`; validation at the edge (shared zod schemas via `ZodValidationPipe` + global class-validator pipe), global exception filter with problem-details JSON (incl. proper 451 error name)
@@ -92,10 +91,9 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 
 ## Phase 4 — Content sprint + skills.sh (Weeks 6–8) — F-9
 
-> **Status (verified 2026-09-04):** 27 Official systems and 14 Brand Looks are
-> published; Figma is the only draft because source verification is inconclusive.
-> All 42 entries pass schema and `design.md lint`; all 41 published entries pass
-> source verification and human QA. License findings:
+> **Status (verified 2026-09-04):** 27 Official systems and 15 Brand Looks are
+> published. All 42 entries pass schema, `design.md lint`, source verification,
+> and human QA. License findings:
 > **Lexicon/Clay** and **Kyper** ship no public token code, and **Shopify
 > Polaris** (first replacement candidate) was rejected because polaris-tokens
 > v5+ carries a custom license restricting visually-similar third-party UIs —
@@ -105,7 +103,7 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 > under BSD-3-Clause with strict font/trademark notes.
 
 - [x] Official +15 (delivered as +17 incl. the two restricted-handling entries): **Atlassian ADS, Spectrum, TDesign, Semi, Arco, Pajamas, Forma 36, Amplify UI, Vaadin Lumo, Backstage, Vitamin, Moon, Vibe (monday.com), Garden, Gestalt** + **SLDS, DSFR** — each passed the full publish workflow and live-source verification
-- [~] Brand Looks ×15: **Stripe, Linear, Vercel, Notion, Spotify, Airbnb, Figma, Supabase, Raycast, Apple, NVIDIA, Discord, Netflix, GitHub.com, OpenAI** — 14 pass the complete publish workflow; Figma remains draft until its source adapter can recover enough evidence
+- [x] Brand Looks ×15: **Stripe, Linear, Vercel, Notion, Spotify, Airbnb, Figma, Supabase, Raycast, Apple, NVIDIA, Discord, Netflix, GitHub.com, OpenAI** — all pass the complete publish workflow; Figma's public HTML/CSS/SVG adapter recovered 30 source colors and grounded all 16 published roles
 - [x] Restricted-entry handling verified for DSFR + SLDS (PRD §12): DSFR is `restricted: true` reference-only with a 451 reason (API 451 path covered by the Phase 2 e2e suite); SLDS publishes under BSD-3-Clause with strict font-substitution + trademark notes
 - [x] **Flip repo to public** — done 2026-07-21 by the owner; live at `github.com/System-Desgin/AgentDS` (org slug verified; all references updated)
 - [x] `skills/` live in-repo: master `design-systems` skill (SKILL.md + 7 bundled archetypes + `fetch_design_md.sh|py` hitting `/v1`) + 7 flagship individual skills (carbon, material-3, primer, fluent-2, cloudscape, flowbite, ant-design)
@@ -119,14 +117,14 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 - [~] Web: full security-header set live (HSTS preload, nosniff, DENY framing, strict referrer, Permissions-Policy, COOP/CORP) + CSP locked to self/API/fonts. **Observatory: B+ (80, 9/10 tests)** — the missing test is `script-src 'unsafe-inline'`, required because App Router prerenders inline bootstrap scripts; an A needs per-request nonces = abandoning SSG/ISR. Owner call if A outranks static rendering. API side: helmet, problem-details errors, throttler verified under load — done
 - [x] Abuse test (2026-07-21): 600 requests at 62 rps against raw-file endpoints → 240 served (incl. 22 ETag 304s), 360 clean 429s, zero errors/5xx, p50 144ms, healthy after
 - [~] Secrets rotation + backup/restore + deploy runbook documented in `docs/05-OPERATIONS.md` — _remaining owner actions: schedule the daily Postgres backup in Dokploy + one restore test; quarterly access review_
-- [x] Pipeline output review (2026-09-04): all 42 catalog DESIGN.md files pass schema/lint/sanitizer checks; all 41 published entries additionally pass verification and QA; preview tests keep asserting script-free server markup
+- [x] Pipeline output review (2026-09-04): all 42 published catalog DESIGN.md files pass schema/lint/sanitizer, verification, and QA checks; preview tests keep asserting script-free server markup
 
 ### Launch
 - [x] Lighthouse ≥95 perf/a11y/SEO on home + 3 detail pages — **met** (mobile emulation, production, 2026-07-21): home **99**/96/100, carbon **98**/97/100, stripe **97**/97/100 (CLS 0), spectrum **96**/97/100. Two fixes en route: specimen-fonts stylesheet deferred off the critical path (was render-blocking, LCP 3.3s), then specimens clamped to one clipped line (font swap had introduced CLS 0.318)
 - [x] 404/500 pages: 404 returns a real status; root `error.tsx` + `global-error.tsx` are styled to DESIGN.md
 - [ ] Provision Uptime Kuma on Dokploy and configure owner alerting
 - [x] Launch assets: channel-specific copy plus a reproducible, same-prompt Codex benchmark with exact prompt, run metadata, scored outputs, and an honest Carbon comparison image in `docs/assets/launch/`
-- [ ] Add a custom 1280×640 GitHub social preview image
+- [~] Custom 1280×640 GitHub social preview asset is ready at `docs/assets/launch/github-social-preview.png`; _remaining owner action: upload it in the authenticated repository settings UI_
 - [~] Publish and distribute: the repository, production app/API, and skills.sh listing are public; owner-authorized launch posts and appropriate awesome-list submissions remain
 - [ ] Day-7 review: metrics vs PRD §10, bug triage, P1 backlog grooming
 
