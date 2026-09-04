@@ -38,8 +38,8 @@ Use this skill when the user:
 2. Get the file. Prefer the bundled copy when one exists in `references/<slug>.DESIGN.md`
    (7 archetypes ship with this skill). Otherwise fetch:
    ```bash
-   scripts/fetch_design_md.sh <slug>            # or:
-   curl -fsSL https://api.agent-ds.oday-bakkour.com/v1/systems/<slug>/design.md
+   scripts/fetch_design_md.sh <slug>             # or:
+   python3 scripts/fetch_design_md.py <slug>     # both SHA-256 verified
    ```
 3. Save it as `DESIGN.md` in the project root (or merge into an existing one at
    the user's direction).
@@ -103,6 +103,11 @@ Author a fresh file in the same shape as the bundled archetypes:
 - The API is read-only HTTPS `GET`, no auth, no telemetry: nothing about your
   project is sent anywhere. The bundled `references/` files work fully
   offline — fetching is optional.
+- The bundled fetch helpers accept only canonical lowercase slugs, download to
+  a private temporary file, and verify `design.md`, `tokens.json`, and
+  `tailwind.css` against the installed `references/SHA256SUMS` manifest before
+  replacing a local file. A missing or mismatched digest fails closed; update
+  or reinstall the skill instead of bypassing the check.
 - Every published file is pipeline-gated before release: schema-validated,
   linted with zero errors by the official `design.md` linter, plain markdown
   only (no HTML, no scripts), human-reviewed, and Official Systems record
@@ -121,3 +126,6 @@ Author a fresh file in the same shape as the bundled archetypes:
   government identity) — tell the user why and do not work around it.
 - HTTP 429 means rate-limited — honor `Retry-After`.
 - Responses are cached (`ETag`); send `If-None-Match` when re-fetching.
+- `bundle.zip` remains available from the public API but is intentionally not
+  accepted by the pinned text-artifact helpers; fetch it directly only when the
+  user explicitly requests the bundle.

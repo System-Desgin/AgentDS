@@ -77,6 +77,11 @@ the following:
 The normalized tokens remain the source of truth, so upstream drift can be
 re-checked without rewriting values from memory.
 
+The installable master skill also pins every downloadable text artifact by
+SHA-256. Its shell and Python helpers reject non-canonical slugs, unlisted
+artifacts, and changed responses before replacing a local file. Bundled
+archetypes remain fully offline.
+
 ## Two catalog paths
 
 - **Official Systems** — the primary catalog: Carbon, Material 3, Primer,

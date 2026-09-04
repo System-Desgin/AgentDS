@@ -18,3 +18,6 @@ docs
 content/**/tokens.json
 content/**/tailwind.css
 content/**/lint-report.json
+
+# Reproducible benchmark outputs are preserved byte-for-byte as generated.
+benchmarks/**/outputs

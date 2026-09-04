@@ -72,6 +72,16 @@ Each publishable entry needs all of the following:
 Leave an entry as `draft` when its source cannot be recovered. An inconclusive
 report is more useful than an invented token.
 
+After a content-only release is merged and deployed, maintainers update the
+master skill's pinned download manifest in a separate skill-sync pull request:
+
+```bash
+pnpm skill:integrity
+pnpm skill:test
+```
+
+Do not combine that generated `skills/` change with the content pull request.
+
 ## Code changes
 
 - Keep TypeScript strict and avoid `any`.
