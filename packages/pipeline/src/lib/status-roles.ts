@@ -124,9 +124,11 @@ export function documentStatusTokens(
     .map((name) => contrastRatio(additions[name] as string, surface).toFixed(1))
     .join(" / ");
 
-  const bullet =
-    `- **status colors** — ${parts} are the observed status hues, each holding ` +
-    `${ratios}:1 on \`{colors.surface}\` so they can carry text as well as fills.\n`;
+  const grammar =
+    names.length === 1
+      ? `is the observed status hue, holding ${ratios}:1 on \`{colors.surface}\` so it can carry text as well as fills.`
+      : `are the observed status hues, each holding ${ratios}:1 on \`{colors.surface}\` so they can carry text as well as fills.`;
+  const bullet = `- **status colors** — ${parts} ${grammar}\n`;
 
   return `${markdown.slice(0, end).replace(/\n+$/, "\n")}${bullet}${markdown.slice(end)}`;
 }

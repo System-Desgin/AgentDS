@@ -138,10 +138,14 @@ export function groundColors(
  * rewrite would corrupt the tokens it was not meant to touch, so ambiguous
  * values are dropped and reported to the caller instead.
  */
-export function substitutionMap(changes: ColorChange[]): {
+export function substitutionMap(
+  changes: ColorChange[],
+  published: Record<string, string> = {},
+): {
   map: Map<string, string>;
   ambiguous: string[];
 } {
+  const changeByToken = new Map(changes.map((change) => [change.token, change]));
   const byValue = new Map<string, Set<string>>();
   for (const change of changes) {
     const from = change.from.toLowerCase();
@@ -149,6 +153,19 @@ export function substitutionMap(changes: ColorChange[]): {
     set.add(change.to.toLowerCase());
     byValue.set(from, set);
   }
+
+  // A value may also belong to a token that did not change. A global rewrite
+  // would then corrupt that unchanged token (for example, changing
+  // `on-action: #fff` must not also darken `surface: #fff`). Add every token's
+  // intended result so shared values become ambiguous and stay out of the
+  // global substitution pass.
+  for (const [token, value] of Object.entries(published)) {
+    const from = value.toLowerCase();
+    const targets = byValue.get(from);
+    if (!targets) continue;
+    targets.add((changeByToken.get(token)?.to ?? value).toLowerCase());
+  }
+
   const map = new Map<string, string>();
   const ambiguous: string[] = [];
   for (const [from, targets] of byValue) {
@@ -156,6 +173,44 @@ export function substitutionMap(changes: ColorChange[]): {
     else ambiguous.push(from);
   }
   return { map, ambiguous };
+}
+
+/**
+ * Rewrite color declarations by token name inside YAML front matter. This is
+ * the safe path for shared values that cannot be substituted globally.
+ */
+export function applyColorTokenChanges(markdown: string, changes: ColorChange[]): string {
+  if (changes.length === 0) return markdown;
+  const replacements = new Map(changes.map((change) => [change.token, change.to]));
+  const lines = markdown.split("\n");
+  let inFrontMatter = lines[0]?.trim() === "---";
+  let inColors = false;
+
+  return lines
+    .map((line, index) => {
+      if (index === 0) return line;
+      if (inFrontMatter && line.trim() === "---") {
+        inFrontMatter = false;
+        inColors = false;
+        return line;
+      }
+      if (!inFrontMatter) return line;
+      if (line === "colors:") {
+        inColors = true;
+        return line;
+      }
+      if (inColors && !/^ {2}\S/.test(line)) inColors = false;
+      if (!inColors) return line;
+
+      const token = /^ {2}([A-Za-z0-9_-]+)\s*:/.exec(line)?.[1];
+      const replacement = token ? replacements.get(token) : undefined;
+      if (!replacement) return line;
+      return line.replace(/#[0-9a-fA-F]{6}\b/, (match) => {
+        const wasUpper = match.slice(1) === match.slice(1).toUpperCase();
+        return wasUpper ? replacement.toUpperCase() : replacement.toLowerCase();
+      });
+    })
+    .join("\n");
 }
 
 /**
