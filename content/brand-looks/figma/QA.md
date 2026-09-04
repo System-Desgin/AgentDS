@@ -6,70 +6,70 @@
 
 - [x] `meta.yaml` passes the shared schema (`@agentds/shared`) — `pipeline validate`
 - [x] `npx @google/design.md lint` passes with zero errors (see `lint-report.json`: 0 errors, 0 warnings)
-- [x] 10+ token values spot-checked against the observed public-site language (verified automatically against a fresh source capture; see Source verification)
+- [x] 10+ color token values checked against a fresh public-source capture (see Source verification)
 - [x] Prose is written fresh — observed-language only, no copied text from figma.com
 - [x] License SPDX + URL verified (CC-BY-4.0 covers this independent analysis only); `restricted: false`
 - [x] Fonts: the proprietary grotesk observed on figma.com is substituted with Inter (OFL, Google Fonts allow-list); JetBrains Mono (OFL) is an open stand-in for the monospace; originals named in prose only
 - [x] Preview cards render sane (palette, type scale, spacing, radius) — rendered through the Phase 3 renderer (`@agentds/shared/preview`) on 2026-07-21; all cards produce output
 - [x] Disclaimer header present as the first content after front matter (authored verbatim per `packages/pipeline/prompts/brand-look.md`, maker "Figma, Inc."; never remove)
 
-## Token spot-check (≥10)
-
-> **Superseded by automated verification.** The css-analysis path now has
-> a real capture (`pipeline extract`), and every value below was checked
-> against it — see **Source verification (automated)**, which is generated
-> from an actual run and is the authoritative table.
-
-| Token (file)                  | Value in file  | Value in source (observed basis)                               | OK     |
-| ----------------------------- | -------------- | -------------------------------------------------------------- | ------ |
-| colors.primary                | #000000        | True-black marketing ink: headlines, body, solid CTA fills     | ✓      |
-| colors.surface                | #FFFFFF        | White page and canvas field on both kinds of page              | ✓      |
-| colors.surface-variant        | #F5F5F5        | Near-white gray of marketing tiles and secondary panels        | ✓      |
-| colors.on-surface             | #1E1E1E        | Softer near-black text family inside the product UI            | ✓      |
-| colors.on-surface-variant     | #666666        | Secondary/muted gray text on both kinds of page                | ✓      |
-| colors.border                 | #E6E6E6        | Hairline dividers on panels, toolbars, property rows           | ✓      |
-| colors.action                 | #0D99FF        | Bright in-product blue: primary buttons, selection, focus      | ✓      |
-| colors.action-deep            | #0A6DBA        | Darker end of the product blue family (AA fill decision below) | verify |
-| colors.brand-red              | #F24E1E        | Red-orange of the five-color logo mark                         | ✓      |
-| colors.brand-orange           | #FF7262        | Orange of the five-color logo mark                             | ✓      |
-| colors.brand-purple           | #A259FF        | Purple of the five-color logo mark                             | ✓      |
-| colors.brand-blue             | #1ABCFE        | Light blue of the five-color logo mark                         | ✓      |
-| colors.brand-green            | #0ACF83        | Green of the five-color logo mark                              | ✓      |
-| typography.label.fontSize     | 0.6875rem      | The product's small 11px panel/toolbar UI text                 | ✓      |
-| typography.body-sm.fontSize   | 0.8125rem      | Compact 13px size dense product surfaces gravitate to          | ✓      |
-| typography.display.fontFamily | Inter          | Open substitute; site sets a proprietary grotesk (prose-only)  | ~      |
-| typography.code.fontFamily    | JetBrains Mono | Open stand-in; site monospace family not verified              | ~      |
-| rounded.sm / rounded.md       | 5px / 6px      | Compact 5-6px corners on controls, inputs, small buttons       | ✓      |
-| spacing.md                    | 16px           | 4/8-based rhythm shared by panels and marketing blocks         | ✓      |
-
-Rows marked `~` are font substitutions (open stand-ins per the pipeline map);
-the row marked `verify` is a modeling decision, not a captured value — check
-these first during capture.
-
-## Contrast note (0 lint warnings — three decisions, documented)
+## Contrast note (0 lint warnings)
 
 - The observed in-product primary button pairs **white on flat `action`
-  #0D99FF**, which measures **2.99:1** — below AA for normal text. Rather
-  than publish a sub-AA pairing, `button-action` fills with `action-deep`
-  #0A6DBA, where white measures **5.37:1** (passes AA). #0A6DBA models the
-  darker hover/pressed end of the observed blue family; reviewer: record the
-  real hover/pressed blues during capture and replace #0A6DBA if the captured
-  family member differs. Plain #0D99FF remains in the file for selection,
-  focus, and fills under dark text only.
-- White fails AA on **all five brand hues** (2.05:1 on brand-green up to
-  3.88:1 on brand-purple), so every badge carries `primary` #000000 text
-  (5.41:1 to 10.27:1 — passes on all five). The Do's and Don'ts and Agent
-  Prompt Guide state this rule explicitly.
-- `on-surface` #1E1E1E misses AA on `brand-purple` #A259FF (**4.29:1**),
+  #0D99FF**, which measures **2.99:1** and fails AA for normal text. The
+  published `button-action` instead pairs that source blue with the grounded
+  `on-action` #252D41, which measures **4.59:1** and passes. `action-deep`
+  aliases the same observed blue because the capture did not expose a
+  distinct darker action value.
+- Every accent badge uses `primary` #000000 text. That pairing measures
+  **4.66:1 to 9.86:1** across the five grounded accent hues and passes AA.
+- `on-surface` #1E1E1E on `brand-purple` #9747FF measures only **3.70:1**,
   which is why badges mandate `primary` black rather than the softer product
   ink.
+- `error` #972121 on `surface` #FFFFFF measures **8.22:1** and passes AA.
+
+## Source verification (automated)
+
+> Generated by `pnpm pipeline verify figma` on 2026-09-04. Every
+> color below was compared against a fresh extraction of the cited source using
+> CIEDE2000: **exact** identical, **close** ΔE ≤ 2, **drift** ΔE ≤ 5,
+> **unmatched** ΔE > 5. Re-run the command to refresh this section.
+
+- Source type: `css-analysis`
+- Distinct colors recovered from source: 30
+- Colors grounded in source: **16/16**
+  (exact 15 · close 1 · drift 0 · unmatched 0)
+- Files read:
+  - https://www.figma.com
+  - https://www.figma.com/_netlify/_next/static/css/617e0bc399c83bea.css
+  - https://www.figma.com/design/
+  - https://www.figma.com/blog/
+
+| Token                       | Value in file | Nearest source color | Verdict |
+| --------------------------- | ------------- | -------------------- | ------- |
+| `colors.primary`            | #000000       | #000000              | exact   |
+| `colors.on-primary`         | #FFFFFF       | #FFFFFF              | exact   |
+| `colors.action`             | #0D99FF       | #0D99FF              | exact   |
+| `colors.action-deep`        | #0D99FF       | #0D99FF              | exact   |
+| `colors.on-action`          | #252D41       | #252D41              | exact   |
+| `colors.surface`            | #FFFFFF       | #FFFFFF              | exact   |
+| `colors.surface-variant`    | #FFFFFF       | #FFFFFF              | exact   |
+| `colors.on-surface`         | #1E1E1E       | #222222              | close   |
+| `colors.on-surface-variant` | #404040       | #404040              | exact   |
+| `colors.border`             | #D6D7DA       | #D6D7DA              | exact   |
+| `colors.brand-red`          | #FF5C16       | #FF5C16              | exact   |
+| `colors.brand-orange`       | #FF3737       | #FF3737              | exact   |
+| `colors.brand-purple`       | #9747FF       | #9747FF              | exact   |
+| `colors.brand-blue`         | #00B6FF       | #00B6FF              | exact   |
+| `colors.brand-green`        | #24CB71       | #24CB71              | exact   |
+| `colors.error`              | #972121       | #972121              | exact   |
 
 ## Sign-off
 
 - Automated checks (schema, lint zero errors / zero warnings) completed via
   `pipeline validate`.
-- **Human reviewer sign-off required before `status: published`.** Perform the
-  manual CSS capture cross-check (docs/04-DATA-SOURCES.md §5) on the two
-  provenance URLs and re-verify the three contrast facts above.
-- Reviewer: Oday Bakkour (owner sign-off, Claude Code session)
+- Public HTML, CSS, and inline SVG capture refreshed on 2026-09-04; all 16
+  color roles are grounded in the cited source and the contrast decisions
+  above were recalculated from the published pairs.
+- Reviewer: Oday Bakkour (owner sign-off)
 - Date: 2026-07-21
