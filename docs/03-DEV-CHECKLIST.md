@@ -132,6 +132,6 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 
 ## Continuous (post-launch backlog seeds)
 
-- [~] Weekly pipeline drift check: scheduled/manual workflow exists and its 2026-09-04 clean-checkout run detected Linear/Raycast drift; the repaired content branch passed end to end. _Remaining: merge the ordered code → content → skill-integrity PR stack, then confirm the next `main` schedule._
+- [x] Weekly pipeline drift check: the scheduled/manual workflow detected Linear/Raycast drift, the ordered code → content → skill-integrity stack repaired it, and the full live-source sweep passed on merged `main` ([run 33897309821](https://github.com/System-Desgin/AgentDS/actions/runs/33897309821), 2026-09-04)
 - [ ] Monthly: add 4–6 systems; refresh counters-based "most fetched" ordering
 - [ ] P1 items from PRD §7.5 in priority order (compare view → collections → RSS)
