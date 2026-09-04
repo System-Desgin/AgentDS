@@ -23,7 +23,7 @@
     <text x="22" y="311" fill="#D9A054" font-family="ui-monospace, 'SFMono-Regular', Consolas, monospace" font-size="16">npx skills add System-Desgin/AgentDS --skill design-systems</text>
 
     <g transform="translate(0 378)" font-family="ui-monospace, 'SFMono-Regular', Consolas, monospace" font-size="16" fill="#57503F">
-      <text x="0" y="0">41 PUBLISHED FILES</text>
+      <text x="0" y="0">42 PUBLISHED FILES</text>
       <circle cx="205" cy="-6" r="2.5" fill="#BC4A26" />
       <text x="222" y="0">8 AGENT SKILLS</text>
       <circle cx="390" cy="-6" r="2.5" fill="#BC4A26" />
