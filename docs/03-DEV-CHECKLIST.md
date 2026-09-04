@@ -115,7 +115,7 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 ## Phase 5 — Hardening & launch (Week 8)
 
 ### Security review (own it — this is the brand)
-- [~] Dependency audit: `pnpm audit --audit-level=high` is clean on the current feature branch (2026-09-04), including patched transitive dependencies; GitHub's alerts remain visible on default `main` until the code PR merges
+- [x] Dependency audit: `pnpm audit --audit-level=high` reports no known vulnerabilities and GitHub reports zero open Dependabot alerts on `main` (verified 2026-09-04)
 - [~] Web: full security-header set live (HSTS preload, nosniff, DENY framing, strict referrer, Permissions-Policy, COOP/CORP) + CSP locked to self/API/fonts. **Observatory: B+ (80, 9/10 tests)** — the missing test is `script-src 'unsafe-inline'`, required because App Router prerenders inline bootstrap scripts; an A needs per-request nonces = abandoning SSG/ISR. Owner call if A outranks static rendering. API side: helmet, problem-details errors, throttler verified under load — done
 - [x] Abuse test (2026-07-21): 600 requests at 62 rps against raw-file endpoints → 240 served (incl. 22 ETag 304s), 360 clean 429s, zero errors/5xx, p50 144ms, healthy after
 - [~] Secrets rotation + backup/restore + deploy runbook documented in `docs/05-OPERATIONS.md` — _remaining owner actions: schedule the daily Postgres backup in Dokploy + one restore test; quarterly access review_
