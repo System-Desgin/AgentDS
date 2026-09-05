@@ -125,7 +125,7 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 - [x] 404/500 pages: 404 returns a real status; root `error.tsx` + `global-error.tsx` are styled to DESIGN.md
 - [ ] Provision Uptime Kuma on Dokploy and configure owner alerting
 - [x] Launch assets: channel-specific copy plus a reproducible, same-prompt Codex benchmark with exact prompt, run metadata, scored outputs, and an honest Carbon comparison image in `docs/assets/launch/`
-- [~] Custom 1280×640 GitHub social preview asset is ready at `docs/assets/launch/github-social-preview.png`; _remaining owner action: upload it in the authenticated repository settings UI_
+- [x] Custom GitHub social preview uploaded and independently verified through repository metadata on 2026-09-05 (`usesCustomOpenGraphImage: true`); source asset retained at `docs/assets/launch/github-social-preview.png` (1280×640)
 - [~] Publish and distribute: the repository, production app/API, and skills.sh listing are public; owner-authorized launch posts and appropriate awesome-list submissions remain
 - [x] First post-launch review completed 2026-09-05 (day 46, also covering the overdue day-30 indicators): metrics snapshot, limitations, bug triage, and ordered P1 backlog are recorded in `docs/07-POST-LAUNCH-REVIEW.md`
 
