@@ -57,8 +57,13 @@ Rotate on: personnel/device change, suspected exposure, or every 6 months.
 ## Health + verification
 
 - API: `GET /v1/health` (uptime + db state) — wired to the container
-  HEALTHCHECK and suitable for Uptime Kuma.
-- Web: `GET /` (200) and `/systems` (200).
+  HEALTHCHECK and monitored by Uptime Kuma every 60 seconds.
+- Web: `GET /` (200) and `/systems` (200), both monitored by Uptime Kuma every
+  60 seconds. All three monitors have certificate-expiry checks and the owner
+  notification assigned.
+- Analytics: `GET https://analytics.agent-ds.oday-bakkour.com/api/heartbeat`
+  returns 200. A production browser must load `/script.js` and receive 200 from
+  `POST /api/send`; this full path was verified on 2026-09-05.
 - Post-deploy smoke: list endpoint returns the expected system count; a
   restricted entry (dsfr) returns 451 on file routes; an unknown slug 404s.
 
