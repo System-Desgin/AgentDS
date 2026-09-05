@@ -11,12 +11,13 @@ are committed so the result can be inspected and repeated.
 ## Controlled setup
 
 - Exact prompt: [`prompt.txt`](./prompt.txt)
-- Generator: recorded in [`outputs/run.json`](./outputs/run.json)
+- Generators: recorded in [`outputs/run.json`](./outputs/run.json) and
+  [`outputs/claude-code/run.json`](./outputs/claude-code/run.json)
 - Baseline input: an otherwise empty Git repository
 - Treatment input: the same empty repository plus
   [`content/official/carbon/DESIGN.md`](../../content/official/carbon/DESIGN.md)
-- Same model, reasoning effort, prompt, sandbox, and network-free output
-  constraints for both runs
+- Within each agent pair, the same model, reasoning effort, prompt, sandbox,
+  and network-free output constraints for baseline and treatment
 - No manual changes to either generated HTML file
 
 The prompt itself tells the agent to read `DESIGN.md` if one exists. That line
@@ -25,14 +26,10 @@ difference.
 
 ## Inspect the evidence
 
-- [`outputs/baseline.html`](./outputs/baseline.html) — generated without design
-  context
-- [`outputs/carbon.html`](./outputs/carbon.html) — generated with the verified
-  Carbon file
-- [`outputs/results.json`](./outputs/results.json) — machine-readable rubric and
-  source evidence
-- [`outputs/run.json`](./outputs/run.json) — CLI/model settings and SHA-256
-  hashes for every input and output
+- [`outputs/`](./outputs/) — the recorded Codex baseline, Carbon treatment,
+  machine-readable evaluation, and run metadata
+- [`outputs/claude-code/`](./outputs/claude-code/) — the equivalent evidence
+  from Claude Code
 - [`outputs/comparison.html`](./outputs/comparison.html) — side-by-side visual
   wrapper used to capture the launch image
 - [`evaluate.mjs`](./evaluate.mjs) — zero-dependency source evaluator
@@ -45,29 +42,37 @@ IBM Plex Sans is named, radii and spacing stay on the published scales, drop
 shadows are absent, and Carbon's success/error tokens are used. It does not
 assign a subjective beauty score.
 
-In the recorded run, the baseline passes **0/7** design-system checks and the
-Carbon treatment passes **5/7**. The treatment uses Carbon's primary, typeface,
-radii, semantic status colors, and no-shadow rule, but it still invents 11
-unpublished colors and several off-scale spacing values. That imperfection is
-part of the evidence: `DESIGN.md` strongly steers the result, while automated
-source checks and human review remain necessary for strict compliance.
+| Agent       | Baseline | With Carbon `DESIGN.md` |
+| ----------- | -------: | ----------------------: |
+| Codex       |      0/7 |                     5/7 |
+| Claude Code |      1/7 |                     5/7 |
+
+Both recorded treatments use Carbon's primary, typeface, radii, semantic
+status colors, and no-shadow rule. Neither reaches strict compliance: the
+Codex treatment invents 11 unpublished colors and several off-scale spacing
+values; Claude Code invents 2 colors and uses one off-scale spacing value.
+Those imperfections are part of the evidence: `DESIGN.md` strongly steers both
+agents, while automated source checks and human review remain necessary.
 
 ## Reproduce
 
-Requirements: Node.js 22+, Codex CLI authenticated with a ChatGPT/Codex account,
-and access to the pinned model recorded in `scripts/run-carbon-benchmark.mjs`.
-No API key is read by the runner.
+Requirements: Node.js 22+ and either the Codex CLI authenticated with a
+ChatGPT/Codex account or Claude Code authenticated through a claude.ai plan.
+No API key is read by the runner; the Claude path refuses to run when
+`ANTHROPIC_API_KEY` is present.
 
 ```bash
 pnpm benchmark:carbon
+pnpm benchmark:carbon:claude
 ```
 
-That command generates both variants in fresh temporary Git repositories,
+Each command generates both variants in fresh temporary Git repositories,
 prints the evaluation, and leaves the temporary output path for inspection.
 To deliberately replace the committed evidence:
 
 ```bash
 pnpm benchmark:carbon -- --record
+pnpm benchmark:carbon:claude -- --record
 ```
 
 Review the diff before committing a new run. Model output is nondeterministic,

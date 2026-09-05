@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revenue Dashboard — Northstar Analytics</title>
+<style>
+  :root {
+    --color-primary: #0F62FE;
+    --color-on-primary: #FFFFFF;
+    --color-surface: #FFFFFF;
+    --color-on-surface: #161616;
+    --color-on-surface-variant: #525252;
+    --color-surface-variant: #F4F4F4;
+    --color-helper: #6F6F6F;
+    --color-border-subtle: #E0E0E0;
+    --color-border-strong: #8D8D8D;
+    --color-success: #24A148;
+    --color-warning: #F1C21B;
+    --color-error: #DA1E28;
+
+    --radius-sm: 2px;
+    --radius-md: 4px;
+    --radius-lg: 8px;
+
+    --space-xxs: 2px;
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  a { color: var(--color-primary); }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: var(--space-sm);
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    z-index: 100;
+  }
+  .skip-link:focus {
+    left: var(--space-sm);
+  }
+
+  /* ---------- Top navigation ---------- */
+  .topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-sm) var(--space-lg);
+    border-bottom: 1px solid var(--color-border-subtle);
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .topnav__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--color-on-surface);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .topnav__mark {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-on-primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    flex: none;
+  }
+
+  .topnav__links {
+    display: flex;
+    gap: var(--space-lg);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  .topnav__links a {
+    text-decoration: none;
+    color: var(--color-on-surface-variant);
+    font-size: 0.875rem;
+    font-weight: 400;
+    padding: var(--space-sm) var(--space-xs);
+    border-bottom: 2px solid transparent;
+  }
+
+  .topnav__links a:hover,
+  .topnav__links a:focus {
+    color: var(--color-on-surface);
+  }
+
+  .topnav__links a[aria-current="page"] {
+    color: var(--color-on-surface);
+    font-weight: 600;
+    border-bottom-color: var(--color-primary);
+  }
+
+  .topnav__user {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.875rem;
+    color: var(--color-on-surface-variant);
+    white-space: nowrap;
+  }
+
+  .avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-full, 9999px);
+    background-color: var(--color-surface-variant);
+    border: 1px solid var(--color-border-subtle);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-on-surface);
+    flex: none;
+  }
+
+  /* ---------- Main layout ---------- */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-lg) var(--space-3xl);
+  }
+
+  .page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-xl);
+  }
+
+  .page-header__text h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0 0 var(--space-xs);
+    color: var(--color-on-surface);
+  }
+
+  .page-header__text p {
+    margin: 0;
+    color: var(--color-on-surface-variant);
+    font-size: 0.875rem;
+  }
+
+  .page-header__controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  fieldset.date-range {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-sm);
+    background-color: var(--color-surface-variant);
+    padding: var(--space-xs) var(--space-sm);
+    margin: 0;
+  }
+
+  fieldset.date-range legend {
+    padding: 0 var(--space-xs);
+    font-size: 0.75rem;
+    color: var(--color-helper);
+  }
+
+  fieldset.date-range select {
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 0.875rem;
+    color: var(--color-on-surface);
+    padding: var(--space-xs) var(--space-xs);
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  fieldset.date-range select:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  .btn {
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+  }
+
+  .btn-primary:hover { background-color: #0043CE; }
+  .btn-primary:focus-visible { outline: 2px solid #161616; outline-offset: 2px; }
+
+  .btn-secondary {
+    background-color: var(--color-surface);
+    color: var(--color-primary);
+    border-color: var(--color-border-strong);
+  }
+
+  .btn-secondary:hover { background-color: var(--color-surface-variant); }
+
+  /* ---------- KPI tiles ---------- */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+    list-style: none;
+    padding: 0;
+  }
+
+  .kpi-tile {
+    background-color: var(--color-surface-variant);
+    border-radius: var(--radius-sm);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .kpi-tile__label {
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    color: var(--color-helper);
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .kpi-tile__value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-on-surface);
+  }
+
+  .kpi-tile__delta {
+    font-size: 0.75rem;
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xxs);
+  }
+
+  .kpi-tile__delta--up { color: var(--color-success); }
+  .kpi-tile__delta--down { color: var(--color-error); }
+
+  .kpi-tile__delta .kpi-tile__period {
+    color: var(--color-helper);
+  }
+
+  /* ---------- Chart ---------- */
+  .panel {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-sm);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  .panel__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-lg);
+  }
+
+  .panel__header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+    color: var(--color-on-surface);
+  }
+
+  .panel__header .caption {
+    font-size: 0.875rem;
+    color: var(--color-on-surface-variant);
+    margin: 0;
+  }
+
+  .chart {
+    margin: 0;
+  }
+
+  .chart-plot {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-sm);
+    height: 220px;
+    border-bottom: 1px solid var(--color-border-subtle);
+    padding: 0 var(--space-xs);
+  }
+
+  .chart-bar-group {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    gap: var(--space-xs);
+    min-width: 0;
+  }
+
+  .chart-bar-value {
+    font-size: 0.6875rem;
+    color: var(--color-on-surface-variant);
+    white-space: nowrap;
+  }
+
+  .chart-bar {
+    width: 100%;
+    max-width: 36px;
+    background-color: var(--color-primary);
+    border-radius: 4px 4px 0 0;
+  }
+
+  .chart-bar-group:hover .chart-bar,
+  .chart-bar-group:focus-within .chart-bar {
+    background-color: #0043CE;
+  }
+
+  .chart-axis {
+    display: flex;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-xs) 0;
+  }
+
+  .chart-axis span {
+    flex: 1 1 0;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--color-helper);
+  }
+
+  figcaption.chart-caption {
+    margin-top: var(--space-md);
+    font-size: 0.75rem;
+    color: var(--color-helper);
+  }
+
+  /* ---------- Table ---------- */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  caption {
+    text-align: left;
+    font-size: 0.875rem;
+    color: var(--color-on-surface-variant);
+    margin-bottom: var(--space-md);
+  }
+
+  thead th {
+    text-align: left;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-helper);
+    font-weight: 400;
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid var(--color-border-strong);
+  }
+
+  tbody td {
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid var(--color-border-subtle);
+    font-size: 0.875rem;
+    color: var(--color-on-surface);
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  th[scope="row"] {
+    font-weight: 600;
+  }
+
+  td.numeric {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .delta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xxs);
+  }
+
+  .delta--up { color: var(--color-success); }
+  .delta--down { color: var(--color-error); }
+
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .status::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    flex: none;
+  }
+
+  .status--healthy { color: var(--color-success); }
+  .status--healthy::before { background-color: var(--color-success); }
+
+  .status--watch { color: #8D6605; }
+  .status--watch::before { background-color: var(--color-warning); }
+
+  .status--critical { color: var(--color-error); }
+  .status--critical::before { background-color: var(--color-error); }
+
+  footer.app-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-lg);
+    border-top: 1px solid var(--color-border-subtle);
+    color: var(--color-helper);
+    font-size: 0.75rem;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 960px) {
+    .kpi-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 720px) {
+    .topnav__links {
+      order: 3;
+      width: 100%;
+      justify-content: flex-start;
+      gap: var(--space-md);
+    }
+
+    .page-header {
+      align-items: flex-start;
+    }
+
+    .chart-bar-value {
+      display: none;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .kpi-grid {
+      grid-template-columns: 1fr;
+    }
+
+    main {
+      padding: var(--space-lg) var(--space-md) var(--space-2xl);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none !important;
+    }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header>
+  <nav class="topnav" aria-label="Primary">
+    <a class="topnav__brand" href="#">
+      <span class="topnav__mark" aria-hidden="true">N</span>
+      Northstar Analytics
+    </a>
+    <ul class="topnav__links">
+      <li><a href="#" aria-current="page">Dashboard</a></li>
+      <li><a href="#">Customers</a></li>
+      <li><a href="#">Reports</a></li>
+      <li><a href="#">Settings</a></li>
+    </ul>
+    <div class="topnav__user">
+      <span class="avatar" aria-hidden="true">JS</span>
+      <span>Jamie Sato</span>
+    </div>
+  </nav>
+</header>
+
+<main id="main-content">
+  <div class="page-header">
+    <div class="page-header__text">
+      <h1>Revenue Dashboard</h1>
+      <p>Performance overview across all active accounts</p>
+    </div>
+    <div class="page-header__controls">
+      <fieldset class="date-range">
+        <legend>Date range</legend>
+        <label class="visually-hidden" for="date-range-select">Select date range</label>
+        <select id="date-range-select" name="date-range">
+          <option>Last 7 days</option>
+          <option selected>Last 30 days</option>
+          <option>Last quarter</option>
+          <option>Year to date</option>
+          <option>Custom range</option>
+        </select>
+      </fieldset>
+      <button type="button" class="btn btn-primary">Export report</button>
+    </div>
+  </div>
+
+  <ul class="kpi-grid" aria-label="Key performance indicators">
+    <li class="kpi-tile">
+      <p class="kpi-tile__label">Revenue</p>
+      <p class="kpi-tile__value">$482,300</p>
+      <p class="kpi-tile__delta kpi-tile__delta--up">
+        <span aria-hidden="true">▲</span> 12.4% <span class="kpi-tile__period">vs. prior period</span>
+      </p>
+    </li>
+    <li class="kpi-tile">
+      <p class="kpi-tile__label">Customers</p>
+      <p class="kpi-tile__value">1,284</p>
+      <p class="kpi-tile__delta kpi-tile__delta--up">
+        <span aria-hidden="true">▲</span> 3.1% <span class="kpi-tile__period">vs. prior period</span>
+      </p>
+    </li>
+    <li class="kpi-tile">
+      <p class="kpi-tile__label">Average order</p>
+      <p class="kpi-tile__value">$1,860</p>
+      <p class="kpi-tile__delta kpi-tile__delta--down">
+        <span aria-hidden="true">▼</span> 1.2% <span class="kpi-tile__period">vs. prior period</span>
+      </p>
+    </li>
+    <li class="kpi-tile">
+      <p class="kpi-tile__label">Churn rate</p>
+      <p class="kpi-tile__value">2.4%</p>
+      <p class="kpi-tile__delta kpi-tile__delta--down">
+        <span aria-hidden="true">▼</span> 0.3% <span class="kpi-tile__period">vs. prior period</span>
+      </p>
+    </li>
+  </ul>
+
+  <section class="panel" aria-labelledby="chart-heading">
+    <div class="panel__header">
+      <h2 id="chart-heading">Monthly revenue</h2>
+      <p class="caption">In thousands of USD, trailing 12 months</p>
+    </div>
+    <figure class="chart">
+      <div class="chart-plot" role="img" aria-label="Bar chart of monthly revenue from January to December, rising from 32 thousand dollars in January to 58 thousand dollars in December">
+        <div class="chart-bar-group">
+          <span class="chart-bar-value" aria-hidden="true">32</span>
+          <div class="chart-bar" style="height: 55.2%;" title="January: $32,000"></div>
+        </div>
+        <div class="chart-bar-group">
+          <span class="chart-bar-value" aria-hidden="true">35</span>
+          <div class="chart-bar" style="height: 60.3%;" title="February: $35,000"></div>
+        </div>
+        <div class="chart-bar-group">
+          <span class="chart-bar-value" aria-hidden="true">38</span>
+          <div class="chart-bar" style="height: 65.5%;" title="March: $38,000"></div>
+        </div>
+        <div class="chart-bar-group">
+          <span class="chart-bar-value" aria-hidden="true">41</span>
+          <div class="chart-bar" style="height: 70.7%;" title="April: $41,000"></div>
+        </div>
+        <div class="chart-bar-group">
+          <span class="chart-bar-value" aria-hidden="true">39</span>
+          <div class="chart-bar" style="height: 67.2%;" title="May: $39,000"></div>
+        </div>
+        <div class="chart-bar-group">
+          <span class="chart-bar-value" aria-hidden="true">44</span>
+          <div class="chart-bar" style="height: 75.9%;" title="June: $44,000"></div>
+        </div>
+        <div class="chart-bar-group">
+          <span class="chart-bar-value" aria-hidden="true">47</span>
+          <div class="chart-bar" style="height: 81.0%;" title="July: $47,000"></div>
+        </div>
+        <div class="chart-bar-group">
+          <span class="chart-bar-value" aria-hidden="true">45</span>
+          <div class="chart-bar" style="height: 77.6%;" title="August: $45,000"></div>
+        </div>
+        <div class="chart-bar-group">
+          <span class="chart-bar-value" aria-hidden="true">49</span>
+          <div class="chart-bar" style="height: 84.5%;" title="September: $49,000"></div>
+        </div>
+        <div class="chart-bar-group">
+          <span class="chart-bar-value" aria-hidden="true">52</span>
+          <div class="chart-bar" style="height: 89.7%;" title="October: $52,000"></div>
+        </div>
+        <div class="chart-bar-group">
+          <span class="chart-bar-value" aria-hidden="true">55</span>
+          <div class="chart-bar" style="height: 94.8%;" title="November: $55,000"></div>
+        </div>
+        <div class="chart-bar-group">
+          <span class="chart-bar-value" aria-hidden="true">58</span>
+          <div class="chart-bar" style="height: 100%;" title="December: $58,000"></div>
+        </div>
+      </div>
+      <div class="chart-axis" aria-hidden="true">
+        <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span>
+        <span>May</span><span>Jun</span><span>Jul</span><span>Aug</span>
+        <span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+      </div>
+      <figcaption class="chart-caption">Revenue grew every month, from $32,000 in January to a twelve-month high of $58,000 in December.</figcaption>
+    </figure>
+  </section>
+
+  <section class="panel" aria-labelledby="regions-heading">
+    <div class="panel__header">
+      <h2 id="regions-heading">Top regions</h2>
+      <p class="caption">Ranked by revenue this period</p>
+    </div>
+    <table>
+      <caption class="visually-hidden">Top regions by revenue, with month-over-month growth and account health status</caption>
+      <thead>
+        <tr>
+          <th scope="col">Region</th>
+          <th scope="col" class="numeric">Revenue</th>
+          <th scope="col" class="numeric">Growth</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">North America</th>
+          <td class="numeric">$196,400</td>
+          <td class="numeric"><span class="delta delta--up"><span aria-hidden="true">▲</span> 8.2%</span></td>
+          <td><span class="status status--healthy">Healthy</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Europe</th>
+          <td class="numeric">$142,850</td>
+          <td class="numeric"><span class="delta delta--up"><span aria-hidden="true">▲</span> 5.6%</span></td>
+          <td><span class="status status--healthy">Healthy</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Asia Pacific</th>
+          <td class="numeric">$78,300</td>
+          <td class="numeric"><span class="delta delta--up"><span aria-hidden="true">▲</span> 14.1%</span></td>
+          <td><span class="status status--healthy">Healthy</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Latin America</th>
+          <td class="numeric">$41,950</td>
+          <td class="numeric"><span class="delta delta--down"><span aria-hidden="true">▼</span> 2.3%</span></td>
+          <td><span class="status status--watch">Watch</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Middle East &amp; Africa</th>
+          <td class="numeric">$22,800</td>
+          <td class="numeric"><span class="delta delta--down"><span aria-hidden="true">▼</span> 9.7%</span></td>
+          <td><span class="status status--critical">Critical</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<footer class="app-footer">
+  <p>Data reflects the last 30 days, updated daily. &copy; 2026 Northstar Analytics.</p>
+</footer>
+
+</body>
+</html>

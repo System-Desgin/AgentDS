@@ -20,7 +20,7 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 - [x] Scaffold monorepo (`pnpm` workspaces + Turborepo): `apps/web`, `apps/api`, `packages/shared`, `packages/pipeline`, `content/`, `skills/`
 - [x] Root configs: TypeScript strict (no `any`), ESLint + Prettier, `.editorconfig`, commitlint (conventional commits), husky pre-commit (lint-staged)
 - [x] Add project `DESIGN.md` and `CLAUDE.md` to repo root (deliverables 5 & 6)
-- [~] `.claude/` project config: `/generate-system <slug>` command (read-only tool allowlist) + settings; `ANTHROPIC_API_KEY` kept unset everywhere — _remaining owner check: confirm billing attribution for one headless `claude -p` run_
+- [x] `.claude/` project config: `/generate-system <slug>` command (read-only tool allowlist) + settings; `ANTHROPIC_API_KEY` kept unset everywhere. A controlled headless benchmark confirmed `authMethod: claude.ai`, `subscriptionType: max`, `apiProvider: firstParty`, and no API-key presence before running.
 - [x] `packages/shared`: zod schema for `meta.yaml`, shared types/DTOs, purpose-taxonomy constants (+ 14 schema tests)
 - [x] GitHub Actions active under `.github/workflows/`: CI, content validation, gitleaks, Dokploy deploy, and scheduled/manual upstream verification
 
@@ -107,7 +107,7 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 - [x] Restricted-entry handling verified for DSFR + SLDS (PRD §12): DSFR is `restricted: true` reference-only with a 451 reason (API 451 path covered by the Phase 2 e2e suite); SLDS publishes under BSD-3-Clause with strict font-substitution + trademark notes
 - [x] **Flip repo to public** — done 2026-07-21 by the owner; live at `github.com/System-Desgin/AgentDS` (org slug verified; all references updated)
 - [x] `skills/` live in-repo: master `design-systems` skill (SKILL.md + 7 bundled archetypes + `fetch_design_md.sh|py` hitting `/v1`) + 7 flagship individual skills (carbon, material-3, primer, fluent-2, cloudscape, flowbite, ant-design)
-- [~] Test installs on real agents: `npx skills add System-Desgin/AgentDS --skill design-systems` discovered all 8 skills and installed the master skill into isolated Claude Code and shared Cursor/Codex layouts (2026-09-04). An actual same-prompt Codex benchmark improved design-system compliance from 0/7 without AgentDS to 5/7 with Carbon; the two misses are disclosed. _Remaining: repeat the behavioral benchmark in Claude Code and Cursor._
+- [~] Test installs on real agents: `npx skills add System-Desgin/AgentDS --skill design-systems` discovered all 8 skills and installed the master skill into isolated Claude Code and shared Cursor/Codex layouts (2026-09-04). Controlled same-prompt benchmarks improved design-system compliance from 0/7 to 5/7 in Codex and from 1/7 to 5/7 in Claude Code; all misses are disclosed with committed source evidence. _Remaining: repeat the behavioral benchmark in Cursor after its headless CLI is installed and authenticated._
 - [x] README with skills.sh badges, compatibility matrix, legal disclaimer, and live skills.sh indexing. The listing reports Trust Hub Pass and Socket Pass; request a fresh Snyk scan after the checksum-hardening PR merges.
 
 ## Phase 5 — Hardening & launch (Week 8)
