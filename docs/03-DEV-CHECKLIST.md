@@ -22,11 +22,11 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 - [x] Add project `DESIGN.md` and `CLAUDE.md` to repo root (deliverables 5 & 6)
 - [x] `.claude/` project config: `/generate-system <slug>` command (read-only tool allowlist) + settings; `ANTHROPIC_API_KEY` kept unset everywhere. A controlled headless benchmark confirmed `authMethod: claude.ai`, `subscriptionType: max`, `apiProvider: firstParty`, and no API-key presence before running.
 - [x] `packages/shared`: zod schema for `meta.yaml`, shared types/DTOs, purpose-taxonomy constants (+ 14 schema tests)
-- [x] GitHub Actions active under `.github/workflows/`: CI, content validation, gitleaks, Dokploy deploy, and scheduled/manual upstream verification
+- [x] GitHub Actions active under `.github/workflows/`: CI, content validation, gitleaks, and scheduled/manual upstream verification; Vercel and Dokploy deploy from their direct Git integrations
 
 ### Environments
 - [x] Vercel project linked to `apps/web` (monorepo root + build filters); production and branch preview deployments verified
-- [x] API container: multi-stage `Dockerfile` (node:22-alpine, non-root, `HEALTHCHECK` on `/v1/health`) + single `docker-compose.yml` (api + postgres, Traefik labels for Dokploy); deployed through the webhook workflow
+- [x] API container: multi-stage `Dockerfile` (node:22-alpine, non-root, `HEALTHCHECK` on `/v1/health`) + single `docker-compose.yml` (api + postgres, Traefik labels for Dokploy); deployed through Dokploy's direct repository integration
 - [~] PostgreSQL on Dokploy (dedicated DB + user, least privilege); production health reports `db: up` — _remaining owner actions: schedule daily backups and complete a restore drill_
 - [x] Env management: `.env.example` per app + root compose env; secrets only in Vercel/Dokploy, never in Git
 - [x] DNS on oday-bakkour.com: `agent-ds` points to Vercel and `api.agent-ds` to the Dokploy host; both domains serve valid Let's Encrypt HTTPS

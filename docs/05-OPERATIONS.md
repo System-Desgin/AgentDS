@@ -11,7 +11,6 @@ owner; nothing here contains a secret value (CLAUDE.md rule 15).
 | `INGEST_TOKEN` | Dokploy env | `POST /internal/ingest` bearer | Only the owner calls this; rotate freely |
 | `INGEST_IP_ALLOWLIST` | Dokploy env | ingest guard | Config, not secret; keep tight |
 | `REVALIDATE_TOKEN` | Vercel env | `POST /api/revalidate` on web | Rotate together with whatever calls it |
-| `DOKPLOY_WEBHOOK_URL` | GitHub Actions secret | `deploy.yml` redeploy trigger | Regenerate in Dokploy, update the secret |
 | `NEXT_PUBLIC_UMAMI_SRC` / `NEXT_PUBLIC_UMAMI_WEBSITE_ID` | Vercel env | analytics script slot | Public-ish, not sensitive |
 
 `ANTHROPIC_API_KEY` must never exist in any environment (CLAUDE.md rule 18).
@@ -27,8 +26,9 @@ Rotate on: personnel/device change, suspected exposure, or every 6 months.
 2. **INGEST_TOKEN / REVALIDATE_TOKEN**: generate (`openssl rand -hex 32`),
    update Dokploy/Vercel env, redeploy. No coordination needed beyond any
    personal scripts that call them.
-3. **Dokploy webhook**: regenerate the deploy webhook in the Dokploy service,
-   update the `DOKPLOY_WEBHOOK_URL` GitHub Actions secret.
+3. **Dokploy repository integration**: reconnect its Git provider in Dokploy
+   after repository or organization access changes. AgentDS does not duplicate
+   this connection with a GitHub Actions webhook secret.
 4. **GitHub**: owner account uses 2FA; review org members and deploy keys
    quarterly (Settings → People / Deploy keys).
 
@@ -46,9 +46,10 @@ Rotate on: personnel/device change, suspected exposure, or every 6 months.
 ## Deploys
 
 - **Web**: push/merge to `main` → Vercel Git integration deploys production.
-- **API**: push/merge to `main` → `deploy.yml` POSTs the Dokploy webhook →
-  image rebuild (content baked in) → boot runs `prisma migrate deploy` +
-  full ingest. Manual alternative: Deploy button in Dokploy.
+- **API**: push/merge to `main` → Dokploy's repository integration receives the
+  update → image rebuild (content baked in) → boot runs
+  `prisma migrate deploy` + full ingest. Manual alternative: Deploy button in
+  Dokploy.
 - **After content merges**: API redeploy re-ingests; then call the web
   revalidate webhook (or wait for ISR's 300s window).
 - Never hand-edit the production DB (CLAUDE.md deployment notes).
