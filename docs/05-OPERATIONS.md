@@ -61,6 +61,21 @@ Rotate on: personnel/device change, suspected exposure, or every 6 months.
 - Post-deploy smoke: list endpoint returns the expected system count; a
   restricted entry (dsfr) returns 451 on file routes; an unknown slug 404s.
 
+## Accepted security trade-off
+
+The launch posture intentionally keeps static generation and ISR. Next.js App
+Router emits inline bootstrap scripts for prerendered pages, so the web CSP
+allows `'unsafe-inline'` in `script-src`; moving to request-time nonces would
+make every route dynamic and weaken the PRD's static fallback and performance
+goals. The residual risk is constrained by the rest of the policy: no
+`'unsafe-eval'`, scripts limited to self plus the configured Umami origin,
+`object-src 'none'`, `base-uri 'self'`, `frame-ancestors 'none'`, and published
+content sanitized to plain Markdown with no HTML or scripts.
+
+This B+ Mozilla Observatory posture was accepted for launch on 2026-09-05.
+Revisit it if Next.js supports nonce-backed static output, the app begins
+rendering user-controlled HTML, or the static-fallback requirement changes.
+
 ## Incident basics
 
 - API down: Dokploy → service logs; `docker compose ps` on the host; the web
