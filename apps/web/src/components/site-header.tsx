@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const NAV_ITEMS = [
   { href: "/systems", label: "catalog" },
+  { href: "/collections", label: "collections" },
   { href: "/compare", label: "compare" },
   { href: "/what-is-design-md", label: "what-is-design-md" },
   { href: "/api", label: "api" },
