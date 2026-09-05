@@ -157,6 +157,12 @@ export default async function SystemDetailPage({ params }: { params: Promise<{ s
             best for: {system.best_for.join(" · ")}
           </p>
         ) : null}
+        <Link
+          href={`/compare?systems=${encodeURIComponent(slug)}`}
+          className="w-fit rounded-md border border-border px-4 py-2 font-mono text-[0.8125rem] uppercase tracking-[0.04em] text-primary transition-colors duration-150 ease-out hover:border-accent hover:text-accent"
+        >
+          compare this system
+        </Link>
       </header>
 
       {/* Restricted notice or actions (F-2) */}

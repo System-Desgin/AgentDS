@@ -109,7 +109,7 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 - [x] Restricted-entry handling verified for DSFR + SLDS (PRD §12): DSFR is `restricted: true` reference-only with a 451 reason (API 451 path covered by the Phase 2 e2e suite); SLDS publishes under BSD-3-Clause with strict font-substitution + trademark notes
 - [x] **Flip repo to public** — done 2026-07-21 by the owner; live at `github.com/System-Desgin/AgentDS` (org slug verified; all references updated)
 - [x] `skills/` live in-repo: master `design-systems` skill (SKILL.md + 7 bundled archetypes + `fetch_design_md.sh|py` hitting `/v1`) + 7 flagship individual skills (carbon, material-3, primer, fluent-2, cloudscape, flowbite, ant-design)
-- [~] Test installs on real agents: `npx skills add System-Desgin/AgentDS --skill design-systems` discovered all 8 skills and installed the master skill into isolated Claude Code and shared Cursor/Codex layouts (2026-09-04). Controlled same-prompt benchmarks improved design-system compliance from 0/7 to 5/7 in Codex and from 1/7 to 5/7 in Claude Code; all misses are disclosed with committed source evidence. _Remaining: repeat the behavioral benchmark in Cursor after its headless CLI is installed and authenticated._
+- [x] Test installs on real agents: `npx skills add System-Desgin/AgentDS --skill design-systems` discovered all 8 skills and installed the master skill into isolated Claude Code and shared Cursor/Codex layouts (2026-09-04). Controlled same-prompt benchmarks improved design-system compliance from 0/7 to 5/7 in Codex and from 1/7 to 5/7 in Claude Code; all misses are disclosed with committed source evidence. The owner intentionally skipped Cursor's optional behavioral benchmark on 2026-09-05; no Cursor authentication is required for the project.
 - [x] README with skills.sh badges, compatibility matrix, legal disclaimer, and live skills.sh indexing. The listing reports Trust Hub Pass and Socket Pass; request a fresh Snyk scan after the checksum-hardening PR merges.
 
 ## Phase 5 — Hardening & launch (Week 8)
@@ -135,4 +135,4 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 
 - [x] Weekly pipeline drift check: the scheduled/manual workflow detected Linear/Raycast drift, the ordered code → content → skill-integrity stack repaired it, and the final full live-source sweep—including newly published Figma—passed on merged `main` ([run 33900112329](https://github.com/System-Desgin/AgentDS/actions/runs/33900112329), 2026-09-04)
 - [~] Monthly: counters-based “most fetched” ordering is live and refreshes automatically; the first post-launch 4–6-system content batch remains
-- [ ] P1 items from PRD §7.5 in priority order (compare view → collections → RSS)
+- [~] P1 items from PRD §7.5 in priority order: compare view implemented; collections and RSS remain

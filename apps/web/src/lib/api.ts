@@ -56,6 +56,12 @@ export interface CatalogResult {
   live: boolean;
 }
 
+export interface CatalogOptionsResult {
+  items: SystemListItem[];
+  /** True when the API answered; false when the bundled-content fallback did. */
+  live: boolean;
+}
+
 export async function fetchCatalog(query: CatalogQuery): Promise<CatalogResult> {
   const page = query.page && query.page > 0 ? query.page : 1;
   const params = new URLSearchParams();
@@ -92,6 +98,23 @@ export async function fetchCatalog(query: CatalogQuery): Promise<CatalogResult> 
     total: fallback.total,
     page,
     totalPages: Math.ceil(fallback.total / CATALOG_PAGE_SIZE),
+    live: false,
+  };
+}
+
+/** All published systems for compact selectors such as the compare view. */
+export async function fetchCatalogOptions(): Promise<CatalogOptionsResult> {
+  const live = await apiFetch<PaginatedEnvelope<SystemListItem>>("/v1/systems?limit=100");
+  if (live) {
+    return {
+      items: [...live.data].sort((a, b) => a.name.localeCompare(b.name)),
+      live: true,
+    };
+  }
+
+  const fallback = await fallbackListSystems({ page: 1, limit: 100 });
+  return {
+    items: [...fallback.data].sort((a, b) => a.name.localeCompare(b.name)),
     live: false,
   };
 }

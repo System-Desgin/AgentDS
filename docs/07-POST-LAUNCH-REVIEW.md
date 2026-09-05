@@ -64,8 +64,9 @@ and closed the actionable launch defects found during the review cycle:
 - an Actions “Deploy” job that was green while silently skipping deployment;
 - the unresolved CSP grade-versus-static-rendering decision.
 
-No known code-owned P0 defect remains open. Cursor's behavioral benchmark and
-the deferred Postgres backup/restore work still require owner infrastructure.
+No known code-owned P0 defect remains open. The owner intentionally skipped
+Cursor's optional behavioral benchmark on 2026-09-05; the deferred Postgres
+backup/restore work still requires owner infrastructure.
 
 ## Decisions and next priorities
 
@@ -79,11 +80,12 @@ the deferred Postgres backup/restore work still require owner infrastructure.
 3. **Finish operational safety — partially completed 2026-09-05.** Uptime Kuma
    owner alerts are live. Daily Postgres backups and one scratch restore remain
    deferred by the owner.
-4. **Finish the agent benchmark matrix.** Authenticate Cursor CLI and run the
-   existing same-prompt Carbon protocol without changing its evaluator.
-5. **Then start P1.** Keep the PRD order: compare view, local collections, then
-   RSS/JSON feeds. Do not start those features until launch measurement and
-   operations are working.
+4. **Cursor benchmark — intentionally skipped 2026-09-05.** The owner chose not
+   to authenticate Cursor for the optional behavioral run. Codex and Claude
+   Code evidence remains the published benchmark basis.
+5. **Start P1.** Keep the PRD order: compare view, local collections, then
+   RSS/JSON feeds. Measurement and uptime monitoring are now working; database
+   backup/restore remains separately deferred by the owner.
 
 The homepage and category pages already sort “most fetched” from live aggregate
 counters, so that part of the monthly maintenance task is automatic.
