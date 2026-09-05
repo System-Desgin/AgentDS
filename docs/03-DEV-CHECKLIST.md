@@ -126,10 +126,10 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 - [x] Launch assets: channel-specific copy plus a reproducible, same-prompt Codex benchmark with exact prompt, run metadata, scored outputs, and an honest Carbon comparison image in `docs/assets/launch/`
 - [~] Custom 1280×640 GitHub social preview asset is ready at `docs/assets/launch/github-social-preview.png`; _remaining owner action: upload it in the authenticated repository settings UI_
 - [~] Publish and distribute: the repository, production app/API, and skills.sh listing are public; owner-authorized launch posts and appropriate awesome-list submissions remain
-- [ ] Day-7 review: metrics vs PRD §10, bug triage, P1 backlog grooming
+- [x] First post-launch review completed 2026-09-05 (day 46, also covering the overdue day-30 indicators): metrics snapshot, limitations, bug triage, and ordered P1 backlog are recorded in `docs/07-POST-LAUNCH-REVIEW.md`
 
 ## Continuous (post-launch backlog seeds)
 
 - [x] Weekly pipeline drift check: the scheduled/manual workflow detected Linear/Raycast drift, the ordered code → content → skill-integrity stack repaired it, and the final full live-source sweep—including newly published Figma—passed on merged `main` ([run 33900112329](https://github.com/System-Desgin/AgentDS/actions/runs/33900112329), 2026-09-04)
-- [ ] Monthly: add 4–6 systems; refresh counters-based "most fetched" ordering
+- [~] Monthly: counters-based “most fetched” ordering is live and refreshes automatically; the first post-launch 4–6-system content batch remains
 - [ ] P1 items from PRD §7.5 in priority order (compare view → collections → RSS)

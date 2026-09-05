@@ -49,6 +49,7 @@ I also committed a reproducible same-prompt benchmark. The baseline passed 0/7
 static Carbon checks; adding Carbon DESIGN.md moved the result to 5/7. The two
 remaining failures are published too: the agent still invented colors and
 off-scale spacing, so AgentDS improves steering but does not replace review.
+The same controlled protocol in Claude Code moved from 1/7 to 5/7.
 
 ## Show HN
 
@@ -111,6 +112,8 @@ The screenshot is an actual recorded Codex run: 0/7 Carbon checks without the
 file, 5/7 with it. Exact prompt, HTML, model settings, hashes, and evaluator are
 in the repo. The remaining drift is disclosed, not cropped out.
 
+The same controlled protocol in Claude Code moved from 1/7 to 5/7.
+
 **4/** Works with any agent that reads a file: Claude Code, Cursor, Codex,
 Copilot, Windsurf, Kiro, OpenCode, Pi.
 
@@ -143,6 +146,7 @@ I tested that claim with a reproducible same-prompt Codex run. The baseline
 passed 0/7 source-level Carbon checks; the result with DESIGN.md passed 5/7.
 The generated source and the two failed checks are public too, because stronger
 design steering is useful evidence even when it is not perfect compliance.
+The same protocol in Claude Code moved from 1/7 to 5/7.
 
 Browse: https://agent-ds.oday-bakkour.com
 Install: npx skills add System-Desgin/AgentDS --skill design-systems

@@ -162,8 +162,8 @@ cp apps/api/.env.example apps/api/.env    # then fill in values
 docker compose up --build                 # api + postgres
 ```
 
-See [`docs/`](./docs) for the full plan: `01-PROJECT-IDEA.md`, `02-PRD.md`,
-`03-DEV-CHECKLIST.md`, `04-DATA-SOURCES.md`.
+See [`docs/`](./docs) for the project idea, PRD, implementation checklist,
+source policy, operations runbook, launch copy, and post-launch review.
 
 ## Legal
 
