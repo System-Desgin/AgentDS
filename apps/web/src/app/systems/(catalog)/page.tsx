@@ -81,6 +81,14 @@ export default async function SystemsPage({
             api unreachable — serving files bundled with this build
           </p>
         ) : null}
+        <div className="flex flex-wrap gap-4 pt-1 font-mono text-[0.8125rem] uppercase tracking-[0.04em]">
+          <Link href="/collections" className="text-accent hover:underline">
+            browse collections →
+          </Link>
+          <a href="/random" className="text-accent hover:underline">
+            pick a random system →
+          </a>
+        </div>
       </header>
 
       {/* Path toggle — persists in URL (F-1). */}

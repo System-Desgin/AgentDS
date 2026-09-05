@@ -1,5 +1,6 @@
 import { PURPOSE_CATEGORIES, PURPOSE_CATEGORY_LABELS } from "@agentds/shared";
 import { fetchCatalog } from "../../lib/api";
+import { CURATED_COLLECTIONS } from "../../lib/collections";
 import { API_URL, SITE_URL } from "../../lib/site";
 
 export const revalidate = 3600;
@@ -22,8 +23,16 @@ export async function GET(): Promise<Response> {
     "",
     "## Key pages",
     `- [Catalog](${SITE_URL}/systems): browse and filter every published system`,
+    `- [Collections](${SITE_URL}/collections): focused starting sets for common interface work`,
+    `- [Compare](${SITE_URL}/compare): inspect two or three token sets side by side`,
     `- [What is DESIGN.md](${SITE_URL}/what-is-design-md): the format explained`,
     `- [API docs](${SITE_URL}/api): fetch endpoints, no keys required`,
+    "",
+    "## Curated collections",
+    ...CURATED_COLLECTIONS.map(
+      (collection) =>
+        `- [${collection.title}](${SITE_URL}/collections/${collection.slug}): ${collection.summary}`,
+    ),
     "",
     "## Browse by purpose",
     ...PURPOSE_CATEGORIES.map(

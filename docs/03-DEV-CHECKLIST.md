@@ -135,4 +135,4 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 
 - [x] Weekly pipeline drift check: the scheduled/manual workflow detected Linear/Raycast drift, the ordered code → content → skill-integrity stack repaired it, and the final full live-source sweep—including newly published Figma—passed on merged `main` ([run 33900112329](https://github.com/System-Desgin/AgentDS/actions/runs/33900112329), 2026-09-04)
 - [~] Monthly: counters-based “most fetched” ordering is live and refreshes automatically; the first post-launch 4–6-system content batch remains
-- [~] P1 items from PRD §7.5 in priority order: compare view implemented; collections and RSS remain
+- [~] P1 items from PRD §7.5 in priority order: compare view plus curated collections/random discovery implemented; RSS remains

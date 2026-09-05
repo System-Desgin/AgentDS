@@ -2,16 +2,27 @@ import type { MetadataRoute } from "next";
 import { PURPOSE_CATEGORIES } from "@agentds/shared";
 import { SAMPLE_TEMPLATES } from "@agentds/shared/preview";
 import { AGENT_SNIPPETS } from "../lib/agent-snippets";
+import { CURATED_COLLECTIONS } from "../lib/collections";
 import { fetchAllSlugs, fetchCatalog } from "../lib/api";
 import { SITE_URL } from "../lib/site";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticRoutes = ["", "/systems", "/compare", "/what-is-design-md", "/api", "/about"].map(
-    (path) => ({
-      url: `${SITE_URL}${path}`,
-      changeFrequency: "weekly" as const,
-    }),
-  );
+  const staticRoutes = [
+    "",
+    "/systems",
+    "/collections",
+    "/compare",
+    "/what-is-design-md",
+    "/api",
+    "/about",
+  ].map((path) => ({
+    url: `${SITE_URL}${path}`,
+    changeFrequency: "weekly" as const,
+  }));
+  const collectionRoutes = CURATED_COLLECTIONS.map((collection) => ({
+    url: `${SITE_URL}/collections/${collection.slug}`,
+    changeFrequency: "weekly" as const,
+  }));
   const agentRoutes = AGENT_SNIPPETS.map((agent) => ({
     url: `${SITE_URL}/agents/${agent.id}`,
     changeFrequency: "monthly" as const,
@@ -43,5 +54,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         changeFrequency: "monthly" as const,
       })),
     );
-  return [...staticRoutes, ...agentRoutes, ...categoryRoutes, ...systemRoutes, ...previewRoutes];
+  return [
+    ...staticRoutes,
+    ...collectionRoutes,
+    ...agentRoutes,
+    ...categoryRoutes,
+    ...systemRoutes,
+    ...previewRoutes,
+  ];
 }
