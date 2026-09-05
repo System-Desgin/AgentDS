@@ -90,8 +90,8 @@ Everything the pipeline and content team pull from. **All URLs and package names
 Repeatable, documented, defensible (this is what separates us from sloppy scraping):
 
 1. **Scope:** public marketing/product pages only; no login walls, no assets downloaded, no logos redistributed.
-2. **Capture:** automated — `pnpm pipeline extract <slug>` fetches the provenance URLs, follows their linked stylesheets and inline `<style>` blocks, and harvests the `:root` custom-property layer plus literal colors, font stacks and radii. Server-rendered inline `style` declarations and SVG `fill`, `stroke`, and gradient-stop colors also count; script bodies and serialized CMS data never do. It reads hex, `rgb()`, `hsl()`, the OKLab family, and `color-mix(… transparent …)` (composited over both light and dark ground), because modern sites publish in all of them. Output is `tokens.raw.json`; page URLs + capture date go in provenance. Sites that expose no observable token or presentation layer (JS-rendered or bot-blocked) come back thin — that is reported, not papered over, and such an entry cannot be published.
-3. **Normalize** into the DESIGN.md token schema with semantic role mapping (primary/surface/on-surface…).
+2. **Capture:** automated — `pnpm pipeline extract <slug>` fetches the provenance URLs, follows their linked stylesheets and inline `<style>` blocks, and harvests the `:root` custom-property layer plus literal colors, font stacks and radii. Server-rendered inline `style` declarations and SVG `fill`, `stroke`, and gradient-stop colors also count; script bodies and serialized CMS data never do. It reads hex, `rgb()`, `hsl()`, the OKLab family, and `color-mix(… transparent …)` (composited over both light and dark ground), because modern sites publish in all of them. Output is `tokens.raw.json`, containing raw evidence, bounded normalized candidates, and coverage statistics; page URLs + capture date go in provenance. Sites that expose no observable token or presentation layer (JS-rendered or bot-blocked) come back thin — that is reported, not papered over, and such an entry cannot be published.
+3. **Normalize** source literals into bounded DESIGN.md-shaped candidates. The normalizer categorizes only observed values and never invents units. Generation proposes the compact semantic roles (primary/surface/on-surface…), then human QA verifies that selection against the source.
 4. **Fonts:** name the observed family in prose; token `fontFamily` uses a licensed Google-Fonts substitute from our fixed substitution map (e.g., proprietary grotesk → Inter; SF Pro → Inter; custom serif → Source Serif 4).
 5. **Disclaimer header (mandatory, injected by pipeline):** "Independent analysis of publicly observable design patterns. Not affiliated with, endorsed by, or sponsored by {maker}. All trademarks belong to their owners. Use as inspiration for an original system."
 6. Same `generate → lint → export → QA` steps as Official path.
@@ -101,7 +101,7 @@ Reference collections for calibration only — never copy their files: `VoltAgen
 
 ## 6. Prose generation guidance (Claude prompts, `packages/pipeline/prompts/`)
 
-- Input = normalized tokens + our own paraphrased summary of the system's published usage principles. **Never paste official docs text into output; never quote; rationale is rewritten.**
+- Input = bounded normalized source candidates + our own paraphrased summary of the system's published usage principles. **Never paste official docs text into output; never quote; rationale is rewritten.**
 - Fixed section order + length budget (whole file target 300–600 lines; front matter ≤ ~120 tokens entries).
 - Every color/typography claim in prose must reference an existing token (linter enforces refs).
 - "Do's and Don'ts" = 6–10 concrete pairs derived from the system's documented usage rules, rephrased.

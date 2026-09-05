@@ -39,8 +39,8 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 > evidence to close the final draft, and the protected content workflow passed.
 
 ### Pipeline (`packages/pipeline`) — F-6/F-7/F-8
-- [x] `extract <slug>`: `npm-tokens` (fetch token JSON via jsDelivr — no tarball unpack), `repo-json` (raw JSON URLs), `css-analysis` (Brand Looks: prints the documented manual-capture procedure) → `tokens.raw.json` + provenance
-- [~] Token normalizer: `NormalizedTokens` model + `buildFrontMatter` (model → DESIGN.md front matter) + a DTCG/plain-map flattener. _The full source→compact-DESIGN.md curation (semantic role mapping, `{token.ref}` cross-links) is done during generate + QA — a compact DESIGN.md is a distillation, not a raw dump._
+- [x] `extract <slug>`: `npm-tokens` (fetch token JSON via jsDelivr — no tarball unpack), `repo-json` (raw JSON URLs), `css-analysis` (automated public HTML/CSS/SVG capture) → `tokens.raw.json` + provenance
+- [x] Token normalizer: every extraction now persists bounded, source-derived `NormalizedTokens` candidates (colors/typography/rounded/spacing/components) plus coverage statistics; legacy raw payloads normalize at generation time. The versioned prompt receives the candidates, provenance, and author-owned guidance through tested placeholder rendering. _Generation + human QA own semantic role selection and `{token.ref}` cross-links — a compact DESIGN.md is a distillation, not a raw dump._
 - [x] `generate <slug>`: guardrailed `claude -p` wrapper (asserts `ANTHROPIC_API_KEY` unset, `--max-turns` cap, read-only `--allowedTools`), prompt template + tokens → DESIGN.md; interactive alternative `/generate-system`. _Runs where the Claude CLI is installed; guardrail unit-tested._
 - [x] `validate <slug>`: official linter (`design.md lint --format json`) + shared meta schema; persists `lint-report.json`; exits non-zero on errors
 - [x] `export <slug>`: `tokens.json` (DTCG) + `tailwind.css` (Tailwind v4) via the official exporter; `bundle.zip` (+ `LICENSE-NOTICE.txt` with CC BY 4.0 attribution, upstream license/provenance, and Brand-Look disclaimer)

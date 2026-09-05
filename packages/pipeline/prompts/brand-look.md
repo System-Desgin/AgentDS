@@ -1,7 +1,7 @@
 # Brand Look — DESIGN.md generation prompt (v1)
 
 > Same rules as the Official prompt, with the mandatory disclaimer and
-> observed-only framing. Template placeholders in `{{double_braces}}` are filled
+> observed-only framing. Double-brace template placeholders are filled
 > by the pipeline.
 
 ## Role
@@ -18,8 +18,19 @@ official design system.
 
 ## Inputs
 
-- Captured tokens (YAML, from public CSS + computed styles): `{{normalized_tokens}}`
-- Capture provenance (page URLs + date): `{{provenance}}`
+### Normalized source candidates (YAML, from public HTML/CSS/SVG)
+
+<!-- prettier-ignore -->
+```yaml
+{{normalized_tokens}}
+```
+
+### Capture provenance (page URLs + date)
+
+<!-- prettier-ignore -->
+```yaml
+{{provenance}}
+```
 
 ## Output rules
 
@@ -30,3 +41,5 @@ official design system.
    plain-markdown/no-HTML rules as the Official prompt.
 4. Fonts: name the observed family in prose; the `fontFamily` token uses a
    licensed Google-Fonts substitute from the fixed substitution map.
+5. Curate compact semantic roles from the candidates without changing literal
+   values or inventing missing values. Components may compose token references.

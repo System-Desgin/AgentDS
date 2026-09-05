@@ -3,8 +3,11 @@ import { existsSync } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import pc from "picocolors";
-import { parseMetaYaml } from "@agentds/shared";
+import { stringify as toYaml } from "yaml";
+import { parseMetaYaml, type Meta } from "@agentds/shared";
 import { findEntryDir, findRepoRoot } from "../lib/paths";
+import type { NormalizedTokens, RawTokenMap } from "../model/tokens";
+import { normalizeRawTokens } from "../normalize/raw-tokens";
 
 /**
  * Billing guardrail (CLAUDE.md): generation runs on the owner's Claude Max plan.
@@ -28,6 +31,91 @@ function claudeAvailable(): boolean {
 // Read-only tool allowlist for the generation agent (never writes/executes).
 const ALLOWED_TOOLS = "Read Grep Glob";
 const MAX_TURNS = "24";
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return value !== null && typeof value === "object" && !Array.isArray(value);
+}
+
+function isStringRecord(value: unknown): value is Record<string, string> {
+  return isRecord(value) && Object.values(value).every((item) => typeof item === "string");
+}
+
+function isNestedTokenRecord(value: unknown): boolean {
+  return (
+    isRecord(value) &&
+    Object.values(value).every(
+      (item) =>
+        isRecord(item) &&
+        Object.values(item).every(
+          (nestedValue) => typeof nestedValue === "string" || typeof nestedValue === "number",
+        ),
+    )
+  );
+}
+
+function isNormalizedTokens(value: unknown): value is NormalizedTokens {
+  if (!isRecord(value)) return false;
+  return (
+    isStringRecord(value.colors) &&
+    isNestedTokenRecord(value.typography) &&
+    isStringRecord(value.rounded) &&
+    isStringRecord(value.spacing) &&
+    isNestedTokenRecord(value.components)
+  );
+}
+
+function rawTokensFrom(value: unknown): RawTokenMap | null {
+  if (!isRecord(value)) return null;
+  const entries = Object.entries(value);
+  if (entries.some(([, token]) => typeof token !== "string" && typeof token !== "number")) {
+    return null;
+  }
+  return Object.fromEntries(entries) as RawTokenMap;
+}
+
+export function normalizedTokensFromExtractPayload(payload: unknown): {
+  tokens: NormalizedTokens;
+  usedLegacyFallback: boolean;
+} {
+  if (!isRecord(payload)) throw new Error("tokens.raw.json must contain a JSON object.");
+  if (isNormalizedTokens(payload.normalizedTokens)) {
+    return { tokens: payload.normalizedTokens, usedLegacyFallback: false };
+  }
+
+  const rawTokens = rawTokensFrom(payload.tokens);
+  if (!rawTokens) {
+    throw new Error("tokens.raw.json has no normalizedTokens or valid raw tokens map.");
+  }
+  return { tokens: normalizeRawTokens(rawTokens).tokens, usedLegacyFallback: true };
+}
+
+export function renderGenerationPrompt(
+  template: string,
+  meta: Meta,
+  tokens: NormalizedTokens,
+): string {
+  const guidance = {
+    summary: meta.summary,
+    description: meta.description,
+    categories: meta.categories,
+    tags: meta.tags,
+    best_for: meta.best_for,
+  };
+  const replacements: Record<string, string> = {
+    "{{name}}": meta.name,
+    "{{maker}}": meta.maker,
+    "{{normalized_tokens}}": toYaml(tokens).trim(),
+    "{{provenance}}": toYaml(meta.provenance).trim(),
+    "{{paraphrased_guidance}}": toYaml(guidance).trim(),
+  };
+  let prompt = template;
+  for (const [placeholder, value] of Object.entries(replacements)) {
+    prompt = prompt.replaceAll(placeholder, value);
+  }
+  const unresolved = prompt.match(/\{\{[a-z_]+\}\}/i)?.[0];
+  if (unresolved) throw new Error(`Generation prompt has an unresolved placeholder: ${unresolved}`);
+  return prompt;
+}
 
 /**
  * Generate an entry's DESIGN.md prose via headless Claude Code (`claude -p`)
@@ -76,8 +164,14 @@ export async function runGenerate(slug: string): Promise<void> {
   }
 
   const template = await readFile(promptPath, "utf8");
-  const tokens = await readFile(tokensPath, "utf8");
-  const prompt = `${template}\n\n## Normalized tokens\n\n\`\`\`json\n${tokens}\n\`\`\`\n`;
+  const payload: unknown = JSON.parse(await readFile(tokensPath, "utf8"));
+  const normalized = normalizedTokensFromExtractPayload(payload);
+  if (normalized.usedLegacyFallback) {
+    console.warn(
+      pc.yellow("tokens.raw.json predates normalization — run extract again to refresh it."),
+    );
+  }
+  const prompt = renderGenerationPrompt(template, meta, normalized.tokens);
 
   console.log(pc.dim(`Generating DESIGN.md for ${slug} via claude -p (read-only, no API key)…`));
   const res = spawnSync(
