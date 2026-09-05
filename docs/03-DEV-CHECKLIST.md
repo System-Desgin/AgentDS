@@ -6,12 +6,13 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 
 ## Phase 0 — Foundation (Week 1)
 
-> **Status (verified 2026-09-04):** the foundation and production infrastructure
+> **Status (verified 2026-09-05):** the foundation and production infrastructure
 > are live: Vercel serves the web app and branch previews; Dokploy serves the API
-> and PostgreSQL; DNS and TLS are healthy; five workflows run from
+> and PostgreSQL plus self-hosted Umami and Uptime Kuma; DNS and TLS are healthy;
+> five workflows run from
 > `.github/workflows/`; and `main` requires CI, gitleaks, one approval, and
 > resolved conversations. Scheduling daily database backups and completing a
-> restore drill remain owner-operated Phase 5 work.
+> restore drill remain owner-deferred Phase 5 work.
 
 ### Repo & tooling
 - [x] GitHub org + repo exist: `System-Desgin/AgentDS` (private during build; public since 2026-07-21)
@@ -29,7 +30,7 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 - [x] API container: multi-stage `Dockerfile` (node:22-alpine, non-root, `HEALTHCHECK` on `/v1/health`) + single `docker-compose.yml` (api + postgres, Traefik labels for Dokploy); deployed through Dokploy's direct repository integration
 - [~] PostgreSQL on Dokploy (dedicated DB + user, least privilege); production health reports `db: up` — _remaining owner actions: schedule daily backups and complete a restore drill_
 - [x] Env management: `.env.example` per app + root compose env; secrets only in Vercel/Dokploy, never in Git
-- [x] DNS on oday-bakkour.com: `agent-ds` points to Vercel and `api.agent-ds` to the Dokploy host; both domains serve valid Let's Encrypt HTTPS
+- [x] DNS on oday-bakkour.com: `agent-ds` points to Vercel; `api.agent-ds`, `analytics.agent-ds`, and `status.agent-ds` point to the Dokploy host; all four domains serve valid HTTPS
 
 ## Phase 1 — Content pipeline + first 10 systems (Weeks 2–3)
 
@@ -71,11 +72,12 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 
 ## Phase 3 — Frontend (Weeks 4–6) — F-1/F-2/F-3
 
-> **Status (verified 2026-09-04):** the frontend is feature-complete and live on
+> **Status (verified 2026-09-05):** the frontend is feature-complete and live on
 > Vercel with branch previews. Production serves the catalog, detail and purpose
 > pages, restricted state, metadata routes, and API-down bundled-content fallback.
 > The fallback was also exercised from a production build with an unreachable API.
-> Umami remains optional external infrastructure; its script slot is env-gated.
+> Self-hosted, cookieless Umami is live and its env-gated script is enabled in
+> Production and Preview.
 
 - [x] Design tokens from project `DESIGN.md` as Tailwind v4 theme (full palette incl. warning/error, radii, next/font-backed font stacks); base layout with skip link, nav, footer
 - [x] Home page per DESIGN.md (hero thesis, path split, featured grid — hidden while catalog is empty, 3-step how-it-works, install command block with copy)
@@ -86,7 +88,7 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 - [x] Static pages: `/what-is-design-md`, `/agents/[agent]` ×6 (claude-code, cursor, kiro, windsurf, codex, copilot), `/api`, `/about` (legal, licensing, privacy, contact)
 - [x] SSG/ISR: `generateStaticParams` from API ∪ bundled content; `POST /api/revalidate` (bearer REVALIDATE_TOKEN) for ingest-triggered refresh; graceful fallback serving bundled `content/` files when the API is unreachable (`outputFileTracingIncludes`)
 - [x] SEO: per-page metadata + OG, JSON-LD (`SoftwareSourceCode`) on detail, sitemap.xml, robots.txt, canonical URLs, llms.txt
-- [~] Analytics: env-gated Umami script slot on web + copy/download events wired to `/v1/events` — _remaining: provision Umami on Dokploy and set the two env vars_
+- [x] Analytics: self-hosted Umami on Dokploy + env-gated web script in Production and Preview + copy/download events wired to `/v1/events`; browser verification loaded `/script.js` and posted `/api/send` successfully (2026-09-05)
 - [x] a11y: skip link, keyboard-operable tabs/forms, 2px accent `:focus-visible` rings, AA token pairs per DESIGN.md, `prefers-reduced-motion` disables the entrance fade
 
 ## Phase 4 — Content sprint + skills.sh (Weeks 6–8) — F-9
@@ -123,7 +125,7 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 ### Launch
 - [x] Lighthouse ≥95 perf/a11y/SEO on home + 3 detail pages — **met** (mobile emulation, production, 2026-07-21): home **99**/96/100, carbon **98**/97/100, stripe **97**/97/100 (CLS 0), spectrum **96**/97/100. Two fixes en route: specimen-fonts stylesheet deferred off the critical path (was render-blocking, LCP 3.3s), then specimens clamped to one clipped line (font swap had introduced CLS 0.318)
 - [x] 404/500 pages: 404 returns a real status; root `error.tsx` + `global-error.tsx` are styled to DESIGN.md
-- [ ] Provision Uptime Kuma on Dokploy and configure owner alerting
+- [x] Uptime Kuma on Dokploy monitors the production home page, `/systems`, and API `/v1/health` every 60 seconds; all three are up, use certificate-expiry checks, and have the owner notification assigned (verified 2026-09-05)
 - [x] Launch assets: channel-specific copy plus a reproducible, same-prompt Codex benchmark with exact prompt, run metadata, scored outputs, and an honest Carbon comparison image in `docs/assets/launch/`
 - [x] Custom GitHub social preview uploaded and independently verified through repository metadata on 2026-09-05 (`usesCustomOpenGraphImage: true`); source asset retained at `docs/assets/launch/github-social-preview.png` (1280×640)
 - [~] Publish and distribute: the repository, production app/API, and skills.sh listing are public; owner-authorized launch posts and appropriate awesome-list submissions remain

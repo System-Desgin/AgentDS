@@ -18,6 +18,20 @@ day-30 leading-indicator check. All measurements are aggregate and cookieless.
 | Detail → action rate | Unavailable | Umami is not provisioned; API counters alone have no page-view denominator |
 | Returning-visitor share | Unavailable | Umami is not provisioned |
 
+## Operational follow-up — 2026-09-05
+
+- Self-hosted Umami is live at `analytics.agent-ds.oday-bakkour.com`; the
+  `AgentDS` website is configured, both Vercel variables are present in
+  Production and Preview, and an external browser verified successful
+  `/script.js` and `/api/send` requests. Funnel measurements now have a
+  denominator; meaningful trends begin with this date rather than being
+  backfilled into the snapshot above.
+- Uptime Kuma is live at `status.agent-ds.oday-bakkour.com`. Its 60-second
+  monitors cover the home page, `/systems`, and `/v1/health`; all three were up
+  with certificate-expiry checks and the owner notification assigned.
+- Daily Postgres backups and the scratch restore drill remain intentionally
+  deferred by the owner. No backup configuration was changed during this work.
+
 The API rate is directional rather than a unique-user measure. The counter is
 incremented for every successful raw-artifact response and intentionally stores
 no IP, cookie, referrer, or user identity.
@@ -51,7 +65,7 @@ and closed the actionable launch defects found during the review cycle:
 - the unresolved CSP grade-versus-static-rendering decision.
 
 No known code-owned P0 defect remains open. Cursor's behavioral benchmark and
-the operations tasks below require authenticated owner infrastructure.
+the deferred Postgres backup/restore work still require owner infrastructure.
 
 ## Decisions and next priorities
 
@@ -59,11 +73,12 @@ the operations tasks below require authenticated owner infrastructure.
    launch target, while stars, explicit file actions, and skill installs are
    low. The GitHub social card was uploaded on 2026-09-05; publish the prepared
    launch posts before adding another large content batch.
-2. **Restore the missing funnel denominator.** Provision cookieless Umami and
-   set the two Vercel variables so CTR, action rate, and returning share become
-   measurable.
-3. **Finish operational safety.** Schedule daily Postgres backups, run one
-   scratch restore, and configure Uptime Kuma owner alerts.
+2. **Restore the missing funnel denominator — completed 2026-09-05.**
+   Cookieless Umami and both Vercel variables are live; collect a fresh funnel
+   snapshot after enough post-install traffic exists.
+3. **Finish operational safety — partially completed 2026-09-05.** Uptime Kuma
+   owner alerts are live. Daily Postgres backups and one scratch restore remain
+   deferred by the owner.
 4. **Finish the agent benchmark matrix.** Authenticate Cursor CLI and run the
    existing same-prompt Carbon protocol without changing its evaluator.
 5. **Then start P1.** Keep the PRD order: compare view, local collections, then
