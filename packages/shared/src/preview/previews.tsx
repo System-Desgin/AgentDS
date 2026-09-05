@@ -31,7 +31,7 @@ const valueStyle: CSSProperties = {
 /** Parse a CSS dimension to px (rem = 16px); null when unparseable. */
 export function dimensionToPx(value: string | number): number | null {
   if (typeof value === "number") return value;
-  const match = /^(-?\d*\.?\d+)(px|rem|em)$/.exec(value.trim());
+  const match = /^(-?(?:\d+(?:\.\d+)?|\.\d+))(px|rem|em)$/.exec(value.trim());
   if (!match) return null;
   const n = Number(match[1]);
   return match[2] === "px" ? n : n * 16;

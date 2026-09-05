@@ -114,9 +114,10 @@ Phases map to PRD §11. Every box is a mergeable unit of work. Requirement IDs (
 
 ### Security review (own it — this is the brand)
 - [x] Dependency audit: `pnpm audit --audit-level=high` reports no known vulnerabilities and GitHub reports zero open Dependabot alerts on `main` (verified 2026-09-04)
+- [x] GitHub repository hardening (2026-09-05): CodeQL default setup scans JavaScript/TypeScript, Python, and Actions on protected branches, pull requests, and weekly; its initial findings were fixed. Secret scanning + push protection, Dependabot alerts/security updates, and private vulnerability reporting are enabled; the access review found one admin collaborator and no deploy keys
 - [x] Web: full security-header set live (HSTS preload, nosniff, DENY framing, strict referrer, Permissions-Policy, COOP/CORP) + CSP locked to self/API/fonts. **Observatory: B+ (80, 9/10 tests)** — launch decision recorded 2026-09-05: retain SSG/ISR and accept the constrained `script-src 'unsafe-inline'` residual risk instead of abandoning static rendering for request-time nonces. API side: helmet, problem-details errors, throttler verified under load — done
 - [x] Abuse test (2026-07-21): 600 requests at 62 rps against raw-file endpoints → 240 served (incl. 22 ETag 304s), 360 clean 429s, zero errors/5xx, p50 144ms, healthy after
-- [~] Secrets rotation + backup/restore + deploy runbook documented in `docs/05-OPERATIONS.md` — _remaining owner actions: schedule the daily Postgres backup in Dokploy + one restore test; quarterly access review_
+- [~] Secrets rotation + backup/restore + deploy runbook documented in `docs/05-OPERATIONS.md`; initial GitHub collaborator/deploy-key review completed — _remaining owner actions: schedule the daily Postgres backup in Dokploy + one restore test; repeat access review quarterly_
 - [x] Pipeline output review (2026-09-04): all 42 published catalog DESIGN.md files pass schema/lint/sanitizer, verification, and QA checks; preview tests keep asserting script-free server markup
 
 ### Launch

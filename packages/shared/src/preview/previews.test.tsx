@@ -93,6 +93,8 @@ describe("dimensionToPx", () => {
   it("parses px and rem, rejects junk", () => {
     expect(dimensionToPx("8px")).toBe(8);
     expect(dimensionToPx("1.5rem")).toBe(24);
+    expect(dimensionToPx(".5em")).toBe(8);
+    expect(dimensionToPx(`9${"9".repeat(100_000)}x`)).toBeNull();
     expect(dimensionToPx(12)).toBe(12);
     expect(dimensionToPx("auto")).toBeNull();
   });

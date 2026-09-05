@@ -73,6 +73,94 @@ export function inlineStyles(html: string): string[] {
   return [...html.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/gi)].map((m) => m[1] ?? "");
 }
 
+function tagEnd(html: string, tagStart: number): number {
+  let quote: '"' | "'" | null = null;
+  for (let index = tagStart + 1; index < html.length; index += 1) {
+    const char = html[index];
+    if (quote !== null) {
+      if (char === quote) quote = null;
+    } else if (char === '"' || char === "'") {
+      quote = char;
+    } else if (char === ">") {
+      return index;
+    }
+  }
+  return -1;
+}
+
+function tagIdentity(tag: string): { closing: boolean; name: string } {
+  let cursor = 1;
+  const closing = tag[cursor] === "/";
+  if (closing) cursor += 1;
+  while (cursor < tag.length && /\s/.test(tag[cursor] as string)) cursor += 1;
+  const start = cursor;
+  while (cursor < tag.length) {
+    const char = tag[cursor] as string;
+    const code = char.charCodeAt(0);
+    const isNameChar =
+      (code >= 48 && code <= 57) ||
+      (code >= 65 && code <= 90) ||
+      (code >= 97 && code <= 122) ||
+      char === "-";
+    if (!isNameChar) break;
+    cursor += 1;
+  }
+  return { closing, name: tag.slice(start, cursor).toLowerCase() };
+}
+
+function isHtmlWhitespace(char: string | undefined): boolean {
+  return char === " " || char === "\t" || char === "\n" || char === "\r" || char === "\f";
+}
+
+/** Tags outside script bodies, parsed without treating remote HTML as markup. */
+function presentationTags(html: string): string[] {
+  const tags: string[] = [];
+  const lower = html.toLowerCase();
+  let cursor = 0;
+
+  while (cursor < html.length) {
+    const start = html.indexOf("<", cursor);
+    if (start === -1) break;
+
+    if (html.startsWith("<!--", start)) {
+      const commentEnd = html.indexOf("-->", start + 4);
+      if (commentEnd === -1) break;
+      cursor = commentEnd + 3;
+      continue;
+    }
+
+    const end = tagEnd(html, start);
+    if (end === -1) break;
+    const tag = html.slice(start, end + 1);
+    const identity = tagIdentity(tag);
+
+    if (!identity.closing && identity.name === "script") {
+      let searchFrom = end + 1;
+      let closingStart = -1;
+      while (searchFrom < html.length) {
+        const candidate = lower.indexOf("</script", searchFrom);
+        if (candidate === -1) break;
+        const boundary = lower[candidate + 8];
+        if (boundary === ">" || isHtmlWhitespace(boundary)) {
+          closingStart = candidate;
+          break;
+        }
+        searchFrom = candidate + 8;
+      }
+      if (closingStart === -1) break;
+      const closingEnd = tagEnd(html, closingStart);
+      if (closingEnd === -1) break;
+      cursor = closingEnd + 1;
+      continue;
+    }
+
+    tags.push(tag);
+    cursor = end + 1;
+  }
+
+  return tags;
+}
+
 /**
  * CSS declarations and literal colors attached directly to public markup.
  *
@@ -82,16 +170,28 @@ export function inlineStyles(html: string): string[] {
  * in serialized CMS data or JavaScript source never enter the evidence set.
  */
 export function inlinePresentationValues(html: string): string[] {
-  const markup = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
   const values: string[] = [];
+  const vectorTags = new Set([
+    "svg",
+    "g",
+    "path",
+    "rect",
+    "circle",
+    "ellipse",
+    "line",
+    "polyline",
+    "polygon",
+    "stop",
+    "text",
+    "use",
+  ]);
 
-  for (const match of markup.matchAll(/\bstyle\s*=\s*(["'])(.*?)\1/gi)) {
-    if (match[2]) values.push(match[2]);
-  }
-
-  const vectorTag =
-    /<(?:svg|g|path|rect|circle|ellipse|line|polyline|polygon|stop|text|use)\b[^>]*>/gi;
-  for (const [tag] of markup.matchAll(vectorTag)) {
+  for (const tag of presentationTags(html)) {
+    for (const match of tag.matchAll(/\bstyle\s*=\s*(["'])(.*?)\1/gi)) {
+      if (match[2]) values.push(match[2]);
+    }
+    const identity = tagIdentity(tag);
+    if (identity.closing || !vectorTags.has(identity.name)) continue;
     for (const match of tag.matchAll(/\b(?:fill|stroke|stop-color)\s*=\s*(["'])(.*?)\1/gi)) {
       if (match[2]) values.push(match[2]);
     }

@@ -62,6 +62,22 @@ describe("inlinePresentationValues", () => {
     `;
     expect(inlinePresentationValues(html)).toEqual([]);
   });
+
+  it("skips script bodies with spaced end tags and ignores comments", () => {
+    const html = `
+      <!-- <path fill="#BADBAD"> -->
+      <SCRIPT type="module">const serialized = '<div style="#DEADBE">';</script   >
+      <script>const decoy = '</scriptx><svg fill="#C0FFEE">';</script>
+      <div style="color:#123456"></div>
+    `;
+    expect(inlinePresentationValues(html)).toEqual(["color:#123456"]);
+  });
+
+  it("ignores everything after an unclosed script tag", () => {
+    expect(inlinePresentationValues('<script><path fill="#DEADBE"><div style="#BADBAD">')).toEqual(
+      [],
+    );
+  });
 });
 
 describe("customProperties", () => {
