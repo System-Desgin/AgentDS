@@ -12,9 +12,9 @@ import { findEntryDir, findRepoRoot } from "../lib/paths";
  * account, so refuse to run if it is present.
  */
 export function assertNoAnthropicApiKey(env: NodeJS.ProcessEnv = process.env): void {
-  if (env.ANTHROPIC_API_KEY && env.ANTHROPIC_API_KEY.trim() !== "") {
+  if (Object.hasOwn(env, "ANTHROPIC_API_KEY")) {
     throw new Error(
-      "ANTHROPIC_API_KEY is set — refusing to generate. It reroutes `claude -p` billing " +
+      "ANTHROPIC_API_KEY is present — refusing to generate. It reroutes `claude -p` billing " +
         "off the plan's Agent SDK credit. Unset it and retry (see CLAUDE.md).",
     );
   }
