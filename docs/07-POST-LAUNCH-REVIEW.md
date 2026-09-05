@@ -57,8 +57,8 @@ the operations tasks below require authenticated owner infrastructure.
 
 1. **Distribute before expanding.** The catalog is already above the 40-system
    launch target, while stars, explicit file actions, and skill installs are
-   low. Publish the prepared launch posts and upload the GitHub social card
-   before adding another large content batch.
+   low. The GitHub social card was uploaded on 2026-09-05; publish the prepared
+   launch posts before adding another large content batch.
 2. **Restore the missing funnel denominator.** Provision cookieless Umami and
    set the two Vercel variables so CTR, action rate, and returning share become
    measurable.
