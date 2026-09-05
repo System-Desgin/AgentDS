@@ -21,4 +21,9 @@ describe("parseCssVars", () => {
     const css = ".a{--x:1rem} .b{--y:2rem}";
     expect(parseCssVars(css, "file")).toEqual({ "file.--x": "1rem", "file.--y": "2rem" });
   });
+
+  it("handles hostile non-declarations without backtracking", () => {
+    const css = `---:${" ".repeat(100_000)}!`;
+    expect(parseCssVars(css)).toEqual({});
+  });
 });

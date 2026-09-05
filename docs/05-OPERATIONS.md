@@ -62,6 +62,21 @@ Rotate on: personnel/device change, suspected exposure, or every 6 months.
 - Post-deploy smoke: list endpoint returns the expected system count; a
   restricted entry (dsfr) returns 451 on file routes; an unknown slug 404s.
 
+## GitHub repository controls
+
+- `main` requires an up-to-date branch, the full CI gate, gitleaks, one
+  approval, and resolved conversations. Force pushes and branch deletion are
+  disabled.
+- GitHub secret scanning, push protection, Dependabot alerts/security updates,
+  and private vulnerability reporting are enabled. Reports go through the
+  repository Security tab or `contact@oday-bakkour.com`.
+- CodeQL default setup scans JavaScript/TypeScript, Python, and GitHub Actions
+  on protected-branch pushes, eligible pull requests, and a weekly schedule.
+  Treat new high/critical alerts as release blockers; review lower-severity
+  alerts instead of dismissing them without evidence.
+- The 2026-09-05 access review found one admin collaborator and no deploy keys.
+  Repeat the collaborator, deploy-key, and Git-integration review quarterly.
+
 ## Accepted security trade-off
 
 The launch posture intentionally keeps static generation and ISR. Next.js App

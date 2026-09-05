@@ -1,25 +1,58 @@
 import type { RawTokenMap } from "../model/tokens";
 
-// Match `--token-name: value;` (or `... }`) declarations. Values can't span
-// braces, so this never crosses rule boundaries. No code is executed.
-const CSS_VAR_RE = /--([a-z0-9-]+)\s*:\s*([^;{}]+?)\s*(?:;|})/gi;
+function isNameCharacter(char: string): boolean {
+  const code = char.charCodeAt(0);
+  return (
+    (code >= 48 && code <= 57) ||
+    (code >= 65 && code <= 90) ||
+    (code >= 97 && code <= 122) ||
+    char === "-"
+  );
+}
+
+function isCssWhitespace(char: string): boolean {
+  return char === " " || char === "\t" || char === "\n" || char === "\r" || char === "\f";
+}
 
 /**
  * Parse CSS custom properties into a flat token map. Keeps the FIRST occurrence
  * of each variable — for design-system stylesheets the default (e.g. light/white)
  * theme is declared first in `:root`, so first-wins grounds that theme. Safe:
- * a pure regex parse, never evaluates the stylesheet.
+ * a linear text parse, never evaluates the stylesheet. Avoiding a backtracking
+ * expression keeps runtime bounded even when a remote stylesheet is hostile.
  */
 export function parseCssVars(css: string, prefix = ""): RawTokenMap {
   const out: RawTokenMap = {};
-  let match: RegExpExecArray | null;
-  CSS_VAR_RE.lastIndex = 0;
-  while ((match = CSS_VAR_RE.exec(css)) !== null) {
-    const name = match[1];
-    const value = match[2]?.trim();
-    if (name === undefined || value === undefined) continue;
+  let cursor = 0;
+
+  while (cursor < css.length) {
+    const declarationStart = css.indexOf("--", cursor);
+    if (declarationStart === -1) break;
+
+    const nameStart = declarationStart + 2;
+    let nameEnd = nameStart;
+    while (nameEnd < css.length && isNameCharacter(css[nameEnd] as string)) nameEnd += 1;
+    if (nameEnd === nameStart) {
+      cursor = nameStart;
+      continue;
+    }
+
+    cursor = nameEnd;
+    while (cursor < css.length && isCssWhitespace(css[cursor] as string)) cursor += 1;
+    if (css[cursor] !== ":") continue;
+
+    cursor += 1;
+    while (cursor < css.length && isCssWhitespace(css[cursor] as string)) cursor += 1;
+    const valueStart = cursor;
+    while (cursor < css.length && css[cursor] !== ";" && css[cursor] !== "}") cursor += 1;
+    if (cursor === css.length || cursor === valueStart) continue;
+
+    const name = css.slice(nameStart, nameEnd);
+    const value = css.slice(valueStart, cursor).trim();
     const key = prefix ? `${prefix}.--${name}` : `--${name}`;
     if (!(key in out)) out[key] = value;
+
+    cursor += 1;
   }
   return out;
 }

@@ -15,6 +15,9 @@ on:
         description: "Verify a single entry (blank = all)"
         required: false
 
+permissions:
+  contents: read
+
 jobs:
   verify:
     name: tokens vs. upstream source
