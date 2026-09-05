@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-09-05T06:38:24.000Z",
+  "generator": {
+    "agent": "claude-code",
+    "cli": "2.1.260 (Claude Code)",
+    "model": "sonnet",
+    "reasoningEffort": "medium",
+    "resolvedModels": [
+      "claude-haiku-4-5-20251001",
+      "claude-sonnet-5"
+    ],
+    "safeMode": true,
+    "sessionPersistence": false,
+    "allowedTools": [
+      "Read",
+      "Write"
+    ],
+    "serviceTiers": [
+      "standard"
+    ],
+    "turns": {
+      "baseline": 6,
+      "carbon": 5
+    },
+    "auth": {
+      "authMethod": "claude.ai",
+      "apiProvider": "firstParty",
+      "subscriptionType": "max",
+      "anthropicApiKeyPresent": false
+    }
+  },
+  "inputs": {
+    "prompt": "benchmarks/carbon-dashboard/prompt.txt",
+    "promptSha256": "8be1af2cc4163b6d5c2bfc6a16e755cccbce920ac76ff04912c4771377081f87",
+    "treatmentDesign": "content/official/carbon/DESIGN.md",
+    "treatmentDesignSha256": "35db589370202f332a295537528d2d1ed2da250556e4bd3f7d70defb2e7c0c26",
+    "onlyTreatmentInputDifference": "DESIGN.md"
+  },
+  "outputs": {
+    "baselineSha256": "345039fa315a045a5b02bbcb9da064a514d8f50c42ce20d49c7e311e51af4338",
+    "carbonSha256": "c8b5c65136673683585e3488dfbf1a77b43ee5c8c0f0c0a2f2a66962f864f769"
+  },
+  "agentFinalMessages": {
+    "baseline": "Created `index.html` at the baseline directory — a self-contained, no-JS revenue dashboard with top nav, KPI tiles, a pure CSS/HTML monthly bar chart, and a top-regions table with status pills, using the validated dataviz palette (six-digit hex throughout).",
+    "carbon": "Created `index.html` — a Carbon-styled revenue dashboard with top nav, KPI tiles, a CSS-only monthly bar chart, and a top-regions table with status indicators, using only the DESIGN.md hex tokens."
+  }
+}

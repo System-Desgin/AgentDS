@@ -34,13 +34,13 @@ language, not IBM's official component library.
 
 [![Two dashboards generated from the same prompt, without and with Carbon DESIGN.md](./docs/assets/launch/comparison.png)](./benchmarks/carbon-dashboard/README.md)
 
-In a [reproducible Codex benchmark](./benchmarks/carbon-dashboard/README.md), the
-baseline passed **0/7** source-level Carbon checks and the run with `DESIGN.md`
-passed **5/7**. The treatment used Carbon's primary, typeface, radii, status
-colors, and no-shadow rule, but still invented unpublished colors and off-scale
-spacing. The exact prompt, model settings, generated HTML, hashes, evaluator,
-and limitations are committed—this is evidence of stronger steering, not a
-claim of perfect compliance.
+In [reproducible Codex and Claude Code benchmarks](./benchmarks/carbon-dashboard/README.md),
+the baselines passed **0/7** and **1/7** source-level Carbon checks; both runs
+with `DESIGN.md` passed **5/7**. The treatments used Carbon's primary, typeface,
+radii, status colors, and no-shadow rule, but still invented unpublished colors
+and off-scale spacing. The exact prompt, model settings, generated HTML, hashes,
+evaluator, and limitations are committed—this is evidence of stronger steering,
+not a claim of perfect compliance.
 
 ### From install to on-system UI
 

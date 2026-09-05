@@ -28,6 +28,7 @@
     "validate:content": "pnpm --filter @agentds/shared build && node scripts/validate-content.mjs",
     "check:verification": "node scripts/check-verification.mjs",
     "benchmark:carbon": "node scripts/run-carbon-benchmark.mjs",
+    "benchmark:carbon:claude": "node scripts/run-carbon-benchmark.mjs --agent=claude-code",
     "pipeline": "pnpm --filter @agentds/shared build && pnpm --filter @agentds/pipeline start",
     "prepare": "husky"
   },
