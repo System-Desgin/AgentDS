@@ -7,6 +7,7 @@ import { extractNpmTokens } from "../extract/npm-tokens";
 import { extractRepoJson } from "../extract/repo-json";
 import { captureSiteCss, type SiteCapture } from "../extract/site-css";
 import type { ExtractResult } from "../model/tokens";
+import { normalizeRawTokens } from "../normalize/raw-tokens";
 
 function today(): string {
   return new Date().toISOString().slice(0, 10);
@@ -17,8 +18,10 @@ function today(): string {
  * Adapter is chosen by `meta.provenance.source_type`:
  *   - npm  → fetch the package's token JSON via jsDelivr
  *   - repo → fetch raw token JSON URLs from `provenance.urls`
- *   - css-analysis (Brand Looks) → documented manual capture (not auto-fetched)
- * Curating these raw tokens into the compact DESIGN.md happens in generate + QA.
+ *   - css-analysis (Brand Looks) → capture public HTML/CSS/SVG token evidence
+ * Raw source values are also normalized into bounded, DESIGN.md-shaped
+ * candidates. Semantic distillation into the final compact file stays in
+ * generate + QA so extraction never invents design decisions.
  */
 export async function runExtract(slug: string): Promise<void> {
   const entry = findEntryDir(slug);
@@ -72,6 +75,7 @@ export async function runExtract(slug: string): Promise<void> {
 
   const tokenCount = Object.keys(result.rawTokens).length;
   const capture = "colors" in result ? (result as SiteCapture) : null;
+  const normalized = normalizeRawTokens(result.rawTokens);
   const payload = {
     slug,
     extractedAt,
@@ -83,6 +87,8 @@ export async function runExtract(slug: string): Promise<void> {
     ...(capture
       ? { colors: capture.colors, fontStacks: capture.fontStacks, radii: capture.radii }
       : {}),
+    normalization: normalized.stats,
+    normalizedTokens: normalized.tokens,
     tokens: result.rawTokens,
   };
   await writeFile(join(entry.dir, "tokens.raw.json"), JSON.stringify(payload, null, 2), "utf8");
@@ -97,5 +103,13 @@ export async function runExtract(slug: string): Promise<void> {
   console.log(
     pc.green(`${slug}: extracted ${tokenCount} tokens`),
     pc.dim(`from ${result.files.length} file(s) → tokens.raw.json`),
+  );
+  console.log(
+    pc.dim(
+      `  normalized candidates: ${normalized.stats.output.colors} colors · ` +
+        `${normalized.stats.output.typography} type styles · ` +
+        `${normalized.stats.output.spacing} spacing · ` +
+        `${normalized.stats.output.rounded} radii`,
+    ),
   );
 }

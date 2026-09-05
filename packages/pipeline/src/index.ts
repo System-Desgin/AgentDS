@@ -15,9 +15,11 @@ export { flattenTokens } from "./extract/parse-dtcg";
 export { parseCssVars } from "./extract/parse-css";
 export { isTokenFile, isCssTokenFile, extractNpmTokens } from "./extract/npm-tokens";
 export { extractRepoJson } from "./extract/repo-json";
+export { normalizeRawTokens } from "./normalize/raw-tokens";
 
 export { lintDesignMd, exportDesignMd, findDesignMdBin } from "./lib/design-md";
 export { contentDirFor, findRepoRoot, findEntryDir, CONTENT_DIRNAME } from "./lib/paths";
 
 export type { NormalizedTokens, RawTokenMap, TypographyScale, ExtractResult } from "./model/tokens";
+export type { NormalizationResult, NormalizationStats } from "./normalize/raw-tokens";
 export type { LintResult, LintSummary, LintFinding, ExportFormat } from "./lib/design-md";

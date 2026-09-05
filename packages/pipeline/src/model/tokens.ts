@@ -12,8 +12,8 @@ export interface TypographyScale {
 
 /**
  * The curated token model that maps 1:1 onto DESIGN.md front matter. Extraction
- * produces a best-effort draft; generation + human QA refine it (the compact
- * DESIGN.md is a distillation of a system's tokens, not a raw dump).
+ * produces bounded, source-derived candidates in this shape; generation +
+ * human QA distill those candidates into the final compact token set.
  */
 export interface NormalizedTokens {
   colors: Record<string, string>;

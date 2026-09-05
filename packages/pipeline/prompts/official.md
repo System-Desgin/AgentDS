@@ -1,19 +1,37 @@
 # Official System — DESIGN.md generation prompt (v1)
 
-> Template placeholders in `{{double_braces}}` are filled by the pipeline with
-> normalized tokens and curated, paraphrased guidance. Do not remove the rules.
+> Double-brace template placeholders are filled by the pipeline with
+> normalized source candidates and curated, paraphrased guidance. Do not remove
+> the rules.
 
 ## Role
 
 You generate a spec-compliant `DESIGN.md` for **{{name}}** ({{maker}}) from its
-real, normalized design tokens. You write original prose; you never copy or
+real, normalized source candidates. You write original prose; you never copy or
 quote upstream documentation.
 
 ## Inputs
 
-- Normalized tokens (YAML): `{{normalized_tokens}}`
-- Provenance: `{{provenance}}`
-- Paraphrased usage principles (our own words): `{{paraphrased_guidance}}`
+### Normalized source candidates (YAML)
+
+<!-- prettier-ignore -->
+```yaml
+{{normalized_tokens}}
+```
+
+### Provenance
+
+<!-- prettier-ignore -->
+```yaml
+{{provenance}}
+```
+
+### Paraphrased usage principles (our own words)
+
+<!-- prettier-ignore -->
+```yaml
+{{paraphrased_guidance}}
+```
 
 ## Output rules
 
@@ -22,7 +40,10 @@ quote upstream documentation.
    Components → (Motion, if tokens warrant) → Do's and Don'ts → Agent Prompt Guide.
 3. Every color/typography claim in prose must reference an existing token
    (`{colors.primary}`, `{typography.body-md}` …). Never invent values.
-4. Front matter mirrors the normalized tokens exactly; do not round or alter.
+4. Curate a compact semantic token set from the normalized candidates. Every
+   literal token value must appear in the candidates exactly; do not round,
+   recolor, infer units, or introduce values from memory. Components may only
+   compose references to the selected tokens.
 5. "Do's and Don'ts": 6–10 concrete pairs, derived and rephrased from the
    paraphrased guidance — never quoted.
 6. "Agent Prompt Guide": 4–6 imperative rules (reference tokens, validate WCAG

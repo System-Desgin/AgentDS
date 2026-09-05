@@ -10,8 +10,9 @@ re-runs diff-stable (see `docs/04-DATA-SOURCES.md` §6).
 
 Rules baked into both:
 
-- Input is normalized tokens + our own paraphrased usage summary. **Never** paste
-  or quote official docs text into the output.
+- Input is bounded, normalized source candidates + our own paraphrased usage
+  summary. Generation performs the semantic distillation, and human QA verifies
+  it. **Never** paste or quote official docs text into the output.
 - Fixed section order; whole-file budget ~300–600 lines.
 - Every color/typography claim references an existing token (the linter enforces
   refs).
